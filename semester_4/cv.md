@@ -32,7 +32,7 @@ structure
 
 # Introduction
 ## Color Models
-![Alt text](images/01_models.png)
+![Alt text](resources/cv/01_models.png)
 
 
 ## Histogram 
