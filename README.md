@@ -1,1 +1,1 @@
-# thi_studies
+# thi_exams
