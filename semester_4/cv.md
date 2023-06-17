@@ -73,7 +73,7 @@ Der Cut-Off bestimmt die Grenzfrequenz (wie Viertelkreis von oben links).
 ## Discrete Cosinus Transformation (DCT)
 Aufteilung in 8x8 Blöcke, die dann in den Frequenzraum transformiert werden.
 
-![DCT 8x8](images/DCT-8x8.png)
+![DCT 8x8](resources/cv/02_DCT-8x8.png)
 
 ## Kompression
 * Jedes JPEG Bild wird in 8x8 Blöcke zerlegt und dann in den Frequenzraum transformiert.
@@ -88,12 +88,15 @@ Aufteilung in 8x8 Blöcke, die dann in den Frequenzraum transformiert werden.
 
 2. Zeichnen Sie eine entsprechende Frequenzansicht eines Rechtecksignals, ohne es zu berechnen.
 
-&emsp; &emsp; &emsp; ![Fourier Square](images/fourier_square.png)
+&emsp; &emsp; &emsp; ![Fourier Square](resources/cv/03_fourier_square.png)
 
 3. Zeichnen Sie für die folgende Frequenzansicht die entsprechende Zeitansicht.
 
 &emsp; &emsp; &emsp; **LERNEN**
 
 
+# Characteristics
+...
 
-[⬆ nach oben](#big-data-01)
+
+[⬆ nach oben](#table-of-contents)
