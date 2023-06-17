@@ -71,7 +71,7 @@ Ein Superschlüssel ist eine Menge von Attributen, die Tupel einer Relation ***e
 ISBN
 ISBN, Autor
 Autor, Buchtitel
-ISBN; Autor, Buchtitel
+ISBN, Autor, Buchtitel
 ```
 
 ### Schlüsselkandidat
