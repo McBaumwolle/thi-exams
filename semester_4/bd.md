@@ -15,6 +15,10 @@
     - [Primärschlüssel](#primärschlüssel)
     - [Surrogatschlüssel](#surrogatschlüssel)
     - [Fremdschlüssel](#fremdschlüssel)
+  - [ERD zur Relationen](#erd-zur-relationen)
+    - [Schriftnotation](#schriftnotation)
+      - [Minimalnotation](#minimalnotation)
+      - [detailierte Notation](#detailierte-notation)
 
 
 <br>
@@ -53,7 +57,7 @@ Eine Relation ist eine Teilmenge des kartesischen Produkts von Wertebereichen.
 ## Relationen als Tabelle
 Beispiel mit 6 Attributen und 3 Tupeln
 
-| CustomerID | Name | Address | City | PostalCode | Country |
+| <ins>CustomerID</ins> | Name | Address | City | PostalCode | Country |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Michael | Broad St 1 | London | 26925 | UK |
 | 2 | John | Main St 2 | New York | 10176 | USA |
@@ -82,7 +86,7 @@ Buchtitel, Autor
 ```
 
 ### Primärschlüssel
-Aus den Kanidaten wird ein Primärschlüssel ausgewählt.
+Aus den Kanidaten wird ein Primärschlüssel ausgewählt - wird meistens unterstrichen.
 ```bash
 ISBN
 ```
@@ -92,18 +96,24 @@ Ein Surrogatschlüssel ist ein künstlich erzeugter Schlüssel, der zur Identifi
 ```bash
 Literatur_ID
 ```
+<!---
+Beispiele
+* Protonenzahl eines Atoms
+* ISBN eines Buches
+* Martriekelnummer eines Studenten
+--->
 
 ### Fremdschlüssel
 Ein Fremdschlüssel ist ein Attribut oder eine Attributkombination, die auf einen Primärschlüssel einer anderen Relation verweist.
 
-| customer_id | name     | city     |
+| <ins>customer_id</ins> | name     | city     |
 |-------------|----------|----------|
 | 1           | John     | New York |
 | 2           | Alice    | London   |
 | 3           | Michael  | Paris    |
 | 4           | Jennifer | Berlin   |
 
-| order_id | order_date | customer_id |
+| <ins>order_id</ins> | order_date | customer_id |
 |----------|------------|-------------|
 | 101      | 2023-05-01 | 1           |
 | 102      | 2023-05-02 | 3           |
@@ -112,3 +122,20 @@ Ein Fremdschlüssel ist ein Attribut oder eine Attributkombination, die auf eine
 
 Die zwiete Tabelle enthält die Spalte ```customer_id```, bei der es sich um einen Fremdschlüssel handelt, der auf die Spalte ```customer_id``` in der ersten Tabelle verweist.
 
+## ERD zur Relationen
+### Schriftnotation
+#### Minimalnotation
+Relationenname (<ins>Primärschlüssel</ins>, ↑ Fremdschlüssel)
+
+#### detailierte Notation
+Relationenname (<ins>Primärschlüssel</ins>: _datentyp_, ↑ Fremdschlüssel: _datentyp_) <br>
+
+<!---
+03 Seite 38
+
+* Format ändern (übersichtlicher beim Letzten Beispiel)
+* Bilder von Umformung -> Lösung da viel
+* Aufgaben
+--->
+
+[⬆ nach oben](#big-data-01)
