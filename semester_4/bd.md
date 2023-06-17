@@ -4,11 +4,12 @@
 - [Big Data 01](#big-data-01)
   - [Inhalt](#inhalt)
   - [Datenbanksysteme](#datenbanksysteme)
-- [02 Koonzeptielle Modellierung](#02-koonzeptielle-modellierung)
+- [Konzeptionelle Modellierung](#konzeptionelle-modellierung)
   - [Entity-Relationship-Modell](#entity-relationship-modell)
 - [Relationales Datenmodell](#relationales-datenmodell)
   - [Relationen als Tabelle](#relationen-als-tabelle)
   - [Relationensprache](#relationensprache)
+
 
 <br>
 
@@ -20,7 +21,7 @@ verwaltungssystem (Database Management
 System, DBMS) verwaltet werden.
 
 
-# Koonzeptielle Modellierung
+# Konzeptionelle Modellierung
 ## Entity-Relationship-Modell 
 * Entities ```[]```
 * Attribute ```()```

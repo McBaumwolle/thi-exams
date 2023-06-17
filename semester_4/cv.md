@@ -13,6 +13,7 @@
   - [Discrete Cosinus Transformation (DCT)](#discrete-cosinus-transformation-dct)
   - [Kompression](#kompression)
   - [Fragen](#fragen-2)
+- [Characteristics](#characteristics)
 
 
 ## Fragen
