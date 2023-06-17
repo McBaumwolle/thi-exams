@@ -9,6 +9,12 @@
 - [Relationales Datenmodell](#relationales-datenmodell)
   - [Relationen als Tabelle](#relationen-als-tabelle)
   - [Relationensprache](#relationensprache)
+    - [Syntax](#syntax)
+    - [Superschlüssel](#superschlüssel)
+    - [Schlüsselkandidat](#schlüsselkandidat)
+    - [Primärschlüssel](#primärschlüssel)
+    - [Surrogatschlüssel](#surrogatschlüssel)
+    - [Fremdschlüssel](#fremdschlüssel)
 
 
 <br>
@@ -54,11 +60,55 @@ Beispiel mit 6 Attributen und 3 Tupeln
 | 3 | Julia | 5th Ave 3 | New York | 10151 | USA |
 
 ## Relationensprache
-(add later)
+Die Relationensprache ist eine formale Sprache, die zur Formulierung von Anfragen an eine Datenbank verwendet wird.
 
-03 page 22
+### Syntax
+(später ergänzen)
 
+### Superschlüssel
+Ein Superschlüssel ist eine Menge von Attributen, die Tupel einer Relation ***eindeutig*** identifizieren.
+```bash
+ISBN
+ISBN, Autor
+Autor, Buchtitel
+ISBN; Autor, Buchtitel
+```
 
-<br>
+### Schlüsselkandidat
+Die minimale Menge von Attributen, die Tupel einer Relation ***eindeutig*** identifizieren.
+```bash
+ISBN
+Buchtitel, Autor
+```
 
-[⬆ nach oben](#big-data-01)
+### Primärschlüssel
+Aus den Kanidaten wird ein Primärschlüssel ausgewählt.
+```bash
+ISBN
+```
+
+### Surrogatschlüssel
+Ein Surrogatschlüssel ist ein künstlich erzeugter Schlüssel, der zur Identifikation eines Tupels verwendet wird - oft mit ```_ID```.	
+```bash
+Literatur_ID
+```
+
+### Fremdschlüssel
+Ein Fremdschlüssel ist ein Attribut oder eine Attributkombination, die auf einen Primärschlüssel einer anderen Relation verweist.
+
+| customer_id | name     | city     |
+|-------------|----------|----------|
+| 1           | John     | New York |
+| 2           | Alice    | London   |
+| 3           | Michael  | Paris    |
+| 4           | Jennifer | Berlin   |
+
+| order_id | order_date | customer_id |
+|----------|------------|-------------|
+| 101      | 2023-05-01 | 1           |
+| 102      | 2023-05-02 | 3           |
+| 103      | 2023-05-03 | 2           |
+| 104      | 2023-05-04 | 1           |
+
+Die zwiete Tabelle enthält die Spalte ```customer_id```, bei der es sich um einen Fremdschlüssel handelt, der auf die Spalte ```customer_id``` in der ersten Tabelle verweist.
+
