@@ -175,3 +175,6 @@ Gleichmäßige Verteilung der Pixelwerte, führt bei homogenen Bereichen zu Nois
 4. Warum ist es eine gute Idee, eine Nachschlagetabelle zu verwenden, wenn man den Histogrammausgleich an einem Bild durchführt?
 
 &emsp; &emsp; &emsp; _lernen_
+
+
+[⬆ nach oben](#table-of-contents)
