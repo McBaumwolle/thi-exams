@@ -24,6 +24,9 @@
     - [Überführung](#überführung)
     - [Aufgaben](#aufgaben)
 - [SQL](#sql)
+  - [Data Definition Language (DDL)](#data-definition-language-ddl)
+    - [Notation](#notation)
+  - [Data Manipulation Language (DML)](#data-manipulation-language-dml)
 
 
 
@@ -161,4 +164,132 @@ Zum Üben siehe [03_relationelles_datenmodell.pdf](https://moodle.thi.de/pluginf
 
 
 # SQL
+SQL ist Datenbanksprache zur Definition, Manipulation und Abfrage von Daten in relationalen Datenbanken.
 
+## Data Definition Language (DDL)
+Zum Anlegen, Ändern und Löshcen von Datenbanken, Schemas, Tabellen und ihren Strukturen.
+
+### Notation
+
+Befehlssatz zum Anlegen einer Datenbank auf dem Datenbankserver.
+```sql
+CREATE DATABASE <escooterverwaltung>;
+```
+
+Befehlssatz zum Anlegen einer Tabelle (Relation) auf dem Datenbankserver.
+```sql
+--create a table
+CREATE TABLE escooter (
+    escooter_id integer NOT NULL PRIMARY KEY,
+    serial_number integer,
+    brand varchar(100),
+    battery_status integer,
+    isrentable smallint,
+    employee_id integer
+);
+```
+
+Manche Datenbanksysteme ermöglichen eine zusätzliche Strukturierungsebene einzufügen. Bei ```Postgres``` werden standardmäßig Tabellen in das Schema ```public``` abgelegt.
+```sql	
+CREATE SCHEMA escooter;
+...
+```
+
+Constraints: Integritätsbedingungen, die bei der Tabellendefinition (oder Änderung) festgelegt werden. z.B. Statistische Wertebereiche, definierte Datentypen und Feldlängen, Fremdschlüssel.
+```sql
+CREATE escooter2 (
+  scooter_id integer NOT NULL PRIMARY KEY,
+  CHECK (scooter_id > 0),
+  ...
+)
+```
+
+Statische Bedingungen werden in SQL von einer ```CHECK```-Anweisung gefolgt von einer
+Bedingung implementiert Änderungen an einer Tabelle werden zurückgewiesen, wenn die Bedingung zu false ausgewertet wird.
+```sql
+CHECK batterystatus BETWEEN 0 AND 100
+CHECK brand IN ('Minimotors', 'Xiaomi', 'Inokim', 'Zero', 'Zoom')
+```
+
+Fremdschlüsselbeziehungen werden mit ```REFERENCES``` definiert. 
+```sql
+CREATE TABLE escooter (
+  FOREIGN KEY (employeeID) REFERENCES
+  employees(employeeid));
+```
+
+Beim Anlegen der ersten Tabelle ist eine andere Tabelle noch nicht bekannt, Fremdschlüsselbeziehungen können daher erst nachträglich definiert werden.
+```sql
+ALTER TABLE escooter
+ADD FOREIGN KEY (employeeID) REFERENCES employees(employeeid);
+```
+
+Eindeutige Werte können mit ```UNIQUE``` definiert werden.
+```sql
+CREATE TABLE escooter (
+  serial_number varchar(100) integer UNIQUE,
+)
+```
+
+Bei der Definitioni eines Fremdschlüssels kann mit ```ON DELETE``` und ```ON UPDATE``` festgelegt werden, was mit den referenzierten Tupeln passieren soll, wenn das referenzierte Tupel gelöscht oder geändert wird.
+```sql
+CREATE TABLE escooter (
+  FOREIGN KEY (employeeID) REFERENCES employees(employeeid)
+
+  --nichts tun
+  ON DELETE NO ACTION
+  
+  --Zeile mitlöschen
+  ON DELETE CASCADE
+
+  --Zeile mit NULL-Werten füllen
+  ON DELETE SET NULL
+
+  --Zeile mit Default-Werten füllen
+  ON DELETE SET DEFAULT
+);
+```
+
+Default-Werte können mit ```DEFAULT``` definiert werden.
+```sql
+CREATE TABLE escooter (
+  serial_number varchar(100) integer DEFAULT '0000000000',
+)
+```
+
+Eindeutige IDs können mit ```GENERATED ALWAYS AS IDENTITY``` definiert werden.
+```sql
+ScooterID integer GENERATED ALWAYS AS IDENTITY
+```
+
+Tabellen lassen sich mit ```ALTER TABLE``` ändern.
+```sql
+-- add an attribute
+ALTER TABLE escooter
+ADD COLUMN scooter_id integer;
+
+-- change a datatype of an attribute
+ALTER TABLE escooter
+ALTER COLUMN scooter_id TYPE varchar(100);
+
+--change column name
+ALTER TABLE escooter
+RENAME COLUMN scooter_id TO scooterid;
+```
+
+Tabellen lassen sich mit ```DROP TABLE``` löschen, Inhalte mit ```TRUNCATE TABLE```.
+```sql
+DROP TABLE <Name der Tabelle>
+DROP TABLE <schemaname>.<Name der Tabelle>
+
+TRUNCATE TABLE <Name der Tabelle>
+TRUNCATE TABLE <schemaname>.<Name der Tabelle>
+```
+
+## Data Manipulation Language (DML)
+
+<!---
+ pdf S. 31
+--->
+
+[⬆ nach oben](#big-data-01)
