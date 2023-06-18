@@ -14,6 +14,13 @@
   - [Kompression](#kompression)
   - [Fragen](#fragen-2)
 - [Characteristics](#characteristics)
+  - [Mean](#mean)
+  - [Mean Square Deviation (MSD)](#mean-square-deviation-msd)
+  - [Histogramm](#histogramm)
+  - [Entropie](#entropie)
+    - [Aufgabe](#aufgabe)
+  - [Fragen](#fragen-3)
+- [Modifications](#modifications)
 
 
 ## Fragen
@@ -97,7 +104,36 @@ Aufteilung in 8x8 Blöcke, die dann in den Frequenzraum transformiert werden.
 
 
 # Characteristics
-...
+## Mean
+Mittelwert der Pixelwerte
+
+## Mean Square Deviation (MSD)
+Standardabweichung vom Mittelwert
+
+## Histogramm
+Verteilung der Pixelwerte
+* Zeichnen: x-Achse Pixelwerte, y-Achse Anzahl Pixel
+* Normalisieren: Histogramm auf 0-1 skalieren
+* aus dem Histogramm lassen sich die anderen Werte berechnen
+* Werte ab zB 200 abschneiden, um Hintergurund zu entfernen
+
+## Entropie
+Maß für Informationsgehalt (H) 
+* 0 = keine Information
+
+### Aufgabe
+Entropie und andere Werte berechnen, siehe [cv_06_characteristics](https://moodle.thi.de/pluginfile.php/745275/mod_resource/content/0/CV_6_Characteristics.pdf) auf moodle. 
+
+## Fragen
+1. Mittelwert, Standardabweichung und Entropie zuordnen 
+2. Histogramme zeichnen
+3. Wenn der Kontrast eines Bildes erhöht wird, wie verändert sich die Entropie?
+
+&emsp; &emsp; &emsp; Entropie nimmt zu, da größerer Bereich von Pixelintensitäten.
 
 
-[⬆ nach oben](#table-of-contents)
+# Modifications
+Man verändert Pixelwerte zum Beispiel um...
+* redundante Informationen zu entfernen.
+* den Fokus auf bestimmte Informationen zu legen.
+* als Preprocessing für weitere Analysen.
