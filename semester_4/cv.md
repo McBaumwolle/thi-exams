@@ -21,6 +21,11 @@
     - [Aufgabe](#aufgabe)
   - [Fragen](#fragen-3)
 - [Modifications](#modifications)
+  - [Grey Value Transformations](#grey-value-transformations)
+  - [Gamma-Transformation](#gamma-transformation)
+    - [Beispiel](#beispiel)
+  - [Histogram Equalization](#histogram-equalization)
+  - [Fragen](#fragen-4)
 
 
 ## Fragen
@@ -136,4 +141,37 @@ Entropie und andere Werte berechnen, siehe [cv_06_characteristics](https://moodl
 Man verändert Pixelwerte zum Beispiel um...
 * redundante Informationen zu entfernen.
 * den Fokus auf bestimmte Informationen zu legen.
-* als Preprocessing für weitere Analysen.
+* als Preprocessing für weitere Analysen. 
+
+## Grey Value Transformations
+(Seite 11 in [cv_07_modifications](https://moodle.thi.de/pluginfile.php/746652/mod_resource/content/0/CV_7_Modifications.pdf) um Formeln anwenden zu können.)
+
+Falls die Transformation zu Werten außerhalb von ```G={0,255}``` führt, Grenzwert nutzen (dafür gibt es bessere Methoden). 
+
+## Gamma-Transformation
+Gamma-Korrektur: $f(g) = 255 * (g/255)^gamma$ um zwischen ```0``` und ```255``` zu bleiben.
+
+Siehe [cv_07_modifications](https://moodle.thi.de/pluginfile.php/746652/mod_resource/content/0/CV_7_Modifications.pdf) Seite 17.
+
+### Beispiel
+![Gamma Korrektur](resources/cv/04_gamma.png)
+
+## Histogram Equalization
+Gleichmäßige Verteilung der Pixelwerte, führt bei homogenen Bereichen zu Noise!
+
+## Fragen 
+1. Unterschied linearer und nichtlinearer Transformationen
+
+&emsp; &emsp; &emsp; _lernen_
+
+2. Wenn wir ein Bild mit Gamma-Transformation umwandeln und dabei einen Gamma-Wert größer als 1 verwenden, wird das Bild heller oder dunkler werden?
+
+&emsp; &emsp; &emsp; Dunkler
+
+3. Lineare Transformation auf Bild anwenden.
+
+&emsp; &emsp; &emsp; _üben_
+
+4. Warum ist es eine gute Idee, eine Nachschlagetabelle zu verwenden, wenn man den Histogrammausgleich an einem Bild durchführt?
+
+&emsp; &emsp; &emsp; _lernen_
