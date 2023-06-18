@@ -112,14 +112,15 @@ Eine Formel F is eine Hornformel, falls F in KNF vorliegt und jede Disjunktion i
 
 
 ## Tableau
-![Alt text](resources/ds/06_tableauregeln.png)
+<img src="resources/ds/06_tableauregeln.png" width="500">
 
 * wenn in Pfad ¬¬H vorkommt, erweitere ihn um H
 * wenn in Pfad G<sub>1</sub> ∧ G<sub>2</sub> vorkommt, erweitere ihn um G<sub>1</sub> und um G<sub>2</sub>
 * wenn in Pfad ¬(G<sub>1</sub> ∧ G<sub>2</sub>) vorkommt, **verzweige** und erweitere
 um linken Nachfolger ¬G<sub>1</sub> und rechten Nachfolger ¬G<sub>2</sub> usw
 
-![Alt text](resources/ds/05_tableaubsp.png)
+<img src="resources/ds/05_tableaubsp.png" width="500">
+
 links: F unerfüllbar, 
 mitte: F unerfüllbar,
 rechts: F erfüllbar <br>
@@ -164,6 +165,6 @@ und in Mengenschreibweise
 
 Unser Herleitungsbaum sieht dann so aus:
 
-![Alt text](resources/ds/04_baum.png)
+<img src="resources/ds/04_baum.png" width="400">
 
 Somit ist Formel F bewiesen indem wir ¬F zur Klauselmenge huinzufügen und einen Widerspruch herleiten. <br>
