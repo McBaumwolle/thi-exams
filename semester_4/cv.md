@@ -149,7 +149,7 @@ Man verändert Pixelwerte zum Beispiel um...
 Falls die Transformation zu Werten außerhalb von ```G={0,255}``` führt, Grenzwert nutzen (dafür gibt es bessere Methoden). 
 
 ## Gamma-Transformation
-Gamma-Korrektur: $f(g) = 255 * (g/255)^gamma$ um zwischen ```0``` und ```255``` zu bleiben.
+Gamma-Korrektur: $f(g) = 255 * (g/255)^\gamma$ um zwischen ```0``` und ```255``` zu bleiben.
 
 Siehe [cv_07_modifications](https://moodle.thi.de/pluginfile.php/746652/mod_resource/content/0/CV_7_Modifications.pdf) Seite 17.
 
