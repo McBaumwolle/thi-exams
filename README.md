@@ -1,4 +1,5 @@
 # thi_exams
+Zusammenfassungen für die Prüfungen, in Markdown.
 
 ## Inhalt
 ### Semester 4
