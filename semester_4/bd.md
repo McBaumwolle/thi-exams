@@ -155,9 +155,10 @@ Foreign Key (ScooterID) REFERENCES e-Scooter(ID)
 | 1:n | Bei zwei Relationen: In einer 1:N Beziehung kommt der Fremdschlüssel immer auf die Seite, wo das N steht. <br> Drei möglich werden aber gemieden. |
 
 ### Aufgaben
-Zum Üben siehe [03_relationelles_datenmodell.pdf](https://moodle.thi.de/pluginfile.php/747005/mod_resource/content/1/03_Relationales_Datenmodell.pdf) Seite 39.
+Zum Üben siehe [03_relationelles_datenmodell.pdf](https://moodle.thi.de/pluginfile.php/747005/mod_resource/content/1/03_Relationales_Datenmodell.pdf) S. 39 & 50.
 
 <span style="color:red">Lernen für garantierte Punkte!</span>
 
 
 # SQL
+
