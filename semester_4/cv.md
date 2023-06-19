@@ -26,6 +26,20 @@
     - [Beispiel](#beispiel)
   - [Histogram Equalization](#histogram-equalization)
   - [Fragen](#fragen-4)
+- [Kernels](#kernels)
+  - [Grenzen](#grenzen)
+    - [Skip Border](#skip-border)
+    - [Extend Border](#extend-border)
+    - [Concatate](#concatate)
+    - [Mirror](#mirror)
+  - [Kerneltypen](#kerneltypen)
+    - [Identity](#identity)
+    - [Box Blur](#box-blur)
+    - [Gaussian Blur](#gaussian-blur)
+    - [Sharpen](#sharpen)
+    - [Sobel](#sobel)
+  - [Fragen](#fragen-5)
+
 
 
 ## Fragen
@@ -199,11 +213,45 @@ Das Bild bleibt gleich. <br>
 <img src="resources/cv/06_kernel_id.png" width="100">
 
 ### Box Blur
-Das Bild wird unscharf. <br>
+Mittelwert der Nachbarn, Bild wird unscharf. <br>
 <img src="resources/cv/05_kernel_boxblur.png" width="100">
 
 ### Gaussian Blur
 Unschärfe mit Gauss Verteilung der Nachbarn. <br>
 <img src="resources/cv/07_kernel_gauss.png" width="100">
+
+### Sharpen
+Bild wird schärfer mit genaueren Kanten. <br>
+<img src="resources/cv/08_kernel_sharpen.png" width="100">
+
+### Sobel
+Filter um Kanten zu erkennen, ´´´x´´´ und ´´´y´´´ Richtung. <br>
+<img src="resources/cv/09_kernel_sobel.png" height="100">
+
+Beide Filter können kombiniert werden, um die Kanten zu verstärken. <br>
+
+$H = \sqrt{H_x^2 + H_y^2}$ 
+
+Die Richtung der Kanten kann mit dem ´´´arctan´´´ berechnet werden. <br>
+
+$\theta = arctan(\frac{H_y}{H_x})$
+<!--
+Check if x/y is correct.
+-->
+
+## Fragen
+1. Definiere einen 4x4 Filter der das Bild schärft.
+
+&emsp; &emsp; &emsp; _hello_
+
+2. Filter auf ein Bild anwenden. 
+
+&emsp; &emsp; &emsp; _siehe Probeklausur_
+
+3. In eigenen Worten erklären, wie ein Sobel-Filter funktioniert.
+
+&emsp; &emsp; &emsp; Starke Änderungen in x- oder y-Richtung werden erkannt. 
+
+&emsp; &emsp; &emsp; → _lernen_
 
 
