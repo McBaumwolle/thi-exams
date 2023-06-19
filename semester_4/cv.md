@@ -177,4 +177,33 @@ Gleichmäßige Verteilung der Pixelwerte, führt bei homogenen Bereichen zu Nois
 &emsp; &emsp; &emsp; _lernen_
 
 
-[⬆ nach oben](#table-of-contents)
+# Kernels
+Matrix, die auf ein Bild angewendet werden kann.
+
+## Grenzen
+### Skip Border
+Das Bild wird kleiner. 
+
+### Extend Border
+Das Bild bleibt gleich groß, aber die Ränder werden mit den Nachbarn aufgefüllt.
+
+### Concatate
+Bild jeweils an den Seiten hinzufügen.
+
+### Mirror
+'Spiegeln' der Matrix, um alle Seiten (insgesamt x8).
+
+## Kerneltypen
+### Identity
+Das Bild bleibt gleich. <br>
+<img src="resources/cv/06_kernel_id.png" width="100">
+
+### Box Blur
+Das Bild wird unscharf. <br>
+<img src="resources/cv/05_kernel_boxblur.png" width="100">
+
+### Gaussian Blur
+Unschärfe mit Gauss Verteilung der Nachbarn. <br>
+<img src="resources/cv/07_kernel_gauss.png" width="100">
+
+
