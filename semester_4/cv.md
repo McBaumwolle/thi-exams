@@ -254,4 +254,11 @@ Check if x/y is correct.
 
 &emsp; &emsp; &emsp; → _lernen_
 
+<!--
+weiter hier 
+https://moodle.thi.de/pluginfile.php/749303/mod_resource/content/0/CV_9_Morphology%20and%20Gabor%20Filter.pdf
 
+und Fragen beantworten
+-->
+
+[⬆ nach oben](#table-of-contents)
