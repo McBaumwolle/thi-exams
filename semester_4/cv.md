@@ -225,7 +225,7 @@ Bild wird schärfer mit genaueren Kanten. <br>
 <img src="resources/cv/08_kernel_sharpen.png" width="100">
 
 ### Sobel
-Filter um Kanten zu erkennen, ´´´x´´´ und ´´´y´´´ Richtung. <br>
+Filter um Kanten zu erkennen, ```x``` und ```y``` Richtung. <br>
 <img src="resources/cv/09_kernel_sobel.png" height="100">
 
 Beide Filter können kombiniert werden, um die Kanten zu verstärken. <br>
