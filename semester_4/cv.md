@@ -254,11 +254,10 @@ Check if x/y is correct.
 
 &emsp; &emsp; &emsp; → _lernen_
 
-<!--
-weiter hier 
-https://moodle.thi.de/pluginfile.php/749303/mod_resource/content/0/CV_9_Morphology%20and%20Gabor%20Filter.pdf
 
-und Fragen beantworten
--->
+## Dilation
+Kernel (z.B. in Kreuzform) der maximalen Wert der Nachbarn auf die Pixel anwendet. Kann über mehrere Iterationen angewendet werden.
 
-[⬆ nach oben](#table-of-contents)
+## Erosion
+Genau das Gegenteil, minimaler Wert der Nachbarn. Strukturen im Bild werden dünner. <br>
+<img src="resources/cv/10_dilation_erosion.png" height="150">
