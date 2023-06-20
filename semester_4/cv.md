@@ -232,7 +232,7 @@ Beide Filter können kombiniert werden, um die Kanten zu verstärken. <br>
 
 $H = \sqrt{H_x^2 + H_y^2}$ 
 
-Die Richtung der Kanten kann mit dem ´´´arctan´´´ berechnet werden. <br>
+Die Richtung der Kanten kann mit dem ```arctan``` berechnet werden. <br>
 
 $\theta = arctan(\frac{H_y}{H_x})$
 <!--
