@@ -38,7 +38,13 @@
     - [Gaussian Blur](#gaussian-blur)
     - [Sharpen](#sharpen)
     - [Sobel](#sobel)
+    - [Dilation](#dilation)
+    - [Erosion](#erosion)
+    - [Opening](#opening)
+    - [Closing](#closing)
+    - [Gabor Filter](#gabor-filter)
   - [Fragen](#fragen-5)
+
 
 
 
@@ -239,6 +245,35 @@ $\theta = arctan(\frac{H_y}{H_x})$
 Check if x/y is correct.
 -->
 
+
+### Dilation
+Kernel (z.B. in Kreuzform) der maximalen Wert der Nachbarn auf die Pixel anwendet. Kann über mehrere Iterationen angewendet werden.
+
+### Erosion
+Genau das Gegenteil, minimaler Wert der Nachbarn. Strukturen im Bild werden dünner. <br>
+<img src="resources/cv/10_dilation_erosion.png" height="150">
+
+### Opening
+Erosion gefolgt von Dilation. Entfernt Noise im Bild. <br>
+
+### Closing
+Dilation gefolgt von Erosion. Entfernt Löcher in Objekten im Vorgrund. <br> 
+<img src="resources/cv/11_opening_closing.png" height="150">
+
+### Gabor Filter
+Für Analyse von Texturen, eine Kombination as Sinus und Gauss. <br>
+* $\lambda$ = Wellenlänge der Sinusfunktion
+* $\theta$ = Orientierung der Sinusfunktion
+* $\psi$ = Phasenverschiebung der Sinusfunktion
+* $\sigma$ = Standardabweichung der Gaussfunktion
+* $\gamma$ = Aspektverhältnis der Gaussfunktion
+
+Der Filter erkennet Kanten in einer bestimmten Orientierung. <br>
+
+<!--
+<img src="resources/cv/12_gabor.bmp" height="150">
+-->
+
 ## Fragen
 1. Definiere einen 4x4 Filter der das Bild schärft.
 
@@ -253,11 +288,3 @@ Check if x/y is correct.
 &emsp; &emsp; &emsp; Starke Änderungen in x- oder y-Richtung werden erkannt. 
 
 &emsp; &emsp; &emsp; → _lernen_
-
-
-## Dilation
-Kernel (z.B. in Kreuzform) der maximalen Wert der Nachbarn auf die Pixel anwendet. Kann über mehrere Iterationen angewendet werden.
-
-## Erosion
-Genau das Gegenteil, minimaler Wert der Nachbarn. Strukturen im Bild werden dünner. <br>
-<img src="resources/cv/10_dilation_erosion.png" height="150">
