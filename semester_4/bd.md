@@ -25,8 +25,26 @@
     - [Aufgaben](#aufgaben)
 - [SQL](#sql)
   - [Data Definition Language (DDL)](#data-definition-language-ddl)
-    - [Notation](#notation)
+    - [Create](#create)
+    - [Constraints](#constraints)
+    - [Check](#check)
+    - [Fremdschlüssel](#fremdschlüssel-1)
+    - [Eindeutigkeit](#eindeutigkeit)
+    - [Default-Werte](#default-werte)
+    - [Ändern](#ändern)
+    - [Löschen](#löschen)
   - [Data Manipulation Language (DML)](#data-manipulation-language-dml)
+    - [Einfügen](#einfügen)
+    - [Ändern](#ändern-1)
+    - [Löschen](#löschen-1)
+  - [Data Query Language (DQL)](#data-query-language-dql)
+    - [Redundanzen](#redundanzen)
+    - [Sortieren](#sortieren)
+    - [Aggregieren](#aggregieren)
+    - [Nullwerte](#nullwerte)
+    - [Vereinigung](#vereinigung)
+    - [Beispiele](#beispiele)
+- [PostgreSQL](#postgresql)
 
 
 
@@ -47,7 +65,7 @@ System, DBMS) verwaltet werden.
 * Relationships ```<>``` 
 * Linien ```-```
 
-![Entity-Relationship-Modell](resources/bd/01_erd.png)
+![Entity-Relationship-Modell]c01_erd.png)
 
 Entities die auf die Existenz eines anderen Entities angewiesen sind, werden als ```weak entity``` bezeichnet und werden mit einem doppelten Rahmen dargestellt.
 
@@ -169,8 +187,8 @@ SQL ist Datenbanksprache zur Definition, Manipulation und Abfrage von Daten in r
 ## Data Definition Language (DDL)
 Zum Anlegen, Ändern und Löshcen von Datenbanken, Schemas, Tabellen und ihren Strukturen.
 
-### Notation
 
+### Create
 Befehlssatz zum Anlegen einer Datenbank auf dem Datenbankserver.
 ```sql
 CREATE DATABASE <escooterverwaltung>;
@@ -194,7 +212,7 @@ Manche Datenbanksysteme ermöglichen eine zusätzliche Strukturierungsebene einz
 CREATE SCHEMA escooter;
 ...
 ```
-
+### Constraints
 Constraints: Integritätsbedingungen, die bei der Tabellendefinition (oder Änderung) festgelegt werden. z.B. Statistische Wertebereiche, definierte Datentypen und Feldlängen, Fremdschlüssel.
 ```sql
 CREATE escooter2 (
@@ -203,14 +221,14 @@ CREATE escooter2 (
   ...
 )
 ```
-
+### Check
 Statische Bedingungen werden in SQL von einer ```CHECK```-Anweisung gefolgt von einer
 Bedingung implementiert Änderungen an einer Tabelle werden zurückgewiesen, wenn die Bedingung zu false ausgewertet wird.
 ```sql
 CHECK batterystatus BETWEEN 0 AND 100
 CHECK brand IN ('Minimotors', 'Xiaomi', 'Inokim', 'Zero', 'Zoom')
 ```
-
+### Fremdschlüssel
 Fremdschlüsselbeziehungen werden mit ```REFERENCES``` definiert. 
 ```sql
 CREATE TABLE escooter (
@@ -223,7 +241,7 @@ Beim Anlegen der ersten Tabelle ist eine andere Tabelle noch nicht bekannt, Frem
 ALTER TABLE escooter
 ADD FOREIGN KEY (employeeID) REFERENCES employees(employeeid);
 ```
-
+### Eindeutigkeit
 Eindeutige Werte können mit ```UNIQUE``` definiert werden.
 ```sql
 CREATE TABLE escooter (
@@ -231,6 +249,7 @@ CREATE TABLE escooter (
 )
 ```
 
+### Default-Werte
 Bei der Definitioni eines Fremdschlüssels kann mit ```ON DELETE``` und ```ON UPDATE``` festgelegt werden, was mit den referenzierten Tupeln passieren soll, wenn das referenzierte Tupel gelöscht oder geändert wird.
 ```sql
 CREATE TABLE escooter (
@@ -262,6 +281,7 @@ Eindeutige IDs können mit ```GENERATED ALWAYS AS IDENTITY``` definiert werden.
 ScooterID integer GENERATED ALWAYS AS IDENTITY
 ```
 
+### Ändern
 Tabellen lassen sich mit ```ALTER TABLE``` ändern.
 ```sql
 -- add an attribute
@@ -277,6 +297,7 @@ ALTER TABLE escooter
 RENAME COLUMN scooter_id TO scooterid;
 ```
 
+### Löschen
 Tabellen lassen sich mit ```DROP TABLE``` löschen, Inhalte mit ```TRUNCATE TABLE```.
 ```sql
 DROP TABLE <Name der Tabelle>
@@ -287,9 +308,120 @@ TRUNCATE TABLE <schemaname>.<Name der Tabelle>
 ```
 
 ## Data Manipulation Language (DML)
+Befehle zum Einfügen, Ändern und Löschen von Tupeln in Tabellen. 
 
-<!---
- pdf S. 31
---->
+### Einfügen
+Daten lassen sich mit ```INSERT INTO``` einfügen.
+```sql
+INSERT INTO escooter VALUES (1, '702', 'Segway', 1, true);
+INSERT INTO employee (eid, vorname, nachname) VALUES (1, 'Max', 'Mayr');
+```
 
-[⬆ nach oben](#big-data-01)
+### Ändern
+Daten lassen sich mit ```UPDATE``` ändern.
+```sql
+UPDATE Customer
+SET ispremium = 1
+WHERE custid = 7;
+```
+### Löschen
+Daten lassen sich mit ```DELETE``` löschen.
+```sql
+ELETE FROM customer
+WHERE city = 'Stuttgart'
+```
+
+## Data Query Language (DQL)
+Befehle zum Abfragen von Daten aus Tabellen.
+
+![Projektion vs Selektion](resources/bd/03_sele_proj.png)
+
+### Redundanzen
+Mit ```DISTINCT``` lassen sich Redundanzen entfernen. Im Beispiel werden nur Zuglinien angezeigt, die auf der Strecke fahren jedoch nicht mehrfach die gleiche Zuglinie.
+```sql
+SELECT DISTINCT zuglinie
+```
+
+### Sortieren
+Mit ```ORDER BY``` lassen sich Ergebnisse sortieren. 
+```sql
+SELECT FirstName, MiddleName, LastName
+FROM Person
+ORDER BY FirstName ASC,
+         LastName DESC;
+```
+
+### Aggregieren
+Zur Berechnung verschiedener Werte aus einer Menge von Tupeln.
+
+Zum Zählen kann ```COUNT``` verwendet werden.
+```sql
+SELECT COUNT(*)
+SELECT(DISTINCT COUNT(*))
+```	
+
+Für die Summe kann ```SUM``` verwendet werden.
+```sql
+SELECT SUM(<Attribut>)
+```
+
+Für den Durchschnitt kann ```AVG``` verwendet werden.
+```sql
+SELECT AVG(<Attribut>)
+```
+
+Und für Minimum und Maximum ```MIN``` und ```MAX```.
+```sql
+SELECT MIN(<Attribut>)
+SELECT MAX(<Attribut>)
+```
+
+Sonstige Funktionen:
+```sql
+LOWER(<Attribut>)
+UPPER(<Attribut>)
+LENGTH(<Attribut>)
+SUBSTRING(<Attribut>, <Start>, <Ende>)
+TRIM(<Attribut>)
+```
+
+### Nullwerte
+Nullwerte lassen sich mit ```IS NULL``` und ```IS NOT NULL``` abfragen.
+```sql
+SELECT *
+FROM customer
+WHERE birthdate IS NULL;
+```
+
+### Vereinigung
+Mit ```UNION``` lassen sich Ergebnisse vereinigen.
+```sql
+SELECT vorname, nachname, geburtsdatum
+FROM kunde
+UNION
+SELECT vorname, nachname, geburtsdatum
+FROM mitarbeiter;
+```
+
+### Beispiele
+Wie viele Kunden gibt es?
+```sql
+SELECT COUNT (custid)
+FROM customer;
+```
+
+Wie viele unterschiedliche Städte gibt es?
+```sql
+SELECT COUNT (DISTINCT city)
+FROM customer;
+```
+
+Für weitere Beispiele und Übungen siehe [04_SQL](https://moodle.thi.de/pluginfile.php/746838/mod_resource/content/1/04_SQL.pdf).
+
+# PostgreSQL
+...
+
+<!-- 
+weiter am Mittwoch
+https://moodle.thi.de/pluginfile.php/748858/mod_resource/content/1/05_PostgreSQL.pdf
+-->
