@@ -424,4 +424,6 @@ Für weitere Beispiele und Übungen siehe [04_SQL](https://moodle.thi.de/pluginf
 <!-- 
 weiter am Mittwoch
 https://moodle.thi.de/pluginfile.php/748858/mod_resource/content/1/05_PostgreSQL.pdf
+
+Unterpunkte wie CREATE wieder weg?
 -->
