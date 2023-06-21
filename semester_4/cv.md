@@ -28,21 +28,7 @@
   - [Fragen](#fragen-4)
 - [Kernels](#kernels)
   - [Grenzen](#grenzen)
-    - [Skip Border](#skip-border)
-    - [Extend Border](#extend-border)
-    - [Concatate](#concatate)
-    - [Mirror](#mirror)
   - [Kerneltypen](#kerneltypen)
-    - [Identity](#identity)
-    - [Box Blur](#box-blur)
-    - [Gaussian Blur](#gaussian-blur)
-    - [Sharpen](#sharpen)
-    - [Sobel](#sobel)
-    - [Dilation](#dilation)
-    - [Erosion](#erosion)
-    - [Opening](#opening)
-    - [Closing](#closing)
-    - [Gabor Filter](#gabor-filter)
   - [Fragen](#fragen-5)
 - [Transformation](#transformation)
 - [Rekonstruktion](#rekonstruktion)
@@ -206,36 +192,36 @@ Gleichmäßige Verteilung der Pixelwerte, führt bei homogenen Bereichen zu Nois
 Matrix, die auf ein Bild angewendet werden kann.
 
 ## Grenzen
-### Skip Border
+**Skip Border** <br>
 Das Bild wird kleiner. 
 
-### Extend Border
+**Extend Border** <br>
 Das Bild bleibt gleich groß, aber die Ränder werden mit den Nachbarn aufgefüllt.
 
-### Concatate
+**Concatate** <br>
 Bild jeweils an den Seiten hinzufügen.
 
-### Mirror
+**Mirror** <br>
 'Spiegeln' der Matrix, um alle Seiten (insgesamt x8).
 
 ## Kerneltypen
-### Identity
+**Identity** <br>
 Das Bild bleibt gleich. <br>
 <img src="resources/cv/06_kernel_id.png" width="100">
 
-### Box Blur
+**Box Blur** <br>
 Mittelwert der Nachbarn, Bild wird unscharf. <br>
 <img src="resources/cv/05_kernel_boxblur.png" width="100">
 
-### Gaussian Blur
+**Gaussian Blur** <br>
 Unschärfe mit Gauss Verteilung der Nachbarn. <br>
 <img src="resources/cv/07_kernel_gauss.png" width="100">
 
-### Sharpen
+**Sharpen** <br>
 Bild wird schärfer mit genaueren Kanten. <br>
 <img src="resources/cv/08_kernel_sharpen.png" width="100">
 
-### Sobel
+**Sobel** <br>
 Filter um Kanten zu erkennen, ```x``` und ```y``` Richtung. <br>
 <img src="resources/cv/09_kernel_sobel.png" height="100">
 
@@ -251,21 +237,21 @@ Check if x/y is correct.
 -->
 
 
-### Dilation
+**Dilation** <br>
 Kernel (z.B. in Kreuzform) der maximalen Wert der Nachbarn auf die Pixel anwendet. Kann über mehrere Iterationen angewendet werden.
 
-### Erosion
+**Erosion** <br>
 Genau das Gegenteil, minimaler Wert der Nachbarn. Strukturen im Bild werden dünner. <br>
 <img src="resources/cv/10_dilation_erosion.png" height="150">
 
-### Opening
+**Opening** <br>
 Erosion gefolgt von Dilation. Entfernt Noise im Bild. <br>
 
-### Closing
+**Closing** <br>
 Dilation gefolgt von Erosion. Entfernt Löcher in Objekten im Vorgrund. <br> 
 <img src="resources/cv/11_opening_closing.png" height="150">
 
-### Gabor Filter
+**Gabor Filter** <br>
 Für Analyse von Texturen, eine Kombination as Sinus und Gauss. <br>
 * $\lambda$ = Wellenlänge der Sinusfunktion
 * $\theta$ = Orientierung der Sinusfunktion
