@@ -44,6 +44,11 @@
     - [Closing](#closing)
     - [Gabor Filter](#gabor-filter)
   - [Fragen](#fragen-5)
+- [Transformation](#transformation)
+- [Rekonstruktion](#rekonstruktion)
+- [Neuronale Netze](#neuronale-netze)
+  - [Wiederholung](#wiederholung)
+  - [CNN](#cnn)
 
 
 
@@ -288,3 +293,37 @@ Der Filter erkennet Kanten in einer bestimmten Orientierung. <br>
 &emsp; &emsp; &emsp; Starke Änderungen in x- oder y-Richtung werden erkannt. 
 
 &emsp; &emsp; &emsp; → _lernen_
+
+
+# Transformation
+(siehe cv_10)
+
+# Rekonstruktion
+(siehe cv_11)
+
+# Neuronale Netze
+## Wiederholung
+Weight Initialization <br>
+Zufällige Werte sind zu ungenau, da zu groß oder klein möglich. <br>
+Xavier Initialization gut für Sigmoid und ```tanh```, nicht bei ```ReLU```. <br>
+He Initialization gut für ```ReLU```. <br>
+
+**Loss** <br>
+Konvexe Loss-Funktionen haben auch nur ein Minimum. <br>
+* Huber Loss (Kombination aus L1 und L2, für Regression)
+* 0-1 Loss (für Klassifikation)
+* Hinge Loss
+* logistische Loss-Funktion
+* logistische Sigmoidd-Funktion 
+* exponentieller Loss
+
+**Optimizer** <br>
+* Gradient Descent
+* Adam (adatpive Learnrate)
+* RMSProp (adatpive Learnrate)
+
+**Momentum** <br> 
+Nimmt Richtung des Gradienten mit, um schneller zu konvergieren. <br>
+
+## CNN
+Um Bilder zu analysieren werden unmengen an Neuronen benötigt. <br>

@@ -459,8 +459,7 @@ INSERT INTO routing.stations VALUES (2, 'Baar-Ebenhausen', 48.6762°, 11.4667, f
 --Daten abfragen
 SELECT * FROM routing.stations WHERE name LIKE 'München%';
 SELECT * FROM routing.stations WHERE long_distance = true;
---
 ```
 
 # Normalisierung
-...
+... 
