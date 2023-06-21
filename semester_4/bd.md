@@ -187,8 +187,6 @@ SQL ist Datenbanksprache zur Definition, Manipulation und Abfrage von Daten in r
 ## Data Definition Language (DDL)
 Zum Anlegen, Ändern und Löshcen von Datenbanken, Schemas, Tabellen und ihren Strukturen.
 
-
-### Create
 Befehlssatz zum Anlegen einer Datenbank auf dem Datenbankserver.
 ```sql
 CREATE DATABASE <escooterverwaltung>;
@@ -212,7 +210,7 @@ Manche Datenbanksysteme ermöglichen eine zusätzliche Strukturierungsebene einz
 CREATE SCHEMA escooter;
 ...
 ```
-### Constraints
+
 Constraints: Integritätsbedingungen, die bei der Tabellendefinition (oder Änderung) festgelegt werden. z.B. Statistische Wertebereiche, definierte Datentypen und Feldlängen, Fremdschlüssel.
 ```sql
 CREATE escooter2 (
@@ -221,14 +219,14 @@ CREATE escooter2 (
   ...
 )
 ```
-### Check
+
 Statische Bedingungen werden in SQL von einer ```CHECK```-Anweisung gefolgt von einer
 Bedingung implementiert Änderungen an einer Tabelle werden zurückgewiesen, wenn die Bedingung zu false ausgewertet wird.
 ```sql
 CHECK batterystatus BETWEEN 0 AND 100
 CHECK brand IN ('Minimotors', 'Xiaomi', 'Inokim', 'Zero', 'Zoom')
 ```
-### Fremdschlüssel
+
 Fremdschlüsselbeziehungen werden mit ```REFERENCES``` definiert. 
 ```sql
 CREATE TABLE escooter (
@@ -241,7 +239,7 @@ Beim Anlegen der ersten Tabelle ist eine andere Tabelle noch nicht bekannt, Frem
 ALTER TABLE escooter
 ADD FOREIGN KEY (employeeID) REFERENCES employees(employeeid);
 ```
-### Eindeutigkeit
+
 Eindeutige Werte können mit ```UNIQUE``` definiert werden.
 ```sql
 CREATE TABLE escooter (
@@ -249,7 +247,7 @@ CREATE TABLE escooter (
 )
 ```
 
-### Default-Werte
+
 Bei der Definitioni eines Fremdschlüssels kann mit ```ON DELETE``` und ```ON UPDATE``` festgelegt werden, was mit den referenzierten Tupeln passieren soll, wenn das referenzierte Tupel gelöscht oder geändert wird.
 ```sql
 CREATE TABLE escooter (
@@ -281,7 +279,6 @@ Eindeutige IDs können mit ```GENERATED ALWAYS AS IDENTITY``` definiert werden.
 ScooterID integer GENERATED ALWAYS AS IDENTITY
 ```
 
-### Ändern
 Tabellen lassen sich mit ```ALTER TABLE``` ändern.
 ```sql
 -- add an attribute
@@ -297,7 +294,6 @@ ALTER TABLE escooter
 RENAME COLUMN scooter_id TO scooterid;
 ```
 
-### Löschen
 Tabellen lassen sich mit ```DROP TABLE``` löschen, Inhalte mit ```TRUNCATE TABLE```.
 ```sql
 DROP TABLE <Name der Tabelle>
@@ -310,21 +306,19 @@ TRUNCATE TABLE <schemaname>.<Name der Tabelle>
 ## Data Manipulation Language (DML)
 Befehle zum Einfügen, Ändern und Löschen von Tupeln in Tabellen. 
 
-### Einfügen
 Daten lassen sich mit ```INSERT INTO``` einfügen.
 ```sql
 INSERT INTO escooter VALUES (1, '702', 'Segway', 1, true);
 INSERT INTO employee (eid, vorname, nachname) VALUES (1, 'Max', 'Mayr');
 ```
 
-### Ändern
 Daten lassen sich mit ```UPDATE``` ändern.
 ```sql
 UPDATE Customer
 SET ispremium = 1
 WHERE custid = 7;
 ```
-### Löschen
+
 Daten lassen sich mit ```DELETE``` löschen.
 ```sql
 ELETE FROM customer
@@ -336,13 +330,11 @@ Befehle zum Abfragen von Daten aus Tabellen.
 
 ![Projektion vs Selektion](resources/bd/03_sele_proj.png)
 
-### Redundanzen
 Mit ```DISTINCT``` lassen sich Redundanzen entfernen. Im Beispiel werden nur Zuglinien angezeigt, die auf der Strecke fahren jedoch nicht mehrfach die gleiche Zuglinie.
 ```sql
 SELECT DISTINCT zuglinie
 ```
 
-### Sortieren
 Mit ```ORDER BY``` lassen sich Ergebnisse sortieren. 
 ```sql
 SELECT FirstName, MiddleName, LastName
@@ -351,7 +343,6 @@ ORDER BY FirstName ASC,
          LastName DESC;
 ```
 
-### Aggregieren
 Zur Berechnung verschiedener Werte aus einer Menge von Tupeln.
 
 Zum Zählen kann ```COUNT``` verwendet werden.
@@ -385,7 +376,6 @@ SUBSTRING(<Attribut>, <Start>, <Ende>)
 TRIM(<Attribut>)
 ```
 
-### Nullwerte
 Nullwerte lassen sich mit ```IS NULL``` und ```IS NOT NULL``` abfragen.
 ```sql
 SELECT *
@@ -393,7 +383,6 @@ FROM customer
 WHERE birthdate IS NULL;
 ```
 
-### Vereinigung
 Mit ```UNION``` lassen sich Ergebnisse vereinigen.
 ```sql
 SELECT vorname, nachname, geburtsdatum
@@ -419,11 +408,67 @@ FROM customer;
 Für weitere Beispiele und Übungen siehe [04_SQL](https://moodle.thi.de/pluginfile.php/746838/mod_resource/content/1/04_SQL.pdf).
 
 # PostgreSQL
-...
+PostgreSQL ist ein relationales Datenbanksystem, das auf dem SQL-Standard basiert. 
 
-<!-- 
-weiter am Mittwoch
-https://moodle.thi.de/pluginfile.php/748858/mod_resource/content/1/05_PostgreSQL.pdf
+## Eigenschaften
+Database Cluster, die aus mehreren Datenbanken bestehen. 
 
-Unterpunkte wie CREATE wieder weg?
--->
+### Datentypen
+```sql
+--Zeichenkette von n Zeichen
+CHARACTER(n)
+
+--Zeichenkette von variabler Länge
+VARCHAR(n)
+
+--längere Zeichenketten
+TEXT
+
+--ganze Zahlen
+INT
+SMALLINT
+
+--Timestamp
+TIMESTAMP
+```
+
+### Unterschiede
+Im Vergleich zu SQL unterscheidet sich PostgreSQL stark in der Syntax. 
+* psql-Befehle beginnen mit ```\```
+* mit ```;``` werden Befehle abgeschlossen
+
+### Beispiele 
+Um Daten einer ```.csv```-Datei zu importieren, muss Trennzeichen und Header angegeben werden.
+```sql
+COPY person(firstname, lastname, birthdate)
+FROM 'C:\Data\person.csv'
+DELIMITER ','
+CSV HEADER encoding 'UTF8';
+```
+
+Beispiel für weitere Abfragen. 
+```sql
+--Datenbank erstellen
+CREATE DATABASE bahn_routing;
+
+--Schema erstellen
+\c bahn_routing
+CREATE SCHEMA routing;
+
+--Tabelle erstellen
+CREATE TABLE routing.stations (
+  station_id integer PRIMARY KEY,
+  name varchar(100) NOT NULL,
+  latitude double precision NOT NULL,
+  longitude double precision NOT NULL,
+  long_distance boolean NOT NULL DEFAULT false,
+);
+
+--Daten anlegen
+INSERT INTO routing.stations VALUES (1, 'München Hbf', 48.1408, 11.5583, true);
+INSERT INTO routing.stations VALUES (2, 'Baar-Ebenhausen', 48.6762°, 11.4667, false);
+
+--Daten abfragen
+SELECT * FROM routing.stations WHERE long_distance = true;
+SELECT * FROM routing.stations WHERE name LIKE 'München%';
+--
