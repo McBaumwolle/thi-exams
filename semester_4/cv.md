@@ -35,6 +35,8 @@
 - [Neuronale Netze](#neuronale-netze)
   - [Wiederholung](#wiederholung)
   - [CNN](#cnn)
+    - [Convolutional Layer](#convolutional-layer)
+  - [Fragen](#fragen-6)
 
 
 
@@ -313,3 +315,22 @@ Nimmt Richtung des Gradienten mit, um schneller zu konvergieren. <br>
 
 ## CNN
 Um Bilder zu analysieren werden unmengen an Neuronen benötigt. <br>
+
+**Idee** <br>
+ Netz für Feature Extraction und ein Netz für Klassifikation. <br>
+
+### Convolutional Layer
+Lokale Suche nach Features im Bild mit Hilfe von Kernels, Paddng um Größe des Bildes zu erhalten.
+
+<img src="resources/cv/12_convolutional_layer.png" height="150">
+
+Zum Beispiel kann Max-Pooling verwendet werden, um die Größe des Bildes zu reduzieren. <br>
+
+## Fragen 
+1. Wieso werden CNNs verwendet und wie funktionieren sie?
+
+&emsp; &emsp; &emsp; CNNs eignen such gut für Bildverarbeitung, da sie die Größe des Bildes reduzieren und Features extrahieren können. _Lernen_
+
+2. Output-Dimension mit Input und Parameter berechnen. 
+
+&emsp; &emsp; &emsp; _rechnen_
