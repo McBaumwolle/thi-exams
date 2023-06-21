@@ -33,7 +33,7 @@
     - [Datentypen](#datentypen)
     - [Unterschiede](#unterschiede)
     - [Beispiele](#beispiele-1)
-  - [SELECT \* FROM routing.stations WHERE name LIKE 'München%';](#select--from-routingstations-where-name-like-münchen)
+- [Normalisierung](#normalisierung)
 
 
 <br>
@@ -457,6 +457,10 @@ INSERT INTO routing.stations VALUES (1, 'München Hbf', 48.1408, 11.5583, true);
 INSERT INTO routing.stations VALUES (2, 'Baar-Ebenhausen', 48.6762°, 11.4667, false);
 
 --Daten abfragen
-SELECT * FROM routing.stations WHERE long_distance = true;
 SELECT * FROM routing.stations WHERE name LIKE 'München%';
+SELECT * FROM routing.stations WHERE long_distance = true;
 --
+```
+
+# Normalisierung
+...
