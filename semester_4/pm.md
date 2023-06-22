@@ -12,6 +12,12 @@
   - [Kriterien für den Projekterfolg](#kriterien-für-den-projekterfolg)
   - [PDCA-Zyklus](#pdca-zyklus)
 - [Vorgehensmodelle](#vorgehensmodelle)
+  - [Wasserfallmodell](#wasserfallmodell)
+  - [V-Modell](#v-modell)
+  - [Spiralmodell](#spiralmodell)
+  - [Wahl des Modells](#wahl-des-modells)
+    - [Projektorganisation](#projektorganisation)
+    - [Rollen](#rollen)
 
 
 # Grundlagen
@@ -100,8 +106,66 @@ Am Ende jeder Phase muss ein Ergebnis erreicht werden. <br>
 -->
 
 ## V-Modell
-...
+Entwicklungsprozess in drei Sichten (Anwender, Architektur, Implementierung) mit integrierter Qualitätssicherung. <br>
+Klare Beschreibung der erwarteten (Zwischen-) Ergebnisse. <br>
+
+**Verifikation**: Stimmt Spezifikation und PRodukt überein? <br>
+**Validierung**: Stimmt Software für den Einsatzzweck? <br>
 
 <img src="resources/pm/04_vmodell.png" alt="V-Modell" width="600"/>
+<!-- replace image maybe -->
+
+**Vorteile** <br>
+* frühzeitiges Erkennen von Risiken und Fehler
+* Gewährleistung der Qualität
+* Verringerung der Abhängigkeit des Auftraggebers
+* verbesserte Kommunikation 
+
+**Nachteile** <br>
+* sehr starres Modell
+* nur anwendbar bei Projekten mit klarer Zielsetzung
+* hoher Dokumentationsaufwand und späte Ergebnisse
+
+## Spiralmodell
+In diesem Fall das iterativ inkrementelle Vorgehensmodell, wobei die Entwicklung von den Kernanforderungen ausgeht und die **alle Anforderungen nicht von Anfang an** bekannt sind. <br>
+
+<img src="resources/pm/05_spiral.png" alt="Spiralmodell" width="400"/>
+
+**Vorteile** <br>
+* schnelle Reaktionszeiten 
+* verbesserte Kommunikation
+* schnelles Feedback
+* vereinfachter Abnahmeprozess (durch Teilabnahmen)
+* qualitativ besseres Ergebis durch frühes Feedback
+* bereichsübergreifend 
+
+**Nachteile** <br>
+* hoher Koordinationsaufwand
+* fehlende Transparenz des aktuellen Projektstandes
+* gute Vertrauensbasis zwischen Auftraggeber und Auftragnehmer vorausgesetzt
 
 
+## Wahl des Modells
+### Projektorganisation
+<!-- S. 19 -->
+| Rolle | Beschreibung |
+|-------|--------------|
+| Auftraggeber | stellt Resourcen (Zeit, Geld) zur Verfügung <br> definiert den Auftrag und Ziele |
+| Lenkungsausschuss | ernennt Projektleiter <br> klärt Konflikte <br> kennt Projektziele, fachliche und technische Anforderungen <br> Abnahme und kann Projektteam entlassen |
+| Projektleiter | verantwortlich für Projektplanung und -durchführung sowie Erfolg <br> benötigt richtige Kompetenzen (Führung, ...) | 
+| Projektbüro | siehe [moodle S.21](https://moodle.thi.de/pluginfile.php/557847/mod_resource/content/6/PM_KI_Kap2_GrundlagePM_he_2023_1-0.pdf) |
+
+Visualisierung der Rollen in klassischen (IT-) Projekten. <br>
+
+<img src="resources/pm/06_projektorganisation.png" alt="Projektorganisation" width="400"/>
+
+### Rollen 
+(siehe [moodle S.28](https://moodle.thi.de/pluginfile.php/557847/mod_resource/content/6/PM_KI_Kap2_GrundlagePM_he_2023_1-0.pdf) zur RACI-Matrix) <br>
+
+Am Beispiel Autoreparatur. <br>
+
+<img src="resources/pm/07_rollen.png" alt="Rollen" width="400"/>
+
+<!--
+vervollständigen ab Seite 36 (moodle)
+-->
