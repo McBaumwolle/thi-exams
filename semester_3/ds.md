@@ -168,3 +168,10 @@ Unser Herleitungsbaum sieht dann so aus:
 <img src="resources/ds/04_baum.png" width="400">
 
 Somit ist Formel F bewiesen indem wir ¬F zur Klauselmenge huinzufügen und einen Widerspruch herleiten. <br>
+
+
+# Prädikatenlogik
+...
+<!--
+siehe moodle und Aufgaben
+-->

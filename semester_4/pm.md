@@ -60,7 +60,14 @@ Plan-Do-Check-Act <br>
 <img src="resources/pm/02_pdca.png" alt="PDCA" width="400"/>
 
 # Vorgehensmodelle
+Zusammenstellung von Methoden und Elementen zu Prozessen und Phasen des Prijektablaufs. <br>
+* bildet Rahmen
+* verbessert Übersichtlichkeit
+* dient als Leitfaden
+* frühzeitige Fehlererkennung
+* projektbegleitende Dokumentation
 
+Die Modelle sind abhängig von der Projektart und deren Eigenschaften. <br>
 
 <!--
 weiter bei 02
@@ -68,3 +75,31 @@ https://moodle.thi.de/pluginfile.php/557847/mod_resource/content/6/PM_KI_Kap2_Gr
 
 Liste von Moodle beachten
 -->
+
+## Wasserfallmodell
+Bekanntestes Vorgehensmodell bei Softwareentwicklung, bei der jede Phase abgeschlossen werden muss bevor die nächste beginnt. <br>
+Am Ende jeder Phase muss ein Ergebnis erreicht werden. <br>
+
+<img src="resources/pm/03_wasserfall.png" alt="Wasserfallmodell" width="400"/>
+
+**Vorteile** <br>
+* leicht verständlich und schnell anwendbar
+* Dokumente stellen Nachvollziehbarkeit sicher
+
+**Nachteile** <br>
+* nur für einfache Projekte geeignet
+* frühes Festlegen der Anforderungen
+* inflexibel gegenüber Änderungen
+* Software bildet nur den Anforderungsstand zu Beginn ab
+
+<!--
+| Vorteile | Nachteile |
+|----------|-----------|
+| point    | point     |
+| point    | point     |
+-->
+
+## V-Modell
+
+
+
