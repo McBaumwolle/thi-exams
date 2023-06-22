@@ -102,6 +102,6 @@ Am Ende jeder Phase muss ein Ergebnis erreicht werden. <br>
 ## V-Modell
 ...
 
-<img src="resources/pm/04_vmodell.png" alt="V-Modell" width="400"/>
+<img src="resources/pm/04_vmodell.png" alt="V-Modell" width="600"/>
 
 
