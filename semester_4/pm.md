@@ -15,9 +15,12 @@
   - [Wasserfallmodell](#wasserfallmodell)
   - [V-Modell](#v-modell)
   - [Spiralmodell](#spiralmodell)
-  - [Wahl des Modells](#wahl-des-modells)
-    - [Projektorganisation](#projektorganisation)
+  - [Projektorganisation](#projektorganisation)
     - [Rollen](#rollen)
+    - [Projektmanagement in der Linie](#projektmanagement-in-der-linie)
+    - [Einfluss-Projektorganisation](#einfluss-projektorganisation)
+    - [Matrix-Projektorganisation](#matrix-projektorganisation)
+    - [reine Projektorganisation](#reine-projektorganisation)
 
 
 # Grundlagen
@@ -145,8 +148,7 @@ In diesem Fall das iterativ inkrementelle Vorgehensmodell, wobei die Entwicklung
 * gute Vertrauensbasis zwischen Auftraggeber und Auftragnehmer vorausgesetzt
 
 
-## Wahl des Modells
-### Projektorganisation
+## Projektorganisation
 <!-- S. 19 -->
 | Rolle | Beschreibung |
 |-------|--------------|
@@ -169,3 +171,84 @@ Am Beispiel Autoreparatur. <br>
 <!--
 vervollständigen ab Seite 36 (moodle)
 -->
+
+### Projektmanagement in der Linie
+**Prinzip** <br>
+* Projektleiter und -mitarbeiter verbleiben in der Linie
+* Projektleiter hat keine Weisungsbefugnis (nur Weisungsbefugnis)
+
+**Vorteile** <br>
+* keine organisatorischen Veränderungen erforderlich
+
+**Nachteile** <br>
+* Linie sticht Projekt
+* kaum Möglichkeiten zum Aufbau von Teamgeist
+
+**Anwendung** <br>
+* fachbezogene Projekte mit geringer Mitarbeit aus der Linie
+
+<img src="resources/pm/08_linie.bmp" alt="Linie" width="400"/>
+
+### Einfluss-Projektorganisation
+**Prinzip** <br>
+* Projektleiter in einer Stabfunktion
+* Projektmitarbeiter weiter in der Linie
+* Projektleiter hat nur Kooridnationsbefugnisse, keine Weisungsbefugnis
+
+**Vorteile** <br>
+* geringe organisatorische Änderung erforderlich
+* hohe Akzeptanz durch die Linie
+
+**Nachteile** <br>
+*kein direkter Einfluss und keine rasche Reaktion auf Änderungen (da immer erst über Linienvorgesetzten)
+* fehlender Teamgeist
+
+**Anwendung** <br>
+* Kundenprojekte (die Bedeutung gegenüber dem Kunden soll demonstriert werden)
+* Organisationsprojekte, die das gesamte Unternehmen betreffen (z.B. Softwareeinführung)
+
+<img src="resources/pm/09_einfluss.png" alt="Einfluss" width="400"/>
+
+### Matrix-Projektorganisation
+**Prinzip** <br>
+* Überlagerung von funktionaler Organisation (vertikal) mit projektorientierter Organisation (horizontal).
+* Aufteilung der Befugnisse (und Verantwortungen) zwischen Linie und Projekt
+
+**Vorteile** <br>
+* organisatorische Verankerung und somit hohe Aufmerksamkeit des Projektes
+* keine Auslastungsprobleme, da Mitarbeiter in mehreren Projekten eingesetzt werden können
+
+**Nachteile** <br>
+* Projektmitarbeiter sind zwei Leitern unterstellt (Projekt- und Linienmanager) mit Konfliktpotential
+* hohe Belastung der Mitarbeiter 
+* hoher Koordinations- und Abstimmungsaufwand
+
+**Anwendung** <br>
+* Projekte mit unterschiedlichen Fachbereichen und Spezialisten
+* Projekte mit hoher Bedeutung für das Unternehmen
+* wiederkehrende Projekte
+
+<img src="resources/pm/10_matrix.png" alt="Matrix" width="400"/>
+
+### reine Projektorganisation
+**Prinzip** <br>
+* eigene Abteilung für ein Projekt, Projekt-Leiter und -Mitarbeiter in einer Einheit
+* wird nach Abschluss des Projektes wieder aufgelöst
+* Projektleiter hat Koordinations- und Weisungsbefugnis
+
+**Vorteile** <br>
+* hohe Motivation, Teamgeist und Zusammenhalt
+* schnelle Reaktion im Projekt
+* Mitarbeiter konzentrieren sich auf das Projekt
+* geringes Konfliktpotential
+
+**Nachteile** <br>
+* nach Abschluss, Auflösung der Struktur benötigt Stellen ind er Linie
+* Projektorganisation zu Lasten der Linie
+
+**Anwendung** <br>
+* Taskforce
+* Projektabteilung
+
+<img src="resources/pm/11_rein.png" alt="Rein" width="400"/>
+
