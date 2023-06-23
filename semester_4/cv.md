@@ -339,7 +339,7 @@ Zum Beispiel kann Max-Pooling verwendet werden, um die Größe des Bildes zu red
 
 ## Berechnung 
 
-```
+```python
 output_height = (input_height + padding_height_top + padding_height_bottom - kernel_height) / stride_height + 1
 output_width = (input_width + padding_width_left + padding_width_right - kernel_width) / stride_width + 1
 ```
