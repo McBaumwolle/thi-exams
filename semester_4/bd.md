@@ -34,6 +34,11 @@
     - [Unterschiede](#unterschiede)
     - [Beispiele](#beispiele-1)
 - [Normalisierung](#normalisierung)
+  - [Anomalien](#anomalien)
+  - [Abhängigkeiten](#abhängigkeiten)
+  - [Normalformen](#normalformen)
+  - [Aufgabe](#aufgabe)
+
 
 
 <br>
@@ -462,4 +467,110 @@ SELECT * FROM routing.stations WHERE long_distance = true;
 ```
 
 # Normalisierung
-... 
+Aufteilung von Attributen in mehrere Relationen, um Redundanzen zu vermeiden - also die verlustfreie Zerlegung von Tabellen. 
+
+<!-- Denormalisierung -->
+
+## Anomalien
+**Einfügeanomalie** <br>
+Art von Dateninkonsistenz, bei der ein Datensatz nicht eingefügt werden kann, weil ein Attribut schon existiert.
+
+**Änderungsanomalie** <br>
+Wenn Änderungen an bestehenden Informationen nicht korrekt oder konsistent übernommen werden können.
+
+**Löschanomalie** <br>
+Art von Dateninkonsistenz, wenn das Löschen eines Datensatzes unbeabsichtigt zum Verlust von anderen Informationen führt.
+
+## Abhängigkeiten
+
+**funktionale Abhängigkeit** <br>
+Elemente einer Relation sind voneinander abhängig, zum Beispiel wiefolgt. 
+```bash
+{persnr} → {name, vorname, geburtsdatum}
+{projektnr} → {pname, prioritaet}
+{projektnr} → {persnr, name, vorname, geburtsdatum}
+```
+<!-- siehe moodle S. 14 -->
+
+**transitive Abhängigkeit** <br>
+...
+
+**partielle Abhängigkeit** <br>
+...
+
+## Normalformen
+
+**1. Normalform** <br>
+Jedes Attribut enthält nur atomare Werte (also keine mehrwertigen).
+
+| Linie | Start | Ziel | Dauer |
+| ----- | ----- | ---- | ----- |
+| RE 1 | München | Nürnberg | 1.5 |
+| RB 16 | <span style="color:red">Treuchtlingen, Nürnberg</span> | München | 3.2 |
+
+Überführung in erste Normalform, indem mehrwertige Attribute in mehrere Tupel aufgeteilt werden. In diesem Fall zwei mal ```RB16``` mit den beiden Startwerten. <br>
+Oft ist die Trennung jedoch nciht sinnvoll, z.B. bei mehreren Vornamen.
+
+**2. Normalform** <br>
+Jedes Nichtschlüsselattribut ist voll funktional **abhängig** vom Primärschlüssel, und es liegt die **1NF** vor. <br>
+(Eine Relation liegt nicht in 2NF vor, wenn es ein Nichtschlüsselattribut gibt, das nur von einem Teil des Primärschlüssels abhängt.)
+
+| Linie | Start | Ziel | Personal |
+| ----- | ----- | ---- | ----- |
+| RE 1 | München | Nürnberg | 1 |
+| RE 1 | München | Nürnberg | 2 |
+| RB 16 | Treuchtlingen | München | 1 |
+| RB 16 | Treuchtlingen | München | 2 |
+| RB 13 | Augsburg | Ingolstadt | 3 |
+
+Überführung in zweite Normalform, indem die Relation in zwei Relationen aufgeteilt wird. <br>
+
+| Linie | Start | Ziel |
+| ----- | ----- | ---- |
+| RE 1 | München | Nürnberg |
+| RB 16 | Treuchtlingen | München |
+| RB 13 | Augsburg | Ingolstadt |
+
+| Linie | Personal |
+| ----- | ----- |
+| RE 1 | 1 |
+| RE 1 | 2 |
+| RB 16 | 1 |
+| RB 16 | 2 |
+| RB 13 | 3 |
+
+**3. Normalform** <br>
+Kein Nichtschlüsselattribut ist transitiv abhängig von einem Kandidatenschlüssel, und es liegt die **2NF** vor. <br>
+
+Zerlegung - siehe [moodle](https://moodle.thi.de/pluginfile.php/750206/mod_resource/content/1/07_Normalisierung.pdf) S. 29. 
+
+| ID | City | Code | Area |
+| ----- | ----- | ---- | ----- |
+| 1 | München | DE | 357000 |
+| 2 | Nürnberg | DE | 357000 |
+| 3 | Orlando | US | 9834000 |
+| 4 | Bern | CH | 41285 |
+
+Überführung in dritte Normalform, wobei von ```Code``` auf ```Area``` geschlossen werden kann. <br>
+
+| Code | Area |
+| ----- | ----- |
+| DE | 357000 |
+| US | 9834000 |
+| CH | 41285 |
+
+| ID | City | Code |
+| ----- | ----- | ---- |
+| 1 | München | DE |
+| 2 | Nürnberg | DE |
+| 3 | Orlando | US |
+| 4 | Bern | CH |
+
+## Aufgabe
+
+<!-- siehe moodle S. 31 -->
+
+
+
+
+
