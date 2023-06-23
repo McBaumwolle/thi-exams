@@ -180,5 +180,5 @@ ab Samstag
 * Prädikatenlopgik
 * Constraints
 * Notizen (wann leere Menge, ...)
-
+* präd_s45
 -->
