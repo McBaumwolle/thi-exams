@@ -344,5 +344,21 @@ output_height = (input_height + padding_height_top + padding_height_bottom - ker
 output_width = (input_width + padding_width_left + padding_width_right - kernel_width) / stride_width + 1
 ```
 
+Beispiel mit ```N``` (Anzahl Batches), ```H``` (Höhe), ```W``` (Breite), ```C``` (Anzahl Channels), ```KW``` (Kernelbreite), ```KH``` (Kernelhöhe), ```KC``` (Kernel Channel), ```SH``` (Stride Höhe), ```SW``` (Stride Breite), ```P_H1, P_H2``` (Padding Höhe), ```P_W1, P_W2``` (Padding Breite). <br>
+
+  
+```python
+input [N H W C] = [100 255 255 64]
+kernel [H W C] = [7 7 64]
+stride [H W] = [3 4]
+padding [P_H1 P_H2 P_W1 P_W2] = [2 2 2 2]
+output_cnannel2 = 128
+```
+
+Damit ergibt sich folgendes. 
+```python
+output [N H W C] = [100 85 64 128]
+```
+
 # Klassifikation
 ...
