@@ -42,6 +42,9 @@
   - [Netze](#netze)
   - [Gewichtsreduktion](#gewichtsreduktion)
   - [Skip Connections](#skip-connections)
+  - [Cardinality](#cardinality)
+  - [Fragen](#fragen-7)
+- [Object Detection](#object-detection)
 
 
 
@@ -377,7 +380,7 @@ What is a top-5 error?
 Art von Supervised Learning, bei dem ein Objekt einer Klasse zugeordnet wird. <br>
 
 ## Netze
-(siehe [moodle](https://moodle.thi.de/pluginfile.php/753246/mod_resource/content/0/CV_15_Classification%20Architectures.pdf) Seite 7)
+(siehe [moodle](https://moodle.thi.de/pluginfile.php/753246/mod_resource/content/0/CV_15_Classification%20Architectures.pdf) Seite 7 zu **Inception**) <br>
 
 ## Gewichtsreduktion
 Darstellung von GoogLeNet von 2015. 
@@ -390,6 +393,31 @@ In der Praxis ist das nicht so, siehe **Degradation** Problem. <br>
 
 <img src="resources/cv/14_skip_connections.bmp" height="150">
 
-Skip Connections helfen dabei, indem das Netzwerk nur die 
-<abbr title="A residual connection connects the output of one earlier convolutional layer to the input of another future convolutional layer several layers later (e.g. a numer of intermediate convolutional steps are skipped).">Residuals</abbr> <br> 
-lernen muss. <br>
+Skip Connections helfen dabei, indem das Netzwerk nur die  Residuals lernen muss. <br>
+
+_A residual connection (skip connection) connects the output of one earlier convolutional layer to the input of another future convolutional layer several layers later (e.g. a numer of intermediate convolutional steps are skipped)._
+
+
+Für sehr tiefe Netze können auch ```Skip 3 Layers``` verwendet werden. <br>
+
+## Cardinality
+Bis jetzt wurden zwei Probleme außer Acht gelassen.
+* Receptive Fields sind relativ klein für einzelne Channels
+* es werden keine Relationen zwischen den Channels gelernt
+
+<!-- add images -->
+
+## Fragen 
+1. Zeichne ein Inception Modul und erkläre die einzelnen Schritte. Wieso wird es verwendet?
+
+&emsp; &emsp; &emsp; _lernen_
+
+2. Was ist eine Skip Connection und wieso wird sie verwendet?
+
+&emsp; &emsp; &emsp; Skip-Connectionssind zusätzliche Verbindungen in einem neuronalen Netz, die dazu beitragen, das versuchen, das Vanishing-Gradient Problem zu lösen und einen direkten Informationsfluss zwischen frühen und späten Schichten zu ermöglichen, was zu einer verbesserten Leistung und Optimierung tiefer Netze führt.
+
+3. Architektur für ein beschriebenes Problem aufzeichnen und erklären.
+
+&emsp; &emsp; &emsp; _üben_
+
+# Object Detection
