@@ -509,7 +509,7 @@ Jedes Attribut enthält nur atomare Werte (also keine mehrwertigen).
 | RB 16 | <span style="color:red">Treuchtlingen, Nürnberg</span> | München | 3.2 |
 
 Überführung in erste Normalform, indem mehrwertige Attribute in mehrere Tupel aufgeteilt werden. In diesem Fall zwei mal ```RB16``` mit den beiden Startwerten. <br>
-Oft ist die Trennung jedoch nciht sinnvoll, z.B. bei mehreren Vornamen.
+Oft ist die Trennung jedoch nicht sinnvoll, z.B. bei mehreren Vornamen.
 
 **2. Normalform** <br>
 Jedes Nichtschlüsselattribut ist voll funktional **abhängig** vom Primärschlüssel, und es liegt die **1NF** vor. <br>
@@ -566,11 +566,38 @@ Zerlegung - siehe [moodle](https://moodle.thi.de/pluginfile.php/750206/mod_resou
 | 3 | Orlando | US |
 | 4 | Bern | CH |
 
-## Aufgabe
-
 <!-- siehe moodle S. 31 -->
 
+## Aufgabe
+Überführen der 2NF in die 3NF an einem Beispiel. 
 
+| L_ID | Firma            | Straße          | Hausnummer | PLZ   | Ort       |
+| ---- | ---------------- | --------------- | ---------- | ----- | --------- |
+| 1    | Müller GmBH      | Neustrasse      | 1          | 12345 | Neustadt  |
+| 2    | Maier KG         | Musterstrasse   | 3          | 34567 | Musterstadt |
+| 3    | Schmidt AG       | Altgasse        | 5          | 98765 | Altstadt  |
+| 4    | Mayr GbR         | Schillerstrasse | 8a         | 35781 | Weilburg  |
+| 5    | Schneider e.K.   | Pfadstrasse     | 5          | 98765 | Altstadt  |
 
+Aufteilung in die zwei neuen Tabellen. 
+
+| L_ID | Firma            | Straße          | Hausnummer | PLZ (FK) |
+| ---- | ---------------- | --------------- | ---------- | ----- |
+| 1    | Müller GmBH      | Neustrasse      | 1          | 12345 |
+| 2    | Maier KG         | Musterstrasse   | 3          | 34567 |
+| 3    | Schmidt AG       | Altgasse        | 5          | 98765 |
+| 4    | Mayr GbR         | Schillerstrasse | 8a         | 35781 |
+| 5    | Schneider e.K.   | Pfadstrasse     | 5          | 98765 |
+
+| PLZ (PK) | Ort |
+| -------- | --- |
+| 12345 | Neustadt |
+| 34567 | Musterstadt |
+| 98765 | Altstadt |
+| 35781 | Weilburg |
+
+<!--
+Unterschied 2NF und 3NF?
+-->
 
 
