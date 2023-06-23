@@ -39,6 +39,9 @@
   - [Fragen](#fragen-6)
   - [Berechnung](#berechnung)
 - [Klassifikation](#klassifikation)
+  - [Netze](#netze)
+  - [Gewichtsreduktion](#gewichtsreduktion)
+  - [Skip Connections](#skip-connections)
 
 
 
@@ -359,6 +362,34 @@ Damit ergibt sich folgendes.
 ```python
 output [N H W C] = [100 85 64 128]
 ```
+<!--
+What is a top-1 error?
+-> The top-1 error is the percentage of test images for which the correct label is not among the top 1 predicted labels.
+
+What is a top-5 error?
+-> The top-5 error is the percentage of test images for which the correct label is not among the top 5 predicted labels.
+
+
+
+-->
 
 # Klassifikation
-...
+Art von Supervised Learning, bei dem ein Objekt einer Klasse zugeordnet wird. <br>
+
+## Netze
+(siehe [moodle](https://moodle.thi.de/pluginfile.php/753246/mod_resource/content/0/CV_15_Classification%20Architectures.pdf) Seite 7)
+
+## Gewichtsreduktion
+Darstellung von GoogLeNet von 2015. 
+
+<img src="resources/cv/13_googlenet.png" height="150">
+
+## Skip Connections
+In Theorie sollten Netzwerke je tiefer sie sind auch besser werden oder besser als ihre einzelnen Teile. <br>
+In der Praxis ist das nicht so, siehe **Degradation** Problem. <br>
+
+<img src="resources/cv/14_skip_connections.bmp" height="150">
+
+Skip Connections helfen dabei, indem das Netzwerk nur die 
+<abbr title="A residual connection connects the output of one earlier convolutional layer to the input of another future convolutional layer several layers later (e.g. a numer of intermediate convolutional steps are skipped).">Residuals</abbr> <br> 
+lernen muss. <br>
