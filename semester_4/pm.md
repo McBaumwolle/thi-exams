@@ -365,10 +365,13 @@ Ziel ist es, Widerstände zu vermeiden, Unterstützung zu gewinnen und Informati
 
 Die Interessensmatrix sieht wiefolgt aus. 
 
-| # | Stakeholder | Einstellung zum Projekt (```+```, ```-```, ```0```) | Erwartungen (```+```), Beffürchtungen (```-```) | Betroffenheit (```H```, ```M```, ```G```) | Macht und Einfluss (```H```, ```M```, ```G```) |  Maßnahmen |
+| # | Stakeholder | Einstellung zum Projekt (```+```, ```-```, ```0```) | Erwartungen (```+```), Beffürchtungen (```-```) | Betroffenheit (```H```, ```M```, ```G```) | Macht & Einfluss (```H```, ```M```, ```G```) |  Maßnahmen |
 |-|-|-|-|-|-|-|
 | 1 | Entwickler | ```0``` | ```+``` | ```G``` | ```M``` | Erstellung eines funktionalen Prototypen |
 | 2 | Geschäftskunde | ```0``` | ```-``` | ```G``` | ```M``` | Informationsgespräche |
-
-![Alt text](image.png)
+| 3 | Softwareanbieter | ```+``` | ```+``` | ```M``` | ```G``` | Projekteinbindung |
+| 4 | Enduser | ```0``` | ```-``` | ```H``` | ```H``` | Lockangebote |
+| 5 | Datenschutzbeauftragter | ```-``` | ```-``` | ```G``` | ```M``` | Hacktest |
+| 6 | Management | ```+``` | ```+``` | ```H``` | ```H``` |  |
+| 7 | Sicherheitsbeauftragter | ```-``` | ```-``` | ```G``` | ```M``` | Verhandlungssache |
 
