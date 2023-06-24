@@ -42,6 +42,7 @@
   - [ACID](#acid)
   - [Mehrbenutzerbetrieb](#mehrbenutzerbetrieb)
     - [Lösungen](#lösungen)
+  - [Sperren](#sperren)
 
 
 
@@ -722,4 +723,54 @@ Für weiteres Beispiel siehe [moodle](https://moodle.thi.de/pluginfile.php/75110
 
 Generell ist ein Schedule serialisierbar, wenn der Serialisierungsgraph **zyklenfrei** ist. <br>
 
+**Beispiel** <br>
+Drei Beispiele für nicht serialisierbare Schedules, mit Zyklus im Graph. <br>
 
+<img src="resources/bd/04_not_serializable.png" width="600">
+
+<!-- maybe like this 
+**Lost Update** <br>
+| | | | |
+| -- | -- | -- | -- |
+| T1 | read(x) | | write(x) |
+| T2 | | write(x) | |
+
+**Dirty Read** <br>
+| | | | |
+| -- | -- | -- | -- |
+| T1 | write(x) | | write(x) |
+| T2 | | read(x) | |
+-->
+
+Der Konflitkgraph reicht aber nicht aus, um die Serialisierbarkeit zu prüfen. <br>
+
+| | | | | |
+| -- | -- | -- | -- | -- |
+| ```T1``` | ```write(x)``` | | | ```rollback``` |
+| ```T2``` | | ```read(x)``` | ```commit``` | |
+
+Hier liegt zum Beispiel ein Dirty Read vor, aber der Graph ist zyklenfrei. <br>
+Serialisierbarkeit alleine reicht nicht aus, wenn Transationen zurückgesetzt (```rollback```) werden können. <br>
+
+## Sperren
+Sperren sind eine Möglichkeit, um die Serialisierbarkeit zu gewährleisten. <br>
+
+<img src="resources/bd/05_locks.png" width="300">
+<!-- als Tabelle -->
+
+Dabei könenn **Lesesperren** (```lockS```) und **Schreibesperren** (```lockX```) vergeben werden. 
+
+**Problem** <br>
+Wenn eine Transaktion ```T1``` zurückgesetzt wird, davor aber ```T2``` via dirty-read gelesen hat, müssen beide Transaktionen zurückgesetzt werden. <br>
+
+**Lösung** <br>
+Zum Beispiel mti 'Strict 2 Phase Locking ' (S2PL) müssen alle Sperren bis zum Ende (```commit```) der letzen Transaktion gehalten werden. <br>
+<!-- Seite 51 -->
+
+**Deadlocks** <br>
+Sperren können zu Verklemmungen führen, also wenn Transaktionen aufeinander warten. <br>
+
+<img src="resources/bd/06_deadlock.png" width="300">
+<!-- als Tabelle -->
+
+Beispiele und mehr auf [moodle](https://moodle.thi.de/pluginfile.php/751101/mod_resource/content/1/08_Transaktionen.pdf) Seite 53 nachholen. <br>
