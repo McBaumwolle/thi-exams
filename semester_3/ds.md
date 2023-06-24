@@ -176,7 +176,7 @@ Somit ist Formel F bewiesen indem wir ¬F zur Klauselmenge huinzufügen und eine
 <!--
 siehe moodle und Aufgaben
 
-ab Samstag
+ab Samstag / So
 * Prädikatenlopgik
 * Constraints
 * Notizen (wann leere Menge, ...)
