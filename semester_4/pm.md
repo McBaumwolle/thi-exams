@@ -27,6 +27,8 @@
     - [SMART](#smart)
   - [Anforderungen](#anforderungen)
   - [Projektumfeld](#projektumfeld)
+  - [Risikoanalyse](#risikoanalyse)
+- [Projektplanung](#projektplanung)
 
 
 # Grundlagen
@@ -374,4 +376,47 @@ Die Interessensmatrix sieht wiefolgt aus.
 | 5 | Datenschutzbeauftragter | ```-``` | ```-``` | ```G``` | ```M``` | Hacktest |
 | 6 | Management | ```+``` | ```+``` | ```H``` | ```H``` |  |
 | 7 | Sicherheitsbeauftragter | ```-``` | ```-``` | ```G``` | ```M``` | Verhandlungssache |
+
+Zur alternativen Darstellung, siehe [moodle](https://moodle.thi.de/pluginfile.php/562601/mod_resource/content/12/PM_KI_Kap3-1a_Definition_he_2023_1-0.pdf) Seite 50.
+
+<!-- Beispiel mti Studiengang -->
+
+Beeinflussing der Stakeholder durch...
+* Kommunikation
+* Einladungen 
+* Prototypen
+* Infoveranstaltungen
+
+## Risikoanalyse
+**Projektrisiken** <br>
+Unsichere Ereignisse oder mögliche Situationen mit negativen Auswirkungen auf den Projekterfolg. 
+
+**Projektrisikomanagement** <br>
+Identifikation, Klassifikatin und Bewertung von Projektrisiken aller Art sowie Masnahmen zur Risikobewältigung.
+
+1. Risikoidentifikation
+2. Risikobewertung
+3. Risikoabsicherung
+
+Darstellung der Risiken, wobei ```x``` die Eintrittswahrscheinlichkeit und ```y``` die Auswirkung darstellt. 
+
+<img src="resources/pm/14_risikoanalyse.png" alt="Risikoanalyse" width="500"/>
+
+**Risikoabsicherung** <br>
+* Risikovermeidung
+* Risikoverminderung
+* Risikobegrenzung
+* Risikoverlageurng
+* Risikoakzeptanz
+
+Im erwähnten Graph von vorhin können Rikiken in Nähe des Kooridnatenursprungs akzeptiert werden, wobei Risiken oben rechts vermieden werden sollten.
+
+**Beispiel** <br>
+<img src="resources/pm/15_risikoanalyse_beispiel.png" alt="Risikoanalyse Beispiel" width="500"/>
+
+
+# Projektplanung
+<!--
+https://moodle.thi.de/pluginfile.php/734952/mod_resource/content/1/PM_KI_Kap3-1b_PSP-he_2023_1-0.pdf
+-->
 
