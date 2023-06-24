@@ -689,18 +689,21 @@ Abhängig von der Reihenfolge sind folgende Beispiele.
 | -- | -- |
 | read(A) | |
 | | write(A) |
+
 (phatom read)
 
 | T1 | T2 |
 | -- | -- |
 | | write(A) |
 | read(A) | |
+
 (dirty read)
 
 | T1 | T2 |
 | -- | -- |
 | | write(A) |
 | write(A) | |
+
 (lost update)
 
 Zur Notation und Formulierung der Abhängigkeiten, siehe [moodle](https://moodle.thi.de/pluginfile.php/751101/mod_resource/content/1/08_Transaktionen.pdf) Seite 35. <br>
