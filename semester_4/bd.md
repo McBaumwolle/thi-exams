@@ -600,4 +600,110 @@ Aufteilung in die zwei neuen Tabellen.
 Unterschied 2NF und 3NF?
 -->
 
+# Transaktionen
+Eine logische Verarbeitungseinheit auf einer Datenbank, die eine oder mehrere Operationen (Einfügen, Löschen, Ändern, Suchen) enthält. <br>
+Mit dem Befehl ```commit``` werden die Änderungen als gültig erklärt und mit ```rollback``` verworfen oder rückgängig gemacht. <br>
+Der Beginn einer Transaktion wird mit ```BOT``` gekennzeichnet. 
+
+## ACID
+Datenbanksysteme müssen die ACID-Eigenschaften erfüllen. <br>
+
+**Atomicity** <br>
+Die Teilschritte der Transaktion werden als unteilbare, atomare Einheit ausgeführt. 
+Entweder alle oder keine Operationen werden ausgeführt. <br>
+Beispiel: Geldautomat - Geld abheben <br>
+
+**Consistency** <br>
+Die Datenbank befindet sich vor und nach der Transaktion in einem konsistenten Zustand, Daten bleiben konsistent. <br>
+Beispiel: Geld abheben - Kontostand darf nicht negativ werden <br>
+
+**Isolation** <br>
+Transaktionen werden unabhängig voneinander ausgeführt, ohne gegenseitige Beeinflussung. Eine Transaktion hat die Daten für sich alleine. <br>
+Beispiel: Geld abheben - Kontostand darf nicht gleichzeitig  von anderen Transaktionen beeinflusst werden <br>
+
+**Durability** <br>
+Die Ergebnisse einer bestätigten Transation (```ACK```) sind dauerhaft gespeichert, auch nach Fehlern kann der der Zustand wiederhergestellt werden. <br>
+Beispiel: Geld abheben - Kontostand darf nicht verloren gehen bei Stromausfall <br>
+
+**Beispiel** <br>
+Eine Überweisuung von 50€ von Konto 102 auf Konto 103.
+
+```sql
+begin transaction;
+update Konto set Saldo = Saldo - 50 where KtoNr = 102;
+update Konto set Saldo = Saldo + 50 where KtoNr = 103;
+commit;
+```
+
+## Mehrbenutzerbetrieb
+Mehrere Transaktionen können gleichzeitig auf die Datenbank zugreifen. <br>
+Wenn Transaktionen nicht ausreichend isoliert sind, kann es zu Problemen führen. 
+
+**Dirty Read** <br>
+Wenn eine Transaktion Daten liest, die von einer anderen Transaktion noch nicht bestätigt wurden und zum Beispiel wieder zurückgerollt werden. <br>
+<!-- image maybe -->
+Beispiel: Ändern des Alters mit ```update``` und ```rollback```, dazwischen aber lesen von anderer Transaktion. <br>
+
+**Lost Update** <br>
+Tritt auf, wenn zwei Transaktionen gleichzeitig dasselbe Objekt ändern und dabei eine der Änderungen verloren geht durch Überschreiben. <br> 
+<!-- image maybe -->
+Beispiel: Verkauf von Artikeln, mit ```update``` und wird der Stand auf ```4``` gesetzt, danach auf ```5``` von Transaktion zuvor. 
+
+**Non-Repeatable Read** <br>
+Wenn eine Trasnaktion dieselbe Zeile in einer Tabelle zweimal liest und unterschiedliche Werte erhält. <br>
+<!-- image maybe -->
+Beispiel: Lesen der Anzahl von Artikeln, die Anzahl wird von anderer Transaktion geändert und die erste Transaktion liest erneut. 
+
+**Phantom Read** <br>
+Tritt auf, wenn eine Transaktion dieselbe Abfrage zweimal ausführt und unterschiedliche Ergebnisse erhält, weil während der zweiten Ausführung eine andere Transaktion eine neue Zeile eingefügt hat. <br>
+(Unterschied zu Non-Repeatable Read: Zeile wird nicht geändert, sondern neu eingefügt) <br>
+
+**Vergleich** <br>
+* Abhängigkeit von nicht festgeschriebenen Änderungen (```dirty read```) <br>
+* Verlust von Änderungen (```lost update```) <br>
+* gelesene Daten zwischenzeitlich geändert (```non-repeatable read``` & ```phantom read```) <br>
+
+<!-- or as a big table -->
+
+### Lösungen 
+Die einfachste Lösung sind _serielle Transaktionen_, die nacheinander ausgeführt werden. Komplexer ist es mit _parallelen Transaktionen_. <br>
+
+**Schedule** <br>
+Ein Ablaufplan für mindesetens eine Transaktion, gibt die Abfolge der Operationen an. <br>
+Im _seriellen_ Schedule laufen Transaktionen nacheinander ab. <br>
+Im _serialisierbaren_ Schedule laufen Transaktionen parallel ab, aber das Ergebnis ist dasselbe wie bei seriellen Schedule. <br>
+
+<!-- zur Visualisierung vielleicht ein Bild -->
+
+**Konfliktidentifikation** <br>
+Unabhängig von der Reihenfolge ist folgendes Beispiel. 
+
+| T1 | T2 |
+| -- | -- |
+| read(A) | |
+| | read(A) |
+
+Abhängig von der Reihenfolge sind folgende Beispiele.
+
+| T1 | T2 |
+| -- | -- |
+| read(A) | |
+| | write(A) |
+(phatom read)
+
+| T1 | T2 |
+| -- | -- |
+| | write(A) |
+| read(A) | |
+(dirty read)
+
+| T1 | T2 |
+| -- | -- |
+| | write(A) |
+| write(A) | |
+(lost update)
+
+Zur Notation und Formulierung der Abhängigkeiten, siehe [moodle](https://moodle.thi.de/pluginfile.php/751101/mod_resource/content/1/08_Transaktionen.pdf) Seite 35. <br>
+
+**Beispiel** <br>
 
