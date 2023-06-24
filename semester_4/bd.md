@@ -708,5 +708,13 @@ Abhängig von der Reihenfolge sind folgende Beispiele.
 
 Zur Notation und Formulierung der Abhängigkeiten, siehe [moodle](https://moodle.thi.de/pluginfile.php/751101/mod_resource/content/1/08_Transaktionen.pdf) Seite 35. <br>
 
-**Beispiel** <br>
+**Aufgaben** <br>
+Zeichnen Sie den Serialisierungsgraph für folgende Schedules. Ist der Schedule serialisierbar? <br>
+
+<img src="resources/bd/04_graph.png" width="600">
+
+Für weiteres Beispiel siehe [moodle](https://moodle.thi.de/pluginfile.php/751101/mod_resource/content/1/08_Transaktionen.pdf) Seite 39 zum Üben. <br>
+
+Generell ist ein Schedule serialisierbar, wenn der Serialisierungsgraph **zyklenfrei** ist. <br>
+
 
