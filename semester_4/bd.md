@@ -38,6 +38,11 @@
   - [Abhängigkeiten](#abhängigkeiten)
   - [Normalformen](#normalformen)
   - [Aufgabe](#aufgabe)
+- [Transaktionen](#transaktionen)
+  - [ACID](#acid)
+  - [Mehrbenutzerbetrieb](#mehrbenutzerbetrieb)
+    - [Lösungen](#lösungen)
+
 
 
 
