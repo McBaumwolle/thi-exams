@@ -21,6 +21,12 @@
     - [Einfluss-Projektorganisation](#einfluss-projektorganisation)
     - [Matrix-Projektorganisation](#matrix-projektorganisation)
     - [reine Projektorganisation](#reine-projektorganisation)
+- [Projektdefinition](#projektdefinition)
+  - [Phasenmodell](#phasenmodell)
+  - [Projektziele](#projektziele)
+    - [SMART](#smart)
+  - [Anforderungen](#anforderungen)
+  - [Projektumfeld](#projektumfeld)
 
 
 # Grundlagen
@@ -251,4 +257,118 @@ vervollständigen ab Seite 36 (moodle)
 * Projektabteilung
 
 <img src="resources/pm/11_rein.png" alt="Rein" width="400"/>
+
+
+# Projektdefinition
+Projektmanagementphasen
+* Initialisierung
+* Definition
+* Planung
+* Steuerung
+* Abschluss
+
+sind projektspezifisch, ein IT-Projekt hat andere Phasen als ein Bau-Projekt. 
+
+## Phasenmodell
+Eine **Phase** ist ein zeitlicher Abschnitt im Projekt, alle zusammen ergeben das Phasenmodell. <br>
+Dadurch wird die Komplexität des Projektes verringert, es wird überschaubarer und die Transparenz wird erhöht. <br> 
+
+<img src="resources/pm/12_planung_reduktion.png" alt="Phasen" width="400"/>
+
+## Projektziele 
+### SMART
+Ziele sollten SMART sein. <br>
+
+| | | |
+|-|-|-|
+| **S** | specific | einfach, verständlich und präzise |
+| **M** | measurable | eindeutige Kriterien zur Prüfung |
+| **A** | achievable | realistisch erreichenbar |
+| **R** | relevant | für das Projekt relevant und zum Gesamtziel |
+| **T** | time-bound | zeitlich einzuordnen, planbar |
+
+## Anforderungen
+**funktionale Anforderungen** <br>
+Was das System oder PRodukt tut, welche Daten es verarbeitet oder welches Verhalten vom System gewünscht wird. 
+
+**nicht-funktionale Anforderungen** <br>
+Qualitätsanforderungen: Wie gut, schnell, sicher, erweiterbar, ... das gesamte System oder Teie davon sein sollen. <br>
+geforderte Rahmenbedingungen: Unter welchen technischen oder organisatorischen Vorhaben das System entwickelt werden soll, zum Beispiel Forschung nach Nutzung bestimmer Technologien, Zeit- oder Geldvorgaben, ... <br>
+
+**Lastenheft** <br>
+Gesamtheit der Anforderungen des Auftraggebers an das System (WAS). <br>
+
+**Pflichtenheft** <br>
+Im Pflichtenheft dokumentiert der Auftragnehmer, wie er die im Lastenheft gestellten Anforderungen umsetzen will (WIE & WOMIT). <br>
+
+Jedes Ziel oder Jede Anforderung ist...
+* mit eindeutiger ```ID``` versehen
+* einem Anforderer zugeordnet
+* präzise, verständlich, widerspruchsfrei und positiv formuliert
+* zur Umsetzung geeignet
+* verifizierbar (prüfbar, messbar)
+* priorisiert (muss, kann, soll)
+* nachverfolgbar
+* in einer zentralen Liste dokumentiert
+* von Auftraggeber und dem Projektteam akzeptiert
+
+**Anforderungsformulierung** <br>
+Folgendes Beispiel zur Formulierung. 
+
+<img src="resources/pm/13_anforderungen.png" alt="Anforderungen" width="400"/>
+
+**Traceability** <br>
+Anforderungen und alle daraus abgeleiteten Elemente müssen über die gesamte Lebensdauer des Systems nachverfolgbar sein. 
+* Woher kommt die Anforderung?
+* Wie hängt sie mit anderen Anforderungen zusammen?
+
+## Projektumfeld
+DIe Umgebung, die das Projekt direkt oder indirekt beeinflusst. <br>
+* zeitlicher Kontext
+* sachlicher Kontext 
+* sozialer Kontext
+
+**Projektumfeldanalyse** <br>
+Die Identifikation von Faktoren, die das Projekt beeinflussen können. <br>
+* Rahmenbedingungen identifizieren
+* idetiifizieren von allen Stakeholdern
+* Projektrisiken früh erkennen
+
+| | soziale Faktoren | sachliche Faktoren |
+|-|-|-|
+| intern | Auftraggeber <br> Anwender <br> Projektteam <br> Fachbereich | Budgetrahmen <br> Geschäftsprozesse <br> Betriebsvereinbarungen <br> interne Richtlinien |
+| extern | beteiligte externe Firmen <br> Serviceprovider | Gesetze <br> Normen, Standards <br> Marktentwicklung <br> Konjunktur |
+| | Stakeholderanalyse | Risikoanalyse |
+
+**Stakeholder** <br>
+Personen oder Gruppen, die am Projekt beteiligt, interessiert oder von den Auswirkungen betroffen sind. <br>
+* Kunde
+* Mitarbeiter
+* Eigentümer (des Unternehmens)
+* Dienstleister
+* Gesellschaft
+
+<!-- Seite 39 -->
+
+**Stakeholderanalyse** <br>
+Eine Stakeholderanalyse ist das methodische Vorgehen im Projektmanagement um mit den Ansprüchen, Erwartungen, Herausforderungen und Bedenken qualifiziert umzugehen. 
+
+Ist Grundlage für rechtzeitige, zielgruppenspezifische und glaubwürdige Kommunikation. 
+
+Ziel ist es, Widerstände zu vermeiden, Unterstützung zu gewinnen und Informationen zu gewinnen. 
+
+1. Identifikation potentieller Stakeholder
+2. Sammlung von Informationen
+3. strategische Einordnung
+4. Vorhersage des Stakeholderverhaltens
+5. Maßnahmen planen und umsetzen
+
+Die Interessensmatrix sieht wiefolgt aus. 
+
+| # | Stakeholder | Einstellung zum Projekt (```+```, ```-```, ```0```) | Erwartungen (```+```), Beffürchtungen (```-```) | Betroffenheit (```H```, ```M```, ```G```) | Macht und Einfluss (```H```, ```M```, ```G```) |  Maßnahmen |
+|-|-|-|-|-|-|-|
+| 1 | Entwickler | ```0``` | ```+``` | ```G``` | ```M``` | Erstellung eines funktionalen Prototypen |
+| 2 | Geschäftskunde | ```0``` | ```-``` | ```G``` | ```M``` | Informationsgespräche |
+
+![Alt text](image.png)
 

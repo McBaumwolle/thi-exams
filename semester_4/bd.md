@@ -43,6 +43,7 @@
   - [Mehrbenutzerbetrieb](#mehrbenutzerbetrieb)
     - [Lösungen](#lösungen)
   - [Sperren](#sperren)
+- [physischer Entwurf](#physischer-entwurf)
 
 
 
@@ -774,3 +775,6 @@ Sperren können zu Verklemmungen führen, also wenn Transaktionen aufeinander wa
 <!-- als Tabelle -->
 
 Beispiele und mehr auf [moodle](https://moodle.thi.de/pluginfile.php/751101/mod_resource/content/1/08_Transaktionen.pdf) Seite 53 nachholen. <br>
+
+
+# physischer Entwurf
