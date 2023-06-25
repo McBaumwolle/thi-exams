@@ -825,6 +825,9 @@ Gegeben ist die Ausgangssituation. <br>
 
 <img src="resources/bd/08_btree_sol.png" width="200">
 
+**Vorgehen** <br>
+Beim Einfügen 'immer aktives Blatt nach oben'. 
+
 ## Indexe
 Ein Index ist eine Datenstruktur, die die Suche und das Sortieren von Datensätzen beschleunigt. Der ```Primary_Key``` wird meist von dem DBS automatisch indexiert. <br>
 Den automatisch angelegten Index nennt man ```Primary Index```, der ```Secondary Indizes``` werden manuell angelegt. <br>
