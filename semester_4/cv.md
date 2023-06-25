@@ -422,6 +422,95 @@ Bis jetzt wurden zwei Probleme außer Acht gelassen.
 
 
 # Object Detection
-Nach Klassifikation nun mit Boundry Box die jeweiligen Objekte im Bild markieren. <br>
+Nach Klassifikation nun mit Boundry Box die jeweiligen Objekte im Bild markieren. Evaluation mit Intersection over Union (IoU). <br>
 
-$IoU = \frac{area of overlap}{area of union}$
+$IoU = \frac{overlap}{union}$
+
+Oft wird ein threshold von ```0.5``` oder ```0.75``` verwendet, um als true positive zu gelten. <br>
+
+Wie viel ```%``` der vorhergesagten Boxen sind richtig? <br>
+$Precision = \frac{TP}{TP + FP}$ 
+
+Wie viel ```%``` der tatsächlichen Boxen wurden richtig vorhergesagt? <br>
+$Recall = \frac{TP}{TP + FN}$
+
+**Beispiel** <br>
+Annahme, man hat 3TP und 4 FP. <br>
+
+|   | prec | recall | prec_int |
+| --- | --- | --- | --- |
+| TP | $\frac{1}{1} = 1$ | $\frac{1}{3} = 0.33$ | $1$ |
+| FP | $\frac{1}{2} = 0.5$ | $\frac{1}{3} = 0.33$ | $1$ |
+| TP | $\frac{2}{3} = 0.67$ | $\frac{2}{3} = 0.67$ | $0.67$ |
+| FP | $\frac{2}{4} = 0.5$ | $\frac{2}{3} = 0.67$ | $0.67$ |
+| FP | $\frac{2}{5} = 0.4$ | $\frac{2}{3} = 0.67$ | $0.67$ |
+| TP | $\frac{3}{6} = 0.5$ | $\frac{3}{3} = 1$ | $0.5$ |
+| FP | $\frac{3}{7} = 0.43$ | $\frac{3}{3} = 1$ | $0.5$ |
+
+Und als Graph ergibt sich folgendes. 
+
+<img src="resources/cv/15_iou.png" width="400">
+
+**average Precision** <br>
+Alle Precision Werte werden gemittelt. <br>
+
+$AP = \frac{1}{n} \sum_{i=1}^{n} prec_i$
+
+$= \frac{1}{11} (1 + 1 + 1 + 1 + 0.67 0.67 + 0.67 + 0.5 + 0.5 + 0.5 + 0.5)$
+
+$\approx 0.728$
+
+**mean average Precision** <br>
+Mittelwert über alle Klassen, gut für Evaluation. <br>
+
+## Region Proposal
+Paper zu ```R-CNN``` von 2014. <br>
+Vorschläge für die Regionen aus dem Bild erstellen, dann mit CNN die Features extrahieren und dann mit ```SVM``` die Klassifikation durchführen. <br>
+
+<img src="resources/cv/16_region_proposal.bmp" width="500">
+
+Vorgegangen wird wie folgt. <br>
+
+1. 2000 kategorisch unabhangige Regionen aus dem Bild extrahieren
+2. auf ```227x227``` skalieren
+3. für jede Region ein 4096-dimensionales Feature Vektor extrahieren (AlexNet)
+4. non-maximum suppression (Regionen zusammenfassen)
+5. für jede Klasse ein ```SVM``` trainieren
+6. Bounding Box Regression
+
+**Probleme** <br>
+Sehr langsam, da region proposal 2000 mal durchgeführt werden muss.
+
+## Fast R-CNN
+Paper zu ```Fast R-CNN``` von 2015. <br>
+Idee ist, das ```CNN``` nur einmal durchzuführen und dann die Regionen zu extrahieren. 
+Zudem wird ```SVM``` durch ```Softmax``` ersetzt, ```ROI``` Pooling Layer wird verwendet. 
+
+<img src="resources/cv/17_fast_rcnn.bmp" width="500">
+
+
+Für genaue Erklärung zu ```ROI``` Pooling Layer siehe [towardsdatascience](https://scribe.rip/understanding-region-of-interest-part-1-roi-pooling-e4f5dd65bb44). 
+
+**Vorteile** <br>
+* höhere Qualität der Erkennung
+* schneller als ```R-CNN```
+* kein Speicher benötigt wie in der ```R-CNN``` Pipeline
+
+**Nachteile** <br>
+* Region PRoposal mit Selective Search ist immer noch langsam
+* ```ROI``` Pooling verliert Informationen
+
+...
+
+## Fragen
+1. Aus den Ergebnissen an einem Beispiel die ```AP``` berechnen.
+
+&emsp; &emsp; &emsp; _üben_
+
+2. Definieren einer Netzwerkstruktur die 300 unterschiedliche Objekte erkennen kann auf farbigen Bildern. Welche **Loss-Funktion** wird verwendet?
+
+&emsp; &emsp; &emsp; _lernen_
+
+3. Den Unterschied von ```R-CNN```, ```Fast R-CNN``` und ```Faster R-CNN``` erklären.
+
+...
