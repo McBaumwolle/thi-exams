@@ -778,3 +778,81 @@ Beispiele und mehr auf [moodle](https://moodle.thi.de/pluginfile.php/751101/mod_
 
 
 # physischer Entwurf
+Wie kann man effizient Daten speichern und auslesen? <br>
+Im worst case müssen alle Blöcke einer Tabelle (auf der HDD) gelesen werden, um einen bestimmten Datensatz zu finden. <br>
+Als Beispiel, eine Tabelle von Mitarbeitern, je Block können ```4``` Datensätze gespeichert werden, insgesamt sind es ```100``` Datensätze. <br>
+
+**Lösung** <br>
+Die ```IDs``` werden mit den Blockadressen abgespeichert. <br>
+
+| ID | Record Pointer |
+| -- | -- |
+| ```01``` | Block 1 |
+| ```...``` | ```...``` |
+| ```04``` | Block 1 |
+| ```05``` | Block 2 |
+| ```...``` | ```...``` |
+| ```100``` | Block 25 |
+
+Bei mehr Einträgen sind aber auch viel mehr Blöcke für den Index nötig. <br>
+
+**Lösung** <br>
+Es werden 'Indexe für die Indexe' eingeführt, ein ```Outer Index``` und ein ```Inner Index```. <br>
+
+
+## B-Tree
+Ein B-Tree teilt die Daten in Blöcke auf, die in einem Baum angeordnet sind. <br>
+
+<img src="resources/bd/07_btree.bmp" width="600">
+
+Zum Üben und für Beispiele siehe [B-Tree Visualization](https://www.cs.usfca.edu/~galles/visualization/BTree.html) und auf [moodle](https://moodle.thi.de/pluginfile.php/751560/mod_resource/content/1/09_Physischer%20Entwurf_Secondary_Index.pdf) ab Seite 24. 
+
+**Aufgabe** <br>
+Erstellen sie einen B-Tree mit der Ordnung ```m=3``` für folgende Zahlen. <br>
+```[14, 19, 15, 18, 16]```
+
+Gegeben ist die Ausgangssituation. <br>
+```[11, 22]``` 
+
+**Lösung** <br>
+(Lösung noch prüfen)
+
+<img src="resources/bd/08_btree_sol.png" width="200">
+
+## Indexe
+Ein Index ist eine Datenstruktur, die die Suche und das Sortieren von Datensätzen beschleunigt. Der ```Primary_Key``` wird meist von dem DBS automatisch indexiert. <br>
+Den automatisch angelegten Index nennt man ```Primary Index```, der ```Secondary Indizes``` werden manuell angelegt. <br>
+Achtung: Bei Insert, Delete und Update muss der B-Tree ebenfalls angepasst werden. <br>
+
+Codebeispiel mit Secondary Index in PostgreSQL. <br>
+```sql
+CREATE INDEX idx_name
+ON table_name (column_name);
+```
+
+### Hash Index
+Normalerweise verwendet bei Abfragen die nach bestimmten Schlüsselwerten suchen, da sie sehr schnell sind. <br>
+Ist nicht geeignet für Bereichssuchen, aber optimiert ```WHERE``` Clauses. 
+
+<img src="resources/bd/09_hash_index.png" width="300">
+
+## Storage Engine
+Komponente im DBMS, die für Speicherung, Lesen und Schreiben von Daten zuständig ist - liegt quasi zwischen der Datenbank-Engine und der Festplatte. <br>
+
+**zeilenbasierte Speicherung** <br>
+Ganze Zeilen werden jeweils in einem Block gespeichert. 
+* geeignet, wenn wenige oder einzelne Datenstätze benötigt werden
+* ungeeignet für analytische Abfragen, da viele unwichtige Daten mitgelesen werden müssen
+
+**spaltenbasierte Speicherung** <br>
+Jede Spalte wird in einem Block gespeichert.
+* performant, wenn einzelne Spalten nötig sind 
+* ungeeignet, wenn einzelne Datensätze benötigt werden, da so mehrere Blöcke nötig
+
+## RAID
+Ausfallsicherung von Festplatten, indem die Daten mehrfach auf mehrere Festplatten verteilt werden. 
+
+<img src="resources/bd/10_raid.bmp" width="600">
+
+Siehe [Wikipedia](https://en.wikipedia.org/wiki/Standard_RAID_levels) für genauere Erklärung.
+
