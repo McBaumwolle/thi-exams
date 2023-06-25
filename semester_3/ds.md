@@ -21,6 +21,11 @@
   - [Resolution](#resolution)
   - [Resolutionsbeweis](#resolutionsbeweis)
 - [Prädikatenlogik](#prädikatenlogik)
+  - [Notation](#notation)
+  - [Klauseln](#klauseln)
+  - [Hinweise](#hinweise)
+  - [Beispiele](#beispiele)
+- [Constraints](#constraints)
 
 
 # Suche
@@ -172,13 +177,76 @@ Somit ist Formel F bewiesen indem wir ¬F zur Klauselmenge huinzufügen und eine
 
 
 # Prädikatenlogik
-...
-<!--
-siehe moodle und Aufgaben
+Mit der Prädikatenlogik können wir Aussagen über Objekte machen. <br>
 
-ab Samstag / So
-* Prädikatenlopgik
-* Constraints
-* Notizen (wann leere Menge, ...)
-* präd_s45
--->
+## Notation
+```bash
+# Alle Lebewesen sind sterblich.
+∀x (Lebewesen(x) → Sterblich(x))
+
+# Unterklassen
+∀x (student(x) → person(x))
+
+# Disjunktive Klassen
+∀x (aktiv(x) → ¬inaktiv(x))
+
+# Alle Teilklassen
+∀x (ganzzahlig(x) → positiv(x) ∨ negativ(x))
+
+# Typrestriktionen
+∀x ∀y (verheiratet(x, y) → person(x) ∧ person(y))
+
+# Definitionen
+∀x (Regiozug(x) ↔ Zug(x) ∧ ¬ICE(x))
+```
+
+## Klauseln
+Siehe [moodle](https://moodle.thi.de/pluginfile.php/524853/mod_resource/content/4/beamerdeduktaplogik.pdf) Seite 71. 
+
+## Hinweise
+Ausdrücke zum Lernen, die gut zu wissen sind: 
+```bash
+# "Alle Studenten..."
+∀x (student(x) → ...)
+
+# Es gibt mindestens einen Studenten...
+∃x (student(x) ∧ ...)
+
+# Es gibt mindestens zwei Studenten...
+∃x ∃y (student(x) ∧ student(y) ∧ x ≠ y ∧ ...)
+
+# Es gibt genau zwei Studenten...
+∃x ∃y (student(x) ∧ student(y) ∧ x ≠ y ∧ ∀z (student(z) → (z = x ∨ z = y)))
+```
+
+## Beispiele 
+Zum Beweis noch die negierte Formel (zu zeigen) zur Klauselmenge hinzu, bei leerer Menge als Ergebnis ist die Formel gezeigt. 
+```bash
+# zu zeigen
+sterblich(fido)
+
+# Klauselmenge
+hund(x) → tier(x)
+tier(x) → lebewesen(x)
+hund(fido)
+lebewesen(x) → sterblich(x)
+
+# Umformen
+¬hund(x) ∨ tier(x)
+¬tier(x) ∨ lebewesen(x)
+hund(fido)
+¬lebewesen(x) ∨ sterblich(x)
+
+# mit Negation
+¬sterblich(fido)
+
+# Klauselmenge
+{{¬hund(x), tier(x)}, {¬tier(x), lebewesen(x)}, {hund(fido)}, {¬lebewesen(x), sterblich(x)}, {¬sterblich(fido)}}
+```
+
+Daraus ergibt sich folgender Resolutionsbeweis.
+
+<img src="resources/ds/07_resolutionsbeweis.png" width="500">
+
+
+# Constraints
