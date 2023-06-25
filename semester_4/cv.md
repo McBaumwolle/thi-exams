@@ -418,6 +418,10 @@ Bis jetzt wurden zwei Probleme außer Acht gelassen.
 
 3. Architektur für ein beschriebenes Problem aufzeichnen und erklären.
 
-&emsp; &emsp; &emsp; _üben_
+&emsp; &emsp; &emsp; _üben_ mit LeNet, AlexNet, VGG, ResNet, GoogLeNet, Inception
+
 
 # Object Detection
+Nach Klassifikation nun mit Boundry Box die jeweiligen Objekte im Bild markieren. <br>
+
+$IoU = \frac{area of overlap}{area of union}$
