@@ -473,7 +473,7 @@ Vorgegangen wird wie folgt. <br>
 
 1. 2000 kategorisch unabhangige Regionen aus dem Bild extrahieren
 2. auf ```227x227``` skalieren
-3. für jede Region ein 4096-dimensionales Feature Vektor extrahieren (AlexNet)
+3. für jede Region ein ```4096```-dimensionales Feature Vektor extrahieren (AlexNet)
 4. non-maximum suppression (Regionen zusammenfassen)
 5. für jede Klasse ein ```SVM``` trainieren
 6. Bounding Box Regression
