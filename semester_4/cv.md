@@ -45,6 +45,10 @@
   - [Cardinality](#cardinality)
   - [Fragen](#fragen-7)
 - [Object Detection](#object-detection)
+  - [Region Proposal](#region-proposal)
+  - [Fast R-CNN](#fast-r-cnn)
+  - [Fragen](#fragen-8)
+
 
 
 

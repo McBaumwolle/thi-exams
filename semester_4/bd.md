@@ -44,6 +44,12 @@
     - [Lösungen](#lösungen)
   - [Sperren](#sperren)
 - [physischer Entwurf](#physischer-entwurf)
+  - [B-Tree](#b-tree)
+  - [Indexe](#indexe)
+    - [Hash Index](#hash-index)
+  - [Storage Engine](#storage-engine)
+  - [RAID](#raid)
+
 
 
 
