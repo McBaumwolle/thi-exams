@@ -48,6 +48,10 @@
   - [Region Proposal](#region-proposal)
   - [Fast R-CNN](#fast-r-cnn)
   - [Fragen](#fragen-8)
+- [Semantic Segmentation](#semantic-segmentation)
+- [Human Pose Estimation](#human-pose-estimation)
+- [Generative Adversarial Networks](#generative-adversarial-networks)
+
 
 
 
