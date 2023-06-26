@@ -518,3 +518,14 @@ Für genaue Erklärung zu ```ROI``` Pooling Layer siehe [towardsdatascience](htt
 3. Den Unterschied von ```R-CNN```, ```Fast R-CNN``` und ```Faster R-CNN``` erklären.
 
 ...
+
+# Semantic Segmentation
+
+# Human Pose Estimation 
+
+# Generative Adversarial Networks
+Ziel ist es, künstliche Daten zu generieren, die von echten Daten nicht zu unterscheiden sind. <br>
+**Generator** spielt gegen **Discriminator**, der versucht, die generierten von den echten Daten zu unterscheiden.  
+
+<img src="resources/cv/18_gan.png" width="500">
+
