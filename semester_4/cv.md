@@ -54,7 +54,6 @@
   - [Aufbau](#aufbau)
   - [Probleme](#probleme)
   - [Typen](#typen)
-  - [Links](#links)
 
 
 
@@ -537,7 +536,7 @@ Für genaue Erklärung zu ```ROI``` Pooling Layer siehe [towardsdatascience](htt
 Ziel ist es, künstliche Daten zu generieren, die von echten Daten nicht zu unterscheiden sind. <br>
 
 ## Aufbau 
-Zur Visualisierung von GANs, siehe [ganlab](https://poloclub.github.io/ganlab/).
+Zur Visualisierung von GANs, siehe [ganlab](https://poloclub.github.io/ganlab/), [Playground](https://reiinakano.com/gan-playground/) und [Image2Image](https://affinelayer.com/pixsrv/). <br>
 
 **Generator** <br>
 Generiert Daten, die weiter zum Discriminator gegeben werden. <br>
@@ -567,6 +566,3 @@ Der Generator generiert immer die selben Daten, die der Discriminator nicht mehr
 **conditional GANs** <br>
 ...
 
-## Links 
-https://affinelayer.com/pixsrv/ <br>
-https://reiinakano.com/gan-playground/ <br>
