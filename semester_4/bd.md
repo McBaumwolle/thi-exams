@@ -49,10 +49,12 @@
     - [Hash Index](#hash-index)
   - [Storage Engine](#storage-engine)
   - [RAID](#raid)
-
-
-
-
+- [noSQL](#nosql)
+  - [Architekturen](#architekturen)
+  - [Key-Value Stores](#key-value-stores)
+  - [Document Stores](#document-stores)
+  - [Wide Column Stores](#wide-column-stores)
+  - [Graph Stores](#graph-stores)
 
 <br>
 
