@@ -865,3 +865,80 @@ Ausfallsicherung von Festplatten, indem die Daten mehrfach auf mehrere Festplatt
 
 Siehe [Wikipedia](https://en.wikipedia.org/wiki/Standard_RAID_levels) für genauere Erklärung.
 
+
+# noSQL
+nicht-relationale Systeme <br>
+Google BigTable, mongoDB, Redis, Neo4j, ...
+
+**Scale Up** <br>
+Ein einzelner Server wird immer größer, um mehr Daten zu speichern. 
+* schnell sehr teuer
+* single point of failure
+* nicht stufenlos skalierbar
+
+**Scale Out** <br>
+Ein Cluster an Servern, auf sogenannter 'Commodity Hardware'.
+* sehr günstig
+* Server einfach hinzufügen
+
+<!-- kritikpunkte an relationalen dbs -->
+
+**CAP Theorem** <br>
+Ein System kann nicht alle drei Eigenschaften gleichzeitig erfüllen, relationale DBS sind meist in ```CA``` angesiedelt.
+
+|  | Beschreibung |
+|--|--|
+| `C`onsistency | Alle Nutzer sehen zum selben Zeitpunkt die selben Daten. |
+| `A`vailability | Das System ist immer verfügbar, auch bei Teilausfällen. |
+| `P`artition Tolerance | Das System funktioniert auch bei Netzwerkproblemen. |
+
+<details> <summary>Datenbanksysteme</summary>
+<img src="resources/bd/11_cap.bmp" width="500">
+</details>
+
+## Architekturen 
+Verteilte Architekturen, Master-Slave vs Peer-to-Peer.
+
+**Sharding** <br>
+Daten werden auf mehrere Server verteilt, um die Last zu verteilen - sogenannte Shards. 
+
+Für weitere Beispiele, siehe [moodle](https://moodle.thi.de/pluginfile.php/752689/mod_resource/content/1/10_NoSQL.pdf) Seite 36.
+
+## Key-Value Stores
+Daten werden als ```Key-Value``` Paare gespeichert, vergleichbar mit Dictionaries in Python. 
+
+```
+put(key, value)
+get(key)
+delete(key)
+update(key, value)
+```
+
+Schlüssel werden mit einer Hashfunktion in einen Index umgewandelt (Bucket), der auf einen Block zeigt. 
+
+## Document Stores
+Daten werden als Dokumente gespeichert, meist als ```.json```. 
+
+```json
+{
+  "title": "Fleabag",
+  "year": 2016,
+  "cast": [
+    "Phoebe Waller-Bridge",
+    "Sian Clifford",
+    "Olivia Colman"
+  ],
+  "genres": [
+    "Comedy",
+    "Drama"
+  ]
+}
+```
+
+Wird zum Beispiel verwendet von [mongoDB](https://www.mongodb.com/) oder [Couchbase](https://www.couchbase.com/).
+
+## Wide Column Stores
+Daten können als Spalten gespeichert werden, ähnlich wie in relationalen DBS. 
+
+## Graph Stores
+Spezielle Form der Datenrepräsentation, die auf Graphen basiert, zum Beispiel für Transportnetzwerke oder Links im Internet - siehe [Neo4j](https://neo4j.com/).
