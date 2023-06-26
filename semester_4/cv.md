@@ -525,7 +525,12 @@ Für genaue Erklärung zu ```ROI``` Pooling Layer siehe [towardsdatascience](htt
 
 # Generative Adversarial Networks
 Ziel ist es, künstliche Daten zu generieren, die von echten Daten nicht zu unterscheiden sind. <br>
-**Generator** spielt gegen **Discriminator**, der versucht, die generierten von den echten Daten zu unterscheiden.  
+
+**Generator** <br>
+Generiert Daten, die weiter zum Discriminator gegeben werden. <br>
+
+**Discriminator** <br>
+Versucht zu erkennen, ob die Daten vom Generator oder vom echten Datensatz stammen. <br>
 
 <img src="resources/cv/18_gan.png" width="500">
 
