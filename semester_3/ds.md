@@ -250,3 +250,20 @@ Daraus ergibt sich folgender Resolutionsbeweis.
 
 
 # Constraints
+Umsetzung des Constraintproblems an einer Beispielaifgabe. 
+
+<img src="resources/ds/08_constraints_exam.png" width="500">
+
+Mit Umformungen erhalten wir folgende Tabelle, beachte, geänderte Constraints müssen erneut betrachtet werden.
+
+|          | $D_1$ | $D_2$   | $D_3$         | Filterset                |
+|----------|-------|---------|---------------|--------------------------|
+|          | $g,b$ | $Q,K,D$ | $1,2,3,4,5,6$ | $C_{12}, c_{23}, c_{13}$ |
+| $c_{12}$ | $g,b$ | $Q,K$   | $1,2,3,4,5,6$ | $c_{23}, c_{13}$         |
+| $c_{13}$ | $g,b$ | $Q,K$   | $3,4,5,6$     | $c_{23}$                 |
+| $c_{23}$ | $g,b$ | $K$     | $3,5$         | $c_{13}, c_{12}$         |
+| $c_{12}$ | $b$   | $K$     | $3,5$         | $c_{13}$                 |
+| $c_{13}$ | $b$   | $K$     | $5$           | $c_{13}$                 |
+| $c_{23}$ | $b$   | $K$     | $5$           | $\emptyset$              |
+
+
