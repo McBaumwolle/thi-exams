@@ -250,9 +250,16 @@ Daraus ergibt sich folgender Resolutionsbeweis.
 
 
 # Constraints
+## Definition
+...
+
+**Constrainttypen**
+...
+
+## Aufgabe
 Umsetzung des Constraintproblems an einer Beispielaifgabe. 
 
-<img src="resources/ds/08_constraints_exam.png" width="500">
+<img src="resources/ds/08_constraints_exam.png" width="600">
 
 Mit Umformungen erhalten wir folgende Tabelle, beachte, geänderte Constraints müssen erneut betrachtet werden.
 
