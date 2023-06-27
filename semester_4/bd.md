@@ -944,3 +944,19 @@ Daten können als Spalten gespeichert werden, ähnlich wie in relationalen DBS.
 
 ## Graph Stores
 Spezielle Form der Datenrepräsentation, die auf Graphen basiert, zum Beispiel für Transportnetzwerke oder Links im Internet - siehe [Neo4j](https://neo4j.com/).
+
+
+<!--
+# Klausur
+Infos zur Klausur am 13.07.2023. 
+
+<img src="resources/bd/0_klausur.png" width="600">
+
+## Aufgaben
+
+**Aufgabe 01** <br>
+Anforderungstext, MC-Notation und Bullet-Points (wie in Testat 01). 
+
+**Aufgabe 02** <br>
+SQL (Chen, Kardinalität, ...) üben!
+-->
