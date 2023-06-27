@@ -253,7 +253,7 @@ Daraus ergibt sich folgender Resolutionsbeweis.
 ## Definition
 ...
 
-**Constrainttypen**
+**Constrainttypen** <br>
 ...
 
 ## Aufgabe
@@ -270,7 +270,7 @@ Mit Umformungen erhalten wir folgende Tabelle, beachte, geänderte Constraints m
 | $c_{13}$ | $g,b$ | $Q,K$   | $3,4,5,6$     | $c_{23}$                 |
 | $c_{23}$ | $g,b$ | $K$     | $3,5$         | $c_{13}, c_{12}$         |
 | $c_{12}$ | $b$   | $K$     | $3,5$         | $c_{13}$                 |
-| $c_{13}$ | $b$   | $K$     | $5$           | $c_{13}$                 |
+| $c_{13}$ | $b$   | $K$     | $5$           | $c_{23}$                 |
 | $c_{23}$ | $b$   | $K$     | $5$           | $\emptyset$              |
 
 
