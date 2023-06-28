@@ -960,3 +960,192 @@ Anforderungstext, MC-Notation und Bullet-Points (wie in Testat 01).
 **Aufgabe 02** <br>
 SQL (Chen, Kardinalität, ...) üben!
 -->
+
+# mongoDB
+Dokumentenorientiertes Datenbanksystem, das auf ```.json``` basiert. Wird kein ```_id``` angegeben, wird automatisch eine ObjectId generiert.
+
+Beispieldatenbank
+```json
+[
+  {
+    "_id": "5f9b3b3c2c4d8b1b3c2c4d8b",
+    "title": "Detroit: Become Human",
+    "year": 2018,
+    "protagonists": [
+      "Connor",
+      "Kara",
+      "Markus"
+    ],
+    "developer": "Quantic Dream",
+    "publisher": "Sony Interactive Entertainment",
+    "usk": 16
+  },
+  {
+    "_id": "5f9b3b3c2c4d8b1b3c2c4d8c",
+    "title": "The Last of Us",
+    "year": 2013,
+    "protagonists": [
+      "Joel",
+      "Ellie"
+    ],
+    "developer": "Naughty Dog",
+    "publisher": "Sony Interactive Entertainment",
+    "usk": 18
+  }
+]
+```
+
+**Embedding** <br>
+Alle Daten werden in einem Dokument gespeichert, bei sehr großen Datenmengen kann das zu Problemen führen.
+
+**Referencing** <br>
+Es wird auf ein anderes Dokument verwiesen, das die Daten enthält (mit der ```_id```). Die Performance ist besser, aber es müssen mehrere Dokumente abgefragt werden.
+
+```json
+{
+  "_id": "5f9b3b3c2c4d8b1b3c2c4d8b",
+  "user": 012231,
+  "library": [
+    "ObjectId('5f9b3b3c2c4d8b1b3c2c4d8b')",
+    "ObjectId('5f9b3b3c2c4d8b1b3c2c4d8c')"
+  ],
+  "subscribed": true
+}
+```
+
+<!-- Bild von mongoDB Website -->
+
+## Syntax
+Einige Befehle für mongoDB. 
+```python
+# Datenbanken anzeigen
+show dbs
+
+# Datenbank auswählen
+use <db>
+
+# Datenbank löschen
+db.dropDatabase()
+
+# Collection erzeugen
+db.createCollection(<name>)
+
+# Collections anzeigen
+show collections
+
+# Collection löschen
+db.<name>.drop()
+```
+
+**CRUD** <br>
+mongoDB hat eigene, proprietäre Abfragesprache ```MQL```, einschließlich ```C```reate, ```R```ead, ```U```pdate und ```D```elete.
+
+```json
+// einzelnes Dokument einfügen
+db.games.insertOne(
+  {
+    "_id": 1,
+    "name": "Detroit: Become Human"
+  }
+
+// mehrere Dokumente einfügen
+db.games.insertMany(
+[
+  {id: 1, name: "Detroit: Become Human"},
+  {id: 2, name: "The Last of Us"}
+])
+
+// Dokumente anzeigen
+db.games.find()
+
+// Ausgabe eines Dokuments
+db.games.findOne()
+
+// Suche
+db.games.find({name: "Detroit: Become Human"})
+
+// Vergleichsoperatoren
+db.games.find({year: {$gt: 2015}})  // größer als
+db.games.find({year: {$gte: 2015}}) // größer gleich
+db.games.find({year: {$lt: 2015}})  // kleiner als
+db.games.find({year: {$lte: 2015}}) // kleiner gleich
+db.games.find({year: {$ne: 2015}})  // ungleich
+
+// Verschachtelungen
+db.games.find({"protagonists.0": "Connor"})
+
+// oder auch mehreren Ebenen z.B.
+db.lines.find({"stations.name": "Hauptbahnhof"})
+
+// Wert aktualisieren
+db.games.updateOne(
+  {name: "Detroit: Become Human"},
+  {$set: {year: 2018}}
+)
+
+// mehrere Werte aktualisieren
+db.games.updateMany(
+  {year: 2018},
+  {$set: {year: 2019}}
+)
+
+// einzelnes Feld löschen
+db.games.updateOne(
+  {name: "Detroit: Become Human"},
+  {$unset: { type: ""}}
+)
+
+// löschen alller Dokumente
+db.games.deleteMany({})
+
+// löschen mit Bedingung
+db.games.deleteMany({year: 2018})
+
+// löschen der Collection
+db.games.drop()
+```
+
+## Aggregation 
+Aggregation Pipeline, um Daten zu verarbeiten.
+
+```json
+// Liste der Entwickler mit der Anzahl der Spiele (seit 2015), beginnend mit dem Entwickler mit den meisten Spielen.
+db.games.aggregate([
+  {$match: {year: {$gt: 2015}}},
+  {$group: {_id: "$developer", count: {$sum: 1}}},
+  {$sort: {count: -1}}
+])
+```
+
+**Operatoren** <br>
+Übersicht der wesentlichen Operatoren.
+
+```json	
+$project // select fields for the output document
+$match   // select documents to be processed 
+$limit   // limit the number of documents to be passed to the next stage
+$skip    // skip a specified number of documents
+$sort    // sort documents 
+$group   // group documents by a specified key 
+
+$unwind  // deconstruct an array field from the input documents to output a document for each element
+$lookup  // ...
+
+// Accumulators für $group
+$sum     // adds up numeric values
+$avg     // calculates the average value of numeric values
+$min     // returns the minimum value
+$max     // returns the maximum value
+$count   // returns the number of documents
+$stdDevPop // returns the population standard deviation
+```
+
+**Geospacial** <br>
+...
+
+## Beispiele
+Beispiele für die Abfrage, hier die Summe der Spiele pro Entwickler.
+
+```json
+...
+```
