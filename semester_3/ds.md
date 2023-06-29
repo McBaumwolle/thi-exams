@@ -250,10 +250,59 @@ Daraus ergibt sich folgender Resolutionsbeweis.
 
 
 # Constraints
-## Definition
-...
+Constraints (auch Randbedingungen) bieten einfache Art, Probleme zu modelieren. 
 
-**Constrainttypen** <br>
+**Constraint Satisfaction Problem (CSP)** <br>
+Ist ein 4-Tupel mit folgenden Komponenten. 
+* $\mathcal{V}$ ist ein Tupel an _Variablen_
+* $\mathcal{D}$ sind Grundmengen, die _Domänen_, die jeder Variable einen zugelassenen Wert zuordnen
+* $\mathcal{C}$ ist eine Menge von _Constraints_
+* $\mathcal{u}$ ist eine Überdeckungsfunktion
+
+Es gibt verschiedene Arten von Constraints. 
+
+**Tupelmengen** <br>
+```bash
+(new-constraint :typ tupelset
+                :name ampel
+                :variables: (oben mitte unten)
+                :definition ((dunkel dunkel gruen)
+                             (rot gelb dunkel)
+                             (rot dunkel dunkel)
+                             (dunkel gelb dunkel)
+                             (dunkel dunkel gruen)))
+```
+
+**Prädikate** <br>
+```bash
+(new-constraint :typ predicate
+                :name groesser
+                :priority 20
+                :variables (a b)
+                :definition (> a b))
+```
+
+**konstruktive Constraints** <br>
+```bash
+(new-constraint :typ constructive
+                :name mult
+                :variables (a b c)
+                :class nosetprop
+                :definition (((a b) c (*a b))
+                             ((a c) b (/ c a) :if (not (= a 0)))
+                             ((b c) a (/ c b) :if (not (= b 0)))))
+```
+
+## Konistenz
+Ein Constraint-Problem ist konsistent, wenn es eine Lösung gibt, die alle gegebenen Constraints erfüllt.
+
+**lokale Konistenz** <br>
+Ein CSP ist lokal konsistent, wenn alle Constraints erfüllt sind.
+
+**globale Konistenz** <br>
+Weiter ist ein CSP global konsistent, wenn eine Lösung aus einelementigen Domänen besteht.
+
+## Constraintgraph
 ...
 
 ## Aufgabe
