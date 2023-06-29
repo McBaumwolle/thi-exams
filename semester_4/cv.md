@@ -47,6 +47,9 @@
 - [Object Detection](#object-detection)
   - [Region Proposal](#region-proposal)
   - [Fast R-CNN](#fast-r-cnn)
+  - [Faster R-CNN](#faster-r-cnn)
+  - [YOLO](#yolo)
+  - [Transformer](#transformer)
   - [Fragen](#fragen-8)
 - [Semantic Segmentation](#semantic-segmentation)
 - [Human Pose Estimation](#human-pose-estimation)
@@ -54,10 +57,6 @@
   - [Aufbau](#aufbau)
   - [Probleme](#probleme)
   - [Typen](#typen)
-
-
-
-
 
 
 ## Fragen
