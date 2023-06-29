@@ -432,9 +432,15 @@ Erfassung und Beschreibung aller Teilaufgaben des Projekts sowie deren Beziehung
 Graphische Darstellung der Teilaufgaben und deren Beziehungen in den verschiedenen Ebenen. 
 
 ```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
+graph TD;
+    A[Gesamtprojekt]-->B[Teilprojekt A];
+    B-->C[Aufgabe A1];
+    C-->D[Arbeitspaket A1.1];
+    B-->E[Aufgabe A2];
+    E-->F[Arbeitspaket A2.1];
+    E-->G[Arbeitspaket A2.2];
+    A-->H[Teilprojekt B];
+    H-->I[Aufgabe B1];
+    I-->J[Arbeitspaket B1.1];
+    I-->K[Arbeitspaket B1.2];
 ```
