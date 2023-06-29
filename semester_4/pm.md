@@ -30,6 +30,9 @@
   - [Risikoanalyse](#risikoanalyse)
 - [Projektplanung](#projektplanung)
   - [Projektstrukturplanung (PSP)](#projektstrukturplanung-psp)
+  - [Phasenplan](#phasenplan)
+  - [Ablauf- und Terminplan](#ablauf--und-terminplan)
+  - [Resourcen- und Kostenplan](#resourcen--und-kostenplan)
 
 
 # Grundlagen
@@ -444,3 +447,61 @@ graph TD;
     I-->J[Arbeitspaket B1.1];
     I-->K[Arbeitspaket B1.2];
 ```
+
+**Arbeitspakete** <br>
+Teil des Projekts, der im Plan nicht weiter aufgeteilt werden kann. Beschreibung so genau wie möglich, zum Beispiel mit...
+* Name, Nummer, Version und Status
+* inhaltliche Beschreibung
+* geplante Ergebnisse
+* Vorraussetzungen für die Ausführung
+* geplante Dauer 
+* geplanter Aufwand
+* Veranstwortlicher
+
+**Ansatz** <br>
+Beim ```Bottom-Up```-Ansatz werden die Arbeitspakete zuerst definiert und dann zu Teilaufgaben und schließlich zum Projektstrukturplan zusammengefügt. Gut für neue Projekte. <br>
+Hingegen werden beim ```Top-Down```-Ansatz die Aufgaben zuerst definiert und dann in Teilaufgaben und Arbeitspakete zerlegt, gut geeignet für bereits bekannte Projekte.
+
+## Phasenplan
+Gliederung des zeitlichen Ablaufs des Projekts, bei Meilensteilen wird der Projektfortschritt gemessen - es kann über Abbruch, Fortführung oder Korrektur entschieden werden.
+
+## Ablauf- und Terminplan
+Der ABlaufplan legt die sachlogische Reihenfolge der Arbeitspakete fest. Der Terminplan ergänzt den Ablaufplan durch die Berücksichtigung von Resourcen und Wartezeiten. 
+
+**Meilensteinpläne** <br>
+Terminlisten für wichtige Ereignisse und Ergebnisse. 
+<details><summary>Beispiel</summary>
+| # | Vorgang | Dauer | Vorgänger |
+|---|---------|-------|-----------|
+| 1 | Entwicklungsantrag stellen und genehmigen | 10 | - |
+| 2 | Schaltung entwerfen | 3 | 1 |
+| 3 | Stückliste erstellen | 1 | 2 |
+| ... | ... | ... | ... |
+| n | Prototyp testen | 3 | 5 |
+
+Kann gut in einem Netzplan dargestellt werden.
+</details> <br>
+
+**Balkenpläne** <br>
+Graphische Darstellung der Zeitdauer von Arbeitspaketen auf Zeitachse mit Start- und Endterminen.
+<details><summary>Beispiel</summary>
+<img src="resources/pm/18_balkenplan.png" alt="Balkenplan" width="500"/> <br>
+Balkenplan ist so nicht prüfungsrelevant. 
+</details> <br>
+
+**Netzpläne** <br>
+Graphische Darstellung der Ablaufstruktur eines Projekts, zeigt logische und zeitliche Abfolge der Aufgaben. 
+<details><summary>Beispiel</summary>
+<img src="resources/pm/16_vorgangsknoten.png" alt="Knoten" width="500"/> <br>
+Kann in einem ```Netzplan``` mir anderen Knoten dargestellt werden.
+<img src="resources/pm/17_terminrechnung.png" alt="Terminrechnung" width="500"/>
+</details> <br>
+
+## Resourcen- und Kostenplan
+Überarbeitung der Planung mit dem Ziel einer Terminbeschlunigung, zum Beispiel durch Parallelisierung oder optimierten Resourceneinsatz sowei ein beschränkter Arbeitsumfang. 
+
+**Terminbeschleunigung** <br>
+Nur sinnvoll auf dem kritischen Pfad. 
+
+
+<!-- to be continued on p. 74 -->
