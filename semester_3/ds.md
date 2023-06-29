@@ -262,7 +262,7 @@ Ist ein 4-Tupel mit folgenden Komponenten.
 Es gibt verschiedene Arten von Constraints. 
 
 **Tupelmengen** <br>
-```bash
+```prolog
 (new-constraint :typ tupelset
                 :name ampel
                 :variables: (oben mitte unten)
@@ -274,7 +274,7 @@ Es gibt verschiedene Arten von Constraints.
 ```
 
 **Prädikate** <br>
-```bash
+```prolog
 (new-constraint :typ predicate
                 :name groesser
                 :priority 20
@@ -283,7 +283,7 @@ Es gibt verschiedene Arten von Constraints.
 ```
 
 **konstruktive Constraints** <br>
-```bash
+```prolog
 (new-constraint :typ constructive
                 :name mult
                 :variables (a b c)
@@ -323,3 +323,35 @@ Mit Umformungen erhalten wir folgende Tabelle, beachte, geänderte Constraints m
 | $c_{23}$ | $b$   | $K$     | $5$           | $\emptyset$              |
 
 
+# Prolog
+Steht für _Programming in Logic_ und ist eine deklarative Programmiersprache auf Basis von Hornklauseln.
+
+## Syntax
+```bash
+...
+```
+
+## Beispiele
+```prolog
+% Check if two elements are equal
+equals(X, X).
+
+% Check if a number is even
+is_even(X) :- X mod 2 =:= 0.
+
+% Calculate the factorial of a number
+factorial(0, 1).
+factorial(N, Result) :-
+    N > 0,
+    N1 is N - 1,
+    factorial(N1, SubResult),
+    Result is N * SubResult.
+
+% Check if a list is empty
+is_empty([]).
+
+% Concatenate two lists
+concatenate([], List, List).
+concatenate([X|Rest], List, [X|Result]) :-
+    concatenate(Rest, List, Result). 
+```
