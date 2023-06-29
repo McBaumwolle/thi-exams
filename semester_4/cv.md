@@ -433,6 +433,7 @@ Bis jetzt wurden zwei Probleme außer Acht gelassen.
 
 
 # Object Detection
+Object-Detection kombiniert Klassifikation und Regression. <br>
 Nach Klassifikation nun mit Boundry Box die jeweiligen Objekte im Bild markieren. Evaluation mit Intersection over Union (IoU). <br>
 
 $IoU = \frac{overlap}{union}$
@@ -511,7 +512,34 @@ Für genaue Erklärung zu ```ROI``` Pooling Layer siehe [towardsdatascience](htt
 * Region PRoposal mit Selective Search ist immer noch langsam
 * ```ROI``` Pooling verliert Informationen
 
-...
+## Faster R-CNN
+Im Vergleich zu ```Fast R-CNN``` wird die Region Proposal durch ein trainerbares ```RPN``` ersetzt.
+Für jede Box wird werden ```k``` Ankerpunkte (Anchors) erstellt (mit unterschiedlichen Größen und Seitenverhältnissen). 
+Es entstehen ```2k``` Scores (Objekt/kein Objekt) und ```4k``` Koordinaten (Bounding Box).
+
+<img src="resources/cv/18_faster_rcnn.bmp" width="500">
+
+Trainiert wird auf Basis von ```IoU```, mit ```VGG``` als Backbone. Das ```CNN``` wird so geteilt zwischen dem ```RPN``` und ```R-CNN``` Teil. 
+
+<details><summary>Vergleich</summary>
+Vergleich der ersten drei Ansätze.
+<img src="resources/cv/19_fcnn_compare.png" width="500">
+</details>
+
+## YOLO
+Paper zu ```YOLO``` von 2015. <br>
+Ansatz ist, das Bild in ein $SxS$ Grid zu unterteilen und für jede Zelle eine Bounding Box vorherzusagen. Am Ende werden die Box-Probabilities mit den Klassen-Probabilities multipliziert.
+
+<img src="resources/cv/20_yolo.png" width="400">
+
+Die Architektur basiert auf dem ```GoogLeNet```, mit 25 Convolutional und 2 Fully Connected Layer. Vortrainiert auf ```1000-class ImageNet``` mit Input von ```448x448```.
+
+<img src="resources/cv/21_yolo_architecture.png" width="400">
+
+Seit 2015 gab es viele weitere Versionen, wie ```YOLOv2```, ```YOLOv3``` und ```YOLOv4```. 
+
+## Transformer
+Siehe [moodle](https://moodle.thi.de/pluginfile.php/756070/mod_resource/content/0/CV_17_Object_Detection%20II.pdf) Seite 34.
 
 ## Fragen
 1. Aus den Ergebnissen an einem Beispiel die ```AP``` berechnen.
@@ -524,45 +552,15 @@ Für genaue Erklärung zu ```ROI``` Pooling Layer siehe [towardsdatascience](htt
 
 3. Den Unterschied von ```R-CNN```, ```Fast R-CNN``` und ```Faster R-CNN``` erklären.
 
-...
+4. Erkläre wie die ```YOLO``` Architektur funktioniert.
 
-# Semantic Segmentation
-<!--- to be continued --->
+&emsp; &emsp; &emsp; Aufteilung in Gitter mit individuellen Predictions - wird wieder zusammengefügt.
 
-# Human Pose Estimation 
-<!--- to be continued --->
+5. Was sind die Vor- und Nachteile von ```YOLO``` im Vergleich zu ```Faster R-CNN```?
 
-# Generative Adversarial Networks
-Ziel ist es, künstliche Daten zu generieren, die von echten Daten nicht zu unterscheiden sind. <br>
+&emsp; &emsp; &emsp; Schneller, da das gesamte Bild nur einmal durchlaufen wird. <br>
+&emsp; &emsp; &emsp; Nicht so genau, vor allem bei kleinen Objekten.
 
-## Aufbau 
-Zur Visualisierung von GANs, siehe [ganlab](https://poloclub.github.io/ganlab/), [Playground](https://reiinakano.com/gan-playground/) und [Image2Image](https://affinelayer.com/pixsrv/). <br>
+6. Wie kann die Transformer-Architektur für Objekterkennung verwendet werden?
 
-**Generator** <br>
-Generiert Daten, die weiter zum Discriminator gegeben werden. <br>
-
-**Discriminator** <br>
-Versucht zu erkennen, ob die Daten vom Generator oder vom echten Datensatz stammen. <br>
-
-<img src="resources/cv/18_gan.png" width="500">
-
-Das Training kann sehr lange (bis zu mehreren Wochen) dauern, es gibt keine gute Methode zur Evaluation - menschliches Einschreiten ist notwendig. 
-
-## Probleme
-Falls der Generator zu gut wird, kann der Discriminator nicht mehr lernen, auch wenn noch Verbesserungspotential vorhanden ist.
-
-**Mode Collapse** <br>
-Der Generator generiert immer die selben Daten, die der Discriminator nicht mehr unterscheiden kann und somit nicht mehr lernen kann. 
-
-
-## Typen
-
-**deep convolutional GANs** <br>
-...
-
-**minibatch GANs** <br>
-...
-
-**conditional GANs** <br>
-...
-
+&emsp; &emsp; &emsp; _lernen_
