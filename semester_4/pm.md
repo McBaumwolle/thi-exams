@@ -29,6 +29,7 @@
   - [Projektumfeld](#projektumfeld)
   - [Risikoanalyse](#risikoanalyse)
 - [Projektplanung](#projektplanung)
+  - [Projektstrukturplanung (PSP)](#projektstrukturplanung-psp)
 
 
 # Grundlagen
@@ -416,7 +417,24 @@ Im erwähnten Graph von vorhin können Rikiken in Nähe des Kooridnatenursprungs
 
 
 # Projektplanung
-<!--
-https://moodle.thi.de/pluginfile.php/734952/mod_resource/content/1/PM_KI_Kap3-1b_PSP-he_2023_1-0.pdf
--->
+Die Wirkung der Planungstätigkeiten ist relevant für den Projekterfolg, siehe [Phasenmodell](#phasenmodell).
 
+Wichtige Schritte der Projektplanung sind...
+* Projektstrukturplan
+* [Phasenplan](#phasenplan)
+* Ablauf- und Terminplan
+* Resourcen- und Kostenplan
+
+## Projektstrukturplanung (PSP)
+Erfassung und Beschreibung aller Teilaufgaben des Projekts sowie deren Beziehungen. Ziel ist eine Zerlegung in plan- und kontrollierbare Teilauftgaben sowei Transaprenz und Verantwortlichkeit den einzelnen Aufgaben zuzuordnen.
+
+**Projektstrukturplan** <br>
+Graphische Darstellung der Teilaufgaben und deren Beziehungen in den verschiedenen Ebenen. 
+
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
