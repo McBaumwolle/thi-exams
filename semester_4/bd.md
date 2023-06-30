@@ -59,6 +59,9 @@
   - [Syntax](#syntax-1)
   - [Aggregation](#aggregation)
   - [Beispiele](#beispiele-2)
+- [Time Series Database](#time-series-database)
+  - [Hyper Table](#hyper-table)
+  - [Time Bucket](#time-bucket)
 
 
 <br>
