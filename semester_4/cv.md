@@ -617,6 +617,8 @@ Beim Upsampling kann somit das Receptive Field vergrößert werden.
 
 <!-- 
 Foliensatz 2 hat weitere Themen 
+
+Image Warps in Downloads für vorheriges Thema
 -->
 
 ## Fragen 
