@@ -1152,5 +1152,56 @@ $stdDevPop // returns the population standard deviation
 Beispiele für die Abfrage, hier die Summe der Spiele pro Entwickler.
 
 ```json
-...
+db.games.aggregate([
+  {$group: {_id: "$developer", count: {$sum: 1}}},
+  {$sort: {count: -1}}
+])
 ```
+
+# Time Series Database
+Mit ```TimescaleDB``` eine Zeitreihendatenbank erstellt werden für zum Beispiel Sensordaten oder Traffic. Basiert auf ```PostgreSQL``` und ist dafür als Addon verfügbar.
+
+## Hyper Table
+Eine Hypertable besteht aus mehreren Chunks, die jeweils einen Teil des Zeitbereichs der Daten abdecken. 
+
+<img src="resources/bd/12_timescale.bmp" width="500">
+
+**Beispiel** <br>
+Beispiel für Verwaltung von Sensordaten.
+
+```sql
+-- klassische Tabelle anlegen
+CREATE TABLE messwerte (
+  zeitpunkt TIMESTAMP NOT NULL,
+  sensor_id INTEGER NOT NULL,
+  wert FLOAT NOT NULL
+);
+
+-- in Hypertable konvertieren
+SELECT create_hypertable('messwerte', 'zeitpunkt');
+
+-- Daten einfügen
+INSERT INTO messwerte VALUES
+  ('2023-05-21 10:00:00', 1, 35.5),
+  ('2023-05-21 10:05:00', 1, 36.0),
+  ('2023-05-21 10:10:00', 2, 22.3);
+
+-- Optimierung (löschen nach 30 Tagen)
+SELECT add_retention_policy('messwerte', INTERVAL '30 days', true);
+```
+
+## Time Bucket
+Eine gebräuchliche Funktion, um Zeitreihendaten in festgelegten Intervallen zu gruppieren, passend für Aggregationen (Durchschnitt, SUmme, Minimum, ...) über Intervalle. 
+
+```sql
+SELECT time_bucket('1 hour', zeitpunkt) AS one_hour, AVG(temperatur)
+FROM messwerte
+GROUP BY one_hour
+ORDER BY one_hour;
+
+SELECT sensor_id, AVG(wert)
+FROM messwerte
+WHERE zeitpunkt > '2023-05-21 00:00:00'
+GROUP BY sensor_id;
+```
+
