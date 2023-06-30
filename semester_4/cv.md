@@ -52,11 +52,11 @@
   - [Transformer](#transformer)
   - [Fragen](#fragen-8)
 - [Semantic Segmentation](#semantic-segmentation)
-- [Human Pose Estimation](#human-pose-estimation)
-- [Generative Adversarial Networks](#generative-adversarial-networks)
-  - [Aufbau](#aufbau)
-  - [Probleme](#probleme)
-  - [Typen](#typen)
+  - [Fully Convolutional Networks (FCN)](#fully-convolutional-networks-fcn)
+  - [U-Net](#u-net)
+  - [PSPNet](#pspnet)
+  - [DeepLab](#deeplab)
+  - [Fragen](#fragen-9)
 
 
 ## Fragen
@@ -566,41 +566,53 @@ Siehe [moodle](https://moodle.thi.de/pluginfile.php/756070/mod_resource/content/
 
 
 # Semantic Segmentation
-<!--- to be continued --->
+Ziel ist, jedes Pixel einer Klasse zuzuordnen - also eine Segmentation Mask zu erstellen. Zum Beispiel für einen Blur-Effekt auf einfachen Fotos oder für die Erkennung von Hirntumoren.
 
-# Human Pose Estimation 
-<!--- to be continued --->
+## Fully Convolutional Networks (FCN)
+Paper zu ```FCN``` von 2015. <br>
+Funktionoert auf beliebigen Bildgrößen, Aufklösung sinkt dabei. Kann gelöst werden mit zum Beispiel...
+* Bilinear Interpolation (not trained)
+* Transposed Convolutions (trained)
 
-# Generative Adversarial Networks
-Ziel ist es, künstliche Daten zu generieren, die von echten Daten nicht zu unterscheiden sind. <br>
+**Bilinear Interpolation** <br>
+Einfache Interpolation, die das Bild vergrößert. 
 
-## Aufbau 
-Zur Visualisierung von GANs, siehe [ganlab](https://poloclub.github.io/ganlab/), [Playground](https://reiinakano.com/gan-playground/) und [Image2Image](https://affinelayer.com/pixsrv/). <br>
+**Transposed Convolutions** <br>
+Wie eine normale Convolution, nur dass die Input-Feature Map angepasst ist. 
 
-**Generator** <br>
-Generiert Daten, die weiter zum Discriminator gegeben werden. <br>
+<img src="https://raw.githubusercontent.com/vdumoulin/conv_arithmetic/master/gif/padding_strides_transposed.gif" width="200">
 
-**Discriminator** <br>
-Versucht zu erkennen, ob die Daten vom Generator oder vom echten Datensatz stammen. <br>
+Für Rechenbeispiel siehe [moodle](https://moodle.thi.de/pluginfile.php/756088/mod_resource/content/0/CV_18_Semantic_Segmentation.pdf) Seite 16. 
 
-<img src="resources/cv/18_gan.png" width="500">
+<img src="resources/cv/22_transposed_conv.png" width="500">
 
-Das Training kann sehr lange (bis zu mehreren Wochen) dauern, es gibt keine gute Methode zur Evaluation - menschliches Einschreiten ist notwendig. 
+## U-Net
+Paper zu ```U-Net``` von [2015](https://arxiv.org/pdf/1505.04597.pdf). <br>
+Besteht aus einem Encoder-Decoder-Netzwerk, mit ```skip connections``` zwischen den Layern, die Informationen aus dem Encoder direkt an den Decoder weitergeben. Ermöglicht eine detailierte Segmentierung.
 
-## Probleme
-Falls der Generator zu gut wird, kann der Discriminator nicht mehr lernen, auch wenn noch Verbesserungspotential vorhanden ist.
+<img src="resources/cv/23_unet.bmp" width="500">
 
-**Mode Collapse** <br>
-Der Generator generiert immer die selben Daten, die der Discriminator nicht mehr unterscheiden kann und somit nicht mehr lernen kann. 
+Manchmal kommt es aber dazu, dass Kontext im Bild nicht verwendet wird (zum Beispiel wird ein Boot als Auto erkannt, ohne den Kontext 'See' zu berücksichtigen).
 
+## PSPNet
+Paper zu ```PSPNet``` von [2016](https://arxiv.org/pdf/1612.01105.pdf). <br>
 
-## Typen
+Siehe [moodle](https://moodle.thi.de/pluginfile.php/756088/mod_resource/content/0/CV_18_Semantic_Segmentation.pdf) Seite 32.
 
-**deep convolutional GANs** <br>
-...
+## DeepLab
+Paper zu ```DeepLab``` von [2017](https://arxiv.org/pdf/1706.05587.pdf). <br>
+Löst Probleme eines ```CNNs``` mit ```Dilated Convolutions```. 
 
-**minibatch GANs** <br>
-...
+Siehe [moodle](https://moodle.thi.de/pluginfile.php/756088/mod_resource/content/0/CV_18_Semantic_Segmentation.pdf) Seite 35.
 
-**conditional GANs** <br>
-...
+**Atrous Convolutions** <br>
+Beim Upsampling kann somit das Receptive Field vergrößert werden. 
+
+<img src="resources/cv/24_atrous_conv.png" width="500">
+
+<!-- 
+Foliensatz 2 hat weitere Themen 
+-->
+
+## Fragen 
+Fragen wurden im moodle-Kurs hochgeladen. 
