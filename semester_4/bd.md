@@ -62,6 +62,10 @@
 - [Time Series Database](#time-series-database)
   - [Hyper Table](#hyper-table)
   - [Time Bucket](#time-bucket)
+- [Neo4J](#neo4j)
+- [Redis](#redis)
+- [Wide Column Stores](#wide-column-stores-1)
+- [optimierte Speicherformate](#optimierte-speicherformate)
 
 
 <br>
@@ -1208,3 +1212,14 @@ WHERE zeitpunkt > '2023-05-21 00:00:00'
 GROUP BY sensor_id;
 ```
 
+# Neo4J
+<!-- to be continued -->
+
+# Redis
+<!-- to be continued -->
+
+# Wide Column Stores
+<!-- to be continued -->
+
+# optimierte Speicherformate
+<!-- to be continued -->
