@@ -1053,7 +1053,7 @@ db.<name>.drop()
 mongoDB hat eigene, proprietäre Abfragesprache ```MQL```, einschließlich ```C```reate, ```R```ead, ```U```pdate und ```D```elete.
 
 ```json
-// einzelnes Dokument einfügen
+/* einzelnes Dokument einfügen */
 db.games.insertOne(
   {
     "_id": 1,
