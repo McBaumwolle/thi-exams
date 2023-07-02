@@ -26,6 +26,20 @@
   - [Hinweise](#hinweise)
   - [Beispiele](#beispiele)
 - [Constraints](#constraints)
+  - [Konistenz](#konistenz)
+  - [Constraintgraph](#constraintgraph)
+  - [Aufgabe](#aufgabe)
+- [Prolog](#prolog)
+  - [Syntax](#syntax)
+    - [Ändern](#ändern)
+    - [Beziehungen](#beziehungen)
+    - [Negation](#negation)
+    - [Unifikation](#unifikation)
+    - [Arithmetik](#arithmetik)
+    - [Rekursion](#rekursion)
+    - [Listen](#listen)
+  - [Beispiele](#beispiele-1)
+
 
 
 # Suche
@@ -327,9 +341,213 @@ Mit Umformungen erhalten wir folgende Tabelle, beachte, geänderte Constraints m
 Steht für _Programming in Logic_ und ist eine deklarative Programmiersprache auf Basis von Hornklauseln.
 
 ## Syntax
-```bash
+Verwandschaftsbeziehungen als Beispiel. 
+```prolog
+% Datei
+elternteil(ursula, markus).
+elternteil(andreas, markus).
+elternteil(monika, angelika).
+
+% Konsole
+?- [datei].
+true.
+
+?- elternteil(ursula, markus).
+true.
+
+?- elternteil(X, markus).
+X = ursula ;
+X = andreas ;
+```
+
+### Ändern
+Daten können mit `assert` und `retract` hinzugefügt und entfernt werden. 
+```prolog
+?- assert(elternteil(elke, bernd)).
+true.
+?- retract(elternteil(elke, bernd)).
+true.
+```
+
+Zusätuzliche Fakten können einfach hinzugefügt werden. 
+```prolog
+maennlich(markus).
+...
+
+weiblich(ursula).
 ...
 ```
+
+### Beziehungen
+Und neue Definitionen für Beziehungen genau so. 
+```prolog
+% Eltern
+vater(X, Y) :- elternteil(X, Y), maennlich(X).
+mutter(X, Y) :- elternteil(X, Y), weiblich(X).
+
+% Kinder
+sohn(X, Y) :- elternteil(Y, X), maennlich(X).
+tochter(X, Y) :- elternteil(Y, X), weiblich(X).
+
+% Geschwister
+geschwister(X, Y) :- elternteil(Z, X), elternteil(Z, Y), X \= Y.
+
+% Grosseltern
+grossvater(X, Y) :- maennlich(X), elternteil(X, Z), elternteil(Z, Y).
+grossmutter(X, Y) :- weiblich(X), elternteil(X, Z), elternteil(Z, Y).
+```
+
+Rekursiv kann so einfach eine Verwandtschaft überprüft werden. 
+```prolog
+vorfahre(X, Y) :- elternteil(X, Y).
+vorfahre(X, Y) :- elternteil(X, Z), vorfahre(Z, Y).
+```
+
+### Negation
+Eine Negation kann in Prolog mit ```not``` ausgedrückt werden. 
+```prolog
+% Datei
+start(rb16, muenchen).
+start(re1, muenchen).
+start(ice800, muenchen).
+start(ice724, essen).
+regio(rb16).
+regio(re1).
+fern(ice800).
+fern(ice724).
+
+% Abfrage
+?- start(X, muenchen), not(regio(X)).
+X = ice800.
+```
+
+### Unifikation
+Ist eine (minimale) Menge von Substitutionen, die zwei Terme identisch machen. 
+```prolog
+?- X=42.
+X = 42.
+?- g(X)=g(bahn).
+X = bahn.
+
+?- g(A+birne)=g(apfel+B).
+A = apfel,
+B = birne.
+```
+
+Gerechnet wird mit dem `is`-Operator. 
+```prolog
+?- 1+1 = 2.
+false.
+?- 1+1 is 2.
+false.
+
+?- 2 is 1+1.
+true.
+```
+
+### Arithmetik
+Verschiedene Vergleiche sind möglich. 
+```prolog
+?- X==Y       % X und Y gleiche Zahl
+?- X=\=Y      % X und Y ungleiche Zahl
+?- X<Y        % X kleiner Y
+?- X>Y        % X grösser Y
+?- X=<Y       % X kleiner oder gleich Y
+?- X>=Y       % X grösser oder gleich Y
+```
+
+Einfache Rechenoperationen sind auch ähnlich zu anderen Sprachen.
+```prolog
+?- X+Y       % Addition
+?- X-Y       % Subtraktion
+?- X*Y       % Multiplikation
+?- X/Y       % Division
+?- X//Y      % Ganzzahlige Division
+?- X mod Y   % Modulo (Restwert)
+```
+
+### Rekursion
+Auch rekursive Funktionen sind möglich. 
+```prolog
+% Datei
+fib(0, 1).
+fib(1, 1).
+fib(N, F) :- N1 is N-1,
+             N2 is N-2,
+             fib(N1, Fib1),
+             fib(N2, Fib2),
+             Fib is Fib1+Fib2.
+
+% Abfrage
+?- fib(0, E). 
+E = 1.
+?- fib(8, E).
+E = 34.
+```
+
+Bei höheren Zahlen steigt die Rechenzeit stark an, deswegen können endständig rekursive Funktionen verwendet werden. Hierzu müssen Zwischenwerte gleich in den Rekursionsaufruf übergeben werden, lösung mit Akkumulatorvariablen. 
+```prolog
+% n, 01, 02, Ergebnis
+fibh(0, E, _, E).
+fibh(N, P1, P2, E) :- PN is P1+P2,
+                      N1 is N-1,
+                      fibh(N1, PN, P1, E).
+fib(N, E) :- fibh(N, 1, 0, E).
+
+% Abfrage
+?- fib(0, E).
+E = 1.
+?- fib(40, E).
+E = 165580141.
+```
+
+### Listen
+Listen sind in Prolog eine Folge von Elementen. 
+```prolog
+% Liste
+?- [1, 2, X] = [Y, Z, 3].
+X = 3.
+Y = 1.
+Z = 2.
+
+% Prüfen
+member(rb16, [rb16, re1, ice800, ice724]).
+true.
+```
+
+Elemente am Anfang oder Ende einer Liste können mit `|` aufgerufen werden. 
+```prolog
+?- [rb, re, ice] = [Erstes|Rest].
+Erstes = rb,
+Rest = [re, ice].
+
+?- [rb, re, ic, ice] = [rb, re, Drittes|Rest].
+Drittes = ic,
+Rest = [ice].
+```
+
+Bei einer leeren Liste ist ```|``` nicht definiert. 
+```prolog
+?- X|Y = [].
+false.
+```
+
+Die Länge einer Liste kann mit eigener Funktion berechnet werden. 
+```prolog
+% Datei
+my_len([], 0).
+my_len([K|Rest], E) :- my_len(Rest, E1),
+                       E is E1+1.
+
+% Abfrage
+?- my_len([1, 2, 3], E).
+E = 3.
+```
+
+<!--
+weiter auf Seite 39
+-->
+
 
 ## Beispiele
 ```prolog
@@ -354,4 +572,13 @@ is_empty([]).
 concatenate([], List, List).
 concatenate([X|Rest], List, [X|Result]) :-
     concatenate(Rest, List, Result). 
+```
+
+Beispiele zur Unifukation. 
+```prolog
+g(X+Y,f(a+b-C)) = g(23+h(a+b),f(Z+b-otto))
+X = 23, 
+Y = h(a+b),
+C = otto,
+Z = a
 ```
