@@ -33,6 +33,8 @@
   - [Phasenplan](#phasenplan)
   - [Ablauf- und Terminplan](#ablauf--und-terminplan)
   - [Resourcen- und Kostenplan](#resourcen--und-kostenplan)
+- [Projektstart](#projektstart)
+  - [Scope](#scope)
 
 
 # Grundlagen
@@ -505,3 +507,24 @@ Nur sinnvoll auf dem kritischen Pfad.
 
 
 <!-- to be continued on p. 74 -->
+
+# Projektstart
+Bilet die Nahtstelle zwischen Vorbereitung und Realisierung. Folgendes sollte bereits zum Projektstart vorliegen...
+* Projektziele
+* Projektbudget
+* Projektleiter und -team
+
+Der Projektauftrag als Ergebbnis der Definitionphase. 
+```mermaid
+graph TD;
+    A[Projektauftrag]-->B[1. Thema des Projekts <br> 2. Ziele und Restriktionen <br> 3. Projektleiter ernannt <br> 4. Termine und Meilensteine <br> 5. Budget und Kosten <br> 6. Berichtswesen]
+```
+
+## Scope
+Die Inhalts- und Umfangsbeschreibung beschreibt den Inhalt sowie den Umfang des Projekts, sowie die wichtigtsen Liefergegenstände.
+
+**Scope Statement** <br>
+Siehe [moodle](https://moodle.thi.de/pluginfile.php/567247/mod_resource/content/5/PM_KI_Kap3-2_Kickoff_he_2023_1-0.pdf) Seite 13.
+<!-- Bild einfügen -->
+
+
