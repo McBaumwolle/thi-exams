@@ -56,12 +56,16 @@
   - [U-Net](#u-net)
   - [PSPNet](#pspnet)
   - [DeepLab](#deeplab)
+  - [Instance Segmentation](#instance-segmentation)
+  - [Transformer](#transformer-1)
+  - [Autoencoder](#autoencoder)
   - [Fragen](#fragen-9)
 - [Human Pose Estimation](#human-pose-estimation)
 - [Generative Adversarial Networks](#generative-adversarial-networks)
   - [Aufbau](#aufbau)
   - [Probleme](#probleme)
   - [Typen](#typen)
+
 
 
 ## Fragen
@@ -608,6 +612,9 @@ Siehe [moodle](https://moodle.thi.de/pluginfile.php/756088/mod_resource/content/
 Paper zu ```DeepLab``` von [2017](https://arxiv.org/pdf/1706.05587.pdf). <br>
 Löst Probleme eines ```CNNs``` mit ```Dilated Convolutions```. 
 
+**Dilated Convolutions** <br>
+Den Kernel (Input) vergrößern, indem Lücken zwischen den Elementen eingefügt werden.
+
 Siehe [moodle](https://moodle.thi.de/pluginfile.php/756088/mod_resource/content/0/CV_18_Semantic_Segmentation.pdf) Seite 35.
 
 **Atrous Convolutions** <br>
@@ -620,6 +627,32 @@ Foliensatz 2 hat weitere Themen
 
 Image Warps in Downloads für vorheriges Thema
 -->
+
+**DeepLab v2** <br>
+Paper zu ```DeepLab v2``` von [2017](https://arxiv.org/pdf/1606.00915.pdf). <br>
+Erweitert ```DeepLab``` um ```CRF``` (Conditional Random Field) zur Verbesserung der Segmentierung.
+
+**DeepLab v3** <br>
+Paper zu ```DeepLab v3``` von [2018](https://arxiv.org/pdf/1706.05587.pdf). <br>
+
+
+## Instance Segmentation
+Eine Kombination aus ```Object Detection``` und ```Semantic Segmentation```. 
+
+
+## Transformer
+...
+
+## Autoencoder
+Modelle, die Encoding und Decoding anwenden und somit eine Rekonstruktion des Bildes erstellen. Wegen des ```Bottlenecks``` wird das Bild komprimiert.
+* Denoising 
+* Bildkompression
+* Auflösung erhöhen
+
+Autoencoder funktionieren unsupervised, deswegen gut geeignet für Daten ohne Labels - somit gut für das Pretraining von Modellen.
+
+**Context Encoders** <br>
+Nutzen Techniken zur Augmentation für den Feature-Vektor. Idee ist es, das Netz zur Rekonstruktion von Bildern zu trainieren, die zufällig aus dem Originalbild entfernt wurden. 
 
 ## Fragen 
 Fragen wurden im moodle-Kurs hochgeladen. 
@@ -660,4 +693,3 @@ Der Generator generiert immer die selben Daten, die der Discriminator nicht mehr
 
 **conditional GANs** <br>
 ...
-
