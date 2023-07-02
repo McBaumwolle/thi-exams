@@ -63,9 +63,9 @@
   - [Hyper Table](#hyper-table)
   - [Time Bucket](#time-bucket)
 - [Neo4J](#neo4j)
-- [Redis](#redis)
-- [Wide Column Stores](#wide-column-stores-1)
-- [optimierte Speicherformate](#optimierte-speicherformate)
+- [Key-Value Stores](#key-value-stores-1)
+  - [Redis](#redis)
+  - [Persistenz](#persistenz)
 
 
 <br>
@@ -1215,11 +1215,83 @@ GROUP BY sensor_id;
 # Neo4J
 <!-- to be continued -->
 
-# Redis
-<!-- to be continued -->
+# Key-Value Stores
+Problem bei relationalen Datenbanken ist die Performance bei Aggregationen - zum Beispiel die Abfrage nach der Durchschnittstemperatur über mehrere Monate. Hierfür sind ```Key-Value``` Stores geeignet, die auf Hash-Tabellen basieren. <br>
+* Caching
+* Session Management
+* Chats
 
-# Wide Column Stores
-<!-- to be continued -->
+## Redis
+Zum Beispiel [Redis](https://redis.io/) basiert auf diesem Modell, eine ```In-Memory``` Datenbank, die Daten im Arbeitsspeicher hält.
 
-# optimierte Speicherformate
-<!-- to be continued -->
+**Strings** <br>
+Einfachste Datenstruktur in Reids, um Zeichenfolgen, Ganz- oder Fließkommazahlen sowie JPEG-Bilder und mehr zu speichern. 
+
+```bash
+key → string
+```
+
+Größere Keys (ab ```1024``` Bytes) sind ungeeigent, da sie rechenintensiver sind. 
+
+```redis
+SET key value
+GET key
+
+DEL key
+EXISTS key
+
+KEYS * 
+flushall
+```
+
+**Lists** <br>
+Lists in Redis sind verkettete Listen, in denen Elemente an einem Ende hinzugefügt und entfernt werden können. 
+
+```redis
+lpush listname value
+
+lrange listname <start> <stop>
+
+rpush KEY value
+
+LPOP listname
+RPOP listname
+
+LSET listname INDEX value
+´´´
+
+**Sets** <br>
+Sets in Redis sind Collection von eindeutigen Strings zur Ermittlung von Schnittmengen, Vereinigungen und Differenzen zwischen Sets. 
+
+```redis
+SADD KEY MEMBER
+SMEMBERS KEY
+
+SINTER set1 set2
+```
+
+**Sorted Sets** <br>
+Geordnete Collection von eindeutigen Strings, die mit einem Wert (Score) versehen sind, geeigenet für Ranglisten. 
+
+```redis
+ZADD KEY SCORE MEMBER
+ZRANK KEY MEMBER
+```
+
+**Hashes** <br>
+Hashes ermöglichen die SPeicherung von mehreren Schlüssel-Wert-Paaren in einem Key. 
+
+```redis
+HSET KEY field1 value1 field2 value2
+```
+
+## Persistenz
+Muss aktiviert werden, damit Daten nach einem Absturz wiederhergestellt werden können. 
+
+**Persistent Snapshots** <br>
+In einem definierten Zeitintervall wird ein Snapshot der Datenbank gemacht, der wieder hergestellt werden kann. 
+
+**Append-Only File** <br>
+Jede Schreiboperation wird an das ```log``` angehängt, das lesbar für Menschen ist.
+
+
