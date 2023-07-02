@@ -1260,7 +1260,7 @@ LPOP listname
 RPOP listname
 
 LSET listname INDEX value
-´´´
+```
 
 **Sets** <br>
 Sets in Redis sind Collection von eindeutigen Strings zur Ermittlung von Schnittmengen, Vereinigungen und Differenzen zwischen Sets. 
