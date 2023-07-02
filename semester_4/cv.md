@@ -65,6 +65,7 @@
   - [Aufbau](#aufbau)
   - [Probleme](#probleme)
   - [Typen](#typen)
+- [Praktika](#praktika)
 
 
 
@@ -693,3 +694,6 @@ Der Generator generiert immer die selben Daten, die der Discriminator nicht mehr
 
 **conditional GANs** <br>
 ...
+
+# Praktika
+<!--- to be continued --->
