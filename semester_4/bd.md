@@ -66,6 +66,8 @@
 - [Key-Value Stores](#key-value-stores-1)
   - [Redis](#redis)
   - [Persistenz](#persistenz)
+- [Wide Column Stores](#wide-column-stores-1)
+- [optimierte Speicherformate](#optimierte-speicherformate)
 
 
 <br>
@@ -1293,5 +1295,12 @@ In einem definierten Zeitintervall wird ein Snapshot der Datenbank gemacht, der 
 
 **Append-Only File** <br>
 Jede Schreiboperation wird an das ```log``` angehängt, das lesbar für Menschen ist.
+
+
+# Wide Column Stores
+<!-- to be continued -->
+
+# optimierte Speicherformate
+<!-- to be continued -->
 
 
