@@ -9,11 +9,8 @@ Zusammenfassungen für die Prüfungen, in Markdown.
 
 [Projektmanagement](semester_4/pm.md) & [Software-Engineering](semester_4/se.md)
 
+[Seminar](semester_4/sm.md)
+
 ### Semester 3
 [Deduktive Systeme](semester_3/ds.md)
 
-### Semester 2
-...
-
-### Semester 1
-...
