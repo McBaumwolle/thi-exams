@@ -35,6 +35,10 @@
   - [Resourcen- und Kostenplan](#resourcen--und-kostenplan)
 - [Projektstart](#projektstart)
   - [Scope](#scope)
+- [Projektfortschritt](#projektfortschritt)
+  - [Projektcontrolling](#projektcontrolling)
+    - [Fortschrittskontrolle](#fortschrittskontrolle)
+  - [Projektsteuerung](#projektsteuerung)
 
 
 # Grundlagen
@@ -528,3 +532,109 @@ Siehe [moodle](https://moodle.thi.de/pluginfile.php/567247/mod_resource/content/
 <!-- Bild einfügen -->
 
 
+# Projektfortschritt
+Der Projektfortschritt wird anhand von Meilensteinen gemessen.
+<!-- check this info -->
+
+## Projektcontrolling
+Geht über die reine Überwachungsfunktion hinaus und enthält auch die Verantwortlichkeiten für Planung und Steuerung. 
+* Verfolgung der projektrelevanten [Zielgrößen](## "Sachziel, Terminziel & Kostenziel")
+* Vergleich mit Projektplan
+* feststellen von Planabweichungen
+
+**1. Projektdatenerfassung** <br>
+Erhebung, Überprüfung und Aufbereitung von Daten zur aktuellen Projektsituation.
+
+**2. Soll-Ist-Vergleich** <br>
+Vergleich zwischen Planung und erreichten ist-Werten sowie Feststellung von Abweichungen zwischen Plan und Stand. 
+
+**3. Abweichungsanalyse** <br>
+Ermittlung der Gründe für Abweichungen sowie Aufzeigen möglicher Korrekturmaßnahmen.
+
+**4. Steuerungsmaßnahmen** <br>
+Beschluss, Durchführung und Kontrolle von Maßnahmen zur Erreichung der Projektziele. 
+
+### Fortschrittskontrolle
+Sinn ist das Erkennen von kritischen Entwicklungen in dem Verhältnis. 
+
+```mermaid
+graph LR;
+    A(Kosten) <--> B;
+    B(Leistung) <--> C;
+    C(Termin) <--> A;
+```
+
+Mit ```20%``` des Aufwandes werden bereits ```80%``` der Leistung erbracht und für die letzten ```20%``` werden ```80%``` des Aufwandes benötigt.
+
+**Kontrolle auf Basis der Ist-Werte** <br>
+Zum Beispiel mit der Zeit aknn der Fortschritt gemessen werden.
+
+$FGR_{ist} = \frac{t_{verstrichen}}{t_{gesamt}}$
+
+**Kontrolle auf Basis der Restwerte** <br>
+Beispielsweise kann mit den bisher angefallenen und geplanten Kosten zur Vollendung der Fortschritt gemessen werden.
+
+$FGR_{ist} = \frac{K_{ist}}{K_{ist} + K_{rest}}$
+
+**Kontrolle auf Basis von Leistungsmaßen** <br>
+Messung des Fortschritts anhand von Leistungsmaßen, zum Beispiel Anzahl der erstellten Codezeilen. 
+
+**0/100-Methode** <br>
+Meilenstein wird erst dann erreicht, wenn das Arbeitspaket vollständig abgeschlossen ist.
+
+**50/50-Methode** <br>
+Mit Beginn eines Vorgangs werden 50% der budgetierten Kosten
+dem Fertigstellungswert zugerechnet. Erst nach der Abnahme des Arbeitsergebnissen werden die restlichen 50% dem Fertigstellungswert gutgeschrieben.
+
+**20/80-Methode** <br>
+Analog zur ```50/50``` Methode. 
+
+Das Problem beim Ermitteln des ```FSG``` ist, dass er oft zu optimistisch eingeschätzt wird.
+
+**Meilensteinanalyse** <br>
+Ziel der Meilenstein-Trendanalyse ist, Trendaussagen darüber treffen zu können, ob die geplanten Meilensteintermine voraussichtlich eingehalten werden, sich verzögern oder ob Meilensteinergebnisse voraussichtlich schon früher als geplant vorliegen werden.
+
+Das ```MTA```-Diagramm zeigt die Entwicklung der Meilensteintermine über die Zeit.
+
+<details><summary>MTA-Diagramm</summary>
+<img src="resources/pm/19_mta.png" alt="MTA" width="500"/> <br>
+<!-- alternative: 19_mta.bmp -->
+</details> <br>
+
+**Kosten-Trend-Analyse** <br>
+Die Kostentrendanalyse (KTA) ist eine Methode zum Kostencontrolling in Projekten und zeigt den erwartbaren Verlauf der Projektkosten.
+
+<details><summary>KTA-Diagramm</summary>
+<img src="resources/pm/20_kta.png" alt="KTA" width="500"/> <br>
+</details> <br>
+
+## Projektsteuerung
+Die Verknüpfung von allgemeinen Projektmanagement zu einem ganzheitlichen Konzept der Projektführung. Ziele sind...
+* Früherkennung von Abweichungen
+* Steuermaßnahmen früh einzuleiten
+* Entwicklung des zukünftigen Projektverlaufs
+
+```mermaid
+graph LR;
+    A(Überwachung) --> B(Steuerung);
+    B --> C(Planung);
+    C --> A;
+```
+
+**Abweichungsanalyse und Steuerungsprozess** <br>
+Wesentlich bei der Festlegung von Maßnahmen ist die Berücksichtigung der Reaktionszeit.
+
+```mermaid
+graph TB;
+    A(Eintritt einer Abweichung) --> B(Erkennung der Abweichung);
+    B --> C(Analyse der Abweichung);
+    C --> D(Erarbeitung von Steuerungsmaßnahmen);
+    D --> E(Entscheidung über Steuerungsmaßnahmen);
+    E --> F(Einsatz o. Kommunikation und Aktivierung der Maßnahmen);
+    F --> G(Wirkung der Maßnahmen);
+    G --> A;
+```
+
+<!--
+https://moodle.thi.de/pluginfile.php/567384/mod_resource/content/9/PM_KI_Kap3-3_Fortschritt_und_Trend_he_2023_1-0.pdf
+-->
