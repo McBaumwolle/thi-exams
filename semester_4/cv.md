@@ -677,7 +677,7 @@ Eine Sequenz von ```CNNs``` um 2D-maps zu erstellen mit Heatmaps für die Positi
 
 Foliensatz auf [moodle](https://moodle.thi.de/pluginfile.php/758820/mod_resource/content/0/CV_20_Human_Pose_Estimation.pdf) Seite 13.
 
-<img src="resources/cv/26_conv_pm_slide.png" width="500">
+<img src="resources/cv/26_conv_pm_slide.png" width="800">
 </details> <br>
 
 Im ersten Teil des ```CPM``` wird die Heatmap nur auf dem lokalen Bild erzeugt - mit ```5``` ConvLayer mti einer ```1x1``` Convolution (also ein ```FCNN```).
@@ -686,7 +686,7 @@ Im zweiten Teil wird das Bild als Input verwendet, sowie die Feature-Outputs von
 <details><summary>genauere Darstellung</summary>
 
 The spatial context from the shoulder, nexk and head help to eliminate wrong detections (red) and strengthen the correct ones (green).
-<img src="resources/cv/27_conv_pm_stages.bmp" width="800">
+<img src="resources/cv/27_conv_pm_stages.bmp" width="500">
 
 </details> <br>
 
