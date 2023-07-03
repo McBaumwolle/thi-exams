@@ -67,7 +67,10 @@
   - [Redis](#redis)
   - [Persistenz](#persistenz)
 - [Wide Column Stores](#wide-column-stores-1)
+  - [Grundlagen](#grundlagen)
+  - [Architektur](#architektur)
 - [optimierte Speicherformate](#optimierte-speicherformate)
+
 
 
 <br>
@@ -1298,9 +1301,42 @@ Jede Schreiboperation wird an das ```log``` angehängt, das lesbar für Menschen
 
 
 # Wide Column Stores
-<!-- to be continued -->
+Datenbanksysteme wie [hadop](https://hadoop.apache.org/) oder [Cassandra](https://cassandra.apache.org/) basieren auf dem Wide Column Store Prinzip. <br>
+Einsatz zum Beispiel bei Chats oder Finanztransaktionen (MasterCard).
+
+## Grundlagen
+Läuft auf günstiger Commodity Hardware mit horizontaler Skalierung der Systeme, muss so konzipiert werden, dass Netzwerk- und Systemausfälle abgefangen werden können.
+
+Annahme: Es müssen sehr große Dateien gespeichert werden, überwiegend Web-Dokumente von Crawlern - hauptsächlich sequentieller Zugriff.
+
+Daten werden in ```Chunks``` von ```64 MB``` gespeichert, die auf mehreren Servern verteilt sind, ein zentraler Chinkserver kennt die Verteilung und jeder Chunk hat eine Unique ID.
+
+Annahme: Jeder Server kann jederzeit ausfallen, deshalb wird jeder Chink dreifach repliziert - der GFS-Master überwacht und steuert die Replikation. 
+
+Jeder Chunkserver sendet dem Master in definierten Intervallen z.B. ```10s``` - so ist bei fehlendem Signal bekannt, was offline ist und eine Replikation kann gestartet werden. 
+
+## Architektur 
+**HDFS Block** <br>
+Ein Block ist im Normalfall ```128 MB``` Groß. 
+
+**Name Node** <br>
+...
+
+**Data Node** <br>
+...
+
+**HDFS** <br>
+Hadoop Distributed File System
+
+**Edit Log** <br>
+Die Log-Datei, die alle Änderungen (Transaktionen) überwacht.
+
+<!-- 
+moodle 
+https://moodle.thi.de/pluginfile.php/758024/mod_resource/content/1/Hadoop.pdf
+https://moodle.thi.de/pluginfile.php/759265/mod_resource/content/1/15_Hadoop_Teil2.pdf
+-->
+
 
 # optimierte Speicherformate
 <!-- to be continued -->
-
-
