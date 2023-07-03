@@ -515,7 +515,7 @@ member(rb16, [rb16, re1, ice800, ice724]).
 true.
 ```
 
-Elemente am Anfang oder Ende einer Liste können mit `|` aufgerufen werden. 
+Elemente am __Anfang__ einer Liste können mit `|` aufgerufen werden. 
 ```prolog
 ?- [rb, re, ice] = [Erstes|Rest].
 Erstes = rb,
