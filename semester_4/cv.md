@@ -686,7 +686,7 @@ Im zweiten Teil wird das Bild als Input verwendet, sowie die Feature-Outputs von
 <details><summary>genauere Darstellung</summary>
 
 The spatial context from the shoulder, nexk and head help to eliminate wrong detections (red) and strengthen the correct ones (green).
-<img src="resources/cv/27_conv_pm_stages.bmp" width="500">
+<img src="resources/cv/27_conv_pm_stages.bmp" width="800">
 
 </details> <br>
 
