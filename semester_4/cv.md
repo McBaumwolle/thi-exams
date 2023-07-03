@@ -658,8 +658,75 @@ Nutzen Techniken zur Augmentation für den Feature-Vektor. Idee ist es, das Netz
 ## Fragen 
 Fragen wurden im moodle-Kurs hochgeladen. 
 
+
 # Human Pose Estimation 
-<!--- to be continued --->
+Ziel ist es, die Position von (z.B.) Gelenken im Körper zu erkennen.
+
+## Convolutional Pose Machines
+Paper zu ```Convolutional Pose Machines``` von [2016](https://arxiv.org/pdf/1602.00134.pdf). <br>
+
+Eine Sequenz von ```CNNs``` um 2D-maps zu erstellen mit Heatmaps für die Positionen der Gelenke.
+
+<img src="resources/cv/25_conv_pose_machines.bmp" width="500">
+
+<details><summary>genauere Darstellung</summary>
+
+Foliensatz auf [moodle](https://moodle.thi.de/pluginfile.php/758820/mod_resource/content/0/CV_20_Human_Pose_Estimation.pdf) Seite 13.
+
+<img src="resources/cv/26_conv_pm_slide.png" width="500">
+</details> <br>
+
+Im ersten Teil des ```CPM``` wird die Heatmap nur auf dem lokalen Bild erzeugt - mit ```5``` ConvLayer mti einer ```1x1``` Convolution (also ein ```FCNN```).
+Im zweiten Teil wird das Bild als Input verwendet, sowie die Feature-Outputs von der Heatmap (```belief maps```) des vorherigen Layers (größeres Receptive Field).
+
+<details><summary>genauere Darstellung</summary>
+
+The spatial context from the shoulder, nexk and head help to eliminate wrong detections (red) and strengthen the correct ones (green).
+<img src="resources/cv/27_conv_pm_stages.bmp" width="500">
+
+</details> <br>
+
+Zitat aus der Publikation.
+
+> Large receptive fields can be archieved either by pooling at the expense of precision, increasing the kernel size of the convolutional filters at the expense of increasing the number of parameters, or by increasing the number of convolutional layers at the risk of encountering vanishing gradients during training.
+
+Jeder Schritt des Netzwerks hat eine Loss-Funktion, die Ground-Truth-Heatmaps wird mit Gauss-Funktion über den Körperteilen erstellt. Typisherweise ```Fehler``` wenn mehere Personen im Bild sind. 
+
+## Stacked Hourglass 
+Paper zu ```Stacked Hourglass``` von [2016](https://arxiv.org/pdf/1603.06937.pdf). <br>
+<!-- Der Ansatz von ```Stacked Hourglass``` Blöcken ist es, -->
+
+<img src="resources/cv/28_stacked_hourglass.bmp" width="500">
+
+Am Anfang ```7x7``` Convolution mit Stride ```2``` und MaxPooling - am Ende eine ```1x1``` Convolution.
+
+Im Paper wurden ```8``` Stacked Hourglass Blöcke verwendet, mit Data Augmentation - das Training hat etwa ```3``` Tage gedauert. 
+Auch hier oft ```Fehler``` bei mehreren Personen im Bild.
+
+## OpenPose
+Paper zu ```OpenPose``` von [2018](https://arxiv.org/pdf/1812.08008.pdf). 
+
+Nutzt ```Part Affinity Maps (PAF)``` um die Verbindung zwischen den Körperteilen zu erkennen. Also ein ```2D``` Vektorfeld, das die Koordinaten und Ausrichtung der Körperteile enthält.
+
+1. ```Feedforward``` Netzwerk sagt ein Set an ```2D``` Confidence Maps vorher.
+2. Es werden ```2D``` Vektor ```PAFs``` gelernt, die die Verbindugen beinhalten.
+3. Beide werden kombiniert um ```2D Key Points``` für alle Personen zu erhalten. 
+
+Sehr gute Performance, auch bei mehreren Personen im Bild.
+
+## Fragen
+1. Was sind Herausforderungen in der Human Pose Estiamtion und wie können diese (2) bewältigt werden?
+
+&emsp; &emsp; &emsp; _lernen_
+
+2. Was ist ein Stacked Hourglass Netzwerk, wie funktioniert es und wo wird es eingesetzt?
+
+&emsp; &emsp; &emsp; _lernen_
+
+3. Wie n utzt OpenPose Part Affinity Maps und was ist der Vorteil?
+
+&emsp; &emsp; &emsp; _lernen_
+
 
 # Generative Adversarial Networks
 Ziel ist es, künstliche Daten zu generieren, die von echten Daten nicht zu unterscheiden sind. <br>
