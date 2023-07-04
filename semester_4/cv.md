@@ -754,17 +754,35 @@ Falls der Generator zu gut wird, kann der Discriminator nicht mehr lernen, auch 
 **Mode Collapse** <br>
 Der Generator generiert immer die selben Daten, die der Discriminator nicht mehr unterscheiden kann und somit nicht mehr lernen kann. 
 
+Es werden also gute Daten generiert, die aber keine Diversität haben. Lösen durch ```minibatch GANs``` - der Diskriminator schaut sich einen Mini-Batch an Daten an und erkennt fehlende Abwechslung. 
 
-## Typen
+<details><summary>Erläuterung</summary>
 
-**deep convolutional GANs** <br>
-...
+Darstellung von Mode Collapse auf dem MNIST-Datenatz. <br>
+<img src="resources/cv/19_mode_collapse.png" width="500">
 
-**minibatch GANs** <br>
-...
+Es werden Daten aus den Mini-Batches gezogen, die wenig Abwechslung zeigen (zum Beispiel mit ```L2```-Norm) und diese dann zum Discriminator weitergegeben. Diese Daten unterscheiden sich den echten Daten, dadurch kann mehr Diversität erzeugt werden.
 
-**conditional GANs** <br>
-...
+</details> <br>
+
+Weitere Architekturen sind ```Conditional GANs``` oder ```Deep Convolutional GANs```. 
+
+## Anwendungen
+Kann zum Beispiel gut für Anonymisierung von Gesichtern verwendet werden. Zuerst wird das Gesicht erkannt und z.B. ausgeschnitten, dann wird ein GAN verwendet um ein neues Gesicht zu generieren und drauf zu setzen.
+
+## Fragen
+1. Erkläre wie ein GAN funkioniert und welche Komponenten es hat. Wie genau wird trainiert?
+
+&emsp; &emsp; &emsp; _lernen_
+
+2. Was ist Mode Collapse und wieso tritt es auf? 
+
+&emsp; &emsp; &emsp; _lernen_
+
+3. Wasn kann verwendet werden um ein GAN so zu beeinflussen, spezifische Bilder zu generieren?
+
+&emsp; &emsp; &emsp; _lernen_
+
 
 # Praktika
 <!--- to be continued --->
