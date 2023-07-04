@@ -544,10 +544,6 @@ my_len([K|Rest], E) :- my_len(Rest, E1),
 E = 3.
 ```
 
-<!--
-weiter auf Seite 39
--->
-
 
 ## Beispiele
 ```prolog
@@ -582,3 +578,12 @@ Y = h(a+b),
 C = otto,
 Z = a
 ```
+
+Beispiel zur Löschen aus einer Liste und Hinzufügen. 
+```prolog
+mydel(X, [X|Rest], Rest).
+mydel(X, [Y|Rest], [Y|DRest]) :- mydel(X, Rest, DRest).
+
+nyins(X, L, R) :- mydel(X, R, L).
+```
+
