@@ -1339,3 +1339,75 @@ https://moodle.thi.de/pluginfile.php/759265/mod_resource/content/1/15_Hadoop_Tei
 
 # optimierte Speicherformate
 <!-- to be continued -->
+
+
+# Übungen
+## Aufgabe 01
+Korrigiere folgende Tabellen in deren angegebender Normalform. 
+
+**Aufgabe 01a** <br>
+Für die ```1NF``` muss jedes Attribut der Relation  einen atomaren Wertebereich haben - folgende Tabelle verletzt diese Bedingung. 
+
+| Server_ID | Album | Release | Songs |
+| --------- | ----- | ------- | ------ |
+| 4711 | Lady Gaga - Chromatica | 2020 | Rain on Me, 911, Replay |
+| 4712 | Charli XCX - Sucker | 2014 | Boom Clap |
+| 4713 | Lady Gaga - The Fame | 2008 | Just Dance |
+
+Das Feld ```Album``` enthält zwei Attributwertebereiche und ```Songs``` eine Menge an Titeln. Um in die ```1NF``` zu kommen, muss die Tabelle aufgeteilt werden.
+
+| Server_ID | Artist | Album | Release | Track | Song |
+| --------- | ------ | ----- | ------- | ----- | ---- |
+| 4711 | Lady Gaga | Chromatica | 2020 | 1 | Rain on Me |
+| 4711 | Lady Gaga | Chromatica | 2020 | 2 | 911 |
+| 4711 | Lady Gaga | Chromatica | 2020 | 3 | Replay |
+| 4712 | Charli XCX | Sucker | 2014 | 1 | Boom Clap |
+| 4713 | Lady Gaga | The Fame | 2008 | 1 | Just Dance |
+
+Da jetzt jeder Attributwertebereich atomar ist sowie die Tabelle einen eindeutigen Primärschlüssel (Verbundschlüssel aus den Spalten ```Server_ID```, ```Track```) hat, befindet sich die Relation in der ```1NF```.
+
+<br>
+
+**Aufgabe 01b** <br>
+Eine Relation ist genau dann in der ```2NF```, wenn die erste Normalform vorliegt und kein Nichtprimärattribut (Attribut, das nicht Teil eines Schlüsselkandidaten ist) funktional von einer echten Teilmenge eines Schlüsselkandidaten abhängt. 
+
+| Server_ID | Artist | Album | Release | Track | Song |
+| --------- | ------ | ----- | ------- | ----- | ---- |
+| 4711 | Lady Gaga | Chromatica | 2020 | 1 | Rain on Me |
+| 4711 | Lady Gaga | Chromatica | 2020 | 2 | 911 |
+| 4711 | Lady Gaga | Chromatica | 2020 | 3 | Replay |
+| 4712 | Charli XCX | Sucker | 2014 | 1 | Boom Clap |
+| 4713 | Lady Gaga | The Fame | 2008 | 1 | Just Dance |
+
+Problem hier ist, dass die Felder ```Album```, ```Artist``` und ```Release``` funktional von ```Server_ID``` abhängen. Um in die ```2NF``` zu kommen, muss die Tabelle aufgeteilt werden.
+
+<!-- siehe Wikipedia für weiteres Problem und das Resultat -->
+
+| Server_ID | Artist | Album | Release |
+| --------- | ------ | ----- | ------- |
+| 4711 | Lady Gaga | Chromatica | 2020 |
+| 4712 | Charli XCX | Sucker | 2014 |
+| 4713 | Lady Gaga | The Fame | 2008 |
+
+| Server_ID | Track | Song |
+| --------- | ----- | ---- |
+| 4711 | 1 | Rain on Me |
+| 4711 | 2 | 911 |
+| 4711 | 3 | Replay |
+| 4712 | 1 | Boom Clap |
+| 4713 | 1 | Just Dance |
+
+Das Attribut ```Server_ID``` in zweiten Tabelle ist nun ein Fremdschlüssel, der auf den Primärschlüssel der ersten Tabelle verweist - zugleich stellen die Attribute ```Server_ID``` und ```Track``` den Primärschlüssel der Tabelle dar. 
+
+<br>
+
+**Aufgabe 01c** <br>
+...
+
+<!--
+
+https://de.wikipedia.org/wiki/Normalisierung_(Datenbank)?useskin=vector#Erste_Normalform_(1NF)
+
+https://www.datenbanken-verstehen.de/datenmodellierung/normalisierung/
+
+-->
