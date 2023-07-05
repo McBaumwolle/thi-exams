@@ -47,6 +47,8 @@
 * große Tiefen erreichbar
 * geringe Platzkomplexität
 * kombinierbar
+* oft nur limitierte Tiefen erreichbar 
+* darunter leidet die Vollständigkeit
 
 <img src="resources/ds/01_tiefen.png" alt="Alt text" width="300"> <br>
 
