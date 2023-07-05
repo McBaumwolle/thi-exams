@@ -82,6 +82,24 @@
 ## Forward-Checking
 ...
 
+## A-Stern 
+Der A-Stern Algorithmus ist ein informierter Suchalgorithmus, der eine Heuristik verwendet, um die Suche zu beschleunigen. 
+
+$f(x) = g(x) + h(x)$ 
+
+Hier ist $g(x)$ der Pfadkostenfunktion und $h(x)$ die Heuristik, also Schätzung der Kosten von $x$ zum Ziel.
+
+**Beispiel** <br>
+Bei der Navigation von München nach Hamburg, ist die Heuristik die Luftlinie zwischen den einzelnen Städten. In Ingolstadt ist man bereits $82km$ gefahren, die Luftlinie nach Hamburg beträgt $542km$.  
+
+$f(x) = 82km + 542km = 612km$ 
+
+Ulm ist auch ein möglicher Stop auf dem Weh, die Liftlinie beträgt $573km$ wenn man bereits $156km$ gefahren ist.
+
+$f(x) = 156km + 573km = 729km$
+
+Somit wird der Pfad vorerst außer Acht gelassen, da die Heuristik über Ingolstadt besser ist.
+
 # Aussagenlogik 
 ## Normalformen
 ### Literal
