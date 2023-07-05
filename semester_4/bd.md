@@ -1300,7 +1300,7 @@ In einem definierten Zeitintervall wird ein Snapshot der Datenbank gemacht, der 
 Jede Schreiboperation wird an das ```log``` angehängt, das lesbar für Menschen ist.
 
 
-# Wide Column Stores
+# Hadoop
 Datenbanksysteme wie [hadop](https://hadoop.apache.org/) oder [Cassandra](https://cassandra.apache.org/) basieren auf dem Wide Column Store Prinzip. <br>
 Einsatz zum Beispiel bei Chats oder Finanztransaktionen (MasterCard).
 
@@ -1336,7 +1336,6 @@ moodle
 https://moodle.thi.de/pluginfile.php/758024/mod_resource/content/1/Hadoop.pdf
 https://moodle.thi.de/pluginfile.php/759265/mod_resource/content/1/15_Hadoop_Teil2.pdf
 -->
-
 
 # optimierte Speicherformate
 <!-- to be continued -->

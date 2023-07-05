@@ -39,6 +39,9 @@
   - [Projektcontrolling](#projektcontrolling)
     - [Fortschrittskontrolle](#fortschrittskontrolle)
   - [Projektsteuerung](#projektsteuerung)
+- [Projektabschluss](#projektabschluss)
+  - [Dokumentation](#dokumentation)
+  - [Abschluss](#abschluss)
 
 
 # Grundlagen
@@ -638,3 +641,72 @@ graph TB;
 <!--
 https://moodle.thi.de/pluginfile.php/567384/mod_resource/content/9/PM_KI_Kap3-3_Fortschritt_und_Trend_he_2023_1-0.pdf
 -->
+
+
+# Projektabschluss
+## Dokumentation
+Gute DOkumentation erleichtert die EInarbeitung oder rasche Orientierung neuer Mitarbeiter, sichert zudem Wissen für Personalausfall oder -verlust. Nachvollziehbarkeit ist somit garantiert und nach Abschluss kann einiges wiederverwendet werden.
+
+**Produkt** <br>
+Erzeignis oder Ergebnis eines Tätigkeitsvorhabens, erbrachte Leistung zum Beispiel eine Diensleistung oder ein Softwareprodukt. 
+
+**Projekt** <br>
+Zielorientiertes Vorhaben zur Herstellung des Produkts. 
+
+**Prozess** <br>
+Eigentliches Vorgehen im Projekt zur Herstellung des Produkts.
+
+| Produktdokumentation | Projektdokumentation |
+| -------------------- | -------------------- |
+| Systemspezifikation <br> Funktionsspezifikation <br> Designspezifikation <br> Programmlisting <br> Benutzerhandbuch <br> ... | Projektauftrag <br> Projektziele <br> Projektkalkulation <br> Projektstrukturplan <br> Terminplan <br> Kostenplan <br> Qualitätssicherungsbericht <br> Fortschrittsberichte <br> ... | 
+
+**Zielsetzung** <br>
+Aktuellen Stand des Projekts in schriftlicher Form festhalten und Prognosen für den weiteren Verlauf des Projekts treffen.
+
+**Rückmeldung** <br>
+Termininformationen von den Arbeitspaket-Verantwortlichen, zum Beispiel Anfangs- und Endtermin oder Restbearbeitungsdauer - sowie Kosten- und Aufwandsüberwaachung.
+
+**Projekthanbuch** <br>
+Nimmt alle Projektdokumente und sonstigen Unterlagen auf, durchnummerierte Struktur und gut aufgegliedert (angelehnt an den Projektstrukturplan).
+
+**Projekttagebuch** <br>
+Zeichnet chronologisch alle wichtigen Ereignisse auf, ähnlich wie Protokolle. 
+
+## Abschluss
+Das Projektende ist zeitlich und personell begrenzt - wenn das Projektziel erreicht ist. Letzte Aufgaben zum Ende des Projekts sind...
+* formale Abnahme durch den Auftraggeber
+* Projektdokumentation (siehe [Dokumentation](#dokumentation))
+* Übergabe der Veranstwortung der Ergebnisse 
+* Freigabe von Ressourcen
+*  kurzer Abschlussbericht
+
+Sowie die kritische Projektaufarbeitung.
+* kritische Aufarbeitung des Projekts
+* Projektanalyse (Fragebögen, Befragungen)
+* Nachkalkulation
+* Evaluation der Ergebnisse
+* Projektabschlusssitzung vorbereiten
+* Abschlussbericht verfassen
+
+Auf der Beziehungsebene fallen folgende Aufgaben an...
+* Teammeetings bis zum Projektende
+* Abschwächen des Teamgedanken entgegenwirken
+* Mitarbeitenden frühzeitig neue Aufgaben zuweisen
+* Mitarbeitenden Feedback geben
+* abschließendes Gespräch mit den Mitarbeitenden
+* Feedback der Stakeholder einfordern
+
+**Projektabschlusssitzung** <br>
+Die Projektabschlusssitzung ist ein formelles Treffen, bei dem die Projektergebnisse präsentiert werden.
+* Sind die Projektziele erreicht worden? 
+* Ist der Auftraggeber zufrieden?
+* Was ist gut oder schlecht gelungen?
+* Wie war das Klima im Team?
+* Wie war die Zusammenarbeit mit Externen? 
+* Was wurde gelernt für die Zukunft?
+
+**Projektabschlussbericht** <br>
+Der Projektabschlussbericht ist ein formelles Dokument, das die Projektergebnisse dokumentiert. 
+
+**Sonsitges** <br>
+Die Kundenzufriedenheit kann am Ende erfragt werden, um Feedback zu sammeln und in anderen Projekten einzusetzen. Der Projektabschluss sollte gefeiert werden als Event. 
