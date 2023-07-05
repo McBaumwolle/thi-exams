@@ -77,10 +77,22 @@
 ...
 
 ## Back-Tracking
-...
+Zurückgehen auf einen vorherigen Zustand, wenn ein Fehler auftritt.
+
+<details><summary>Beispiel</summary>
+
+<img src="resources/ds/03a_backtracking.png" alt="Alt text" width="500">
+
+</details> <br>
 
 ## Forward-Checking
-...
+Suchraum früh begrenzen, um die Suche zu beschleunigen.
+
+<details><summary>Beispiel</summary>
+
+<img src="resources/ds/03b_forwardchecking.png" alt="Alt text" width="500">
+
+</details> <br>
 
 ## A-Stern 
 Der A-Stern Algorithmus ist ein informierter Suchalgorithmus, der eine Heuristik verwendet, um die Suche zu beschleunigen. 
@@ -94,7 +106,7 @@ Bei der Navigation von München nach Hamburg, ist die Heuristik die Luftlinie zw
 
 $f(x) = 82km + 542km = 612km$ 
 
-Ulm ist auch ein möglicher Stop auf dem Weh, die Liftlinie beträgt $573km$ wenn man bereits $156km$ gefahren ist.
+Ulm ist auch ein möglicher Stop auf dem Weg, die Liftlinie beträgt $573km$ wenn man bereits $156km$ gefahren ist.
 
 $f(x) = 156km + 573km = 729km$
 
@@ -208,6 +220,13 @@ Unser Herleitungsbaum sieht dann so aus:
 <img src="resources/ds/04_baum.png" width="400">
 
 Somit ist Formel F bewiesen indem wir ¬F zur Klauselmenge huinzufügen und einen Widerspruch herleiten. <br>
+
+## Sonsitges
+**Korrektheit** <br>
+Eine Logik wird als korrekt bezeichnet, wenn jede aus wahren Formeln mittels Inferenzregeln hergeleitete Formel auch wieder wahr ist.
+
+**Vollständigkeit** <br>
+Eine mathematische Aussage heißt vollständig, wenn sie aus den Axiomen hergeleitet werden kann.
 
 
 # Prädikatenlogik
