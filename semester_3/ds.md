@@ -81,7 +81,7 @@ Zurückgehen auf einen vorherigen Zustand, wenn ein Fehler auftritt.
 
 <details><summary>Beispiel</summary>
 
-<img src="resources/ds/03a_backtracking.png" alt="Alt text" width="500">
+<img src="resources/ds/03b_forwardchecking.png" alt="Alt text" width="500">
 
 </details> <br>
 
@@ -90,7 +90,7 @@ Suchraum früh begrenzen, um die Suche zu beschleunigen.
 
 <details><summary>Beispiel</summary>
 
-<img src="resources/ds/03b_forwardchecking.png" alt="Alt text" width="500">
+<img src="resources/ds/03a_backtracking.png" alt="Alt text" width="500">
 
 </details> <br>
 
