@@ -1354,6 +1354,8 @@ Für die ```1NF``` muss jedes Attribut der Relation  einen atomaren Wertebereich
 | 4712 | Charli XCX - Sucker | 2014 | Boom Clap |
 | 4713 | Lady Gaga - The Fame | 2008 | Just Dance |
 
+<details><summary>Lösung</summary>
+
 Das Feld ```Album``` enthält zwei Attributwertebereiche und ```Songs``` eine Menge an Titeln. Um in die ```1NF``` zu kommen, muss die Tabelle aufgeteilt werden.
 
 | Server_ID | Artist | Album | Release | Track | Song |
@@ -1366,6 +1368,7 @@ Das Feld ```Album``` enthält zwei Attributwertebereiche und ```Songs``` eine Me
 
 Da jetzt jeder Attributwertebereich atomar ist sowie die Tabelle einen eindeutigen Primärschlüssel (Verbundschlüssel aus den Spalten ```Server_ID```, ```Track```) hat, befindet sich die Relation in der ```1NF```.
 
+</details>
 <br>
 
 **Aufgabe 01b** <br>
@@ -1378,6 +1381,8 @@ Eine Relation ist genau dann in der ```2NF```, wenn die erste Normalform vorlieg
 | 4711 | Lady Gaga | Chromatica | 2020 | 3 | Replay |
 | 4712 | Charli XCX | Sucker | 2014 | 1 | Boom Clap |
 | 4713 | Lady Gaga | The Fame | 2008 | 1 | Just Dance |
+
+<details><summary>Lösung</summary>
 
 Problem hier ist, dass die Felder ```Album```, ```Artist``` und ```Release``` funktional von ```Server_ID``` abhängen. Um in die ```2NF``` zu kommen, muss die Tabelle aufgeteilt werden.
 
@@ -1399,6 +1404,7 @@ Problem hier ist, dass die Felder ```Album```, ```Artist``` und ```Release``` fu
 
 Das Attribut ```Server_ID``` in zweiten Tabelle ist nun ein Fremdschlüssel, der auf den Primärschlüssel der ersten Tabelle verweist - zugleich stellen die Attribute ```Server_ID``` und ```Track``` den Primärschlüssel der Tabelle dar. 
 
+</details>
 <br>
 
 **Aufgabe 01c** <br>
@@ -1409,6 +1415,8 @@ Eine Relation befindet sich in der ```3NF```, wenn sie die 2. NF erfüllt und ke
 | 4711 | Chromatica | Lady Gaga | Pop | 2020 |
 | 4712 | One Stone | Trixie Mattel | Country | 2018 |
 | 4713 | The Fame | Lady Gaga | Pop | 2008 |
+
+<details><summary>Lösung</summary>
 
 Offensichtlich lässt sich der ```Artist``` aus der ```Server_ID``` ableiten, das ```Genre``` hängt wiederum vom ```Artist``` und damit **transitiv** von der ```Server_ID``` ab.
 
@@ -1425,3 +1433,27 @@ Offensichtlich lässt sich der ```Artist``` aus der ```Server_ID``` ableiten, da
 
 Die Tabelle ist nun in der ```3NF```, wenn man annimmt, jeder ```Artist``` eindeutig ist. Eine weitere Relation mit ```Server_ID```, ```Track``` und ```Song``` ist zur Vollständigkeit noch anzulegen. 
 (In disem Beispiel hat auch jeder ```Artist``` nur ein ```Genre``` zur Vereinfachung.)
+
+</details>
+<br>
+
+## Aufgabe 02
+Überführen und bilden von ERM-Diagrammen in andere Notationen.
+
+**Aufgabe 02a** <br>
+Überführen sie das vorliegende ERD in ein Relationenmodell (Schriftform mit Minimalnotation).
+
+<img src="resources/bd/ex_erd.png" width="500">
+
+<details><summary>Lösung</summary>
+
+<img src="resources/bd/ex_erd_solution.png" width="500">
+
+</details>
+<br>
+
+<!--
+- ander rum
+- Küche aufgabe
+- eigene aufgabe
+-->
