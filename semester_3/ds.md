@@ -226,7 +226,7 @@ Somit ist Formel F bewiesen indem wir ¬F zur Klauselmenge huinzufügen und eine
 Eine Logik wird als korrekt bezeichnet, wenn jede aus wahren Formeln mittels Inferenzregeln hergeleitete Formel auch wieder wahr ist.
 
 **Vollständigkeit** <br>
-Eine mathematische Aussage heißt vollständig, wenn sie aus den Axiomen hergeleitet werden kann.
+Bedeutet in einer Logik, dass jede wahre Formel auch aus anderen wahren Formeln herleitbar ist, also in der Logik auch bewiesen werden kann.
 
 
 # Prädikatenlogik
