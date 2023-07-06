@@ -1423,4 +1423,5 @@ Offensichtlich lässt sich der ```Artist``` aus der ```Server_ID``` ableiten, da
 | Lady Gaga | Pop |
 | Trixie Mattel | Country |
 
-Die Tabelle ist nun in der ```3NF```, wenn man annimmt, jeder ```Artist```` eindeutig ist. Eine weitere Relation mit ```Server_ID```, ```Track``` und ```Song``` ist zur Vollständigkeit noch anzulegen.
+Die Tabelle ist nun in der ```3NF```, wenn man annimmt, jeder ```Artist``` eindeutig ist. Eine weitere Relation mit ```Server_ID```, ```Track``` und ```Song``` ist zur Vollständigkeit noch anzulegen. 
+(In disem Beispiel hat auch jeder ```Artist``` nur ein ```Genre``` zur Vereinfachung.)
