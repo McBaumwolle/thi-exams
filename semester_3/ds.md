@@ -221,6 +221,13 @@ Unser Herleitungsbaum sieht dann so aus:
 
 Somit ist Formel F bewiesen indem wir ¬F zur Klauselmenge huinzufügen und einen Widerspruch herleiten. <br>
 
+**Hinweise** <br>
+Für die Umformung ein paar Hinweise. 
+```bash
+# Verkettung
+(A ∧ B) ∨ C = (A ∨ C) ∧ (B ∨ C)
+```
+
 ## Sonsitges
 **Korrektheit** <br>
 Eine Logik wird als korrekt bezeichnet, wenn jede aus wahren Formeln mittels Inferenzregeln hergeleitete Formel auch wieder wahr ist.
