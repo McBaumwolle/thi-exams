@@ -1402,12 +1402,25 @@ Das Attribut ```Server_ID``` in zweiten Tabelle ist nun ein Fremdschlüssel, der
 <br>
 
 **Aufgabe 01c** <br>
-...
+Eine Relation befindet sich in der ```3NF```, wenn sie die 2. NF erfüllt und keine funktionalen Abhängigkeiten der Nichtschlüssel-Attribute untereinander bestehen. Solche Abhängigkeiten bezeichnet man auch als transitive Abhängigkeiten.
 
-<!--
+| Server_ID | Album | Artist | Genre | Release |
+| --------- | ----- | ------ | ----- | ------- |
+| 4711 | Chromatica | Lady Gaga | Pop | 2020 |
+| 4712 | One Stone | Trixie Mattel | Country | 2018 |
+| 4713 | The Fame | Lady Gaga | Pop | 2008 |
 
-https://de.wikipedia.org/wiki/Normalisierung_(Datenbank)?useskin=vector#Erste_Normalform_(1NF)
+Offensichtlich lässt sich der ```Artist``` aus der ```Server_ID``` ableiten, das ```Genre``` hängt wiederum vom ```Artist``` und damit **transitiv** von der ```Server_ID``` ab.
 
-https://www.datenbanken-verstehen.de/datenmodellierung/normalisierung/
+| Server_ID | Album | Release |
+| --------- | ----- | ------- |
+| 4711 | Chromatica | 2020 |
+| 4712 | One Stone | 2018 |
+| 4713 | The Fame | 2008 |
 
--->
+| Artist | Genre |
+| ------ | ----- |
+| Lady Gaga | Pop |
+| Trixie Mattel | Country |
+
+Die Tabelle ist nun in der ```3NF```, wenn man annimmt, jeder ```Artist```` eindeutig ist. Eine weitere Relation mit ```Server_ID```, ```Track``` und ```Song``` ist zur Vollständigkeit noch anzulegen.
