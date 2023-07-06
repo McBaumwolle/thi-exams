@@ -590,6 +590,29 @@ my_len([K|Rest], E) :- my_len(Rest, E1),
 E = 3.
 ```
 
+## Constraints
+Mit dem Modul `clpfd` können Constraints definiert und so mathematisch gerechnet werden. Für $x=2y$ und $x-4=y$ kann so vorgegangen werden.
+
+```prolog
+% Import
+:- use_module(library(clpfd)).
+
+% Programm
+solve_equations(X, Y) :-
+    % Variablen definieren
+    X in -100..100,
+    Y in -100..100,
+    
+    % Gleichungssystem definieren
+    X #= Y * 2,
+    X - 4 #= Y.
+
+% Abfrage
+?- solve_equations(X, Y).
+X = 8,
+Y = 4.
+```
+
 
 ## Beispiele
 ```prolog
