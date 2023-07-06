@@ -11,6 +11,7 @@
   - [Hill-Climbing](#hill-climbing)
   - [Back-Tracking](#back-tracking)
   - [Forward-Checking](#forward-checking)
+  - [A-Stern](#a-stern)
 - [Aussagenlogik](#aussagenlogik)
   - [Normalformen](#normalformen)
     - [Literal](#literal)
@@ -20,6 +21,7 @@
   - [Tableau](#tableau)
   - [Resolution](#resolution)
   - [Resolutionsbeweis](#resolutionsbeweis)
+  - [Sonsitges](#sonsitges)
 - [Prädikatenlogik](#prädikatenlogik)
   - [Notation](#notation)
   - [Klauseln](#klauseln)
@@ -38,7 +40,9 @@
     - [Arithmetik](#arithmetik)
     - [Rekursion](#rekursion)
     - [Listen](#listen)
+  - [Constraints](#constraints-1)
   - [Beispiele](#beispiele-1)
+
 
 
 
