@@ -230,6 +230,11 @@ Für die Umformung ein paar Hinweise.
 ```bash
 # Verkettung
 (A ∧ B) ∨ C = (A ∨ C) ∧ (B ∨ C)
+
+# Mengen
+A ∧ B = {A,B}
+A ∨ B = {A},{B}
+```
 ```
 
 ## Sonsitges
