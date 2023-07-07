@@ -235,7 +235,6 @@ Für die Umformung ein paar Hinweise.
 A ∧ B = {A,B}
 A ∨ B = {A},{B}
 ```
-```
 
 ## Sonsitges
 **Korrektheit** <br>
