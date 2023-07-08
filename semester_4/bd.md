@@ -1343,12 +1343,12 @@ https://moodle.thi.de/pluginfile.php/759265/mod_resource/content/1/15_Hadoop_Tei
 
 # Übungen
 ## Aufgabe 01
-Korrigiere folgende Tabellen in deren angegebender Normalform. 
+Korrigiere folgende Tabellen in deren angegebender Normalform. Primärschlüssel sind kursiv gekennzeichnet. 
 
 **Aufgabe 01a** <br>
 Für die ```1NF``` muss jedes Attribut der Relation  einen atomaren Wertebereich haben - folgende Tabelle verletzt diese Bedingung. 
 
-| Server_ID | Album | Release | Songs |
+| _Server_ID_ | Album | Release | Songs |
 | --------- | ----- | ------- | ------ |
 | 4711 | <span style="color: red;">Lady Gaga - Chromatica</span> | 2020 | <span style="color: red;">Rain on Me, 911, Replay</span> |
 | 4712 | <span style="color: red;">Charli XCX - Sucker</span> | 2014 | Boom Clap |
@@ -1374,7 +1374,7 @@ Da jetzt jeder Attributwertebereich atomar ist sowie die Tabelle einen eindeutig
 **Aufgabe 01b** <br>
 Eine Relation ist genau dann in der ```2NF```, wenn die erste Normalform vorliegt und kein Nichtprimärattribut (Attribut, das nicht Teil eines Schlüsselkandidaten ist) funktional von einer echten Teilmenge eines Schlüsselkandidaten abhängt. 
 
-| Server_ID | Artist | Album | Release | Track | Song |
+| _Server_ID_ | Artist | Album | Release | _Track_ | Song |
 | --------- | ------ | ----- | ------- | ----- | ---- |
 | 4711 | Lady Gaga | Chromatica | 2020 | 1 | Rain on Me |
 | 4711 | Lady Gaga | Chromatica | 2020 | 2 | 911 |
@@ -1388,13 +1388,13 @@ Problem hier ist, dass die Felder ```Album```, ```Artist``` und ```Release``` fu
 
 <!-- siehe Wikipedia für weiteres Problem und das Resultat -->
 
-| Server_ID | Artist | Album | Release |
+| _Server_ID_ | Artist | Album | Release |
 | --------- | ------ | ----- | ------- |
 | 4711 | Lady Gaga | Chromatica | 2020 |
 | 4712 | Charli XCX | Sucker | 2014 |
 | 4713 | Lady Gaga | The Fame | 2008 |
 
-| Server_ID | Track | Song |
+| <u>Unterstrichener Text</u> | _Track_ | Song |
 | --------- | ----- | ---- |
 | 4711 | 1 | Rain on Me |
 | 4711 | 2 | 911 |
