@@ -406,6 +406,26 @@ Art von Supervised Learning, bei dem ein Objekt einer Klasse zugeordnet wird. <b
 ## Netze
 (siehe [moodle](https://moodle.thi.de/pluginfile.php/753246/mod_resource/content/0/CV_15_Classification%20Architectures.pdf) Seite 7 zu **Inception**) <br>
 
+### LeNet
+Ein simples Convolutional Neural Network von 1998, nutzt Backpropagation. <br>
+
+<details><summary>Struktur</summary>
+
+<img src="resources/cv/13a_lenet.png" height="150">
+
+Wurde angewendet auf den ```MNIST``` Datensatz. <br>
+
+</details> <br>
+
+<!-- 
+
+SONNTAG
+
+-->
+
+### AlexNet
+...
+
 ## Gewichtsreduktion
 Darstellung von GoogLeNet von 2015. 
 
