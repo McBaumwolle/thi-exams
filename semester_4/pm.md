@@ -710,3 +710,7 @@ Der Projektabschlussbericht ist ein formelles Dokument, das die Projektergebniss
 
 **Sonsitges** <br>
 Die Kundenzufriedenheit kann am Ende erfragt werden, um Feedback zu sammeln und in anderen Projekten einzusetzen. Der Projektabschluss sollte gefeiert werden als Event. 
+
+
+# agiles Projektmanagement
+...

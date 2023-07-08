@@ -1350,9 +1350,9 @@ Für die ```1NF``` muss jedes Attribut der Relation  einen atomaren Wertebereich
 
 | Server_ID | Album | Release | Songs |
 | --------- | ----- | ------- | ------ |
-| 4711 | Lady Gaga - Chromatica | 2020 | Rain on Me, 911, Replay |
-| 4712 | Charli XCX - Sucker | 2014 | Boom Clap |
-| 4713 | Lady Gaga - The Fame | 2008 | Just Dance |
+| 4711 | <span style="color: red;">Lady Gaga - Chromatica</span> | 2020 | <span style="color: red;">Rain on Me, 911, Replay</span> |
+| 4712 | <span style="color: red;">Charli XCX - Sucker</span> | 2014 | Boom Clap |
+| 4713 | <span style="color: red;">Lady Gaga - The Fame</span> | 2008 | Just Dance |
 
 <details><summary>Lösung</summary>
 
