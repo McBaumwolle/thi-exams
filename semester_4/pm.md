@@ -713,4 +713,52 @@ Die Kundenzufriedenheit kann am Ende erfragt werden, um Feedback zu sammeln und 
 
 
 # agiles Projektmanagement
-...
+Eine agile Methode zur Planung und Steuerung von Projekten. Im Gegensatz zu traditionellen Projektmanagementmethoden, die auf starren Plänen und Prozessen basieren, betont agiles Projektmanagement Flexibilität, Zusammenarbeit und schnelle Anpassung an sich ändernde Anforderungen.
+
+## agiles Manifest
+Das agile Manifest ist eine Sammlung von Prinzipien, die als Leitfaden für agile Softwareentwicklungsprojekte dienen. 
+
+```mermaid
+graph LR;
+    A(Individuen und Interaktionen) -->|wichtiger als| B(Prozesse und Tools);
+    C(funktionierende Software) -->|wichtiger als| D(umfassende Dokumentation);
+    E(Kooperation mit Betroffenen) -->|wichtiger als| F(Vertragsverhandlung);
+    G(Reagieren auf Veränderung) -->|wichtiger als| H(Befolgen eines Plans);
+```
+
+Idee ist ein kleines, leistungsfähiges Team mit allen erforderlichen Kompetenzen, das sich selbst organisiert und die Verantwortung für die Erreichung des Projektziels übernimmt. Schnelles Feedback ist garantiert und Fokus liegt auf erlebbaren Zwichenergebnissen.
+
+## Scrum
+Das Scrum-Team besteht aus Product-Owner, Team und Scrum-Master. 
+
+<img src="resources/pm/21_scrum.png" width="500">
+
+**Product-Owner** <br>
+Ist für den wirtschaftlichen Erfolg des Produkts verantwortlich, fasst Anforderungen im Product-Backlog zusammen und priorisiert diese.
+
+**Team** <br>
+Das (Entwicklungs-)Team ist in der Regel aus ```3-8``` Personen zusammengesetzt, die Anforderungen aus dem Product-Backlog eigenvständig planen. 
+
+**Scrum-Master** <br>
+Ist Scrum-Experte, Coach und Eskalationsinstanz bei Problemen, hält sich aber oft zurück.
+
+**Product-Backlog** <br>
+Eine Liste aller gewünschten funktionalen und nicht-funktionalen Anforderungen an das Produkt. 
+
+<!-- detaillierter -->
+
+**Sprint-Backlog** <br>
+Team-Mitglieder wählen einzelne ```Tasks``` selbst aus, die Arbeit wird nie zugewiesen, tägliche aktualisierung des Restaufwands. Oft gut sichtbar auf einem Whiteboard - [trelo](https://trello.com/) zum Beispiel.
+
+**Sprint-Burn-Dow** <br>
+Graphische Darstellung des ```Sprint-Fortschritts```, zeigt den Restaufwand über die Zeit. Tägliche beantwortung der Fragen...
+* Was habe ich gestern getan?
+* Was werde ich heute tun?
+* Welche Hindernisse gibt es?
+
+Verbesserung des ```Scrum-Prozesses``` zum Beispiel durch...
+* schätzen der Komplexität anstatt von Zeit
+* nicht-lineare Bemessungsskala
+* Neupriorisierung des Product-Backlogs durch den Product-Owner
+* bessere Kommuikation im Team und Abstimmungen 
+
