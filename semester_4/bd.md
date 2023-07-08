@@ -1394,7 +1394,7 @@ Problem hier ist, dass die Felder ```Album```, ```Artist``` und ```Release``` fu
 | 4712 | Charli XCX | Sucker | 2014 |
 | 4713 | Lady Gaga | The Fame | 2008 |
 
-| <u>Unterstrichener Text</u> | _Track_ | Song |
+| _Server_ID_ | _Track_ | Song |
 | --------- | ----- | ---- |
 | 4711 | 1 | Rain on Me |
 | 4711 | 2 | 911 |
@@ -1410,7 +1410,7 @@ Das Attribut ```Server_ID``` in zweiten Tabelle ist nun ein Fremdschlüssel, der
 **Aufgabe 01c** <br>
 Eine Relation befindet sich in der ```3NF```, wenn sie die 2. NF erfüllt und keine funktionalen Abhängigkeiten der Nichtschlüssel-Attribute untereinander bestehen. Solche Abhängigkeiten bezeichnet man auch als transitive Abhängigkeiten.
 
-| Server_ID | Album | Artist | Genre | Release |
+| _Server_ID_ | Album | Artist | Genre | Release |
 | --------- | ----- | ------ | ----- | ------- |
 | 4711 | Chromatica | Lady Gaga | Pop | 2020 |
 | 4712 | One Stone | Trixie Mattel | Country | 2018 |
@@ -1420,7 +1420,7 @@ Eine Relation befindet sich in der ```3NF```, wenn sie die 2. NF erfüllt und ke
 
 Offensichtlich lässt sich der ```Artist``` aus der ```Server_ID``` ableiten, das ```Genre``` hängt wiederum vom ```Artist``` und damit **transitiv** von der ```Server_ID``` ab.
 
-| Server_ID | Album | Release |
+| _Server_ID_ | Album | Release |
 | --------- | ----- | ------- |
 | 4711 | Chromatica | 2020 |
 | 4712 | One Stone | 2018 |
@@ -1430,6 +1430,14 @@ Offensichtlich lässt sich der ```Artist``` aus der ```Server_ID``` ableiten, da
 | ------ | ----- |
 | Lady Gaga | Pop |
 | Trixie Mattel | Country |
+
+| _Server_ID_ | _Track_ | Song |
+| --------- | ----- | ---- |
+| 4711 | 1 | Rain on Me |
+| 4711 | 2 | 911 |
+| 4711 | 3 | Replay |
+| 4712 | 1 | Boom Clap |
+| 4713 | 1 | Just Dance |
 
 Die Tabelle ist nun in der ```3NF```, wenn man annimmt, jeder ```Artist``` eindeutig ist. Eine weitere Relation mit ```Server_ID```, ```Track``` und ```Song``` ist zur Vollständigkeit noch anzulegen. 
 (In disem Beispiel hat auch jeder ```Artist``` nur ein ```Genre``` zur Vereinfachung.)
