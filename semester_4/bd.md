@@ -1358,7 +1358,7 @@ Für die ```1NF``` muss jedes Attribut der Relation  einen atomaren Wertebereich
 
 Das Feld ```Album``` enthält zwei Attributwertebereiche und ```Songs``` eine Menge an Titeln. Um in die ```1NF``` zu kommen, muss die Tabelle aufgeteilt werden.
 
-| Server_ID | Artist | Album | Release | Track | Song |
+| _Server_ID_ | Artist | Album | Release | _Track_ | Song |
 | --------- | ------ | ----- | ------- | ----- | ---- |
 | 4711 | Lady Gaga | Chromatica | 2020 | 1 | Rain on Me |
 | 4711 | Lady Gaga | Chromatica | 2020 | 2 | 911 |
