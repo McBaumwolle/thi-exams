@@ -316,10 +316,83 @@ Der Filter erkennet Kanten in einer bestimmten Orientierung. <br>
 
 
 # Transformation
-(siehe cv_10)
+...
+
+## Translation
+Verschiebung des Bildes um $t_x$ und $t_y$.
+
+$x' = [I t] \overline{x}$ <br>
+
+$I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$ <br>
+
+$\overline{x}' = \begin{bmatrix} I &t \\ 0^T & 1 \end{bmatrix} \overline{x}$
+
+$t$ ist der Wert der Translation, zum Beispiel $t = \begin{bmatrix} 50 \\ 50 \end{bmatrix}$
+
+## Euclidean
+Kombination aus Rotation und Translation. <br>
+
+$x' = \begin{bmatrix} R & t \end{bmatrix} \overline{x}$
+
+Hierbei ist $R$ die Rotationsmatrix $R = \begin{bmatrix} cos(\theta) & -sin(\theta) \\ sin(\theta) & cos(\theta) \end{bmatrix}$.
+
+## Similarity
+Kombination aus Rotation, Translation und Skalierung - es bleibt die Form des Bildes erhalten. <br>
+
+$x' = \begin{bmatrix} sR & t \end{bmatrix} \overline{x}$ <br>
+
+$x' = \begin{bmatrix} s cos(\theta) & -s sin(\theta) & t_x \\ s sin(\theta) & s cos(\theta) & t_y \end{bmatrix} \overline{x}$
+
+Hier isit der Skalierungsfaktor $s$ zum Beispiel $s = 0.5$.
+
+
+## Affine
+Rotation um eine Achse, Skalierung und Translation - parralelle Linien bleiben parralell. <br>
+
+$x' = A \overline{x}$ <br>
+
+$x' = \begin{bmatrix} a_{00} & a_{01} & a_{02} \\ a_{10} & a_{11} & a_{12} \end{bmatrix} \overline{x}$
+
+$A$ ist eine beliebige $2 \times 3$ Matrix. <br>
+
+<details><summary>Matrix-Infos</summary>
+
+$a_{00}$ und $a_{11}$ sind die Skalierungsfaktoren. <br>
+$a_{01}$ und $a_{10}$ sind die Shearingfaktoren in $x$ und $y$ Richtung. <br>
+$a_{02}$ und $a_{12}$ sind die Translationen in $x$ und $y$ Richtung. <br>
+
+</details> <br>
+
+
+## Projective
+Verzerrung im Raum, gerade Linien bleiben gerade. <br>
+
+$\widetilde{x}' = \widetilde{H} \widetilde{x}$ <br>
+
+Hier ist $\widetilde{H}$ eine homogene $3 \times 3$ Matrix. Für inhomogene Ergebnisse müssen die Koordinaten normalisiert werden. 
+
+$x' = \frac{h_{00}x + h_{01}y + h_{02}}{h_{20}x + h_{21}y + h_{22}}$ <br>
+$y' = \frac{h_{10}x + h_{11}y + h_{12}}{h_{20}x + h_{21}y + h_{22}}$ <br> 
+
+<details><summary>Matrix-Infos</summary>
+
+$a_{00}$ und $a_{11}$ sind die Skalierungsfaktoren. <br>
+$a_{01}$ und $a_{10}$ sind die Shearingfaktoren in $x$ und $y$ Richtung. <br>
+$a_{02}$ und $a_{12}$ sind die Translationen in $x$ und $y$ Richtung. <br>
+$a_{20}$ und $a_{21}$ kodieren die perspektivische Verzerrung in $x$ und $y$ Richtung. <br>
+
+</details> <br>
+
+<details><summary>Zusammenfassung</summary>
+
+<img src="resources/cv/12a_transformation.png" width="600">
+
+</details> <br>
+
 
 # Rekonstruktion
 (siehe cv_11)
+
 
 # Neuronale Netze
 ## Wiederholung
@@ -420,6 +493,20 @@ Wurde angewendet auf den ```MNIST``` Datensatz. <br>
 <!-- 
 
 SONNTAG
+https://www.google.com/search?q=alexnet+structure&tbm=isch#imgrc=nI9KY6aOxK-1zM
+
+https://www.google.com/search?q=nn+vs+cnn
+
+https://www.google.com/search?q=unet&tbm=isch#imgrc=K-wr6kKnRJ4HPM
+
+https://www.google.com/search?q=sigmoid
+
+https://www.google.com/search?q=How+does+VGGNet+reduce+weights%3F
+
+https://www.google.com/search?q=cv+inception+module&tbm=isch#imgrc=psQyoxlGuaY1hM
+
+https://moodle.thi.de/pluginfile.php/753246/mod_resource/content/0/CV_15_Classification%20Architectures.pdf
+----------- S7
 
 -->
 
