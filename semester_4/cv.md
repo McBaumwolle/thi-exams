@@ -31,6 +31,11 @@
   - [Kerneltypen](#kerneltypen)
   - [Fragen](#fragen-5)
 - [Transformation](#transformation)
+  - [Translation](#translation)
+  - [Euclidean](#euclidean)
+  - [Similarity](#similarity)
+  - [Affine](#affine)
+  - [Projective](#projective)
 - [Rekonstruktion](#rekonstruktion)
 - [Neuronale Netze](#neuronale-netze)
   - [Wiederholung](#wiederholung)
@@ -40,6 +45,10 @@
   - [Berechnung](#berechnung)
 - [Klassifikation](#klassifikation)
   - [Netze](#netze)
+    - [LeNet](#lenet)
+    - [AlexNet](#alexnet)
+    - [VGGNet](#vggnet)
+    - [GoogLeNet](#googlenet)
   - [Gewichtsreduktion](#gewichtsreduktion)
   - [Skip Connections](#skip-connections)
   - [Cardinality](#cardinality)
@@ -68,8 +77,10 @@
 - [Generative Adversarial Networks](#generative-adversarial-networks)
   - [Aufbau](#aufbau)
   - [Probleme](#probleme)
-  - [Typen](#typen)
+  - [Anwendungen](#anwendungen)
+  - [Fragen](#fragen-11)
 - [Praktika](#praktika)
+
 
 
 
@@ -484,8 +495,6 @@ Art von Supervised Learning, bei dem ein Objekt einer Klasse zugeordnet wird. <b
 (siehe [moodle](https://moodle.thi.de/pluginfile.php/753246/mod_resource/content/0/CV_15_Classification%20Architectures.pdf) Seite 7 zu **Inception**) <br>
 
 
-INCPECTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 ### LeNet
 Ein simples Convolutional Neural Network von 1998, nutzt Backpropagation. <br>
 
@@ -542,6 +551,7 @@ Grundidee ist es, kleinere Convolutions zu benutzen um die Anzahl der Parameter 
 ### GoogLeNet
 Paper von [2015](https://arxiv.org/pdf/1409.4842.pdf) zum GoogLeNet. <br>
 
+**Inception** <br>
 Idee eines Inception Modules, das Netzwerk selber lernen zu lassen, welche Convolutions verwendet werden sollen. 
 
 <img src="resources/cv/13d_inception.png" width="400">
