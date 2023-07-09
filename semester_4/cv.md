@@ -483,12 +483,15 @@ Art von Supervised Learning, bei dem ein Objekt einer Klasse zugeordnet wird. <b
 ## Netze
 (siehe [moodle](https://moodle.thi.de/pluginfile.php/753246/mod_resource/content/0/CV_15_Classification%20Architectures.pdf) Seite 7 zu **Inception**) <br>
 
+
+INCPECTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 ### LeNet
 Ein simples Convolutional Neural Network von 1998, nutzt Backpropagation. <br>
 
 <details><summary>Struktur</summary>
 
-<img src="resources/cv/13a_lenet.png" height="150">
+<img src="resources/cv/13a_lenet.png" width="600">
 
 Wurde angewendet auf den ```MNIST``` Datensatz. <br>
 
@@ -515,12 +518,43 @@ https://moodle.thi.de/pluginfile.php/753246/mod_resource/content/0/CV_15_Classif
 -->
 
 ### AlexNet
-...
+Paper von [2012](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf) zum AlexNet. <br>
+
+<details><summary>Struktur</summary>
+
+<img src="resources/cv/13b_alexnet.bmp" width="500">
+
+</details> <br>
+
+
+### VGGNet
+Paper von [2014](https://arxiv.org/pdf/1409.1556.pdf) zum VGGNet. <br>
+
+Grundidee ist es, kleinere Convolutions zu benutzen um die Anzahl der Parameter zu reduzieren (das Netzwerk wird dadurch tiefer). 
+
+<details><summary>Struktur</summary>
+
+<img src="resources/cv/13c_vggnet.bmp" width="500">
+
+</details> <br>
+
+
+### GoogLeNet
+Paper von [2015](https://arxiv.org/pdf/1409.4842.pdf) zum GoogLeNet. <br>
+
+Idee eines Inception Modules, das Netzwerk selber lernen zu lassen, welche Convolutions verwendet werden sollen. 
+
+<img src="resources/cv/13d_inception.png" width="400">
+
+So werden parallel verschiedene Convolutions mit verschiedenen Kernelgrößen (z.B. ```1x1, 3x3, 5x5```) ausgeführt. Dadurch erhält das Netzwerk die Möglichkeit, sowohl lokale als auch globale Informationen zu erfassen - die verschiedenen Outputs werden dann zusammengeführt. <br>
+
+
 
 ## Gewichtsreduktion
-Darstellung von GoogLeNet von 2015. 
+Reduktion der Gewicht mit verschiedenen COnvolution Layern, siehe [GoogleNet](#googlenet). <br>
 
 <img src="resources/cv/13_googlenet.png" height="150">
+
 
 ## Skip Connections
 In Theorie sollten Netzwerke je tiefer sie sind auch besser werden oder besser als ihre einzelnen Teile. <br>
@@ -543,17 +577,17 @@ Bis jetzt wurden zwei Probleme außer Acht gelassen.
 <!-- add images -->
 
 ## Fragen 
-1. Zeichne ein Inception Modul und erkläre die einzelnen Schritte. Wieso wird es verwendet?
+Zeichne ein Inception Modul und erkläre die einzelnen Schritte. Wieso wird es verwendet?
 
-&emsp; &emsp; &emsp; _lernen_
+> in Modul, das das Netzwerk selber entscheiden lässt, welche Convolutions (und deren Kombination) es verwendet. So werden Gewichte im Netzwerk stark reduziert. Nachdem verschiedene Convolutions parallel ausgeführt werden, werden die Outputs zusammengeführt.
 
-2. Was ist eine Skip Connection und wieso wird sie verwendet?
+Was ist eine Skip Connection und wieso wird sie verwendet?
 
-&emsp; &emsp; &emsp; Skip-Connectionssind zusätzliche Verbindungen in einem neuronalen Netz, die dazu beitragen, das versuchen, das Vanishing-Gradient Problem zu lösen und einen direkten Informationsfluss zwischen frühen und späten Schichten zu ermöglichen, was zu einer verbesserten Leistung und Optimierung tiefer Netze führt.
+> Eine Skip-Connection ist eine zusätzliche Verbindung im Netzwerk, die versucht das Vanishing-Gradient Problem zu lösen und einen direkten Informationsfluss zwischen frühen und späten Schichten zu ermöglichen. So sond alternative Wege fpr die Gradienten verfügbar.
 
-3. Architektur für ein beschriebenes Problem aufzeichnen und erklären.
+Architektur für ein beschriebenes Problem aufzeichnen und erklären.
 
-&emsp; &emsp; &emsp; _üben_ mit LeNet, AlexNet, VGG, ResNet, GoogLeNet, Inception
+> LeNet, AlexNet, VGG, ResNet, GoogLeNet, Inception
 
 
 # Object Detection
