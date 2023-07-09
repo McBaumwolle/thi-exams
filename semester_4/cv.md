@@ -421,7 +421,7 @@ $a_{20}$ und $a_{21}$ kodieren die perspektivische Verzerrung in $x$ und $y$ Ric
 
 # Neuronale Netze
 ## Wiederholung
-Weight Initialization <br>
+**Weight Initialization** <br>
 Zufällige Werte sind zu ungenau, da zu groß oder klein möglich. <br>
 Xavier Initialization gut für Sigmoid und ```tanh```, nicht bei ```ReLU```. <br>
 He Initialization gut für ```ReLU```. <br>
@@ -447,9 +447,9 @@ Nimmt Richtung des Gradienten mit, um schneller zu konvergieren. <br>
 Um Bilder zu analysieren werden unmengen an Neuronen benötigt. <br>
 
 **Idee** <br>
- Netz für Feature Extraction und ein Netz für Klassifikation. <br>
+Netz für Feature Extraction und ein Netz für Klassifikation, ein sogenanntes ```Encoder-Decoder-Netz```. <br>
 
-### Convolutional Layer
+**Convolutional Layer** <br>
 Lokale Suche nach Features im Bild mit Hilfe von Kernels, Paddng um Größe des Bildes zu erhalten.
 
 <img src="resources/cv/12_convolutional_layer.png" height="150">
@@ -457,13 +457,13 @@ Lokale Suche nach Features im Bild mit Hilfe von Kernels, Paddng um Größe des 
 Zum Beispiel kann Max-Pooling verwendet werden, um die Größe des Bildes zu reduzieren. <br>
 
 ## Fragen 
-1. Wieso werden CNNs verwendet und wie funktionieren sie?
+Wieso werden CNNs verwendet und wie funktionieren sie?
 
-&emsp; &emsp; &emsp; CNNs eignen such gut für Bildverarbeitung, da sie die Größe des Bildes reduzieren und Features extrahieren können. _Lernen_
+> CNNs eignen such gut für Bildverarbeitung, da sie die Größe des Bildes reduzieren und Features extrahieren können. Concolutional Layer reduzieren jeweils die Dimension des Bildes und erleichtern so das Training.
 
-2. Output-Dimension mit Input und Parameter berechnen. 
+Output-Dimension mit Input und Parameter berechnen. 
 
-&emsp; &emsp; &emsp; _rechnen_
+> siehe unten
 
 ## Berechnung 
 
@@ -493,9 +493,6 @@ What is a top-1 error?
 
 What is a top-5 error?
 -> The top-5 error is the percentage of test images for which the correct label is not among the top 5 predicted labels.
-
-
-
 -->
 
 # Klassifikation
@@ -687,7 +684,7 @@ Für genaue Erklärung zu ```ROI``` Pooling Layer siehe [towardsdatascience](htt
 * kein Speicher benötigt wie in der ```R-CNN``` Pipeline
 
 **Nachteile** <br>
-* Region PRoposal mit Selective Search ist immer noch langsam
+* Region Proposal mit Selective Search ist immer noch langsam
 * ```ROI``` Pooling verliert Informationen
 
 ## Faster R-CNN
@@ -720,28 +717,35 @@ Seit 2015 gab es viele weitere Versionen, wie ```YOLOv2```, ```YOLOv3``` und ```
 Siehe [moodle](https://moodle.thi.de/pluginfile.php/756070/mod_resource/content/0/CV_17_Object_Detection%20II.pdf) Seite 34.
 
 ## Fragen
-1. Aus den Ergebnissen an einem Beispiel die ```AP``` berechnen.
+Aus den Ergebnissen an einem Beispiel die ```AP``` berechnen.
 
-&emsp; &emsp; &emsp; _üben_
+> siehe Formel weiter oben
 
-2. Definieren einer Netzwerkstruktur die 300 unterschiedliche Objekte erkennen kann auf farbigen Bildern. Welche **Loss-Funktion** wird verwendet?
+Definieren einer Netzwerkstruktur die 300 unterschiedliche Objekte erkennen kann auf farbigen Bildern. Welche **Loss-Funktion** wird verwendet?
 
-&emsp; &emsp; &emsp; _lernen_
+> U-Net, YOLO oder Faster R-CNN mit einer Cross-Entropy Loss-Funktion
 
-3. Den Unterschied von ```R-CNN```, ```Fast R-CNN``` und ```Faster R-CNN``` erklären.
+Den Unterschied von ```R-CNN```, ```Fast R-CNN``` und ```Faster R-CNN``` erklären.
 
-4. Erkläre wie die ```YOLO``` Architektur funktioniert.
+> R-CNN besteht aus drei Teilen - RPN, RoI-Pooling und CNN für die Klassifikation.
 
-&emsp; &emsp; &emsp; Aufteilung in Gitter mit individuellen Predictions - wird wieder zusammengefügt.
+> Fast R-CNN verwendet RoI-Pooling um Regionen in feste Größe zu bringen, werden dann mit fully connected Layer klassifiziert. So muss nur einmal das gesamt Bild durchlaufen werden. 
 
-5. Was sind die Vor- und Nachteile von ```YOLO``` im Vergleich zu ```Faster R-CNN```?
+> Faster R-CNN nutzt ein gemeinsames CNN für Feature Extraction und Region Proposal, RPN-Teil generiert selbstständig Regionen. 
 
-&emsp; &emsp; &emsp; Schneller, da das gesamte Bild nur einmal durchlaufen wird. <br>
-&emsp; &emsp; &emsp; Nicht so genau, vor allem bei kleinen Objekten.
+Erkläre wie die ```YOLO``` Architektur funktioniert.
 
-6. Wie kann die Transformer-Architektur für Objekterkennung verwendet werden?
+> Basiert auf einem einzigen Durchlauf des CNNs. Zuerst wird das Bild in ein Grid aufgeteilt und für jede Zelle eine Bounding Box vorhergesagt. Am Ende werden die Box-Probabilities mit den Klassen-Probabilities multipliziert. (Non-Maximum Suppression nicht vergessen)
 
-&emsp; &emsp; &emsp; _lernen_
+Was sind die Vor- und Nachteile von ```YOLO``` im Vergleich zu ```Faster R-CNN```?
+
+> Schneller, da das gesamte Bild nur einmal durchlaufen wird - ist in Echtzeit möglich.
+
+> Nicht so genau wegen dem Grid, vor allem fpr kleine Objekte. 
+
+Wie kann die Transformer-Architektur für Objekterkennung verwendet werden?
+
+> ...
 
 
 # Semantic Segmentation

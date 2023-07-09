@@ -66,10 +66,14 @@
 - [Key-Value Stores](#key-value-stores-1)
   - [Redis](#redis)
   - [Persistenz](#persistenz)
-- [Wide Column Stores](#wide-column-stores-1)
+- [Hadoop](#hadoop)
   - [Grundlagen](#grundlagen)
   - [Architektur](#architektur)
 - [optimierte Speicherformate](#optimierte-speicherformate)
+- [Übungen](#übungen)
+  - [Aufgabe 01](#aufgabe-01)
+  - [Aufgabe 02](#aufgabe-02)
+  - [Aufgabe 03](#aufgabe-03)
 
 
 
@@ -103,6 +107,14 @@ Min/Max kann am jeweiligen Ende der Linien angegeben werden.
 (0,*) = 0 oder mehr 
 ```
 
+| MC | Min/Max | Bedeutung |
+| --- | --- | --- |
+| C   | (0,1) | 0 oder 1 |
+| 1  | (1,1) | genau 1 |
+| MC | (0,*) | 0 oder mehr |
+| 1C | (1,*) | 1 oder mehr |
+
+
 # Relationales Datenmodell
 Eine Relation ist eine Teilmenge des kartesischen Produkts von Wertebereichen.
 
@@ -122,7 +134,7 @@ Die Relationensprache ist eine formale Sprache, die zur Formulierung von Anfrage
 (später ergänzen)
 
 ### Superschlüssel
-Ein Superschlüssel ist eine Menge von Attributen, die Tupel einer Relation ***eindeutig*** identifizieren.
+Ein Superschlüssel ist eine Menge von Attributen, die Tupel einer Relation **eindeutig** identifizieren.
 ```bash
 ISBN
 ISBN, Autor
@@ -1446,9 +1458,12 @@ Die Tabelle ist nun in der ```3NF```, wenn man annimmt, jeder ```Artist``` einde
 <br>
 
 ## Aufgabe 02
+Erkennen und Überführen von Normalformen, siehe [TUD-Website](https://dditools.inf.tu-dresden.de/ovk/Informatik/Datenbanken/Umsetzung/Uebung_Normalisierung.html).
+
+## Aufgabe 03
 Überführen und bilden von ERM-Diagrammen in andere Notationen.
 
-**Aufgabe 02a** <br>
+**Aufgabe 03a** <br>
 Überführen sie das vorliegende ERD in ein Relationenmodell (Schriftform mit Minimalnotation).
 
 <img src="resources/bd/ex_erd.png" width="500">
