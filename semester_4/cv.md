@@ -218,23 +218,23 @@ Gleichmäßige Verteilung der Pixelwerte, führt bei homogenen Bereichen zu Nois
 ## Fragen 
 1. Unterschied linearer und nichtlinearer Transformationen
 
-&emsp; &emsp; &emsp; _lernen_
+> Lineare Transformationen verändern Daten proportional, während nichtlineare Transformationen komplexe Veränderungen vornehmen können, die nicht proportional sind. (by ChatGPT)
 
 2. Wenn wir ein Bild mit Gamma-Transformation umwandeln und dabei einen Gamma-Wert größer als 1 verwenden, wird das Bild heller oder dunkler werden?
 
-&emsp; &emsp; &emsp; Dunkler
+> Dunkler, da die potentierten Werte kleiner werden, siehe Formel. 
 
 3. Lineare Transformation auf Bild anwenden.
 
-&emsp; &emsp; &emsp; _üben_
+> Anwenden der Formeln, sind gegeben.
 
-4. Warum ist es eine gute Idee, eine Nachschlagetabelle zu verwenden, wenn man den Histogrammausgleich an einem Bild durchführt?
+1. Warum ist es eine gute Idee, eine Nachschlagetabelle zu verwenden, wenn man den Histogrammausgleich an einem Bild durchführt?
 
-&emsp; &emsp; &emsp; _lernen_
+> Zum Optimieren der Berechnungszeit, da für selbe Pixelwerte nicht mehrmals die gleiche Berechnung durchgeführt werden muss.
 
 
 # Kernels
-Matrix, die auf ein Bild angewendet werden kann.
+Matrix, die auf ein Bild angewendet werden kann - für Visualisierung siehe [Website](https://setosa.io/ev/image-kernels/). 
 
 ## Grenzen
 **Skip Border** <br>
@@ -310,20 +310,30 @@ Der Filter erkennet Kanten in einer bestimmten Orientierung. <br>
 <img src="resources/cv/12_gabor.bmp" height="150">
 -->
 
+$g(x,y,\lambda,\theta,\psi,\sigma,\gamma) = exp(-\frac{x'^2 + \gamma^2 y'^2}{2\sigma^2}) * exp(i(2\pi\frac{x'}{\lambda} + \psi))$ <br>
+
+
 ## Fragen
-1. Definiere einen 4x4 Filter der das Bild schärft.
+Definiere einen 4x4 Filter der das Bild schärft.
 
-&emsp; &emsp; &emsp; _hello_
+> ```[0, -1, -1, 0]``` <br>
+> ```[-1, 5, 5, -1]``` <br>
+> ```[-1, 5, 5, -1]``` <br>
+> ```[0, -1, -1, 0]``` <br>
 
-2. Filter auf ein Bild anwenden. 
+Filter auf ein Bild anwenden. 
 
-&emsp; &emsp; &emsp; _siehe Probeklausur_
+> Einfache Berechnung wie in der Probeklausur.
 
-3. In eigenen Worten erklären, wie ein Sobel-Filter funktioniert.
+In eigenen Worten erklären, wie ein Sobel-Filter funktioniert.
 
-&emsp; &emsp; &emsp; Starke Änderungen in x- oder y-Richtung werden erkannt. 
+> Starke Kontraste werden erkannt, da die Differenz zwischen den Pixeln berechnet wird. <br>
+> ```[-1, 0, 1]``` <br>
+> ```[-2, 0, 2]``` <br>
+> ```[-1, 0, 1]``` <br>
+> Als Beispiel ein Sogel-Filter für Kanten von rechts. <br> 
 
-&emsp; &emsp; &emsp; → _lernen_
+> Merkhilfe für Sobel-Filter: von + nach -
 
 
 # Transformation
