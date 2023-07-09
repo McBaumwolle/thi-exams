@@ -316,7 +316,9 @@ Der Filter erkennet Kanten in einer bestimmten Orientierung. <br>
 
 
 # Transformation
-...
+Verschiedene Transformationen, die auf ein Bild angewendet werden können wie zum Beispiel Rotation. 
+
+$\left[X\atop Y\right]$ 
 
 ## Translation
 Verschiebung des Bildes um $t_x$ und $t_y$.
