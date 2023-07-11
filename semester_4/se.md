@@ -128,8 +128,16 @@ Ein Fehler ist die Abweichung eines beobachteten oder gemessenen Wertes, Zustand
 Viele verschiedene Eunflussfaktoren auf die Qualität von Software. 
 
 **konstruktive Maßnahmen** <br>
-Maßnahmen in Bezug auf das Personal, die Organisation oder der Technik. 
+Maßnahmen in Bezug auf das Personal, die Organisation oder der Technik - sorgen dafür, dass der Entwicklungsprozess und die Software eine bestimmte Qualität aufweisen.
 
 **analytische Maßnahmen** <br>
-Zum Beispiel statische oder dynamische Tests. 
+Zum Beispiel statische oder dynamische Tests - sind Maßnahmen zur Ermittlung der aktuellen Software-Qualität. Sie bringen per se keine Qualität, führen aber zu weiteren Maßnahmen der Qualitätsverbesserung.
+
+
+# Analysephase
+<!-- 
+https://online-lectures-cs.thi.de/se-ss2021-ki-ref1/#/
+
+200 Seiten
+-->
 
