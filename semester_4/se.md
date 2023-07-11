@@ -65,7 +65,7 @@ Betrachtung des gleichen Sachverhalts aus unterschiedlichen Perspektiven, ergebe
 Softwareentwicklung erfolgt streng zielorientiert nach wirtschaftlichen Aspekten. 
 
 **Qualität** <br>
-Ergibt sich aus der Gesamtheit der Eigenschaften und Merkmale eines Produkts - typischerweise in Lastenheft beschrieben.
+Ergibt sich aus der Gesamtheit der Eigenschaften und Merkmale eines Produkts - typischerweise in Lastenheft beschrieben, siehe [Softwarequalität](#softwarequalität).
 
 **Kosten** <br>
 Normalerweise sind die Wartungnskosten höher als die Entwicklungskosten. 
@@ -87,4 +87,49 @@ Die Zeit ist ein wichtiger Faktor, da die Kosten mit der Zeit steigen.
 
 
 <!-- Ausblick Phasenmodell -->
+
+# Softwarequalität
+Die Gesamtheit von Eigenschaften und Merkmalen einer Einheit (das heißt eines Produkts oder einer Tätigkeit) bezüglich ihrer Eignung, festgelegte und vorausgesetzte Erfordernisse zu erfüllen. 
+
+<!-- Qualitätsmodell -->
+
+## DIN ISO 25010
+
+```mermaid
+graph TB
+    A[DIN ISO 25010]
+
+    B[Functionality]
+    C[Portability]
+    D[Maintainability]
+    E[Compatibility]
+    F[Reliability]
+    G[Usability]
+
+    B --> A
+    C --> A
+    D --> A
+    A --> E
+    A --> F
+    A --> G
+```
+
+## Qualitätsmaßnahmen
+Es ist praktisch nicht möglich, mit vertretbarem Aufwand fehlerfreie Software zu entwickeln.
+
+**Fehler** <br>
+Ein Fehler ist die Abweichung eines beobachteten oder gemessenen Wertes, Zustandes oder Verhaltens eines Softwareprodukts von dem spezifizierten oder als richtig Erwarteten.
+
+* Prozessqualität
+* Mitarbeitende
+* Reife der Technologie
+* Qualität der verwendeten Werkzeuge
+
+Viele verschiedene Eunflussfaktoren auf die Qualität von Software. 
+
+**konstruktive Maßnahmen** <br>
+Maßnahmen in Bezug auf das Personal, die Organisation oder der Technik. 
+
+**analytische Maßnahmen** <br>
+Zum Beispiel statische oder dynamische Tests. 
 
