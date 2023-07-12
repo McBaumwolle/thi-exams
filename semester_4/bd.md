@@ -107,6 +107,8 @@ Min/Max kann am jeweiligen Ende der Linien angegeben werden.
 (0,*) = 0 oder mehr 
 ```
 
+Siehe [Link](https://www.tinohempel.de/info/info/datenbank/kardinalitaet_mc.htm).
+
 | MC | Min/Max | Bedeutung |
 | --- | --- | --- |
 | C   | (0,1) | 0 oder 1 |
