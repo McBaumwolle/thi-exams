@@ -135,9 +135,101 @@ Zum Beispiel statische oder dynamische Tests - sind Maßnahmen zur Ermittlung de
 
 
 # Analysephase
-<!-- 
-https://online-lectures-cs.thi.de/se-ss2021-ki-ref1/#/
+Die Analysephase ist die erste und eine der wichtigsten Phasen im Gesamtmodell. Fragen zur Funktionalität, den Randbedingungen und den Eigenheiten des Systems werden geklärt.
 
-200 Seiten
+**Aktivitäten** <br>
+* Analyse des Ist-Zustandes 
+* Analyse der Machbarkeit (Risiko % Kosten)
+* Definition des Systemkontexts
+* Bestimmung der Anforderungen
+
+**Ergebnisse** <br>
+* Pflichtenheft
+* Konzept der Benutzeroberfläche
+* Analysemodell
+
+<!-- Planungsphase und Definitionspahse -->
+
+## Anforderungen
+Legen fest, was man von einem Softwaresystem als Eigenschaften erwartet.
+
+> Die App muss den aktuellen Standort des Benutzers erkennen und die Wetterdaten für diesen Standort anzeigen.
+
+Generell sind Anforderungen schwer zu ermitteln, da Beteiligte die Anforderungen oft nicht klar formulieren können oder Fachsprache und -wissen fehlt. Auch können die Interessen der einzelnen Beteiligten unterschiedlich sein.
+
+**funktionale Anforderungen** <br>
+Definiert eine vom System zu erbringende Funktion. 
+* Was tut das System?
+* Wie reagierte das System auf Eingaben?
+
+**nicht-funktionale Anforderungen** <br>
+Werden auch Qualitätsanforderungen genannt, definieren eine qualitative Eigenschaft, die das System erfüllen muss, zum Beispiel...
+
+```mermaid
+graph TD
+    A[nicht-funktionale Anforderungen] --> B[Produkt]
+    A[nicht-funktionale Anforderungen] --> C[Organisation]
+    A[nicht-funktionale Anforderungen] --> D[Externe]
+
+    B --> E[Zuverlässigkeit]
+    B --> F[Effizienz]
+    B --> G[Usability]
+
+    F --> X[Performance]
+    F --> Y[Speicher]
+
+    C --> H[Coding]
+    C --> I[Standards]
+
+    D --> J[Ethik]
+    D --> K[Gesetze]
+
+    K --> L[Datenschutz]
+    K --> M[Sicherheit]
+```
+
+**Randbedingungen** <br>
+Eine organisatorische oder teschnologische Vorgabe, die Art und Weise einschränkt, wie das System realisiert werden kann. 
+
+> Das System muss bis spätestens September 2024 zur Verfügung stehen.
+
+> Das System soll mit Web-Services realisiert werden. 
+
+## Requirements Engineering
+Feststellung aller relevanten Anforderungen an ein Softwaresystem und deren Dokumentation.
+* Ermittlung
+* Dokumentation
+* Prüfung und Abstimmung
+* Verwaltung
+
+**Systemkontext** <br>
+Teil der Umgebung eines Systems, der für die Definition und das Verständnis der Anforderungen relevant ist.
+* Personen und Stakeholder
+* Systeme mit Leistungsbezug
+* teschnsiche oder organisatorische Prozesse
+* Dokumente (Gesetze, Standards, Normen)
+
+<details><summary>Beispiel</summary>
+
+<img src="resources/se/01_systemkontext.png" width="500">
+
+</details>
+
+<!-- 
+viel weggelassen 
+-->
+
+**Anforderungs-Dokumentation** <br>
+<!--
+NACHHOLEN 7.4
+-->
+
+## Anwendungsfälle
+Ein Use-Case ist die Beschreibung einer Interaktion zwischen dem Benutzer mit dem System.
+
+<!--
+DIAGRAMM + Ü
+
+PRIO 
 -->
 
