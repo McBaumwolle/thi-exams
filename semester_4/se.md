@@ -8,6 +8,18 @@
   - [Software-Engineering](#software-engineering-1)
   - [Modellierung](#modellierung)
   - [Ziele](#ziele)
+- [Softwarequalität](#softwarequalität)
+  - [DIN ISO 25010](#din-iso-25010)
+  - [Qualitätsmaßnahmen](#qualitätsmaßnahmen)
+- [Analysephase](#analysephase)
+  - [Anforderungen](#anforderungen)
+  - [Requirements Engineering](#requirements-engineering)
+  - [Anwendungsfälle](#anwendungsfälle)
+  - [GUI-Prototypen](#gui-prototypen)
+  - [Aktivitätsdiagramme](#aktivitätsdiagramme)
+  - [Domain](#domain)
+  - [Syntax](#syntax)
+
 
 
 # Einführung
@@ -309,3 +321,52 @@ Beispiel zum Ablauf "Getränk kaufen".
 </details> <br>
 
 Für weitere Übungen siehe [moodle](https://online-lectures-cs.thi.de/se-ss2021-ki/#/7/33).
+
+## Domain
+Beim Einsatz von Modellen in der Softwareentwicklung ist ein wichtiges Ziel, einen nahtlosen Übergang vom Problem zur Implementierung zu ermöglichen. Durch das "Domain Modelling" kann der Problembereich in der Sprache der Anwender modelliert werden, sodass die analysierten Klassen, Attribute und Methoden in der Implementierung verwendet werden können. Das Domänenmodell stellt dabei eine abstrakte Darstellung des Wissens über den Problembereich dar.
+
+<img src="resources/se/07_domain.png" width="500">
+
+Es ersleichtert die Kommunikation und setzt essenzielles Fachwissen voraus. Im Beispiel wurde die UML-Klassendiagramm-Syntax verwendet.
+
+## Syntax
+Ein Klassendiagramm beschreibt eine Menge von Klassen mit ihren Eigenschaften. 
+
+<img src="resources/se/08_klassendiagramm.png" width="500">
+
+Die Sichtbarkeit von Attributen ist wiefolgt beschrieben. 
+
+| Symbol | Name | Beschreibung |
+| --- | --- | --- |
+| + | public | öffentlich, für alle Elemente sichtbar |
+| - | private | nur für Objekte dieser Klasse sichtbar |
+| # | protected | sichtbar nur für Instanzen und Instanzen abgeleiteter Klassen |
+| ~ | package | sichtbar für alle Elemente im gleichen Package |
+
+**Wertebereiche** <br>
+Ein ```/``` vor einem Attribut bedeutet, dass es sich um ein abgeleitetes Attribut handelt, wie zum Beispiel das Alter aus dem Geburtsdatum. 
+
+```bash
++ getAge(dateOfBirth : Date) : int
+```
+
+Die Rückgabetypen von Operationen werden in der Klammer angegeben, ähnlich die Parameter der Operation. 
+
+**abstrakte Klassen** <br>
+Abstrakte Klassen können nicht instanziiert werden und werden kursiv geschrieben. 
+
+**Assoziationen** <br>
+Assoziationen beschreiben die Beziehungen zwischen Klassen.
+
+<img src="resources/se/09_assoziationen.png" width="500">
+
+**Aggregation** <br>
+Eine Aggregation ist eine spezielle Assoziation, bei der ein Objekt aus mehreren anderen Objekten besteht.
+
+<detais><summary>Beispiel</summary>
+
+<img src="resources/se/10_aggregation.png" width="500">
+
+</details> <br>
+
+Aggregation bedeutet, das Teil kann ohne das Ganze existieren (z.B. Person in Team). Dahingegen kann eine Komposition nicht ohne das Ganze existieren (siehe Beispiel oben).
