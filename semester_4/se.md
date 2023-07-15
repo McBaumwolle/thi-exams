@@ -20,6 +20,8 @@
   - [Domain](#domain)
   - [Syntax](#syntax)
 - [Designphase](#designphase)
+  - [4+1 Sichtenmodell](#41-sichtenmodell)
+  - [Kriterien für guten Entwurf](#kriterien-für-guten-entwurf)
 
 
 
@@ -406,3 +408,106 @@ Weitere Aufgaben auf [moodle](https://online-lectures-cs.thi.de/se-ss2021-ki-ref
 
 
 # Designphase
+Softwarearchitektur und –design hilft bei der strukturierten und hierarchischen Anorderung von Systemkomponenten und der Beschreibung der Beziehungen.
+
+<img src="resources/se/12_designphase.png" width="500">
+
+**Softwareentwurf** <br>
+Das Architekturprinzip der konzeptionellen Integrität (conceptual integrity) ist eingehalten, wenn Entwurfsentscheidungen im gesamten System durchgängig angewendet und Speziallösungen vermieden werden.
+
+**Designphase** <br>
+Verfolgt das Ziel, wie und womit die Realisierung erfolgen soll. 
+
+**Architekturentwurf** <br>
+Im Kontext der Softwareentwicklung verbindet man mit dem Begriff Architektur sowohl die Softwarearchitektur als auch die Systemarchitektur des Softwareprodukts.
+
+Ziel des Entwurfs sind überschaubare und handhabbare Einheiten und die Festlegung der Lösungsstruktur.sowie die Entwicklung von einem User-Interface-Design.
+
+**Entwurfprozess** <br>
+Im Grobentwurf werden die einzelnen Bausteine des Systems und deren Beziehungen zueinander festgelegt. 
+
+Im Feinentwurf werden Detailstrukturen des Systems beschrieben, also wie jeder Baustein in seiner inneren Struktur aufgebaut ist.
+
+## 4+1 Sichtenmodell
+Es müssen verschiedene Sichten (sog. Blueprints) auf das Systems zu einer Gesamtarchitektur vereinigt werden.
+
+**logische Sicht** <br>
+Fokus liegt auf der Darstellung eines Produktmodells, welches typischerweise um Designpakete erweitert wird. Zielgruppe sind Endanwender und Entwickler.
+
+<details><summary>Details</summary>
+
+<img src="resources/se/13_logische_sicht.png" width="500">
+
+Transfer vom Produktmodell zum Implementierungsmodell.
+
+</details> <br>
+
+**Struktursicht** <br>
+Fokus der Struktursicht ist die Beschreibung der statischen Struktur der Software in Form von Subsystemen und Komponenten. Die Ergebnisse haben Zwecke wie Requiroemant-Zurodnung, Arbeitsorganisation, Projektfortsschritt, Wiederverwendung, oder Sicherheit - Zielgruppe ist die Entwicklung. 
+
+
+**physikalische Sicht** <br>
+Zuordnung der Softwarekomponenten auf physikalische Hardware und Verteilung der einzelnen Komponenten. Wichtiger Aspekt ist die Sicherstellung der nicht-funktionalen Anforderungen wie Availability, Reliability, Performance oder Scalability.
+
+Zielgruppen der physikalischen Sicht sind die Teams aus den Phasen Entwicklung sowie Wartung/Betrieb.
+
+<details><summary>Details</summary>
+
+<img src="resources/se/14_physikalische_sicht.png" width="500">
+
+Die bei der Modellierung entstehenden Artefakte sind UML-Deployment-Diagramme. Diese können für die Dokumentation der Netzwerkstruktur verwendet werden.
+
+</details> <br>
+
+**Ablaufsicht** <br>
+Abbildung des Produktmodells auf ein Verarbeitungsmodell, Zielgruppe ist die Entwicklung und Wartung. 
+
+<details><summary>statische Betrachtung</summary>
+
+<img src="resources/se/15_ablaufsicht_statisch.png" width="500">
+
+Stellt die Ablaufsicht alle an der Verarbeitung beteiligten Klassen dar.
+
+</details> <br>
+
+<details><summary>dynamische Betrachtung</summary>
+
+<img src="resources/se/16_ablaufsicht_dynamisch.png" width="500">
+
+Verwendung von Sequenzdiagrammen, stellt dynamischen Ablauf dar, in welcher Abfolge welche Klasse wann mit welcher interagiert. Zum Beispiel das Verbinden von Client mit WebServer. 
+
+</details> <br>
+
+**Szenarien** <br>
+Eine Instanz eines allgemeinen Use-Cases - ist eine Abstraktion der relevanten Anforderungen. 
+
+## Kriterien für guten Entwurf
+Die nachfolgend genannten Kriterien gelten auf allen Ebenen des Entwurfs.
+
+**Korrektheit** <br>
+Erfüllung der Anforderungen sowie Sicherstellung der nichtfunktionalen Anforderungen - siehe [Anforderungen](#anforderungen).
+
+**Wiederverwendung** <br>
+Gleichartige Aufgaben wolltensollten nicht mehrfach implementiert realisiert werden und zukünftige Weiterentwicklungen sollten berücksichtigt werden.
+
+**Verständlichkeit** <br>
+Gute Dokumentation und genauer PRogrammstil mit logischer Struktur.
+
+**Anpassbarkeit** <br>
+Einfache Anpassung an neue Anforderungen oder Funktionen. 
+
+
+
+<!-- 
+https://jojozhuang.github.io/tutorial/mermaid-cheat-sheet/
+add images beneath und mabye ### 
+https://online-lectures-cs.thi.de/se-ss2021-ki-ref2/#/3/20
+-->
+
+**Kohäsion** <br>
+Hohe Kohäsion bedeutet, dass die Elemente einer Komponente eng zusammenhängen. 
+
+**Kopplung** <br>
+Maß für die Abhängigkeit zwischen Komponenten - geringe Kopplung erleichtert die Wartbarkeit und macht Systeme stabiler.
+
+
