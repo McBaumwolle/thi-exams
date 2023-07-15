@@ -19,6 +19,7 @@
   - [Aktivitätsdiagramme](#aktivitätsdiagramme)
   - [Domain](#domain)
   - [Syntax](#syntax)
+- [Designphase](#designphase)
 
 
 
@@ -379,3 +380,29 @@ graph TD
     A[Person] --> B[Dozent]
     A --> C[Studierende]
 ```
+
+Pfeile zeigen dabei auf die Oberklasse (falsch in Diagramm).
+
+<!-- 
+Objektdiagramme 
+-->
+
+**Aufgabe** <br>
+Zum Üben ausklappen.
+
+<details><summary>Aufgabe</summary>
+
+In einer Online-Videothek können Kunden Filme ausleihen. Bei der Ausleihe wird das Alter des Kunden mit der FSK-Angabe des Films abgeglichen und gegebenenfalls die Ausleihe des Films verweigert. Die Bezahlung der Ausleihe erfolgt über ein Kontoguthaben (Prepaid), das der Kunde zu jederzeit auffüllen kann. 
+
+</details>
+
+<details><summary>Lösung</summary>
+
+<img src="resources/se/11_klassendiagramm.png" width="500">
+
+</details> <br>
+
+Weitere Aufgaben auf [moodle](https://online-lectures-cs.thi.de/se-ss2021-ki-ref0/#/8/4). 
+
+
+# Designphase
