@@ -363,10 +363,19 @@ Assoziationen beschreiben die Beziehungen zwischen Klassen.
 **Aggregation** <br>
 Eine Aggregation ist eine spezielle Assoziation, bei der ein Objekt aus mehreren anderen Objekten besteht.
 
-<detais><summary>Beispiel</summary>
+<details><summary>Beispiel</summary>
 
 <img src="resources/se/10_aggregation.png" width="500">
 
 </details> <br>
 
 Aggregation bedeutet, das Teil kann ohne das Ganze existieren (z.B. Person in Team). Dahingegen kann eine Komposition nicht ohne das Ganze existieren (siehe Beispiel oben).
+
+**Generalisierung** <br>
+Ist eine Beziehung zwischen einer spezialisierten Klasse und einer allgemeinen Klasse, zum Beispiel sind Dozenten und Studierende beides Personen.
+
+```mermaid
+graph TD
+    A[Person] --> B[Dozent]
+    A --> C[Studierende]
+```
