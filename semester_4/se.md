@@ -213,13 +213,14 @@ Teil der Umgebung eines Systems, der für die Definition und das Verständnis de
 
 <img src="resources/se/01_systemkontext.png" width="500">
 
-</details>
+</details> <br>
 
 <!-- 
 viel weggelassen 
 -->
 
 **Anforderungs-Dokumentation** <br>
+...
 <!--
 NACHHOLEN 7.4
 -->
@@ -227,9 +228,84 @@ NACHHOLEN 7.4
 ## Anwendungsfälle
 Ein Use-Case ist die Beschreibung einer Interaktion zwischen dem Benutzer mit dem System.
 
-<!--
-DIAGRAMM + Ü
+<details><summary>Beispiele</summary>
 
-PRIO 
--->
+<img src="resources/se/02_use_case.png" width="500">
 
+Und ein weiteres Beispiel mit einem Online-Shop. 
+
+<img src="resources/se/03_use_case.bmp" width="500">
+
+Ein letztes Beispiel mit Seminarverwaltung. 
+
+<img src="resources/se/04_use_case.png" width="500">
+
+</details> <br>
+
+Im Use-Case-Diagramm sind Akteure (Figuren), Use-Cases (Boxen) und (gerichtete) Assotiationen (Linien und Pfeile) zu sehen. Die ```<<include>>```-Beziehung importiert Abläufe von dem Use-Case, auf den der Pfeil zeigt. Die ```<<extend>>```-Beziehung erweitert den Ablauf des Use-Cases. Einfache Pfeil-Verbindungen zeigen Vererbung an. 
+
+**Dokumentation** <br>
+Nicht festgelegt, aber zum Beispiel in einer Tabelle, welche Dinge wie Name, Kurzbeschreibung, Akteure, Auslöser, etc beinhaltet. 
+
+**Include-Beziehung** <br>
+Nicht optional, wierd immer importiert.
+
+**Extend-Beziehung** <br>
+Ist optional und abhängig von einer Bedingung.
+
+**Sonsitges** <br>
+Ein guter Use-Case sollte verstädnlich formuliert werden, ein Diagramm aus ca. 3-15 Cases bestehen - sonst aufteilen. 
+
+**Aufgabe** <br>
+Zum Üben ausklappen.
+
+<details><summary>Aufgabe</summary>
+
+In einer Online-Videothek können Kunden Filme ausleihen. Bei der Ausleihe wird das Alter des Kunden mit der FSK-Angabe des Films abgeglichen und gegebenenfalls die Ausleihe des Films verweigert. Die Bezahlung der Ausleihe erfolgt über ein Kontoguthaben (Prepaid), das der Kunde zu jederzeit auffüllen kann. Für die sichere Online-Zahlung bei der Guthabensauffüllung verwendet das System den externen Dienstleister "SuperPay". Administratoren sollen in der Lage sein, aus Kulanz direkt das Guthaben der Kunden zu erhöhen. 
+
+</details>
+
+<details><summary>Lösung</summary>
+
+<img src="resources/se/05_use_case.png" width="500">
+
+</details> <br>
+
+## GUI-Prototypen
+GUI-Systeme werden in Anwendungs-, Splash-, Unter-, Dialog und Mitteilungsfenster unterteilt. In der Analysephase lassen sich GUIs zum Beispiel planen mit...
+* Prototypen
+* Mockups
+* Skizzen
+
+Mockups (insbesindere Wireframes) sind verbundene Skizzen der GUI, die die Funktionalität und den Aufbau der GUI zeigen. 
+
+## Aktivitätsdiagramme
+Stellen Abläufe und Prozesse im System dar, zum Beispiel für die Beschreibung eines Use-Cases.
+
+```mermaid	
+graph LR
+    A(( )) --> B[check connection]
+    B --> C{ }
+    C -- yes --> D[retrieve weather]
+    D --> Z{ }
+    Z --> G[show weather]
+    C -- no --> E[check cache]
+    E --> F{ }
+    F -- yes --> Z
+    F -- no --> H[show error]
+    G --> I{ }
+    H --> I{ }
+    I --> J(( ))
+```
+
+Das Beispiel zeigt den Ablauf für die Wetter-App beim Starten. Startknoten ist zum Beispiel ein Kreis, eine Entschiedung wird mit einer Raute dargestellt - für genaue Syntax siehe [moodle](https://online-lectures-cs.thi.de/se-ss2021-ki/#/7/7). 
+
+<details><summary>Beispiel</summary>
+
+Beispiel zum Ablauf "Getränk kaufen".
+
+<img src="resources/se/06_aktivitaetsdiagramm.png" width="500">
+
+</details> <br>
+
+Für weitere Übungen siehe [moodle](https://online-lectures-cs.thi.de/se-ss2021-ki/#/7/33).
