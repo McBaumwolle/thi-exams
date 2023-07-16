@@ -489,6 +489,8 @@ Erfüllung der Anforderungen sowie Sicherstellung der nichtfunktionalen Anforder
 
 **Wiederverwendung** <br>
 Gleichartige Aufgaben wolltensollten nicht mehrfach implementiert realisiert werden und zukünftige Weiterentwicklungen sollten berücksichtigt werden.
+* Vererbung
+* Parametrisierung
 
 **Verständlichkeit** <br>
 Gute Dokumentation und genauer PRogrammstil mit logischer Struktur.
@@ -496,12 +498,14 @@ Gute Dokumentation und genauer PRogrammstil mit logischer Struktur.
 **Anpassbarkeit** <br>
 Einfache Anpassung an neue Anforderungen oder Funktionen. 
 
-
-
 <!-- 
 https://jojozhuang.github.io/tutorial/mermaid-cheat-sheet/
 add images beneath und mabye ### 
 https://online-lectures-cs.thi.de/se-ss2021-ki-ref2/#/3/20
+
+PLAN
+================
+Themen darunter ausfomrulieren und alles darüber kürzer (da icht vertieft). 
 -->
 
 **Kohäsion** <br>
@@ -510,4 +514,197 @@ Hohe Kohäsion bedeutet, dass die Elemente einer Komponente eng zusammenhängen.
 **Kopplung** <br>
 Maß für die Abhängigkeit zwischen Komponenten - geringe Kopplung erleichtert die Wartbarkeit und macht Systeme stabiler.
 
+**Information Hiding** <br>
+Das Geheimhaltungsprinzip bedeutet Zugriff über Schnittstellen, bei denen möglichst wenig Informationen öffentlich zugänglich sind.
+
+<!--
+Seperation of Concerns
+-->
+
+## Komponentendiagramme
+Beschreiben Zusammenhänge auf Komponentenebene unter Verwendung von Abhängigkeiten und Schnittstellen.
+
+```mermaid
+graph LR
+    subgraph WeatherApp
+    UI["User Interface"]
+    Data["Data Management"]
+    API["API Integration"]
+    end
+
+    subgraph APIs
+    OpenWeatherMapAPI["OpenWeatherMap API"]
+    LocationAPI["Location API"]
+    end
+
+    UI --> Data
+    Data --> API
+    API --> OpenWeatherMapAPI
+    API --> LocationAPI
+```
+
+Die Zerlegung in Komponenten entspricht dem Prinzip der Gliederung in Teilsysteme, so können diese auch gut wiederverwendet werden. Eine Komponente...
+* exportiert Schnittstellen
+* importiert andere Schnittstellen
+* versteckt die Implementierung
+* definiert eine Einheit der Wiederverwendung
+* kann andere Komponenten enthalten
+
+<details><summary>API-Kopplung</summary>
+
+<img src="resources/se/17_api_kopplung.png" width="500">
+
+</details> <br>
+
+Eine Schnittstelle besteht aus einer Menge von Operatoren, welche die Funktionalität der Komponente beschreiben. Eine Operation ist definiert durch...
+* Syntax (Rückgabewerte, Argumente)
+* Semantik (Funktionalität)
+* nicht-funktionale Eigenschaften (Performance, Verfügbarkeit, ...)
+
+<details><summary>Beispiel</summary>
+
+<img src="resources/se/18_schnittstelle.png" width="500">
+
+</details> 
+
+<details><summary>Syntax</summary>
+
+Komponenten werden als Box dargestellt, Schnittstellen als Kreis mit Verbindung zu den APIs, wobei ein offener Halbkreis eine Nutzung der API darstellt und ein geschlossener Halbkreis eine Implementierung der API.
+
+<img src="resources/se/19_syntax.png" width="500">
+
+Hier nutzt die Komponente B die Komponente A, welche die Schnittstelle implementiert.
+
+<img src="resources/se/20_syntax.png" width="500">
+
+Abhängigkeiten werden als gestrichelte Linien mit Pfeil dargestellt.
+
+</details> <br>
+
+Zur Übung siehe [moodle](https://online-lectures-cs.thi.de/se-ss2021-ki-ref2/#/4/22). 
+
+## Standard-Architekturen
+Bewährte Architekturmuster helfen bei der Strukturierung von Systemen und Anwendungen - bisher rbekannt ist die 3-Schichten-Architektur. 
+
+### N-Schichten-Architektur
+Das System wird in mehrere Schichten aufgeteilt, jede Schicht fasst logisch zusammengehörende Komponenten zusammen. Schichten stellen Dienstleisstungen über APIs zur Verfügung, Kopplung nur bei benachbarten Schichten.
+
+```mermaid
+graph LR
+  subgraph 3-Schichten-Architektur
+      direction LR
+      A[Präsentationsschicht] --> B[Geschäftslgikschicht]
+      B --> C[Datenzugriffsschicht]
+      C --> D((Datenbank))
+  end
+```
+
+Ein Spezialfall dieser Architektur ist die 3SA, welche häufig für interaktive Systeme verwendet wird.
+
+**Präsentationsschicht** <br>
+Realisiert die Bedienoberfläche, greuft auf die Geschäftsschicht zu. 
+
+**Geschäftsschicht** <br>
+Zuständig für fachliche Funktionen der Anwendung und verwaltet alle Objekte und Klassen des Produktmodells (Domäne). 
+
+**Datenzugriffsschicht** <br>
+Auch Persistenzschicht genannt, abstrahiert den Zugriff auf die Datenbank. Aufgabe ist es, Objekte des Domänenmodells abzuspeichern. 
+
+<details><summary>Beispiel</summary>
+
+<img src="resources/se/21_schichten.png" width="500">
+
+Dieses Beispiel soll nun umgebaut werden. 
+
+<img src="resources/se/22_schichten.png" width="500">
+
+Angebot, Kunde und Auftrag sind direkt von der Datenbank abhängig, was nicht gut ist.
+
+<img src="resources/se/23_schichten.png" width="500">
+
+In einem dritten Schritt wird nun eine Persistenzschicht eingeführt. Diese kapselt alle Zugriffe auf die Datenbank und bietet eine fachliche Schnittstelle für die Geschäftslogik an.
+
+</details> <br>
+
+Die **4-Schichten-Architektur** hat zusätzlich noch eine vierte Schicht für Systemfunktionen zur Kapselung von plattformspezifischen Funktionen, z. B. für Schnittstellen zu Fremdsystemen.
+
+### Datenspeicher-Architektur
+Auch Blackboard-Architektur genannt, besteht aus einem zentralen Speicher, auf den alle Komponenten zugreifen können. Der Datenaustausch erfolgt über ein gemeinsames Repository, besonders gut geeignet für große Datenmengen. 
+
+```mermaid
+graph LR
+  subgraph Datenspeicher-Architektur
+      direction LR
+      A[Subsystem] --> B[Zugriffssteuerung]
+      C[Subsystem] --> B
+      D[Subsystem] --> B
+      B --> E[Repository]
+  end
+```
+
+Wird im KI-Bereich genutzt, zum Beispiel für die Verarbeitung von Bildern.
+
+<details><summary>Vorteile</summary>
+
+* effizient für gemeinsame Nutzung
+* stärkere Kohäsion durch Zenralisierung
+
+</details>
+
+<details><summary>Nachteile</summary>
+
+* alle Subsysteme müssen das selbe Dateiformat nutzen
+* Datenintegrität gefährdet
+* Integration neuer Subsysteme kann schwierig sein
+* Flaschenhals bei Repository
+
+</details> <br>
+
+### Pipes-and-Filter-Architektur
+Hier werden Daten von einem Subsystem in "one-way"-Kommunikation weitergereicht. 
+
+```mermaid
+graph LR
+  subgraph Pipes-and-Filter-Architektur
+      direction LR
+      A[ ] --> B[Subsystem]
+      B --> C[Subsystem]
+      C --> D[Subsystem]
+      D --> E[ ]
+  end
+```
+
+<details><summary>Vorteile</summary>
+
+* leichtes Ersetzen der Filter
+* einfache Schnittstsellen zwischen Subsystemen
+* Kombination möglich um komplexere Verarbeitung zu definieren
+* intuitiver Ablauf
+
+</details>
+
+<details><summary>Nachteile</summary>
+
+* keine globalen Daten
+* Probleme bei unterschiedlichen Datenformaten
+* Fehlerhandlung ist problematisch
+
+</details> <br>
+
+### Plugin-Architektur
+Dem System werden AddOns angeboten, um einzelne Module hinzu- oder wegzuschalten - vergleichbar mit Extensions im Browser. 
+
+```mermaid
+graph LR
+  subgraph Plugin-Architektur
+      direction TB
+      A[Plugin] --> B[Schnittstellen]
+      C[Plugin] --> B
+      D[Plugin] --> B
+      E[Plugin] --> B
+      B --> F[Host]
+  end
+```
+
+Systeme sollen häufig flexibel und noch dazu dynamisch um neue Funktionen erweitert werden können, ohne das Kernsystem zu modifizieren - mit den Schnittstellen ist das möglich.
 
