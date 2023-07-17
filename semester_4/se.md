@@ -22,6 +22,14 @@
 - [Designphase](#designphase)
   - [4+1 Sichtenmodell](#41-sichtenmodell)
   - [Kriterien für guten Entwurf](#kriterien-für-guten-entwurf)
+  - [Komponentendiagramme](#komponentendiagramme)
+  - [Standard-Architekturen](#standard-architekturen)
+    - [N-Schichten-Architektur](#n-schichten-architektur)
+    - [Datenspeicher-Architektur](#datenspeicher-architektur)
+    - [Pipes-and-Filter-Architektur](#pipes-and-filter-architektur)
+    - [Plugin-Architektur](#plugin-architektur)
+- [Softwaretest](#softwaretest)
+
 
 
 
@@ -708,3 +716,52 @@ graph LR
 
 Systeme sollen häufig flexibel und noch dazu dynamisch um neue Funktionen erweitert werden können, ohne das Kernsystem zu modifizieren - mit den Schnittstellen ist das möglich.
 
+
+# Softwaretest
+Wie viele Fehler sollten in einem professionell entwickelten Programm erwartet werden? 25 Fehler pro 1000 Zeilen wird also normal angesehen, gute Software sollte nur 2-3 aufweisen. 
+
+Im V-Modell sind Tests fundamental integriert, siehe [Projektmanagement](https://github.com/McBaumwolle/thi_exams/blob/main/semester_4/pm.md#v-modell). Dabei unterscheidet man zwischen statischen (links) und dynamischen (rechts) Tests sowei Verifikation und Validierung. 
+
+* Modultest
+* Integrationstest
+* Systemtest
+* Abnahmetest
+
+**Verifikation** <br>
+Überprüfung, ob das System die richtigen Spezifikation erfüllt - ist bezogen auf eine einzelne Entwicklungsphase. 
+
+Untersucht wird, ob die Spezifikationen korrekt umgesetzt wurden, unabhängig von einem beabsichtigten Zweck oder Nutzen des Produkts.
+
+**Validierung** <br>
+Überprüfung, ob das System die Anforderungen richtig erfüllt.
+
+Untersucht wird, ob das Produkt im Kontext der beabsichtigten Produktnutzung sinnvoll ist. 
+
+## statischer Test
+Analyse und Bewertung eines Testobjekts ohne Ausführung der Software. Finden eher die Ursachen statt konkrete Fehler - Idee ist Prävention. 
+
+Fehler sind Abweichungen von Spezifikationen, Standards, Anforderungen, Designs oder Projektplänen, die zu Verletzungen oder Mängeln führen können.
+
+**statische Analyse** <br>
+Analysieren von Code (ohne Ausführung) auf Fehlerquellen, zum Beispiel mit Prüfung der Syntax oder Einhaltung von Standards.
+
+**Review** <br>
+Ähnlich wie bei der statischen Analyse, nur dass hier der Code von Entwickelnden oder anderen Personen geprüft wird.
+
+## dynamischer Test
+Ausführen eines Testobjekts unter Beobachtung sowie Prüfung des Verhaltens mit Erwartungswerten. 
+
+* **Komponententest** oder **Modultest** prüft, ob jeder einzelne Softwarebaustein (Komponente) seine Spezifikation erfüllt.
+* **Integrationstest** prüft, ob Gruppen von Komponenten wie im Systementwurf vorgesehen zusammenarbeiten.
+* **Systemtest** prüft, ob das System als Ganzes die Anforderungen erfüllt - Unterteilung in funktionale und nicht-funktionale Tests, siehe [PM](https://github.com/McBaumwolle/thi_exams/blob/main/semester_4/pm.md#anforderungen).
+* **Abnahmetest** prüft, ob das System aus Kundensicht die vertraglich vereinbarten Anforderungen erfüllt - wird vom Kunden durchgeführt.
+
+**White-Box-Test** <br>
+Testen der internen Struktur, um die Funktionalität zu überprüfen - wird angewendet, wenn die interne Struktur bekannt ist.
+
+<!-- Beispiel -->
+
+**Black-Box-Test** <br>
+Ist dagegen nur die Schnittstelle der Einheit bekannt, so wird ein sogenannter Blackbox-Test entwickelt - findet in der Regel weniger Fehler als der Whitebox-Test, ist dafür aber weniger aufwändig. Ziel ist es, Übereinstimmung eines Softwaresystems mit Spezifikation zu überprüfen.
+
+<!-- Beispiel -->
