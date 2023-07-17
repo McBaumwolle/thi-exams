@@ -29,8 +29,8 @@
     - [Pipes-and-Filter-Architektur](#pipes-and-filter-architektur)
     - [Plugin-Architektur](#plugin-architektur)
 - [Softwaretest](#softwaretest)
-
-
+  - [statischer Test](#statischer-test)
+  - [dynamischer Test](#dynamischer-test)
 
 
 # Einführung
