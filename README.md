@@ -1,4 +1,4 @@
-# thi_exams
+# thi-exams
 Zusammenfassungen für die Prüfungen, in Markdown.
 
 ## Inhalt
