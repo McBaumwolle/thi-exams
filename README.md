@@ -10,6 +10,12 @@ Zusammenfassungen für die Prüfungen, in Markdown.
 
 [Quantum Technologies and Information](semester_7/qti.md)
 
+### Semester 6
+...
+
+### Semester 5
+...
+
 ### Semester 4
 [Bildverstehen](semester_4/cv.md)
 
@@ -23,3 +29,9 @@ Zusammenfassungen für die Prüfungen, in Markdown.
 
 ### Semester 3
 [Deduktive Systeme](semester_3/ds.md)
+
+### Semester 2
+...
+
+### Semester 1
+...
