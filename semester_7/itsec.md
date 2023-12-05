@@ -134,6 +134,9 @@ Entscheidend ist die Key-Länge, bei `len(key) = 1` ist es Caesar, bei `len(key)
 **Stromchiffren** <br>
 Weiterentwicklung der polyalphabetischen Kryptographie.
 
+<!--
+--- S. 62 of 345
+-->
 
 ...RC4 (S.94)
 
