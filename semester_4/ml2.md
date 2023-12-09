@@ -11,6 +11,8 @@ Prof. Dr. Michael Botsch
 - [Training von Neuronalen Netzen](#training-von-neuronalen-netzen)
   - [Gradientenabstiegsverfahren](#gradientenabstiegsverfahren)
     - [Algorithmus](#algorithmus)
+  - [Backpropagation](#backpropagation)
+  - [Batch-Verfahren](#batch-verfahren)
 - [Varianten von SGD](#varianten-von-sgd)
 - [Methoden zur Verbesserung des Trainings](#methoden-zur-verbesserung-des-trainings)
 - [Regularization](#regularization)
@@ -100,6 +102,21 @@ Beim Gradient-Descent-Verfahren wird folgender Algorithmus verwendet.
     - die Änderung ist nicht mehr groß (`Konvergenz`)
     - die maximale Anzahl $N$ an Iterationen wurde erreicht (`Zeitlimit`) 
 
+<img src="resources/ml/04_gradient_descent.png" width="600"> <br>
+
+## Backpropagation
+Das Training eines neuronales Netzes mit `Gradient-Decent` besteht aus zwei iterativen Schritten. 
+
+**Forward-Propagation** <br>
+Die Eingabedaten werden durch das Netz propagiert und die Ausgabe berechnet (Berechnung der Kosten).
+
+**Backward-Propagation** <br>
+Die Gradienten der Gewichte und des Bias werden berechnet und die Parameter aktualisiert (Update der Gewichte und Biases). 
+
+<!-- insane amount of math -->
+
+## Batch-Verfahren
+...
 
 
 
