@@ -116,10 +116,77 @@ Die Gradienten der Gewichte und des Bias werden berechnet und die Parameter aktu
 <!-- insane amount of math -->
 
 ## Batch-Verfahren
-...
+Normalerweise wird beim Gradientenabstieg in jeder Iteration der gesamte Trainingsdatensatz zur Kostenberechnung verwendet. Bei großen Datensätzen ist dies jedoch sehr rechenintensiv. <br> 
+
+**Algorithmus** <br>
+Beim Batch-Verfahren wird folgender Algorithmus verwendet.
+1. initialisiere die Parameter (Gewichte & Biases)
+2. solange kein Abbruchkriterium erfüllt ist
+    - berechne die Gradienten der Verlustfunktion für jeden Datenpunkt $D_train = \{(x^{(1)}, y^{(1)}), ..., (x^{(n)}, y^{(n)})\}$
+    - mittele die Gradienten $\triangledown_{\theta} C(\theta) = \frac{1}{n} \sum_{s=1}^n \triangledown_{\theta} L(y^{(s)}, f(x^{(s)}))$
+    - Update der Parameter $\theta := \theta - \alpha \triangledown_{\theta} C(\theta)$
+
+**Vorteile** <br>
+- der Gradientenabstieg ist stabil, da alle Trainingsdaten für die Anpassung verwendet werden
+- die Kotsen sind monoton fallend 
+- der Algorithmus ist deterministisch
+
+**Nachteile** <br>
+- bei jedem Update werden alle Daten benötigt (viel Speicher)
+- bei jedem Update werden die Gradienten für alle Daten berechnet (rechenintensiv)
+- bei redundanten Daten werden auch Samples berücksichtigt, die wenig zur Anpassung beitragen (unnötig)
+- globales Minimum wird eventuell verpasst
+
+**Epochen** <br>
+Eine Epoche bezeichnet den Durchlauf des gesamten Trainingsdatensatzes zur Anpassung der Parameter. <br>
+
+**Batch** <br>
+Als Batch wird eine Teilmenge $D_{batch}$ der Trainingsdaten $D_{train}$ bezeichnet, sprich $D_{batch} \subset D_{train}$. <br>
+
+> Beim Batch-Gradientenabstieg ist der gesamte Trainingsdatensatz der Batch.
+
+### stochastischer Gradientenabstieg
+Beim `SGD` wird durch die einzelnen Samples im Trainingsdatensatz iteriert und für jedes einzelne Sample ein Update der Parameter durchgeführt. <br>
+
+> Jeder Datenpunkt ist ein Batch. 
+
+> Es werden mehrere Epochen durchlaufen, damit ein Sample häufiger berücksichtigt wird.
+
+> Zu Beginn der Epochen sollte der Trainingsdatensatz zufällig sortiert werden.
 
 
+**Algorithmus** <br>
+Beim stochastischen Gradientenabstieg wird folgender Algorithmus verwendet.
+1. initialisiere die Parameter (Gewichte & Biases)
+2. solange kein Abbruchkriterium erfüllt ist (für jede Epoche)
+    - mische die Trainingsdaten
+    - iteriere durch alle Samples und führe jeweils ($x^{(s)}, y^{(s)}$) einzeln ein Update aus $\theta := \theta - \alpha \triangledown_{\theta} L(y^{(s)}, f(x^{(s)}))$
 
+<!-- Bild -->
+
+**Vorteile** <br>
+- es werden viele kleine Updates der Parameter durchgeführt
+- wenig Speicherplatz nötig
+- kann mit Redundanzen effizient umgehen
+
+> effizeintes und schnelles Lernen bei großen Datensätzen
+
+**Nachteile** <br>
+- die Kosten werden duch ein Sample nicht gut approximiert (kann lange Trainingzeiten bedeuten)
+- Matrix-Operationen können nicht verwendet werden (langsames Training).
+- Konvergenz ist nicht garantiert (und wir)
+
+**Vergleich der Verfahren** <br>
+`SGD` springt mehr herum, `GD` ist stabiler. <br>
+<details><summary>Vergleich</summary>
+<img src="resources/ml/05_sgd.png" width="600"> <br>
+</details> <br>
+
+### Mini-Batch-Gradientenabstieg
+... 
+<!-- S. 38 -->
+
+<!--
 # Varianten von SGD
 ...
 
@@ -131,3 +198,4 @@ Die Gradienten der Gewichte und des Bias werden berechnet und die Parameter aktu
 
 # Optimierung von Hyperparametern
 ...
+-->
