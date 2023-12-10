@@ -93,6 +93,9 @@ Bei multiklassen Klassifikation wird der verallgemeinerte `logistische Loss` ver
 
 ### Algorithmus
 Beim Gradient-Descent-Verfahren wird folgender Algorithmus verwendet. 
+
+<details><summary>ausklappen</summary>
+
 1. wähle Lernrate $\alpha > 0$, eine maximale Lerngröße $N$ sowie eine Konvergenzschwelle $\epsilon > 0$
 2. wähle zufälige Anfangsparameter $W_n$ (Gewichte) & $b_n$ (Bias)
 3. berechne die Kosten mit den aktuellen Parametern $C(W, b)$
@@ -101,6 +104,8 @@ Beim Gradient-Descent-Verfahren wird folgender Algorithmus verwendet.
 6. wiederhole die Schritte `3` & `4` bis eine der Abbruchbedingungen erfüllt ist
     - die Änderung ist nicht mehr groß (`Konvergenz`)
     - die maximale Anzahl $N$ an Iterationen wurde erreicht (`Zeitlimit`) 
+
+</details> <br>
 
 <img src="resources/ml/04_gradient_descent.png" width="600"> <br>
 
@@ -120,11 +125,16 @@ Normalerweise wird beim Gradientenabstieg in jeder Iteration der gesamte Trainin
 
 **Algorithmus** <br>
 Beim Batch-Verfahren wird folgender Algorithmus verwendet.
+
+<details><summary>ausklappen</summary>
+
 1. initialisiere die Parameter (Gewichte & Biases)
 2. solange kein Abbruchkriterium erfüllt ist
     - berechne die Gradienten der Verlustfunktion für jeden Datenpunkt $D_train = \{(x^{(1)}, y^{(1)}), ..., (x^{(n)}, y^{(n)})\}$
     - mittele die Gradienten $\triangledown_{\theta} C(\theta) = \frac{1}{n} \sum_{s=1}^n \triangledown_{\theta} L(y^{(s)}, f(x^{(s)}))$
     - Update der Parameter $\theta := \theta - \alpha \triangledown_{\theta} C(\theta)$
+
+</details> <br
 
 **Vorteile** <br>
 - der Gradientenabstieg ist stabil, da alle Trainingsdaten für die Anpassung verwendet werden
@@ -157,11 +167,15 @@ Beim `SGD` wird durch die einzelnen Samples im Trainingsdatensatz iteriert und f
 
 **Algorithmus** <br>
 Beim stochastischen Gradientenabstieg wird folgender Algorithmus verwendet.
+
+<details><summary>ausklappen</summary>
+
 1. initialisiere die Parameter (Gewichte & Biases)
 2. solange kein Abbruchkriterium erfüllt ist (für jede Epoche)
     - mische die Trainingsdaten
     - iteriere durch alle Samples und führe jeweils ($x^{(s)}, y^{(s)}$) einzeln ein Update aus $\theta := \theta - \alpha \triangledown_{\theta} L(y^{(s)}, f(x^{(s)}))$
 
+</details> <br>
 <!-- Bild -->
 
 **Vorteile** <br>
@@ -183,8 +197,35 @@ Beim stochastischen Gradientenabstieg wird folgender Algorithmus verwendet.
 </details> <br>
 
 ### Mini-Batch-Gradientenabstieg
-... 
-<!-- S. 38 -->
+Beim `Mini-Batch-Gradientenabstieg` wird ein zufälliger Teil des Trainingsdatensatzes als Batch verwendet. <br>
+
+> Der Batch ist eine zufällige Teilmenge des Trainingsdatensatzes.
+
+> Gute Kombination zwischen Batch- & SGD-Verfahren.
+
+Es werden mehrere Epochen durchlaufen, damit ein Sample häufiger berücksichtigt wird. <br>
+
+**Algorithmus** <br>
+Beim Mini-Batch-Gradientenabstieg wird folgender Algorithmus verwendet.
+
+<details><summary>ausklappen</summary>
+
+1. initialisiere die Parameter (Gewichte & Biases)
+2. solange kein Abbruchkriterium erfüllt ist (für jede Epoche)
+    - teile die Trainingsdaten zufällig in Batches gleicher Größe
+    - iteriere über alle Batches und führe auf jedem ein Update der Parameter durch $\theta := \theta - \alpha \frac{1}{n_{b}} \sum_{(x,y) \in D_{b}} \triangledown_{\theta} L(y, f(x))$ mit Batch $D_{b} \subset D_{train} = \{(x^{(1)}, y^{(1)}), ..., (x^{(n)}, y^{(n)})\}$ und $|D_{b}| = n_{b} < n$
+
+</details> <br>
+
+So werden viele kleinerer Updates der Parameter durchgeführt und es wird wenig Speicherplatz benötigt.
+
+> effizeintes und schnelles Lernen 
+
+Matrix-Operationen können verwendet werden, aber Konvergenz nicht garantiert. Die `Batch-Größe` ist ein Hyperparameter und muss geeignet gewählt werden. <br>
+
+> Das Mini-Batch Verfahren ist dem Batch-Verfahren und dem SGD-Verfahren vorzuziehen!
+
+
 
 <!--
 # Varianten von SGD
