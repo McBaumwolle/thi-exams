@@ -226,11 +226,22 @@ Matrix-Operationen können verwendet werden, aber Konvergenz nicht garantiert. D
 > Das Mini-Batch Verfahren ist dem Batch-Verfahren und dem SGD-Verfahren vorzuziehen!
 
 
+# Varianten von SGD
+Verschiedene Varianten des SGD-Verfahrens. <br>
+
+## Herausforderungen
+Ziel ist es, das Minimum der Kostenfunktion zu finden. Dies ist einfach bei konvexer Funktion, aber sehr schwierig bei hoch-komplexen Funktionen. <br>
+- Sattelpunkte
+- lokale Minima
+- Wahl der Lernrate
+- enge Täler (langsame Konvergenz)
+
+> Übung mit Zuordnung der Hyperparameter und Graphen.
+
+**Noisy Gradients** 
+
 
 <!--
-# Varianten von SGD
-...
-
 # Methoden zur Verbesserung des Trainings
 ...
 
