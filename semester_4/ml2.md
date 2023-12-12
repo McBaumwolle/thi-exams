@@ -238,7 +238,44 @@ Ziel ist es, das Minimum der Kostenfunktion zu finden. Dies ist einfach bei konv
 
 > Übung mit Zuordnung der Hyperparameter und Graphen.
 
-**Noisy Gradients** 
+**Noisy Gradients** <br>
+Sattelpunkten kann entkommen werden, indem man mit Zufall "herausspringt" - mit Rauschen der Gradienten. <br>
+Das `Mini-Batch-Verfahren` erzeugt genau diesen Zufall. 
+
+## Momentum
+Oft ist die Gradientenrichtung nicht die Richtung des Minimums, es wird stark hin- und hergesprungen. 
+
+<img src="resources/ml/06_momentum.png" width="600"> <br>
+
+Mit Momentum wird der "Schwung" der letzten Gradientenrichtung beibehalten. Sei $u_{k.-1}$ der Update-Term des letzten Schrittes, dann ist der Update-Term des aktuellen Schrittes $u_k = \alpha \triangledown_{\theta} C(\theta) + \gamma u_{k-1}$. 
+
+Mit `Momemtum` werden die Parameter nun aktualisiert mit $\theta = \theta - u_k = \theta - ( \alpha \triangledown_{\theta} C(\theta) - \gamma u_{k-1})$.
+
+> $\gamma$ ist der Momentum-Koeffizient und sollte zwischen $0$ und $1$ liegen - üblich ist $0.9$.
+
+> $u_k$ wird auch Geschwindigkeit genannt.
+
+Momentum akkumuliert das exponentielle Mittel der vergangenen Gradienten mit $\gamma$ aös Gewichtungsfaktor, der Update-Term ist eine rekurisve Formel. 
+
+$\theta = \theta_{k-a} - ( \alpha  \sum_{i=1}^k \gamma^{k-i} \triangledown_{\theta_i} C(\theta_{i}) + \gamma^k u_0)$
+
+Im Spezialfall, dass alle Gradienten gleich sind, ergibt sich $\theta = \theta_{k-1} - \alpha \triangledown_{\theta} C(\theta) \frac{1} {1 - \gamma}$.
+
+**Algorithmus** <br>
+Beim Momentum-Verfahren wird folgender Algorithmus verwendet.
+
+<details><summary>ausklappen</summary>
+
+1. lege Lernrate $\alpha$ und Momentum $\gamma$ fest
+2. initialisiere die Parameter $\theta$ (Gewichte & Bias) und Geschwindigkeit $u = 0$
+3. solange kein Abbruchkriterium erfüllt ist
+    - berechne den Gradienten der Kostenfunktion für die Sampel im aktuellen Batch $D_b (n_b = |D_b|)$ mit $\triangledown_{\theta} C(\theta) = \frac{1}{n_b} \sum_{(x,y) \in D_b} \triangledown_{\theta} L(y, f(x))$
+    - berechne die Geschwindigkeit $u := \gamma u + \alpha \triangledown_{\theta} C(\theta)$
+    - Update der Parameter $\theta := \theta - u$
+
+</details> <br>
+
+
 
 
 <!--
