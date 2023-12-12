@@ -13,10 +13,12 @@ Prof. Dr. Michael Botsch
     - [Algorithmus](#algorithmus)
   - [Backpropagation](#backpropagation)
   - [Batch-Verfahren](#batch-verfahren)
+    - [stochastischer Gradientenabstieg](#stochastischer-gradientenabstieg)
+    - [Mini-Batch-Gradientenabstieg](#mini-batch-gradientenabstieg)
 - [Varianten von SGD](#varianten-von-sgd)
-- [Methoden zur Verbesserung des Trainings](#methoden-zur-verbesserung-des-trainings)
-- [Regularization](#regularization)
-- [Optimierung von Hyperparametern](#optimierung-von-hyperparametern)
+  - [Herausforderungen](#herausforderungen)
+  - [Momentum](#momentum)
+  - [adaptive Lernraten](#adaptive-lernraten)
 
 
 # Einleitung
@@ -294,7 +296,10 @@ Zur [Visualisierung](https://distill.pub/2017/momentum/) hier reinschauen!
 
 ## adaptive Lernraten
 ...
-
+<!-- 
+Seite 41 
+https://moodle.thi.de/pluginfile.php/743303/mod_resource/content/1/04%20Varianten%20von%20SGD.pdf 
+-->
 
 
 <!--

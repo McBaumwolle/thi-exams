@@ -4,8 +4,7 @@
 - [IT-Security in der KI](#it-security-in-der-ki)
   - [Inhalt](#inhalt)
 - [Einführung](#einführung)
-  - [Safety](#safety)
-  - [Security](#security)
+  - [Sicherheitsziele](#sicherheitsziele)
   - [Cybercrime](#cybercrime)
 - [Kryptologie](#kryptologie)
   - [Stenanographie](#stenanographie)
@@ -15,13 +14,26 @@
 
 
 # Einführung
-## Safety
-...
+Meist ist durch guet Prävention und Vorsorge ein Angriff vermeidbar. Dazu zähl zum Beispiel...
 
-## Security  
-Sicherheit vor (gezielten) Störungen von außen. 
+- ein eigener Meeting-Server
+- eigene Moodle-Instanz
+- externe Mail-Server und Adressen
+- etc.
 
-...
+So kann ein Angriff nicht die ganze Infrastruktur lahmlegen (zum Beispiel beim Einsatz von Microsoft 365 mit Teams, Office und Outlook). 
+
+**Safety** <br>
+Kontrolle über bekannte Risiken - zum Beispiel durch Vorsorge, Prävention und Schutzmaßnahmen.
+
+**Security** <br>
+Sicherheit vor (gezielten) Störungen von außen - also Angriffen.
+
+<details><summary>Eselbrücke</summary>
+Sicherheitsdienst (Türsteher) nennt sich Security, nicht Safety.
+</details>
+
+## Sicherheitsziele
 
 - Authentizität
 - Integrität
@@ -31,15 +43,22 @@ Sicherheit vor (gezielten) Störungen von außen.
 - Privatsphäre
 - Vertraulichkeit
 
+**Vertraulichkeit, Integrität & Authentizität** <br>
+Informationen bleiben im `vorhergesehenen` Kreis, sind `unverändert` und stammen von angegebenen `Absender`.
+<!-- ausführlich später -->
 
 **Authentifizierung** <br>
-Nachweis der Identität (Shared Secret, Biometrie, ...). 
+Nachweis der `Identität` (Shared Secret, Biometrie, ...). 
+
+**nicht-Abstreitbarkeit** <br>
+"Ich habe das nicht bestellt!" <br>
+Nachweis möglich, somit abstreiten unmöglich.
 
 **Verfügbarkeit** <br>
 Vorhergesagte Nutzung durch vorhergesehene Nutzer ist möglich. 
 
 **Privatsphäre** <br>
-Grundrecht auf informationelle Selbstbestimmung (DSGVO), technisch hilft Anonymisierung.
+Grundrecht auf informationelle Selbstbestimmung (`DSGVO`, etc.), technisch hilft Anonymisierung.
 
 
 ## Cybercrime
