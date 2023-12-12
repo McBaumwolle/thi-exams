@@ -275,6 +275,25 @@ Beim Momentum-Verfahren wird folgender Algorithmus verwendet.
 
 </details> <br>
 
+Zur [Visualisierung](https://distill.pub/2017/momentum/) hier reinschauen!
+
+**Vorteile** <br>
+- beschleunigt das Training bei...
+    - Noisy Gradients
+    - kleinen aber einheitlichen Gradienten
+    - großen Krümmungen
+- kann aus lokalen Minima entkommen
+- Narrow Valleys können schneller durchquert werden
+
+**Nachteile** <br>
+- Wurde $\gamma$ zu groß gewählt, kann zusätzliche Oszillation entstehen.
+
+> Eine weitere Variante ist `Nesterov Momentum`, bei der der Gradient vor dem Update berechnet wird.
+
+<!-- nachholen -->
+
+## adaptive Lernraten
+...
 
 
 
