@@ -295,12 +295,56 @@ Zur [Visualisierung](https://distill.pub/2017/momentum/) hier reinschauen!
 <!-- nachholen -->
 
 ## adaptive Lernraten
-...
-<!-- 
-Seite 41 
-https://moodle.thi.de/pluginfile.php/743303/mod_resource/content/1/04%20Varianten%20von%20SGD.pdf 
--->
+Um den Algorithmus in ein lokales Minimum zu zwingen, kann die Lernrate $\alpha$ über die Zeit verringert werden. 
 
+<img src="resources/ml/07_adaptive_lr.png" width="400"> <br>
+
+**Linear Decay** <br>
+Eine gängige Methode ist die lineare Verringerung der Lernrate. 
+
+<details><summary>ausklappen</summary>
+
+1. Wähle eine Start-Lernrate $\alpha_0$ und eine End-Lernrate $\alpha_\tau$ mit $\alpha_0 > \alpha_\tau$.
+2. Ändere während `SGD` die Lernrate und nehme in der $k$-ten Iteration (Epoche, $k <= \tau$) die Lernrate $\alpha_k = (1 - \epsilon) \alpha_0 + \epsilon \alpha_\tau = \alpha_0 - \frac{k}{\tau} (\alpha_0 - \alpha_\tau)$ mit $\epsilon = \frac{k}{\tau}$.
+3. Haben wir mehr als $\tau$ Iterationen durchgeführt, so blebt die Lernrate konstant $\alpha_k = \alpha_\tau$.
+
+</details> <br>
+
+**Time Decay** <br>
+Eine weitere Methode ist die zeitbasierte Verringerung der Lernrate.
+
+<details><summary>ausklappen</summary>
+
+1. Wähle eine Start-Lernrate $\alpha_0$ und eine Verringungsrate $d$ mit $d > 0$.
+2. Ändere während `SGD` die Lernrate rekursiv und nehme in der $k$-ten Iteration (Epoche) die Lernrate $\alpha_k = \alpha_{k-1} \frac{1}{1 + d k}$.
+
+</details> <br>
+
+**Stepwise Decay** <br>
+Verringerung der Lernrate nach einer festgelegten Anzahl an Iterationen.
+
+<details><summary>ausklappen</summary>
+
+1. Wähle eine Start-Lernrate $\alpha_0$, eine Verringerungsrate $d$ mit $d > 0$ und eine Anzahl an Iterationen $E$ nach denen eine Verringerung stattfinden soll.
+2. Ändere während `SGD` die Lernrate sukzessive nach $E$ Iterationen (Epochen) und nehme in der $k$-ten Iteration (Epoche) die Lernrate $\alpha_k = \alpha_{0} \cdot d^e$ mit $e = \lfloor \frac{k}{E} \rfloor$.
+
+</details> <br>
+
+**Vorteile** <br>
+- Fluktuation um ein (lokales) Minimum wird verringert!
+
+**Nachteile** <br>
+- Es gibt nun mehr Hyperparameter, die vorher bestimmt werden müssen.
+- Dies bringt wiederrum Verschlechterungspotential!
+- Ist die Lernrate zum Beispiel zu klein geworden, kann der Algorithmus nicht mehr lernen. 
+
+> Frühes verringern der Lernrate kann zu einem `Quick-Win` führen, welcher dann letztendlich schlechter als der ursprüngliche Wert ist.
+
+### Adagrad
+<!-- 
+Seite 52
+https://moodle.thi.de/pluginfile.php/743303/mod_resource/content/1/04%20Varianten%20von%20SGD.pdf
+-->
 
 <!--
 # Methoden zur Verbesserung des Trainings
