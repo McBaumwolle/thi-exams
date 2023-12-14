@@ -341,10 +341,73 @@ Verringerung der Lernrate nach einer festgelegten Anzahl an Iterationen.
 > Frühes verringern der Lernrate kann zu einem `Quick-Win` führen, welcher dann letztendlich schlechter als der ursprüngliche Wert ist.
 
 ### Adagrad
-<!-- 
-Seite 52
-https://moodle.thi.de/pluginfile.php/743303/mod_resource/content/1/04%20Varianten%20von%20SGD.pdf
+Mit `Ada`ptive `Grad`ienten wird die Lernrate für jeden Parameter individuell angepasst. <br>
+
+> AdaGrad skaliert $\alpha$ umgekehrt proportiinal zur Wurzel der Summe der quadrierten Gradienten der Vergangenheit. 
+
+> Parameter mit größerer Ableitungen der Verlustfunktion erhalten eine schnelle Verringerung der Lernrate und umgekehrt.
+
+<details><summary>ausklappen</summary>
+
+Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/743303/mod_resource/content/1/04%20Varianten%20von%20SGD.pdf) Seite 52.
+
+</details> <br>
+
+**Nachteile** <br>
+- Die Aufsummierung der quadratischen Gradienten kann zu extrem schnellem Abfallen der Lernrate führen.
+
+**Idee von AdaGrad** <br>
+Je größer die Ableitung eines Parameter, desto schneller und weiter sind wir in diese Richtung zum Minimum gegenagen (beschrieben durch $G_{t, i}$). 
+
+> Der Parameter wurde schon stark angepasst, muss also nicht mehr so stark verändert werden. 
+
+Dünn besetzte Feature haben typeischerweise kleine gemittelte Gradienten. 
+
+> AdaGrad gibt diesen einen größeren Einfluss beim Lernen!
+
+Dünn besetzte Features sind Features, wenn im Datensatz oft `0` vorkommt - zum Beispiel beim One-Hot-Encoding. So wird dort nicht viel gelernt und die anderen Features werden zu stark in den Vordergrund gerückt.
+
+> So können Satelpunkte viel besser vermieden werden.
+
+### RMSProp
+Eine Verbesserung von AdaGrad ist `RMSProp`, soll die schnelle Verringerung der Lernrate verhindern. <br>
+
+
+<details><summary>ausklappen</summary>
+
+Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/743303/mod_resource/content/1/04%20Varianten%20von%20SGD.pdf) Seite 59.
+
+Zusätzlich zum AdaGrad-Algorithmus wird eine `Verfallsrate` (Decay-Rate) $d \in [0, 1)$ gewählt. 
+
+</details> <br>
+
+Anstatt der Aufsummierung der quadrierten Gradienten wird jetzt ein exponentiell gewichteter Mittelwert (mit
+Verfallsrate $d$) betrachtet. 
+
+<!--
+> RMSProp ist ein sehr effektiver Optimizer und findet häufig Anwendung. 
 -->
+
+> Typische Werte für $d$ sind $0.9$ oder $0.99$ (je größer, desto mehr Effekt auf die Lernrate).
+
+### Adam
+Adam ist eine Kombination aus `Momentum` und `RMSProp`.
+
+<details><summary>ausklappen</summary>
+
+Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/743303/mod_resource/content/1/04%20Varianten%20von%20SGD.pdf) Seite 64.
+
+</details> <br>
+
+**Vorteile** <br>
+...
+
+**Nachteile** <br>
+...
+
+**Vergleich** <br>
+... Bild
+
 
 <!--
 # Methoden zur Verbesserung des Trainings
