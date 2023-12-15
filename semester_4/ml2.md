@@ -402,11 +402,27 @@ Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/743303/mod_resource/cont
 **Vorteile** <br>
 ...
 
-**Nachteile** <br>
-...
+**Schwierigkeiten** <br>
+Adam hat manchmal ein Problem zu generalisieren (`Overfitting`). Hier zeigt SGD mit Momentum eine bessere Generalisierungseigenschaft. 
 
-**Vergleich** <br>
-... Bild
+> SWATS (Switching from Adam to SGD) ersetzt nach einem Start mit Adam durch SGD.
+
+Im Verlgiech können also verschiedene Optimizer abhängig vom Problem verschieden abschneiden.
+
+<img src="resources/ml/08_comparison.png" width="500"> <br>
+
+Zum Beispiel bei Bildklassifikation auf bekannten Datensätzen schneidet Adam oft schlechter als SGD ab. <br>
+
+**AMSGrad** <br>
+Eine Variation von Adam, die neue gewichtete Summe der quadrierten Gradienten $G_{t,i} = \beta_2 \cdot G_{t-1, i} + (1 - \beta_2) \cdot g_{t, i}^2$ mit dem in der vorherigen Iteration nur verwendet, falls sie größer ist - also $\hat{G}_{t, i} = \max(\hat{G}_{t-1, i}, G_{t, i})$. <br> 
+Der Parameter-Update ist dann $\theta_{t+1, i} = \theta_{t, i} - \frac{\alpha}{\epsilon + \sqrt{\hat{G}_{t, i}}} \cdot u_{t, i}$.
+
+> AMSGrad soll sicher stellen, dass die Lernrate monoton fällt.
+
+**Adamax** <br>
+Anstatt (wie bei Adam) die Lernrate mittels der Summe der quadrierten Gradienten anzupassen, wird bei `Adamax` der maximale Gradient (der Vergangenheit) verwendet, sprich $G_{t, i} = \max(\beta_2 \cdot G_{t-1, i}, |g_{t, i}|)$. <br>
+Der Parameter-Update ist dann $\theta_{t+1, i} = \theta_{t, i} - \frac{\alpha}{\epsilon + G_{t, i}} \hat{u}_{t, i}$.
+
 
 
 <!--
