@@ -424,11 +424,80 @@ Anstatt (wie bei Adam) die Lernrate mittels der Summe der quadrierten Gradienten
 Der Parameter-Update ist dann $\theta_{t+1, i} = \theta_{t, i} - \frac{\alpha}{\epsilon + G_{t, i}} \hat{u}_{t, i}$.
 
 
+# Methoden zur Verbesserung des Trainings
+Verschiedene Methoden zur Verbesserung des Trainings. <br>
+
+## Vanishing & Exploding Gradients 
+Das Problem der `Exploding und Vanishing Gradients` tritt beim Training Neuronaler Netze mittels SGD und Backpropagation auf.
+
+**Exploding Gradients** <br>
+Die Ableitung nach dem Gewicht ist sehr groß, dadurch werden die Parameter stark geändert. So kann die FLuktuation auch sehr groß werden - das Training wird instabil. Im schlimmsten Fall divergiert das Training.
+
+> Mathematisch bedeutet dies, viele der Produkte liegen unter $-1$ oder über $1$.
+
+**Vanishing Gradients** <br>
+Hier ist die Ableitung wiederum annähernd `0`, weshalb fast kein Update der Parameter durchgeführt wird. Im Extremfall stoppt das Lernen für diesen Parameter. 
+
+> Mathematisch bedeutet dies, viele der Produkte liegen zwischen $-1$ und $1$.
+
+<details><summary>Mathematik</summary>
+<!--
+$\frac{dL(y,a^{(L)})}{dw_{2,2}^{(1)}} 
+-->
+
+Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/747685/mod_resource/content/1/05%20Methoden%20zur%20Verbesserung%20des%20Trainings.pdf) Seite 6.
+
+</details> <br>
+
+> Probleme treten insbesondere bei tiefen Netzen und RNNs auf. 
+
+**Erkennen** <br>
+- Das Modell verbessert sich sehr langsam oder stoppt früh während des Trainings. 
+- Die Gewichte nahe des Output-Layers ändert sich, Gewichte nahe des Input-Layers ändern sich jedoch wenig. 
+- Gewichte werden sehr schnell klein (nahe 0) oder ganz `0`.
+
+**Gradient Clipping** <br>
+Beim `Clipping` werden die Gradienten gestutzt, sobald sie einen minimalen oder maximalen Wert überschreiten.
+
+$g = (g_1, ..., g_n) = (\triangledown_{\theta_1} C(\theta), ..., \triangledown_{\theta_n} C(\theta))$ <br>
+
+Hier kann nach Value $g_i := h | g_i := H$ oder nach Norm $g_i := H \cdot \frac{g}{||g||}$ gestutzt werden. <br>
+
+<img src="resources/ml/09_gradient_clipping.png" width="400"> <br>
+
+
+## Initialisierung der Gewichte
+Die `Weight-Initalization` ist ein wichtiger Schritt beim Training von Neuronalen Netzen. Bei der Einführung des Gradientenabstiegs wurden die Gewichte $W^{(1)}, ..., W^{(L)}$ zufällig initialisiert. 
+
+> Bei konstanter Initialiserung kann das Netzwerk `nicht` vernünftig lernen! 
+
+Auf Seite 31 im [Foliensatz](https://moodle.thi.de/pluginfile.php/747685/mod_resource/content/1/05%20Methoden%20zur%20Verbesserung%20des%20Trainings.pdf) wird genauer darauf eingegangen. Generell sollten Gewichte aber immer zufällig initialisiert werden.
+
+**Standardnormalverteilung** <br>
+Die Gewichte werden zufällig aus einer Standardnormalverteilung gezogen. Problem hier ist, dass mit einer `tanh`-Aktivierungsfunktion bei vielen Neuronen zu sehr kleinen Gradienten führt - das Vanishing Gradient Problem tritt auf. 
+
+**Xavier-Initialisierung** <br>
+Die Gewichte werden zufällig aus einer Normalverteilung mit $\mu = 0$ und $\sigma = 1$ gezogen, danach mit $\sqrt{\frac{1}{size^{l-1}}}$ multipliziert. Es gibt aber auch die Skalierung mit $\sqrt{\frac{2}{size^{l-1} + size^{l}}}$ - diese ist Standard bei `PyTorch`.
+
+> Variante 2 ist ein Mittelweg, um die Varianz bei Forward- & Backpropagation konstant zu halten. 
+
+Hierzu mehr im [Foliensatz](https://moodle.thi.de/pluginfile.php/747685/mod_resource/content/1/05%20Methoden%20zur%20Verbesserung%20des%20Trainings.pdf) auf Seite 50. 
+
+> Xaver-Initalisierung oft bei `tanh`-Aktivierungsfunktion.
+
+**He-Initialisierung** <br>
+Für die `ReLU`-Aktivierungsfunktion wird oft die Kaiming-He-Initialisierung verwendet. Hier werden die Gewichte zufällig aus einer Normalverteilung mit $\mu = 0$ und $\sigma = 1$ gezogen, danach mit $\sqrt{\frac{2}{size^{l-1}}}$ multipliziert.
+
+<!-- Normalverteilung, Formel, S. 59 -->
+
+Die Gewichte können auch mittels Gleichverteilung $[-1, 1]$ initialisiert werden, dann ergibt sich der Skalierungsfaktor $\sqrt{\frac{6}{n_{i-1}}}$.
+
+> Geeignete Initalisierungen können dem Exploding & Vanishing Gradient Problem entgegenwirken.
+
+## Batch Normalization
+... S. 65
 
 <!--
-# Methoden zur Verbesserung des Trainings
-...
-
 # Regularization
 ...
 
