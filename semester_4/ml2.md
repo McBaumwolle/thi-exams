@@ -19,6 +19,14 @@ Prof. Dr. Michael Botsch
   - [Herausforderungen](#herausforderungen)
   - [Momentum](#momentum)
   - [adaptive Lernraten](#adaptive-lernraten)
+    - [Adagrad](#adagrad)
+    - [RMSProp](#rmsprop)
+    - [Adam](#adam)
+- [Methoden zur Verbesserung des Trainings](#methoden-zur-verbesserung-des-trainings)
+  - [Vanishing \& Exploding Gradients](#vanishing--exploding-gradients)
+  - [Initialisierung der Gewichte](#initialisierung-der-gewichte)
+  - [Batch Normalization](#batch-normalization)
+- [Regularization](#regularization)
 
 
 # Einleitung
@@ -495,12 +503,88 @@ Die Gewichte können auch mittels Gleichverteilung $[-1, 1]$ initialisiert werde
 > Geeignete Initalisierungen können dem Exploding & Vanishing Gradient Problem entgegenwirken.
 
 ## Batch Normalization
-... S. 65
+Bei der `Batch Normalization` werden die Features normalisiert. <br>
+
+**Standardisierung** <br>
+Bei der Standardisierung werden alle Feature zentriert und standardisiert, $E(x) = 0$ und $Var(x) = 1$. 
+
+**Normierung** <br>
+Bei der Normierung wreden alle Features auf das Intervall $[0, 1]$ gemapped, alternativ auch auf $[-1, 1]$. 
+
+> Wieso sollte man die Inputvariablen normalisieren?
+
+Bei `SGD` führen verschieden große Features zu unterschiedlich großen Gradienten - also ein Feature mit dem Wert $0.1$ geht in Features mit den Wertebereichen $100$ schnell unter. 
+
+> Die Gewichte leben auf unterschiedlichen Skalen.
+
+> Eine geeignete Lernrate zu finden ist nahezu unmöglich.
+
+Beispiele zur Normalisierung auf Seite 70 im [Foliensatz](https://moodle.thi.de/pluginfile.php/747685/mod_resource/content/1/05%20Methoden%20zur%20Verbesserung%20des%20Trainings.pdf). <br>
+
+<img src="resources/ml/10_normalization.png" width="500"> <br>
+
+**Batch Normalization** <br>
+Hier wird in jedem Layer die Aktivierungsfunktion (bzw. die $z$-Werte) normalisiert - der Algorithmus ist wie folgt. 
+
+<details><summary>ausklappen</summary>
+
+1. Gegeben sei ein Mini-Bacth $B$ der Größe $m$ und seien $z_{k,1}^(l), ..., z_{k,m}^{(l)}$ die Werte der $m$ Samples in einem Hidden-Layer $l$ für das Neuron $k$. 
+2. Berechne das aritmetiscche Mittel und die Varianz (für das Neuron und den Mini-Batch) $\mu = \frac{1}{m} \sum_{i=1}^m z_{i}^{(l)}$ und $\sigma^2 = \frac{1}{m} \sum_{i=1}^m (z_{i}^{(l)} - \mu)^2$.
+3. Normalisiere die $z$-Werte mit $z_{i, norm}^{(l)} = \frac{z_{i}^{(l)} - \mu}{\sqrt{\sigma^2 + \epsilon}}$. 
+4. Transofrmiere die normalisierten Werte mit zwei Parametern $\gamma, \beta \in \mathbb{R}$ mit $\tilde{z}_{i}^{(l)} = \gamma \cdot z_{i, norm}^{(l)} + \beta$.
+5. Wende die Aktivierungsfunktion $\phi^{(l)} aif die Werte $\tilde{z}_{i}^{(l)}$ an und gebe diese weiter an den nächsten Layer. 
+
+</details> <br>
+
+> Die Parameter $\gamma$ und $\beta$ zählen zu den Hyperparametern und werden mit SGD gelernt.
+
+> Standardmäßig wird $\gamma = 1$ und $\beta = 0$ gewählt.
+
+**Python** <br>
+In `PyTorch` kann die Batch Normalization mit `nn.BatchNorm1d` durchgeführt werden. <br>
+
+```python	
+class Net batchNorm(nn.Module): 
+  def __init__(self): 
+    super(Net_batchNorm, self).__init__()
+    self.input_size = input_size
+
+    self.nn.Linear(input_size, 128)
+    self.bn1 = nn.BatchNorm1d(128)      # Anwendung
+    self.fc2 = nn.Linear(128, 64)
+    self.bn2 = nn.BatchNorm1d(64)       # Anwendung
+    self.fc3 = nn.Linear(64, 10)
+
+  def forward(self, x):
+    x = x.view(-1, input_size)
+    x = F.relu(self.bn1(self.fc1(x)))   # Batch Normalization
+    x = F.relu(self.bn2(self.fc2(x)))   # Batch Normalization
+    x = self.fc3(x)
+    return  F.log_softmax(x, dim=1)
+```
+
+**Verlgeich** <br>
+Abhängig vom Problem wird mit Batch-Normalisation sschneller und stabiler gelern. 
+
+<details><summary>ausklappen</summary>
+
+<img src="resources/ml/11_batch_norm.png" width="500"> <br>
+
+</details> <br>
+
+**Covariante-Shift** <br>
+Der Kovarianten-Shift bezeichnet die Veränderung der Verteilung der Input-Variablen. Genauer beschrieben in [Foliensatz](https://moodle.thi.de/pluginfile.php/747685/mod_resource/content/1/05%20Methoden%20zur%20Verbesserung%20des%20Trainings.pdf) auf Seite 92. 
 
 <!--
+nachholen 
+-->
+
 # Regularization
 ...
 
+
+
+<!--
 # Optimierung von Hyperparametern
 ...
 -->
