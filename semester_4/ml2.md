@@ -580,7 +580,110 @@ nachholen
 -->
 
 # Regularization
-...
+Verschiedene Methoden zur Regularisierung von Neuronalen Netzen. <br>
+
+**Wiederholung** <br>
+Beim `Overfitting` wird das Modell zu stark an die Trainingsdaten angepasst, sodass es nicht mehr generalisiert. <br>
+
+<details><summary>Bias und Varianz</summary>
+
+<img src="resources/ml/12_overfitting.png" width="500"> <br>
+
+</details> <br>
+
+Wie kann man Overfitting im Neuronalen Netz verhindern? <br>
+
+> Reduzierung der Komplexität des Netzes (am besten automatisch).
+
+**Vorgehen** <br>
+Manuelles Entfernen von Neuronen ist keine Lösung. Angenommen, die Kostenfunktion ist 
+
+$C_R(f) = \frac{1}{n} \sum_{i=1}^n (L(y^{(i)}, f_A^{(i)}(x^{(i)})) + 10^3 \cdot \beta_4^2 + 10^3 \cdot \beta_4^2$
+
+dann müssen $\beta_3 \approx 0$ und $\beta_4 \approx 0$ sein. So werden durch die Hinzunahme der extra Terme die Gewichte $\beta_3$ und $\beta_4$ im Training nahe $0$ gezwungen - es wird also innerhalb des Trainingsprozesses vereinfacht. 
+
+<img src="resources/ml/13_regularization.png" width="500"> <br>
+
+**p-Norm** <br>
+Gegeben sei ein Vektor $x=(x_1, ..., x_n) - dann ist die $p$-Norm definiert als $||x||_p = (\sum_{i=1}^n |x_i|^p)^{\frac{1}{p}}$. <br>
+
+Insbesondere die $2$-Norm $||x||_2 = \sqrt{\sum_{i=1}^n x_i^2}$ und die $1$-Norm $||x||_1 = \sum_{i=1}^n |x_i|$ sind von Bedeutung. <br>
+
+## L2-Regularisierung
+Bei der `L2`-Regularisierung werden große Netzwerke durch einen Bestrafungsterm $\lambda ||W||_2^2$ in der Kostenfunktion bestraft. 
+
+> Viele Gewichte werden so nahe $0$ gezwingen während des Trainings.
+
+Dies führt zu einem einfacheren Netzwerk und verhindert Overfitting. Die Kostenfunktion sieht hierbei wie folgt aus.
+
+$C_R(f) = \frac{1}{n} \sum_{i=1}^n L(y^{(i)}, f(x^{(i)})) + \lambda \sum_{l=1}^L \sum_{i=1}^{n_{l-1}} \sum_{j=1}^{n_l} (w_{i,j}^{(l)})^2$
+
+<!-- Notation fehlt -->
+
+In der Norm-Schreibweise vereinfacht dann $C(f) + \lambda ||W||_2^2$. <br>
+
+**Regularisierungsparameter** <br>
+$\lambda$ ist der Regularisierungsparameter und kontrolliert den Grad der Bestrafung. 
+
+| höheres $\lambda$ | niedrigeres $\lambda$ |
+| --- | --- |
+| große Gewichte werden stärker bestarft | große Gewichte werden teilweise toleriert |
+| die Gewichte haben einen starken <br> Einfluss auf die Kosten | die Gewichte haben einen schwachen <br> Einfluss auf die Kosten |
+| die Minimierung des Bestrafungsterms <br> steht im Vordergrund | die Verringerung des Verlustes <br> steht im Vordergrund |
+| die Gewichte werden klein | wenige der Gewichte werden klein |
+| das Modell wird einfacher | das Modell bleibt komplex |
+
+$\lambda$ ist ein Hyperparameter und muss geeignet gewählt werden.
+
+> Ein zu größes $\lambda$ kann zu Underfitting führen.
+
+Mit `tanh` als Aktivierungsfunktion verschwindet die nicht-Linearität im Netzwerk annähernd, da die meisten $z$-Werte um $0$ liegen wo die `tanh` nahezu linear ist - es ergibt sich ein einfacheres Netz. 
+
+<details><summary>Backpropagation</summary>
+
+Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/750384/mod_resource/content/0/06%20Regularization.pdf) Seite 25. 
+
+</details> <br>
+
+**Weight Decay** <br>
+Die `Weight Decay` ist eine Variante der L2-Regularisierung, bei der die Gewichte mit einem Faktor verringert werden, die Anpassung sieht wie folgt aus. 
+
+$w_{i,j}^{(l)} = (1-\alpha \frac{\lambda}{n}) \cdot w_{i,j}^{(l)} - \alpha \cdot \triangledown_{w_{i,j}^{(l)}} C(\theta)$
+
+`L2`-Regularisierung verringert also nur das Gewicht in jedem Schritt um den Faktor $(1-\alpha \frac{\lambda}{n})$. Die Hyperparameter $\lambda$ und $\alpha$ sollten so gewählt werden, dass $(1-\alpha \frac{\lambda}{n}) \isin (0,1)$.
+
+**Python** <br>
+In `PyTorch` kann die L2-Regularisierung mit `weight_decay` in der Optimizer-Klasse durchgeführt werden. <br>
+
+```python
+optimizer = optim.SGD(model.parameters(), lr=alpha, weight_decay=0.001)
+```
+
+## L1-Regularisierung
+Anstatt der `2`-Norm kann auch die `1`-Norm verwendet werden. Sei $f$ ein Netzwerk mit $l$ Layern und Gewichtsmatrizen $W^{(1)}, ..., W^{(l)}$, dann ist die Kostenfunktion wiefolgt definiert.
+
+$C_R(f) = \frac{1}{n} \sum_{i=1}^n L(y^{(i)}, f(x^{(i)})) + \lambda \sum_{l=1}^L \sum_{i=1}^{n_{l-1}} \sum_{j=1}^{n_l} |w_{i,j}^{(l)}| = C(f) + \lambda ||W||_1$
+
+<detais><summary>Backpropagation</summary>
+
+Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/750384/mod_resource/content/0/06%20Regularization.pdf) Seite 31.
+
+</details> <br>
+
+**Update der Gewichte** <br>
+Falls $w_{i,j}^{(l)} >= 0$ ist, so wird $w_{i,j}^{(l)}$ um $\lambda - \alpha \cdot \triangledown_{w_{i,j}^{(l)}} C(\theta)$ verringert. <br>
+Falls $w_{i,j}^{(l)} < 0$ ist, so wird $w_{i,j}^{(l)}$ um $-\lambda - \alpha \cdot \triangledown_{w_{i,j}^{(l)}} C(\theta)$ erhöht.
+
+> Die Gewichte werden also durch $\lambda$ in Richtung $0$ gedrückt.
+
+> Bei `L1` werden mehr Gewichte bei $0$ gesetzt als bei `L2`.
+
+<!-- Ridge- und Lasso-Regression -->
+
+## Dropout
+Die Idee von `Dropout` ist es, das Netzwerk zu vereinfachen, indem `zufällig` Neuronen deaktiviert werden. <br>
+
+> S 37
 
 
 
