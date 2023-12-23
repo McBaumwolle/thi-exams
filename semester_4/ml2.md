@@ -683,8 +683,57 @@ Falls $w_{i,j}^{(l)} < 0$ ist, so wird $w_{i,j}^{(l)}$ um $-\lambda - \alpha \cd
 ## Dropout
 Die Idee von `Dropout` ist es, das Netzwerk zu vereinfachen, indem `zufällig` Neuronen deaktiviert werden. <br>
 
-> S 37
+> Durch das zufällige Entfernen der Neuronen ist das `Subnetz` für jedes Update der Gewichte & Biases anders.
 
+Bei linearer Regression werden ebenso Neuronen deaktiviert, also 
+
+$f_A(x) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n$ = \sum_{i=1}^n \beta_i x_i$
+
+fallen einige $\beta_i$ weg - eine Vorhersage kann nicht auf wenigen Feature basieren. Die Features müssen so genereller gelernt werden und alle Features müssen einbezogen werden.
+
+<!-- Features lol -->
+
+**hidden Layer** <br>
+Ein Neuron in einem Hidden-Layer kann sich nciht darauf veralssen, dass die Aktivierung eines Neurons im vorherigen Layer immer da ist. 
+
+> Es kann also nicht Informationen aus einem Neuron allein extrahieren!
+
+Es muss generelle Informationen aus allen Aktivierungen des vorherigen Layers extrahieren, die Gewichte werden über alle Aktivierungen so ausgeglichener verteilt.
+
+> Das neuronale Netz generalisiert besser.
+
+**(binäre) Maske** <br>
+Durch eine `Maske` wird die Auswahl der zu entfernenden Neuronen abgebildet. $\mu = (m_1, ..., m_n)$ mit $m_i \in \{0, 1\}$ und $m_i = 1$ bedeutet, dass das Neuron $i$ aktiviert ist. <br>
+
+**zufällige Auswahl** <br>
+Beim zufälligen Entfernen der Neuronen wird eine Maske $\mu$ zufällig generiert, also wird für jeden Eintrag eine Münze geworfen mit einer Wahrscheinlichkeit $p \in (0,1)$ gewählt, $P(\mu_i = 1) = p$ wobei p auch **Dropout-Rate** genannt wird (standardmäßig $p \in [0.5, 0.8]$). <br>
+
+**Layer Auswahl** <br>
+Es kann auch eine Dropout-Rate für jeden Layer festgelegt werden. Großes $p_i$ bedeutet, dass viele Neuronen im Layer erhalten bleiben und umgekehrt. 
+
+> Die Wahl der $p_i$ beeinflusst den *Grad der Einfachheit* des Netzes.
+
+> Falls $p_i = 1$ ist, so wird der Layer nicht verändert.
+
+## Inverted Dropout
+Beim ...
+
+Es wird wiefolgt vorgegangen.
+
+<detais><summary>ausklappen</summary>
+
+1. Definiere das neuronale Netz mit insgesamt $B$ Neuronen (über alle Layer) und initialisiere $G_i$ und $B_i$. 
+2. Definiere die Drouput-Raten $p_1, ..., p_{L-1}$ zur Beibehaltung der Neuronen in den Layern. 
+3. Trainiere das neuronale Netz (z.B. via Mini-Batch) und tue in jeder Iteration folgendes. 
+    1. Generiere **zufällig** eine Maske $\mu$ mit den obigen Dropout-Raten.
+    2. Benutze die maske $\mu$ zur Erstellung des Subnetzes $Net_{\mu}$.
+    3. Führe die Schritte des Gradientenabstiegs für den aktuellen Mini-Batch auf dem Subnetz $Net_{\mu}$ aus durch:
+        - Forward.Propagation des Mini-Batches auf $Net_{\mu}$ mit Reskalierung der Aktivierungen (multipliziere jede Aktivierung im Layer $l$ mit dem Faktor $\frac{1}{p_l}$ (**inverted Schritt**)).
+        - Berechnung der Kosten des Mini-Batches für $Net_{\mu}$.
+        - Berechnung der Gradienten der Gewichte & Biases in $Net_{\mu}$ (Backpropagation).
+        - Update der Gewichte & Biases des Subnetzes $Net_{\mu}$.
+
+</details> <br>
 
 
 <!--
