@@ -27,6 +27,14 @@ Prof. Dr. Michael Botsch
   - [Initialisierung der Gewichte](#initialisierung-der-gewichte)
   - [Batch Normalization](#batch-normalization)
 - [Regularization](#regularization)
+  - [L2-Regularisierung](#l2-regularisierung)
+  - [L1-Regularisierung](#l1-regularisierung)
+  - [Dropout](#dropout)
+  - [Inverted Dropout](#inverted-dropout)
+  - [Ensemble](#ensemble)
+  - [Early Stopping](#early-stopping)
+  - [Data Augmentation](#data-augmentation)
+
 
 
 # Einleitung
