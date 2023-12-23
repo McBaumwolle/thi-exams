@@ -716,11 +716,9 @@ Es kann auch eine Dropout-Rate für jeden Layer festgelegt werden. Großes $p_i$
 > Falls $p_i = 1$ ist, so wird der Layer nicht verändert.
 
 ## Inverted Dropout
-Beim ...
+Hier werden die übrigen Neuronen passend `skaliert`, sodass die Aktivierung des Layers gleich bleibt. Es wird wiefolgt vorgegangen.
 
-Es wird wiefolgt vorgegangen.
-
-<detais><summary>ausklappen</summary>
+<details><summary>ausklappen</summary>
 
 1. Definiere das neuronale Netz mit insgesamt $B$ Neuronen (über alle Layer) und initialisiere $G_i$ und $B_i$. 
 2. Definiere die Drouput-Raten $p_1, ..., p_{L-1}$ zur Beibehaltung der Neuronen in den Layern. 
@@ -735,6 +733,63 @@ Es wird wiefolgt vorgegangen.
 
 </details> <br>
 
+In jeder Iteration wird ein anderes (zufälliges) Subnetz $Net_{\mu}$ verwendet, durch die zufällige Änderung wird Rauschen hinzugefügt (verhindert Overfitting). <br>
+
+<!-- Wieso ist Skalierung notwendig? -->
+
+**Python** <br>
+Die reskalierung muss nicht im Training, sondern kann auch später während der Testphase erfolgen. In `PyTorch` muss also zwischen Training und Test unterschieden werden. <br>
+
+```python
+def train(epoch, network):
+  network.train()     # Training-Modus
+...
+
+def test(epoch, network):
+  network.eval()      # Test-Modus
+...
+```
+
+Dropout wird wiefolgt in `PyTorch` implementiert. <br>
+
+```python
+class Net_dropout(nn.Module): 
+  def __init__(self): 
+    super(Net_dropout, self).__init__()
+    self.input_size = input_size
+
+    self.fc1 = nn.Linear(input_size, 128)
+    self.do1 = nn.Dropout(p=0.5)      # Dropout
+    self.fc2 = nn.Linear(128, 64)
+    self.do2 = nn.Dropout(p=0.5)      # Dropout
+    self.fc3 = nn.Linear(64, 10)
+
+  def forward(self, x):
+    x = x.view(-1, input_size)
+    x = F.relu(self.fc1(x))
+    x = self.do1(x)                  # Dropout
+    x = F.relu(self.fc2(x))
+    x = self.do2(x)                  # Dropout
+    x = self.fc3(x)
+    return  F.log_softmax(x, dim=1)
+```
+
+## Ensemble
+Idee der Ensemble-Modelle ist es, einzelne Modelle zu kombinieren. <br>
+
+<img src="resources/ml/14_ensemble.png" width="400"> <br>
+
+## Early Stopping
+Beim `Early Stopping` wird das Training abgebrochen, sobald die Evaluationsmetrik innerhalb einer vorgegebenen ANzahl an Epochen keine Verbesserung mehr aufweist. <br>
+
+## Data Augmentation
+Oft sind zu wenig Daten vorhanden für die Komplexität der Fragestelung. Mit `Data Augmentation` können neue Daten generiert werden. <br>
+
+**Bilderkennung** <br>
+Rotation, Skalierung, Pixel versetzen, SPiegelung, Rauschen, Färbung, Schattierung, Verzerrung, etc.
+
+**Spracherkennung** <br>
+Geschwindigkeit, Rauschen, Tonlage, etc.
 
 <!--
 # Optimierung von Hyperparametern
