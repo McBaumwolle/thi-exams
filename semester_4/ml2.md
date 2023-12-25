@@ -691,17 +691,10 @@ Falls $w_{i,j}^{(l)} < 0$ ist, so wird $w_{i,j}^{(l)}$ um $-\lambda - \alpha \cd
 ## Dropout
 Die Idee von `Dropout` ist es, das Netzwerk zu vereinfachen, indem `zufällig` Neuronen deaktiviert werden. <br>
 
-<<<<<<< HEAD
-> S 37
-> https://moodle.thi.de/pluginfile.php/750384/mod_resource/content/0/06%20Regularization.pdf
-=======
 > Durch das zufällige Entfernen der Neuronen ist das `Subnetz` für jedes Update der Gewichte & Biases anders.
->>>>>>> 6bd972ea33073d518e061e356bf05cad3d56a57f
 
 Bei linearer Regression werden ebenso Neuronen deaktiviert, also 
 
-<<<<<<< HEAD
-=======
 $f_A(x) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n$ = \sum_{i=1}^n \beta_i x_i$
 
 fallen einige $\beta_i$ weg - eine Vorhersage kann nicht auf wenigen Feature basieren. Die Features müssen so genereller gelernt werden und alle Features müssen einbezogen werden.
@@ -806,8 +799,94 @@ Rotation, Skalierung, Pixel versetzen, Spiegelung, Rauschen, Färbung, Schattier
 **Spracherkennung** <br>
 Geschwindigkeit, Rauschen, Tonlage, etc.
 
->>>>>>> 6bd972ea33073d518e061e356bf05cad3d56a57f
-<!--
+
 # Optimierung von Hyperparametern
+Die Optimierung von Hyperparametern ist ein wichtiger Schritt beim Training von Neuronalen Netzen. <br>
+
+**generelles Vorgehen** <br>
+Vorgehen bei der Bestimmung der optimalen Hyperparameter.
+
+1. Splitte den Datensatz in drei Teile - Training, Validierung & Test.
+2. Trainiere Modelle für **unterschiedliche Werte der Hyperparameter**.
+3. Validiere die Modelle auf dem Validierungssdatensatz und wähle dasjenige mit der besten Performance.
+4. Bestätige den Fehler auf dme Testdatensatz es gewählten finalen Modells.
+
+## Grid-Search
+Bei der `Rastersuche` (Grid-Search) werden für jeden zu optimierenden Hyperparemeter die einzelnen, zu untersuchenden Werte händisch festgelegt. <br>
+
+**Beispiel** <br>
+Lernrate $\alpha \in \{0.1, 0.01, 0.001\}$ <br>
+Dropout-Rate $p \in \{0.5, 0.8\}$ <br>
+Neuronen im Layer $n_l \in \{12, 24, 42, 102\}$ 
+
+> Es werden also $3 \cdot 2 \cdot 4 = 24$ Modelle trainiert.
+
+Die Ergebnisse lassen sich im Raster visualisieren, deshalb auch der Name `Grid-Search`. <br>
+
+<details><summary>Grid</summary>
+
+<img src="resources/ml/15_grid_search.png" width="400"> <br>
+
+</details> <br>
+
+**Vorteile** <br>
+- Ist einfach, leicht verständlich und straightfoward.
+- Es kann einfach paralleliert werden, da die Modelle nicht von einander abhängen.
+
+**Nachteile** <br>
+- Manuelles Festlegen der Hyperparameter ist aufwendig.
+- Sehr rechenintensiv, da viele Modelle ausprobiert werden müssen.
+
+## Random-Search
+Bei der `Zufallssuche` (Random-Search) werden die zu untersuchenden Werte der Hyperparameter zufällig ausgewählt. <br>
+
+**Beispiel** <br>
+Lernrate $\alpha \in [0.001, 0.1]$ <br>
+Dropout-Rate $p \in [0.5, 0.8]$ <br>
+Neuronen im Layer $n_l \in [8, 128]$
+
+> Gezogene Kombinationen sind zum Beispiel $(\alpha, p, n_l) = (0.1, 0.8, 8)$.
+
+Auch hier können die Ergebnisse in einem Raster visualisiert werden. <br>
+
+<details><summary>Grid</summary>
+
+<img src="resources/ml/16_random_search.png" width="400"> <br>
+
+</details> <br>
+
+**Vorteile** <br>
+- Kann einfach parallelisiert werden, ist auch einfach verständlich.
+- Meistens eine bessere Performance als Grid-Search, da nicht abhängig von einem Gitter. 
+- Häufig reichen weniger zu trainierende Modelle aus.
+
+**Nachteile** <br>
+- Es ist auch rechenintensiv, da viele Modelle ausprobiert werden müssen.
+- Durch zufällige Auswahl kann es sein, dass bestimmte Bereiche nicht abgedeckt werden.
+
+**Quais-Random** <br>
+Durch verschiedene Techniken lassen sich bessere Zufallszahlen generieren - zum Beispiel mit der Sobol- oder Halton-Sequenz. Hierzu mehr auf [Wikipedia](https://en.wikipedia.org/wiki/Low-discrepancy_sequence). <br>
+
+## Bayessche Optimierung
+Die Idee ist es, schon evaluierte Kombinationen von Hyperparametern zu verwenden, um neue Kombinationen zu generieren. <br>
+
+$h: Hyperparameter \rightarrow Performance$ <br>
+$h(x) = Score \: des \: mit \: den \: Hyperparametern \: x \: trainierten \: Modells$ <br>
+
+Das beste Modell ist dann durch $x^* = argmax_{h(x)}$ gegeben. Vorgegangen wird dann wie folgt.
+
+<details><summary>ausklappen</summary>
+
+Zuerst wird ein probabilistisches Modell $P(Score|Hyp)$ für die Hyperparameter $x$ und deren vorhergesagt Performance $h$ erstellt. <br>
+
+1. Generiere über diese Verteilung neue Vorschläge für Hyperparameterkominationen. 
+2. Trainiere die zugehörigen Modelle und berechne den Score. 
+3. Date die opige Verteilung mittels des Satzes von Bayes up, also $P(h|x) = \frac{P(Hyp|Score) P(Score)}{P(Hyp)}$.
+
+</details> <br>
+
+Weitere Informationen und Varianten im [Foliensatz](https://moodle.thi.de/pluginfile.php/753281/mod_resource/content/0/07%20Optimierung%20von%20Hyperparametern.pdf) ab Seite 18.
+
+## Evaolutionäre Algorithmen
 ...
--->
+
