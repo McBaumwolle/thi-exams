@@ -801,7 +801,7 @@ Beim `Early Stopping` wird das Training abgebrochen, sobald die Evaluationsmetri
 Oft sind zu wenig Daten vorhanden für die Komplexität der Fragestelung. Mit `Data Augmentation` können neue Daten generiert werden. <br>
 
 **Bilderkennung** <br>
-Rotation, Skalierung, Pixel versetzen, SPiegelung, Rauschen, Färbung, Schattierung, Verzerrung, etc.
+Rotation, Skalierung, Pixel versetzen, Spiegelung, Rauschen, Färbung, Schattierung, Verzerrung, etc.
 
 **Spracherkennung** <br>
 Geschwindigkeit, Rauschen, Tonlage, etc.
