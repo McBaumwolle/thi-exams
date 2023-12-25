@@ -691,10 +691,17 @@ Falls $w_{i,j}^{(l)} < 0$ ist, so wird $w_{i,j}^{(l)}$ um $-\lambda - \alpha \cd
 ## Dropout
 Die Idee von `Dropout` ist es, das Netzwerk zu vereinfachen, indem `zufällig` Neuronen deaktiviert werden. <br>
 
+<<<<<<< HEAD
+> S 37
+> https://moodle.thi.de/pluginfile.php/750384/mod_resource/content/0/06%20Regularization.pdf
+=======
 > Durch das zufällige Entfernen der Neuronen ist das `Subnetz` für jedes Update der Gewichte & Biases anders.
+>>>>>>> 6bd972ea33073d518e061e356bf05cad3d56a57f
 
 Bei linearer Regression werden ebenso Neuronen deaktiviert, also 
 
+<<<<<<< HEAD
+=======
 $f_A(x) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n$ = \sum_{i=1}^n \beta_i x_i$
 
 fallen einige $\beta_i$ weg - eine Vorhersage kann nicht auf wenigen Feature basieren. Die Features müssen so genereller gelernt werden und alle Features müssen einbezogen werden.
@@ -799,6 +806,7 @@ Rotation, Skalierung, Pixel versetzen, SPiegelung, Rauschen, Färbung, Schattier
 **Spracherkennung** <br>
 Geschwindigkeit, Rauschen, Tonlage, etc.
 
+>>>>>>> 6bd972ea33073d518e061e356bf05cad3d56a57f
 <!--
 # Optimierung von Hyperparametern
 ...
