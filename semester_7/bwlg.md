@@ -6,6 +6,9 @@
 - [Einführung](#einführung)
   - [Was ist BWL?](#was-ist-bwl)
   - [Wirtschaftlichkeitsprinzip](#wirtschaftlichkeitsprinzip)
+  - [Betriebstypen](#betriebstypen)
+  - [Zielkonzeption](#zielkonzeption)
+  - [Fragen](#fragen)
 
 
 # Einführung
@@ -152,3 +155,58 @@ $ROS = \frac{Gewinn \cdot 100\%}{Umsatzerlös}$
 
 > Stellt das Verhältnis zwischen dem Gewinn eines Unternehmens und seinem Gesamtumsatz dar.
 
+## Fragen
+Kontrollfragen zum ersten Kapitel.
+
+**Frage 01** <br>
+In einer Schuhfabrik bestehen drei Fertigungsabteilungen (A, B, C), die verschiedene Schuhmodelle herstellen. Aus den Abteilungen sind folgende Informationen bekannt - bei einem Arbeitstag von 8 Stunden.
+
+| Modell | Stundenlohn | Schuhe/Tag | Verkaufspreis |
+| --- | --- | --- | --- |
+| A | 25€ | 10 | 50€ |
+| B | 30€ | 8 | 75€ |
+| C | 35€ | 6 | 125€ |
+
+Wie hoch ist die durchschnittliche Produktivität und Wirtschaftlichkeit der Mitarbeiter in den verschiedenen Abteilungen?
+
+<details><summary>Antwort</summary>
+
+**Produktivität** <br>
+Die Produktivität ist gegeben durch $P = \frac{Ausbringungsmenge}{Einsatzmenge}$. 
+
+...
+
+**Wirtschaftlichkeit** <br>
+Die Wirtschaftlichkeit ist gegeben durch $W = \frac{Ertrag}{Aufwand}$.
+<!-- geprüft -->
+
+$W_A = \frac{10P \cdot 50€}{25 \frac{€}{h} \cdot 8h} = 2.5$ <br>
+$W_B = \frac{8P \cdot 75€}{30 \frac{€}{h} \cdot 8h} = 2.5$ <br>
+$W_C = \frac{6P \cdot 125€}{35 \frac{€}{h} \cdot 8h} = 2.67$ <br>
+
+Modell `C` ist am wirtschaftlichsten und alle sind $>1$, somit kein Handlungsbedarf.
+
+</details> <br>
+
+**Frage 02** <br>
+Angenommen sei ein europaweit tätiger TV-Hersteller mit einem Gewinn von 95 Mio. Euro (10 % mehr als im Vorjahr). Die Eckdaten des Unternehmens sind folgende. 
+- Jahresüberschuss vor Steuern: 95 Mio. Euro
+- Eigenkapital am 31.12. laut Bilanz: 431 Mio. Euro
+- Umsatz: 1.820 Mio. Euro
+
+Ist das Unternehmen damit profitabel
+
+<details><summary>Antwort</summary>
+
+...
+
+</details> <br>
+
+**Frage 03** <br>
+Zur Herstellung von $4$ Kleidungsstücken werden $8m^2$ Material benötigt. Der Einkaufspreis pro $m^2$ Material sei $5€$, der Verkaufspreis je Kleidungsstück sei $20€$. Wie wirkt sich die Produktivitätssteigerung um $25$% am Beispiel des Minimalprinzips aus?
+
+<details><summary>Antwort</summary>
+
+...
+
+</details> <br>
