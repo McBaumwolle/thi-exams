@@ -5,6 +5,7 @@ Prof. Dr. Ulrich Margull
 - [Quantum Technologies and Information](#quantum-technologies-and-information)
   - [Contents](#contents)
 - [Classical Bits and Gates](#classical-bits-and-gates)
+- [Single Qubits](#single-qubits)
 
 # Classical Bits and Gates
 One bit is represented by an vector $0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ or $1 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. The boolean `NOT` gate is represented by the matrix $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
@@ -69,3 +70,22 @@ For example, the input $|01\rangle$ yields $|0\rangle$ as output.
 $\begin{pmatrix} 0 & 1 & 1 & 1 \\ 1 & 0 & 0 & 0 \end{pmatrix} |01\rangle = \begin{pmatrix} 0 & 1 & 1 & 1 \\ 1 & 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} = |0\rangle$
 
 </details> <br>
+
+# Single Qubits
+A single qubit is represented by a 2-dimensional vector.
+
+$| \psi \rangle = \alpha |0\rangle + \beta |1\rangle = \alpha \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \beta \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}$
+
+The qubit is normalized, therefore $|\alpha|^2 + |\beta|^2 = 1$ and $\alpha, \beta \in \mathbb{C}$. The fact  that a qubit is partly in state $|0\rangle$ and $|1\rangle$ is called _superposition_.
+
+When we measure the qubit, the probability of the measured state is given by
+
+$P(|0\rangle) = |\alpha|^2$ and $P(|1\rangle) = |\beta|^2$
+
+and the sum of both will be $1$.
+
+<!-- 
+https://moodle.thi.de/pluginfile.php/703143/mod_resource/content/20/QCI_script.pdf
+
+S. 19
+-->
