@@ -11,6 +11,7 @@
   - [Kryptographie](#kryptographie)
     - [symmetrische Kryptographie](#symmetrische-kryptographie)
     - [polyalphabetische Kryptographie](#polyalphabetische-kryptographie)
+    - [asymmetrische Kryptographie](#asymmetrische-kryptographie)
 
 
 # Einführung
@@ -207,4 +208,78 @@ AES wurde 2000 "in Dienst gestellt" und ist eine symmetrische Blockchiffre mit 1
 [Animation](https://www.cryptool.org/de/cto/aes-animation) & [Step-by-Step](https://www.cryptool.org/de/cto/aes-step-by-step)
 
 **sicherer Schlüsselaustausch** <br>
-Diffie-Hellman 
+Die grundlegende Idee bei **Diffie-Hellman** ist, dass zwei Kommunikationspartner einen gemeinsamen Schlüssel aushandeln, ohne dass dieser übertragen wird. `Client` und `Server` wählen jeweils
+
+- eine Primzahl `p` und
+- eine Primitivwurzel `g` modulo `p`. 
+
+Nun chiffriert der `Client` den Geheimtext mit seinem eigenen Schlüssel `S` (den er für sich behält). Das Chiffrat `Chiff(Text,S)` sendet er dann an den `Server`. Dieser verschlüsselt erneut mit seinem eigenen Schlüssel `E` (den er ebenfalls geheim hält), was das Doppelchiffrat `Chiff(Chiff(Text,S),E)` ergibt. Dieses sendet er an den `Client` zurück. Dieser entschlüsselt nun mit seinem Schlüssel `S` und erhält `Dechiff(Chiff(Chiff(Text,S),E),S)` = `Chiff(Text,E)`, welches er wieder an den `Server` sendet. Dieser entschlüsselt mit seinem Schlüssel `E` und erhält `Dechiff(Chiff(Text,E),E)` = `Text`.
+
+**binäre Exponentiation** <br>
+Die binäre Exponentiation ($y=x^k$) ist eine Methode, um eine Zahl `x` mit einer natürlichen Zahl `n` zu potenzieren. Idee ist $x^5 = x^4 \cdot x^1 = x^2 \cdot x^2 \cdot x^1$. Nun wird $k$ in binär umgewandelt - aus `1` mache "quadrieren und multiplizieren" und aus `0` mache "quadrieren" - wobei das erste `x` gestrichen wird und durch `x` ersetz wird, da Binärdarstellung immer mit `1` beginnt.
+
+Beispiel: $7^{23}$ <br>
+$23_{dez} = 10111_{bin}$ ergibt Q&M, Q, Q&M, Q&M, Q&M und nach dem Streichen x, Q, Q&M, Q&M, Q&M. 
+
+$x \xrightarrow{Q} x^2 \xrightarrow{Q} x^4 \xrightarrow{M} x^5 \xrightarrow{Q} x^{10} \xrightarrow{M} x^{11} \xrightarrow{Q} x^{22} \xrightarrow{M} x^{23}$
+
+<!-- weiter S. 169 --> 
+
+**Diffie-Hellman** <br>
+- Geheime Zufallszahlen $a$ und $b$ werden gewählt.
+- `Client` wählt Zufallszahl $a, 1 \leq a \leq p-1$ und berechnet $A = g^a \mod p$.
+- `Server` wählt Zufallszahl $b, 1 \leq b \leq p-1$ und berechnet $B = g^b \mod p$.
+- Gegenseitiges Zusenden von $A$ und $B$.
+- `Client` berechnet $K = B^a \mod p$.
+- `Server` berechnet $K = A^b \mod p$.
+- Beide haben nun den gleichen Schlüssel $K$, da 
+  - $K = B^a \mod p = (g^b \mod p)^a \mod p = g^{ba} \mod p$ und
+  - $K = A^b \mod p = (g^a \mod p)^b \mod p = g^{ab} \mod p$.
+- $K$ ist der gemeinsame Schlüssel.
+
+<!-- 
+Beide Erklärungen bitte zusammenfassen und vereinfachen.
+-->
+
+### asymmetrische Kryptographie
+Zum Beispiel RSA (Rivest, Shamir, Adleman, 1977) oder ElGamal (1985).
+
+**RSA** <br>
+Beim RSA-Verfahren wird wie folgt vorgegangen. 
+
+- Wähle zwei zufällige Primzahlen $p$ und $q$.
+- Der Public-Key setzt sich auch dem Zahlenpaar $(e,N)$ zusammen. 
+- Der Private-Key setzt sich aus dem Zahlenpaar $(d,N)$ zusammen.
+
+Grundidee ist, dass es sehr aufwendig ist, große Zahlen in ihre Primfaktoren zu zerlegen. Als Beispiel für einen Public Key wählt man
+
+- $p = 11$ und $q = 13$.
+- $N = p \cdot q = 11 \cdot 13 = 143$.
+- $\varphi(N) = (p-1) \cdot (q-1) = 10 \cdot 12 = 120$.
+- Nun wird $e = 23$ gewählt. 
+- Der Public Key ist $(e,N) = (23,143)$.
+
+Beim Private Key wird ähnlich vorgegangen.
+
+- $p=11$ und $q=13$ plus $N=143$ und $e=23$.
+- Nun wird $d$ wiefolgt berechnet:
+  - $e \cdot d + k \ cdot \varphi(N) = 1$.
+  - $23 \cdot d + k \cdot 120 = 1$.
+  - $23 \cdot 47 + (-9) \cdot 120 = 1$.
+  - $d = 47$.
+- Der Private Key ist $(d,N) = (47,143)$.
+
+Verschlüsselt wird nun mit dem Chiffrat $C$ und Klartext $K$.
+
+- $K = 7$ als Beispiel
+- $e=23$ und $N=143$.
+- $C = K^e \mod N = 7^{23} \mod 143 = 2$.
+
+Und entschlüsselt wird ebenso mit dem Chiffrat $C$ und Klartext $K$.
+
+- $C = 2$ als Beispiel von oben.
+- $d=47$ und $N=143$.
+- $K = C^d \mod N = 2^{47} \mod 143 = 7$.
+
+**Elliptic Curve** <br>
+<!-- weiter auf S. 201, aber relevant? -->
