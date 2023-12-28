@@ -890,3 +890,85 @@ Weitere Informationen und Varianten im [Foliensatz](https://moodle.thi.de/plugin
 ## Evaolutionäre Algorithmen
 ...
 
+
+<!--
+ab hier Teil von Hr. Botsch
+-->
+
+# Ähnlichkeitsmaße
+Verschiedene Ähnlichkeitsmaße für die Bewertung von Clustern. <br>
+
+<!-- ## Unähnlichkeitsmaße -->
+
+**Hamming-Abstand** <br>
+Der `Hamming-Abstand` ist die Anzahl der unterschiedlichen Einträge zweier Vektoren. <br>
+
+<details><summary>Beispiel</summary>
+
+$v_1 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ und $v_2 = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$ somit $H(v_1, v_2) = 1$.
+
+</details> <br>
+
+**Euklidische Norm** <br>
+Bekanntestes Distanzmaß, auch `L2-Norm` genannt. <br>
+
+$d(v_1, v_2) = \sqrt{\sum_{i=1}^n (v_{1,i} - v_{2,i})^2}$ <br>
+
+<!-- ## Ähnlichkeitsmaße -->
+
+**Manhattan-Abstand** <br>
+Der `Manhattan-Abstand` ist die Summe der absoluten Differenzen der Einträge zweier Vektoren - auch `L1-Norm` genannt. <br>
+
+$M(v_1, v_2) = \sum_{i=1}^n |v_{1,i} - v_{2,i}|$ <br>
+
+<details><summary>Beispiel</summary>
+
+$v_1 = \begin{pmatrix} 2 \\ -1 \end{pmatrix}$ und $v_2 = \begin{pmatrix} 0 \\ 3 \end{pmatrix}$ und $a=1$ somit $M(v_1, v_2) = 6$.
+
+</details> <br>
+
+<!-- L - + unendlich -->
+
+**Cosinus-Ähnlichkeit** <br>
+Die Cosinus-Ähnlichkeit ist ein Maß für die Ähnlichkeit zweier Vektoren - auch `Cosinus-Similarity` genannt. <br>
+
+$cos(v_1, v_2) = cos(\theta) = \frac{v_1 \cdot v_2}{||v_1|| \cdot ||v_2||}$ <br>
+
+Sie liegt zwischen $-1$ und $1$, wobei $1$ für eine perfekte Ähnlichkeit steht. <br>
+
+**Überlapp-Ähnlichkeit** <br>
+Ähnlich zur Cosinus-Ähnlichkeit. 
+
+$overlap(v_1, v_2) = \frac{v_1 \cdot v_2}{min(||v_1||, ||v_2||)}$ <br>
+
+$min$ ist hier der kleinere der beiden Vektor-Beträge. <br>
+
+**Dice-Ähnlichkeit** <br>
+Auch ähnlich zur Cosinus-Ähnlichkeit, nur mit weiteren Faktoren. 
+
+$D(v_1, v_2) = \frac{2 \cdot v_1 \cdot v_2}{||v_1||^2 + ||v_2||^2}$ <br>
+
+<!-- nicht geprüft -->
+Wobei $||v_1||^2$ auch gekürzt als $v_1^2$ geschrieben werden kann. <br>
+
+**Jaccard-Ähnlichkeit** <br>
+Die Jaccard-Ähnlichkeit ist ein Maß für die Ähnlichkeit zweier Vektoren. 
+
+$J(v_1, v_2) = \frac{v_1 \cdot v_2}{||v_1||^2 + ||v_2||^2 - v_1 \cdot v_2}$ <br>
+
+**binäre Vektoren** <br>
+...
+
+## Sequenzen
+Verschiedene Ähnlichkeitsmaße für Sequenzen. <br>
+
+**Dynamic Time Warping** <br>
+In Anwendungen, in denen die Ähnlichkeit der Form wichtig ist, ist ein ein anderes Unähnlichkeitsmaß als die Minkowski-Metrik besser geeignet - Dynamisches Time Warping (`DTW`).
+
+<!-- S. 23 -->
+
+# Lagrange-Multiplikatoren
+<!-- S. 32 -->
+
+# Dimensionalitätsreduktion
+<!-- S. 45 -->
