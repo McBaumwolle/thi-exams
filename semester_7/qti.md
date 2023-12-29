@@ -89,3 +89,53 @@ https://moodle.thi.de/pluginfile.php/703143/mod_resource/content/20/QCI_script.p
 
 S. 19
 -->
+
+**Special Qubits** <br>
+There are two common special qubits, the $|+\rangle$ and $|-\rangle$ qubit.
+
+$|+\rangle = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle)$ <br>
+$|-\rangle = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle)$ <br>
+
+In this case, the probability of measuring $|0\rangle$ or $|1\rangle$ is the same. 
+
+**Measurement** <br>
+When doing a measurement, we cannot directly find out the state of the qubit - we cannot measure the amplitudes $\alpha$ and $\beta$ of the states, so we need to repeat the measurement multiple times to get a histogram of the results. 
+
+<img src="resources/qti/01_measurement.png" width="400"/>
+
+In this case, a qubit in _superposition_ is measured twice - the first time produces a random qubit, where the second measurement produces the same result. Thus, `00` is common and `01` and `10` do not occur.
+
+<!--
+4.1.3 Polar Form
+4.1.4 Bloch Sphere
+-->
+
+## Single Qubit Gates
+A quantum gate is an operator that acts on the state of one (or more) qubits. This operators are represented by unitary matrices.
+
+### Pauli Gates
+The Pauli gates are the most common gates. 
+
+**Pauli-X** <br>
+The Pauli-X gate exchanges the amplitudes of the qubit. 
+
+$X|\psi\rangle = X(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \begin{pmatrix} \beta \\ \alpha \end{pmatrix} = \beta|0\rangle + \alpha|1\rangle$
+
+It is also caled a `bit-flip` gate - when applying to the base states $|0\rangle$ and $|1\rangle$, the result is the opposite state.
+
+**Pauli-Z** <br>
+The Pauli-Z gate changes the sign of the $\beta$ amplitude.
+
+$Z|\psi\rangle = Z(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \begin{pmatrix} \alpha \\ -\beta \end{pmatrix} = \alpha|0\rangle - \beta|1\rangle$
+
+It is also called a `phase-flip` gate - when applying to the base state $Z|1\rangle$, the result is $-|1\rangle$.
+
+**Pauli-Y** <br>
+The Pauli-Y gate is a bit more complicated gate, it has an imaginary factor. 
+
+$Y|\psi\rangle = Y(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = i \begin{pmatrix} -\beta \\ \alpha \end{pmatrix} = -i\beta|0\rangle + i\alpha|1\rangle$
+
+<!-- S 24 -->
+
+### Hadamard Gate
+...

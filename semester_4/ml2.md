@@ -952,9 +952,12 @@ $D(v_1, v_2) = \frac{2 \cdot v_1 \cdot v_2}{||v_1||^2 + ||v_2||^2}$ <br>
 Wobei $||v_1||^2$ auch gekürzt als $v_1^2$ geschrieben werden kann. <br>
 
 **Jaccard-Ähnlichkeit** <br>
-Die Jaccard-Ähnlichkeit ist ein Maß für die Ähnlichkeit zweier Vektoren. 
+Die Jaccard-Ähnlichkeit ist ein Maß für die Ähnlichkeit zweier Vektoren - besonders gut bei kategorischen Daten. <br>
 
+<!-- 
 $J(v_1, v_2) = \frac{v_1 \cdot v_2}{||v_1||^2 + ||v_2||^2 - v_1 \cdot v_2}$ <br>
+-->
+$J(v_1, v_2) = \frac{v_1 \cap v_2}{v_1 \cup v_2}$ <br>
 
 **binäre Vektoren** <br>
 ...
