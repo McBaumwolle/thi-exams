@@ -210,3 +210,38 @@ Zur Herstellung von $4$ Kleidungsstücken werden $8m^2$ Material benötigt. Der 
 ...
 
 </details> <br>
+
+
+# konstitutive Entscheidungen
+Als konstitutive Entscheidungen bezeichnet man Führungsentscheidungen, die für Unternehmen von grundlegender Bedeutung sind und die einmalig (oder selten) getroffen werden.
+
+## Standort
+Der Standort eines Unternehmens ist von großer Bedeutung, da er die Wettbewerbsfähigkeit des Unternehmens beeinflusst - Standortfaktoren sind zum Beispiel folgende. 
+
+**Inputorientiert** <br>
+- Gewerbeimmobilien
+- Material- & Rohstoffversorgung
+- Arbeitskräfte (Angebot, Qualifikation, Kosten)
+- Verkehrsanbindung
+- Energieversorgung
+- Umweltschutz & Entsorgung
+
+**Outputorientiert** <br>
+- Absatzmöglichkeiten
+- Konkurrenz im Umfeld
+
+**Abgabenorientiert** <br>
+- Grund-, Gewerbe, Körperschafts & Einkommenssteuer usw.
+- weitere Gebühren
+
+Mit der **Nutzenanalyse** kann für jeden Standort ein Faktor ermittelt werden, der die Standortqualität beschreibt.
+
+
+## Rechtsform
+Die Rechtsform bestimmt die rechtlichen Rahmenbedingungen, unter denen das Unternehmen geführt wird. Eine Übersicht privater Rechtsformen ist folgend darstellt.
+
+### Personengesellschaften
+...
+
+**Einzelunternehmung** <br>
+...
