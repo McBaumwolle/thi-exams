@@ -9,6 +9,13 @@
   - [Betriebstypen](#betriebstypen)
   - [Zielkonzeption](#zielkonzeption)
   - [Fragen](#fragen)
+- [konstitutive Entscheidungen](#konstitutive-entscheidungen)
+  - [Standort](#standort)
+  - [Rechtsform](#rechtsform)
+    - [Personengesellschaften](#personengesellschaften)
+    - [Kapitalgesellschaften](#kapitalgesellschaften)
+      - [Gesellschaft mit beschränkter Haftung (`GmbH`)](#gesellschaft-mit-beschränkter-haftung-gmbh)
+
 
 
 # Einführung
@@ -249,13 +256,27 @@ Die Rechtsform bestimmt die rechtlichen Rahmenbedingungen, unter denen das Unter
 | --- | --- | --- | --- | --- |
 | Einzelunternehmung | • einfach und formlos <br> • Firnemname enthält den Vor- und Nachnamen des Inhabers | • mindestens ein Gesellschafter haftet **persönlich** und **unbeschränkt** mit seinem eigenen Vermögen <br> • alleiniger Eigentümer trägt das gesamte Risiko | • Einzelunternehmer kann frei über die Gewinne verfügen <br> • Gewinne unterliegen nur der **Einkommenssteuer** |  |
 | Gesellschaft bürgerlichen Rechts (`GbR`) | • durch Abschluss eines **Gesellschaftsvertrages** <br> • es werden **mindestens 2** Gesellschafter benötigt <br> • kann nicht in das Handelsregister eingetragen werden | • alle Gesellschafter **haften unbeschränkt** für Schulden, etc. <br> Führung erfolgt **gemeinsam** | • Vermögen gilt als **gemeinsames Vermögen** der Gesellschafter <br> • Gewinn- & Verlustberechnung erfolgt nach Köpfen | • endet mit Erreichen des beabsichtigten Zwecks |
-| Offene Handeslgesellschaft (`OHG`) | • | • | • | • |
-| Kommanditgesellschaft (`KG`) | • | • | • | • |
-| Stille Gesellschaft | • | • | • | • |
-| Partnerschaftsgesellschaft (`PartG`) | • | • | • | • |
+| Offene Handeslgesellschaft (`OHG`) | • auch mit **Gesellschaftsvertrag** mit $>1$ Personen <br> • Firma und Namen **müssen** im **Handeslregister** eingetragen werden | • Gesellschafter haften **solidarisch** mit ihrem **gesamten Vermögen direkt** und **unbeschränkt** <br> • jeder Gesellschafter ist allein **vertretungs- und geschäftsführungsberechtigt** | • **Eigenkapitalerhöhung** ist durch Kapitaleinlagen möglich <br> • keine Körperschaftssteuer <br> • Gewinnausschüttung an Gesellschafter **$\ge 4%$ der Einlage** | • kann **klagen** und **verklagt** werden |
+| Kommanditgesellschaft (`KG`) | | | | |
+| Stille Gesellschaft | • **natürliche** sowie **juristische** Person <br> • wird **nicht** in das **Handelsregister** eingetragen | • **keine** Haftung mit der Einlage <br> • ist grundsätzlich **von der Geschäftsführung** und Vertretung **ausgeschlossen** | • Vermögenseinlage kann als **Kapital** oder **Wirtschaftsgüter** geleistet werden <br> • wird außerhaltb des Verhältnisses **nicht bekannt** | • Beteiligung mit einer Vermögenseinlage an einem Unternehmen |
+| Partnerschaftsgesellschaft (`PartG`) | • **schriftliche** Gründung | | | • zum Beispiel Rechtsantälte, Ärzte oder Psychologen in gemeinsamen Verbund |
 
 <!--
-|   | Voraussetzung | Vermögen | Haftung | Vertretung der Gesellschaft | Innenverhältnis |
-| --- | --- | --- | --- | --- | --- |
-| Gesellschaft bürgerlichen Rechts (`GbR`) | Jeder gemeinsame Zweck | Gesamthand | Gesellschafter haften persönlich und unbeschränkt | Dirch alle Gesellschafter gemeinsam | Gemeinsame Führung dirch alle Gesellschafter |
+Zusammenfassugn in Tabelle auf S. 40
+https://moodle.thi.de/pluginfile.php/700953/mod_resource/content/3/BWLG_Kapitel2_Konstitutive%20Entscheidungen.pdf
 -->
+
+### Kapitalgesellschaften
+Bei der Gründung bestehen grundsätzlich bestimmte Formvorschriften (z. B. notar. Beurkundung, Regelung der Satzung). Die Gesellschaften unterliegen, da sie als juristische Person gelten, der Einkommen- und der Körperschaftsteuer.
+
+**Haftung** <br>
+Besonders bei den Kapitalgesellschaften ist die Haftung, welche hier **begrenzt** ist. 
+
+**Dauer** <br>
+Das Unternehmen existiert **unbefristet** und **unabhängig** von der Existenz der Gesellschafter - ein Wechsel dieser ist auch möglich. 
+
+**persönlicher Kontakt** <br>
+Führung durch angestellte Geschäftsführer, die nicht Gesellschafter sein müssen - abgestimmt wird nach **Höhe der Kapitalanteile**.
+
+#### Gesellschaft mit beschränkter Haftung (`GmbH`)
+Bei der GmbH ist die Haftung der Eigenkapitalgeber auf die Kapitalanlage beschränkt. 

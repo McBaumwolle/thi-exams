@@ -12,6 +12,9 @@
     - [symmetrische Kryptographie](#symmetrische-kryptographie)
     - [polyalphabetische Kryptographie](#polyalphabetische-kryptographie)
     - [asymmetrische Kryptographie](#asymmetrische-kryptographie)
+    - [hybride Verschlüsselung](#hybride-verschlüsselung)
+  - [Integrität](#integrität)
+  - [Authentiizität](#authentiizität)
 
 
 # Einführung
@@ -283,3 +286,60 @@ Und entschlüsselt wird ebenso mit dem Chiffrat $C$ und Klartext $K$.
 
 **Elliptic Curve** <br>
 <!-- weiter auf S. 201, aber relevant? -->
+
+
+**Vorteile** <br>
+Bei der assymetrischen Kryptographie ist der Schlüsselaustausch sicher, da der Private Key nicht übertragen werden muss.
+
+**Nachteile** <br>
+Sehr rechenintensiv und längere Schlüssel nötig als bei der symmetrischen Kryptographie (bei gleicher Sicherheit).
+
+### hybride Verschlüsselung
+Das Problem bei symmetrischer Kryptographie ist der Schlüsselaustausch - bei dem Gegenstück die aufwendige Berechnung.
+
+**Lösungsidee** <br>
+- Erzeuge zufälligen, symmetrischen Sitzungsschlüssel $S$.
+- Verschlüssele Nachricht $M$ mit $S$ symmetrisch, also $C_M = enc_{sym}(M,S)$.
+- Verschlüssele $S$ asymmetrisch an Public-Key $K_pub$ des Empfängers, also $C_S = enc_{asym}(S,K_pub)$.
+- Sende $(C_M,C_S)$ an Empfänger, der dann 
+  - $S = dec_{asym}(C_S,K_priv)$ und
+  - $M = dec_{sym}(C_M,S)$ berechnet.
+
+
+## Integrität
+Ziel ist das Nachweisen von Veränderungen an Daten. 
+
+**Hashfunktion** <br>
+Die Idee der Hash-Funktion ist es, eine Menge $M$ auf $M'$ abzubilden, wobei in der Regel $|M| > |M'|$ gilt. Bekannte Hash-Funktionen sind zum Beispiel `SHA`, `SHA256`, `SHA512` oder `MD5`.
+
+- Nachricht `N` = `Hello World`
+- `H = MD5(N)` = `b10a8db164e0754105b7a99be72e3fe5`
+- Sende `N` und `H` 
+- Angreifer manipuliert `N` zu `N'` = `Hallo Welt` udn berechnet neuen Hash `H'` = `5c372a32c9ae748a4c040ebadc51a829`
+- Leitet `N'` und `H'` weiter
+- Wie kann der Empfänger nun feststellen, dass `N` manipuliert wurde?
+
+**Signatur** <br>
+Die Idee der Signatur ist es, eine Nachricht `N` mit einem Private-Key `K_priv` zu signieren und mit dem Public-Key `K_pub` zu verifizieren.
+
+- Sender 
+  - Nachricht `N`, `Hash H=hash(N)`
+  - Signatur `S=enc(N,K_priv)`
+- senden von `N` und `S`
+- Empfänger
+  - `hash(N)`
+  - `dec(S,K_pub)`
+  - Nachricht unverändert, wenn `hash(N) = dec(S,K_pub)`
+
+> Denn $K_{pub} muss zu K_{priv} passen, den nur der Sender kennt!
+
+## Authentiizität
+Ziel ist das Nachweisen der Identität eines Kommunikationspartners - mit Zertifikaten vertrauenswürdiger Herausgeber (`Root-CA`) oder Signatur.
+
+**SSL/TLS** <br>
+Authentifiziert den Server und ggf auch die Clients, stellt Integrität der Datenübertragung und vertrauliche Kommunikation sicher. 
+
+<!--
+S. 243
+https://moodle.thi.de/course/view.php?id=8533
+-->
