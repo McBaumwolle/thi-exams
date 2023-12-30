@@ -135,7 +135,106 @@ The Pauli-Y gate is a bit more complicated gate, it has an imaginary factor.
 
 $Y|\psi\rangle = Y(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = i \begin{pmatrix} -\beta \\ \alpha \end{pmatrix} = -i\beta|0\rangle + i\alpha|1\rangle$
 
-<!-- S 24 -->
+**Information** <br>
+When two of the same gates are applied, the result is the identity matrix.
+
+$X \cdot X = Y \cdot Y = Z \cdot Z = I_2 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$
 
 ### Hadamard Gate
-...
+The Hadamard gate is a very common gate, it is used to create superposition - it applies to the base states like this. 
+
+$H|0\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle) = |+\rangle$ <br>
+
+$H|1\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle) = |-\rangle$
+
+These are superposition states, the probability of measuring both states is equal. Hadamard is also it's own inverse, so $H \cdot H = 1$.
+
+# Quantum Registers (and Entanglement)
+<!-- 2 Qubit Register 5.1.1 -->
+
+## CNOT (controlled Pauli-X)
+The CNOT, `CX`-gate or controlledd Pauli-X is a 2-qubit gate with a control qubit, which remains unchanged and the qubit it operates on. 
+
+- If the control-qubit is `0`, the second qubit is not changed. 
+- If the control-qubit is `1`, the second qubit is flipped.
+
+Let $q_1$ be the control-gate and $q_0$ the controlled gate, then CNOT has the following form. 
+
+$CNOT = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}$ 
+
+In `Qiskit`, the CNOT gate is defined as 
+
+```python
+qc.cx(q[0], q[1])
+```
+
+and it looks like this.
+
+<img src="resources/qti/02_cnot.png" width="100"/>
+
+Applied on the base states the qubit corresponds to a classical `XOR`-gate.
+
+| input | output |
+| ----- | ------ |
+| 00    | 00     |
+| 01    | 01     |
+| 10    | 11     |
+| 11    | 10     |
+
+## Entanglement
+Two or more qubits are called _entangled_, if their state cannot be described as the tensor product of some individual qubits.
+
+## SWAP-Gate
+The SWAP-Gate swaps the two qubits - as simple as that. 
+
+| input | output |
+| ----- | ------ |
+| 00    | 00     |
+| 01    | 10     |
+| 10    | 01     |
+| 11    | 11     |
+
+The SWAP-Gate is defined as
+
+$SWAP = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$
+
+and in `Qiskit` code it looks like this
+
+```python
+qc.swap(q[0], q[1])
+```
+
+and the visual representation is as follows.
+
+<img src="resources/qti/03_swap.png" width="100"/>
+
+## Toffoli-Gate
+The Toffoli-Gate is a 3-qubit gate, with two control qubits and one target qubit. The target qubit is flipped, if both control qubits are `1`.
+
+| input | output |
+| ----- | ------ |
+| 000   | 000    |
+| 001   | 001    |
+| 010   | 010    |
+| 011   | 011    |
+| 100   | 100    |
+| 101   | 101    |
+| **110**   | **111**    |
+| **111**   | **110**    |
+
+The Toffoli-Gate is defined as
+
+$CCNOT = \begin{pmatrix} 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \end{pmatrix}$
+
+and in `Qiskit` code it looks like this
+
+```python
+qc.ccx(q[0], q[1], q[2])
+```
+
+and the visual representation is as follows.
+
+<img src="resources/qti/04_toffoli.png" width="100"/>
+
+## Multiple Hadamard Gates
+<!-- S. 31 -->
