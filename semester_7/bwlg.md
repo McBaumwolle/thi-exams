@@ -243,5 +243,19 @@ Die Rechtsform bestimmt die rechtlichen Rahmenbedingungen, unter denen das Unter
 ### Personengesellschaften
 ...
 
-**Einzelunternehmung** <br>
-...
+<!-- as table -->
+
+|   | Gründung | Haftung | Gewinne | Sonstiges |
+| --- | --- | --- | --- | --- |
+| Einzelunternehmung | • einfach und formlos <br> • Firnemname enthält den Vor- und Nachnamen des Inhabers | • mindestens ein Gesellschafter haftet **persönlich** und **unbeschränkt** mit seinem eigenen Vermögen <br> • alleiniger Eigentümer trägt das gesamte Risiko | • Einzelunternehmer kann frei über die Gewinne verfügen <br> • Gewinne unterliegen nur der **Einkommenssteuer** |  |
+| Gesellschaft bürgerlichen Rechts (`GbR`) | • durch Abschluss eines **Gesellschaftsvertrages** <br> • es werden **mindestens 2** Gesellschafter benötigt <br> • kann nicht in das Handelsregister eingetragen werden | • alle Gesellschafter **haften unbeschränkt** für Schulden, etc. <br> Führung erfolgt **gemeinsam** | • Vermögen gilt als **gemeinsames Vermögen** der Gesellschafter <br> • Gewinn- & Verlustberechnung erfolgt nach Köpfen | • endet mit Erreichen des beabsichtigten Zwecks |
+| Offene Handeslgesellschaft (`OHG`) | • | • | • | • |
+| Kommanditgesellschaft (`KG`) | • | • | • | • |
+| Stille Gesellschaft | • | • | • | • |
+| Partnerschaftsgesellschaft (`PartG`) | • | • | • | • |
+
+<!--
+|   | Voraussetzung | Vermögen | Haftung | Vertretung der Gesellschaft | Innenverhältnis |
+| --- | --- | --- | --- | --- | --- |
+| Gesellschaft bürgerlichen Rechts (`GbR`) | Jeder gemeinsame Zweck | Gesamthand | Gesellschafter haften persönlich und unbeschränkt | Dirch alle Gesellschafter gemeinsam | Gemeinsame Führung dirch alle Gesellschafter |
+-->
