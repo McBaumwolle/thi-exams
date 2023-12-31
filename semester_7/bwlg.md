@@ -15,6 +15,7 @@
     - [Personengesellschaften](#personengesellschaften)
     - [Kapitalgesellschaften](#kapitalgesellschaften)
       - [Gesellschaft mit beschränkter Haftung (`GmbH`)](#gesellschaft-mit-beschränkter-haftung-gmbh)
+      - [Aktiengesellschaft (`AG`)](#aktiengesellschaft-ag)
 
 
 
@@ -279,4 +280,33 @@ Das Unternehmen existiert **unbefristet** und **unabhängig** von der Existenz d
 Führung durch angestellte Geschäftsführer, die nicht Gesellschafter sein müssen - abgestimmt wird nach **Höhe der Kapitalanteile**.
 
 #### Gesellschaft mit beschränkter Haftung (`GmbH`)
-Bei der GmbH ist die Haftung der Eigenkapitalgeber auf die Kapitalanlage beschränkt. 
+Die `GmbH` ist eine der bekanntesten Rechtsformen und wird häufig von mittelständischen Unternehmen gewählt.
+
+**Gründung** <br>
+- Errichtung erfolgt furch eine oder mehrere Personen mit Abschluss eines **Gesellschaftsvertrages**, die notariell beurkundet werden muss - muss folgende Mindestbestimmungen enthalten.
+  - **Firma** und **Sitz** der Gesellschaft
+  - **Gegenstand** des Unternehmung (z.B. Eisenbahunternehmen)
+  - Höhe des Stammkapitals
+- Änderungen können nur mit einer **Mehrheit** von `75%` der Geseelschafter vorgenommen werden.
+- Entsteht mit einer Eintragung in das **Handelsregister**.
+- **Stammkapital** von mindestens `25.000€` muss vorhanden sein, jede einzelne Stammeinlage mind. `100€`.
+- **Mindesteinzahlung** beträgt `25%` der Stammeinlage.
+- Zwischen Gründung und Eintragung besteht bereits eine `GmbH i.G.` mit beschränkter Haftung. 
+
+**Haftung** <br>
+- Für die Verbindlichkeit der Gesellschaft haftet nur das **Geschäftsvermögen**.
+- Mindesteins ein **Geschäftsführender** notwendig, der die Gesellschaft nach außen vertritt.
+  - stellt **Jahresabschluss** fest
+  - ... <!-- S. 44 -->
+
+**Gewinne** <br>
+- Die GmbH unterliegt der Körperschaftsteuerpflicht auf das Einkommen (Gewinn) der juristischen Person.
+
+**Auflösung** <br>
+- Ablauf der vereinbarten **Vertragsdauer**
+- **Gesellschafterbeschluss** mit `75%` Mehrheit
+- gerichtliches Urteil
+- Eröffnung des **Konkurses**
+
+#### Aktiengesellschaft (`AG`)
+... <!-- S. 50 -->
