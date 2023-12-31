@@ -45,6 +45,7 @@ Prof. Dr. Michael Botsch
 - [Dimensionalitätsreduktion](#dimensionalitätsreduktion)
   - [Hauptkomponentenanalyse](#hauptkomponentenanalyse)
     - [Beispiel](#beispiel)
+  - [Lineare Diskriminanzanalyse](#lineare-diskriminanzanalyse)
 
 
 
@@ -1048,3 +1049,5 @@ Der `MINT`-Datensatz besteht aus 70.000 Bildern von handgeschriebenen Ziffern. J
 
 <img src="resources/ml/18_pca_example.png" width="400"> <br>
 
+## Lineare Diskriminanzanalyse
+...
