@@ -34,6 +34,18 @@ Prof. Dr. Michael Botsch
   - [Ensemble](#ensemble)
   - [Early Stopping](#early-stopping)
   - [Data Augmentation](#data-augmentation)
+- [Optimierung von Hyperparametern](#optimierung-von-hyperparametern)
+  - [Grid-Search](#grid-search)
+  - [Random-Search](#random-search)
+  - [Bayessche Optimierung](#bayessche-optimierung)
+  - [Evaolutionäre Algorithmen](#evaolutionäre-algorithmen)
+- [Ähnlichkeitsmaße](#ähnlichkeitsmaße)
+  - [Sequenzen](#sequenzen)
+- [Lagrange-Multiplikatoren](#lagrange-multiplikatoren)
+- [Dimensionalitätsreduktion](#dimensionalitätsreduktion)
+  - [Hauptkomponentenanalyse](#hauptkomponentenanalyse)
+    - [Beispiel](#beispiel)
+
 
 
 
