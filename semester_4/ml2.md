@@ -974,4 +974,65 @@ In Anwendungen, in denen die Ähnlichkeit der Form wichtig ist, ist ein ein ande
 <!-- S. 32 -->
 
 # Dimensionalitätsreduktion
-<!-- S. 45 -->
+Techniken zur Reduktion der Input-Variablen eines Datensatzes.
+
+> Dadurch soll es (fast) keinen Informationsverlust geben.
+
+> Variablen im verkleinerten Datensatz vollen die Daten (fast) genao so gut beschreiben.
+
+Dimensionsreduktion wird oft bei der Visualisierung von Daten verwendet, aber auch zur Reduzierung der benötigten Ressourcen. _Curse of Dimensionality_ da die Aufgabe sehr schwierig sein kann bei vielen Variablen.- viele Input-Variablen können zu Overfitting führen.
+
+> Ein Modell, welches auf einem Trainingsdatensatz mit wenigen Variablen trainiert wurde, ist simpler und die Schätzungen sind stabiler.
+
+<!-- 
+https://moodle.thi.de/mod/resource/view.php?id=310194
+S. 6
+nachholen 
+-->
+
+## Hauptkomponentenanalyse
+Die `Principal Component Analysis` (`PCA`) ist eine Technik zur Reduktion der Dimensionen, indem wenige Hautkomponenten die Daten beschreiben - durch geeignete Linearkombination der Input-Variablen. <br>
+
+**Totale Varianz** <br>
+Seien $x_1, ..., x_n$ die Input-Variablen, dann ist die totale Varianz gegeben durch
+
+$TVar = \sum_{i=1}^m Var(x_i)$. <br>
+
+**lineare Approximation** <br>
+Die lineare Approximation kann als iterativer Prozess beschrieben werden.
+
+<details><summary>ausklappen</summary>
+
+1. Suche die Gerade, welche die Daten am besten approximiert (Fehlermaß ist der euklidische Abstand).
+2. Suche eine weitere Gerade durch den Mittelpunkt der Daten, welche orthogonal zur ersten Geraden steht und die Daten am besten approximiert.
+3. Suche eine weitere Gerade durch den Mittelpunkt der Daten, welche orthogonal zu den ersten beiden Geraden steht und die Daten am besten approximiert.
+4. Wiederhole Schritt 3 bis genau so viele Geraden gefunden wurden, wie Input-Variablen vorhanden sind.
+
+</details> <br>
+
+<img src="resources/ml/17_pca.png" width="400"> <br>
+
+Durch Rotation kann man die Daten entlang der Achsen der konservierten Hauptkomponenten (`HK`) legen (im Bild, ca. 45° im Uhrzeigersinn drehen).
+
+> Die erste HK beschreibt den Großteil der Varianz, die zweite HK den Großteil der verbleibenden Varianz, etc.
+
+> Die Daten sind vollständig beschrieben durch unkorrelierte Variablen, welche absteigend einen Großteil der Varianz beschreiben.
+
+**Haupkomponenten** <br>
+Gegeben seien $n$ Datenpunkte $x^{(1)}, ..., x^{(n)}$ mit $x^{(i)} = (x_1^{(i)}, ..., x_m^{(i)})$ - es liegen also $m$ Variablen vor. <br>
+
+**Zentrieren** <br>
+Sei $\hat{x}^{(i)} = \frac{1}{n} \sum_{i=1}^n x_i^{(k)}$ das arithmetische Mittel der Variable $x_i$. Wir zentrieren die Daten mit $x_i^{(k)} 	\leftarrow x_i^{(k)} - \hat{x}_i$. <br>
+
+> Das aritmetishce Mittel ist für alle Variablen $0$, die Daten liegen um den Ursprung.
+
+<!-- 
+Kovarianz-Matrix
+S. 14 - 19
+-->
+
+### Beispiel
+Der `MINT`-Datensatz besteht aus 70.000 Bildern von handgeschriebenen Ziffern. Jedes Bild ist ein $28 \times 28$ Pixel großes Graustufenbild. <br>
+
+<img src="resources/ml/18_pca_example.png" width="400"> <br>
+
