@@ -309,4 +309,62 @@ Die `GmbH` ist eine der bekanntesten Rechtsformen und wird häufig von mittelst�
 - Eröffnung des **Konkurses**
 
 #### Aktiengesellschaft (`AG`)
-... <!-- S. 50 -->
+Die `AG` ist eine Kapitalgesellschaft, an der sich Eigenkapitalgeber durch den Erwerb von Aktien beteiligen können - zum Beispiel die DB Fernverkehr AG.
+
+**Gründung** <br>
+- Es reicht eine Person die den **Gesellschaftsvertrag** aufsetzt und die ersten Aktien übernimmt.
+- Der Vertrag muss notariell beurkundet werden udn folgende Mindestbestimmungen enthalten.
+  - **Firma**, **Sitz** und **Gegenstand** der Unternehmung
+  - Höhe des **Grundkapitals**
+  - Stückelung des **Aktienkapitals**
+  - **Fungibilität** der Aktien
+  - **Anzahl** der **Vorstandsmitglieder**
+- Das **Grundkapital** muss mindestens `50.000€` betragen. 
+- Erster **Aufsichtsrat** wird von Gründer bestimmt. 
+
+**Organe** <br>
+Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/700953/mod_resource/content/3/BWLG_Kapitel2_Konstitutive%20Entscheidungen.pdf) S. 52. 
+
+**Vorstand** <br>
+Der Vorstand besteht aus einer oder mehreren **natürlichen Personen**, welche **$max 5y$** bestellt werden können. Die Hauptaufgaben des Vorstands...
+
+- **Leitet** die Gesellschaft
+- **Berichterstattung** an den Aufsichtsrat
+- Bekanntmachung des **Jahresabschlusses**
+- Einberufung der **Hauptversammlung**
+
+**Aufsichtsrat** <br>
+Wird je nach **Mitbestimmungsgesetz** von der Hauptversammlulng für **$max 4y$** gewählt. Aufgaben beinhalten die Bestellung und Abberufung von Vorstandsmitgliedern, die Höchstzahl der Aufsichtsratsmitglieder ist an das **Grundkapital** gebunden.
+
+| | |
+| --- | --- |
+| bis 1.5 Mio. € | 9 |
+| bis 10 Mio. € | 15 |
+| über 10 Mio. € | 21 |
+
+SIEMENS hat zum Beispiel 20 Aufsichtsratsmitglieder.
+
+**Hauptversammlung** <br>
+Das **oberste Organ** der AG, welche folgende Aufgaben übernimmt. 
+
+- **Wahl** des Aufsichtsrats
+- **Entlastung** von Vorstand und Aufsichtsrat
+- Satzungsänderungen
+- Beschlüsse über wesentliche Kapitalveränderungsmaßnahmen
+- Bestellung von **Prüfern**
+
+In de rRegel wird in der Hauptversammlung nach dem **Mehrhetsprinzip** abgestimmt.- in der Regel einmal im Kahr durch den Vortsand einberufen.
+
+#### Vergleich 
+
+|  | GmbH | AG |
+| --- | --- | --- |
+| Gründung | • Sachgründungsbericht <br> • mind. 1 Gründer | • Gründungsprüfung <br> • mind. 1 Gründer |
+| Firma | • Personen-, Sach- oder gemischte Firma möglich, Szusatz `GmbH` | • bei Neugründung nur noch Sachfirma möglich, Zusatz `AG` |
+| Leitung | • Geschäftsführer **ohne** Zeitbeschränkung | • Vorstand **max.** 5 Jahre |  
+| Aufsichtsrat | • nach dem BetrVG nur, wen nmehr als `500` Arbeitnehmer <br> • nach dem MitbestG mehr als `2000` Arbeitnehmer <br> | • durch das AktG zwingend vorgeschrieben |
+| Gesamtheit der <br> Gesellschafter | • Gesellschafterversammlung <br> • Stimmrecht nach Geschäftsanteilen | • Hauptversammlung <br> • Stimmrecht nach Aktienbesitz |
+...
+
+<!-- S. 60 -->
+
