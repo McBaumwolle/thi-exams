@@ -12,6 +12,7 @@
   - [Informationsmanagement](#informationsmanagement)
   - [Personalführung](#personalführung)
   - [Organisation](#organisation)
+  - [Fragen](#fragen)
 
 <!-- VSC weigert sich, das Inhaltsverzeichnis ganz zu erstellen -->
 
@@ -656,3 +657,9 @@ Kombination aus Ein- und Mehrliniensystem - unterteilt Aufgaben in Zeilen  (z.B.
 | Entlastung der Leitungsspitze | hoher Koordinationsaufwand |
 | flache Hierarchie |  |
 
+## Fragen 
+<!-- 
+https://moodle.thi.de/pluginfile.php/706897/mod_resource/content/2/BWLG_Kapitel3-Aufgaben und Kontrollfragen.pdf
+
+Aufgabe 2!
+-->

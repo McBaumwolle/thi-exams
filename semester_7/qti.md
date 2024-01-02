@@ -1,5 +1,5 @@
 # Quantum Technologies and Information
-Prof. Dr. Ulrich Margull
+Transcript and summary of the lecture given by Prof Dr. Ulrich Margull at the Ingolstadt University of Applied Sciences. All rights reserved by the original author(s). 
 
 ## Contents
 - [Quantum Technologies and Information](#quantum-technologies-and-information)
