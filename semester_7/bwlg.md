@@ -7,17 +7,13 @@
   - [Was ist BWL?](#was-ist-bwl)
   - [Wirtschaftlichkeitsprinzip](#wirtschaftlichkeitsprinzip)
   - [Betriebstypen](#betriebstypen)
-  - [Zielkonzeption](#zielkonzeption)
-  - [Fragen](#fragen)
-- [konstitutive Entscheidungen](#konstitutive-entscheidungen)
-  - [Standort](#standort)
-  - [Rechtsform](#rechtsform)
-    - [Personengesellschaften](#personengesellschaften)
-    - [Kapitalgesellschaften](#kapitalgesellschaften)
-      - [Gesellschaft mit beschränkter Haftung (`GmbH`)](#gesellschaft-mit-beschränkter-haftung-gmbh)
-      - [Aktiengesellschaft (`AG`)](#aktiengesellschaft-ag)
+    - [Entscheidung - 3](#entscheidung---3)
+    - [Realisation - 4](#realisation---4)
+  - [Informationsmanagement](#informationsmanagement)
+  - [Personalführung](#personalführung)
+  - [Organisation](#organisation)
 
-
+<!-- VSC weigert sich, das Inhaltsverzeichnis ganz zu erstellen -->
 
 # Einführung
 ## Was ist BWL?
@@ -533,9 +529,130 @@ graph LR
   D[Personalpläne]
   E[Finanzpläne]
 
-  A --> B
-  B --> C
-  C --> D
-  D --> E
-  E --> A
+  A --- B
+  B --- C
+  C --- D
+  D --- E
+  E --- A
 ```
+
+### Entscheidung - 3
+Hier wird generell in drei Arten von Entscheidungen unterschieden.
+
+**Entscheidung bei Sicherheit** <br>
+Eine Maßnahme führt zu einem **eindeutig** bestimmten Ergebnis - es tritt zu `100%` ein.
+
+**Entscheidung bei Risiko** <br>
+Eine Maßnahme führt zu einem **wahrscheinlichen** Ergebnis - es tritt mit einer **bestimmten** Wahrscheinlichkeit ein - es liegt eine Wahrscheinlichkeitsverteilung vor.
+
+**Entscheidung bei Ungewissheit** <br>
+Eine Maßnahme führt zu einem **unbestimmten** Ergebnis - es tritt mit einer **unbestimmten** Wahrscheinlichkeit ein - es können keine Eintreffwahrscheinlichkeiten zugewiesen werden.
+
+Mehr hierzu und Formeln auf S. 21 im [Foliensatz](https://moodle.thi.de/pluginfile.php/705225/mod_resource/content/7/BWLG_Kapitel3_Unternehmensf%C3%BChrung%20Entscheidung%20und%20Organisation.pdf). 
+
+<!-- Aufgaben rechnen -->
+
+**Beispiel** <br>
+In einer Quizshow ist man ahnungslos, alle `4` Antworten sind mit einer Wahrscheinlichkeit von `25%` richtig - es geht um `125.000€`. Bei falscher Antwort fällt man auf `500€` zurück.
+
+| | richtig | falsch |
+| --- | --- | --- |
+| zocken | `125.000€` | `500€` |
+| aufhören | `64.000€` | `--` |
+
+$E(Zocken) = 0.25 \cdot 125.000€ + 0.75 \cdot 500€ = 31.250€$ <br>
+$E(Aufhören) = 0.25 \cdot 64.000€ = 16.000€$
+
+Nun fallen zwei Antworten weg, es bleiben `2` Antworten übrig - die Wahrscheinlichkeit steigt auf `50%`.
+
+$E(Zocken) = 0.5 \cdot 125.000€ + 0.5 \cdot 500€ = 62.500€$ <br>
+$E(Aufhören) = 0.5 \cdot 64.000€ = 32.000€$
+
+> Beispiel noch nicht geprüft.
+
+<!--
+Risikoneutral, Risikoavers, Risikofreudig
+Beispiel auf S. 34
+-->
+
+### Realisation - 4
+Die Realisation ist die Umsetzung der Entscheidung in die Praxis - hierbei ist die **Kontrolle** ein wichtiger Bestandteil.
+
+## Informationsmanagement
+Leitungshandeln in Bezug auf Information udn Kommunikation - hat die Aufgabe, den Produktionsfaktor _Information_ zu beschaffen.
+
+- Ausgleich von Informationsnachfrage und -angebot
+- Versorgung Entscheidungsträger mit Informationen
+- Sicherung einer hohen Informationsqualität
+
+## Personalführung
+Ein kommunikativer Prozess der Einflussnahme auf die Mitarbeiter zur Erreichung der Unternehmensziele.
+
+<img src="resources/bwlg/02_personalfuehrung.png" width="500"/>
+
+**autoritärer Führungsstil** <br>
+Entscheidungen werden **ohne** Beteiligung der Mitarbeiter getroffen - diese haben mit den Entscheidungen zu leben.
+
+**kooperativer Führungsstil** <br>
+Trennung von Entscheidung, Ausführung und Kontrolle **gemildert** - durch **Delegation** werden die Entscheidungen auf die richtige Ebene gebracht.
+
+**Laissz-faire Führungsstil** <br>
+iele, Entscheidungen, Kontrolle, Interaktionsbeziehungen und Arbeitsorganisation bestimmen die Mitarbeitenden **weitgehend selbst**. Es wird auf Anweisungen von oben **verzichtet**.
+
+<!-- 
+**patriachalischer Führungsstil** <br>
+
+kürzere Zusammenfassungen
+-->
+
+## Organisation
+Die Organisation ist die **Gestaltung** und **Entwicklung** der Aufbau- und Ablauforganisation eines Unternehmens.
+
+**Einliniensystem** <br>
+Jeder Mitarbeitende ist nur einem Vorgesetzten unterstellt - graphisch also ein **Baum**.
+
+| Vorteile | Nachteile |
+| -------- | --------- |
+| relativ einfach | fehlende Dynamik |
+| eindeutige Verhältnisse | lange Entscheidungswege |
+| klare Kompetenzen | unflexibel |
+| genauer Instanzenweg |  | 
+
+**Mehrliniensystem** <br>
+Jeder Mitarbeitende ist mehreren Vorgesetzten unterstellt - graphisch also ein **Netz**.
+
+| Vorteile | Nachteile |
+| -------- | --------- |
+| Spezialisierung von Führungskräften <br> kann genutzt werden |gefahr von Überschneidung | 
+| kein lästiger Instanzenweg | mehrere Vorgesetzte können belastend sein |
+| schnelle Entscheidungen | eventuell Aufgabenüberschneidung |
+
+**Stabliniensystem** <br>
+Kombination aus Ein- und Mehrliniensystem - unterteilt in z.B. Produktion und Verwaltung, ausgehend der Stabstelle. 
+
+| Vorteile | Nachteile |
+| -------- | --------- |
+| einheitlicher Instantzenweg | Konfliktgefahr durch Trennung |
+| Spezialisten für sachliche Probleme | Demotivation des Stabes durch <br> fehlende Entscheidungsbefugnis |
+| Stäbe entlasten die Instanzen | hohe Zusammenarbeit erforderlich |
+| klare Zuständigkeiten | |
+
+**Spartenorganisation** <br>
+Aufteilung nach Produkten, Regionen oder Kundengruppen - die Sparten sind weitgehend selbstständig.
+
+| Vorteile | Nachteile |
+| -------- | --------- |
+| Motivation der Sparten(leiter) <br> durch hohes Verantwortungsgefühl | Sparten können gegeneinandern arbeiten |
+| übersichtlich | Koordinationsprobleme |
+|  | viele Führungskräfte |
+
+**Matrixorganisation** <br>
+Kombination aus Ein- und Mehrliniensystem - unterteilt Aufgaben in Zeilen  (z.B. Produkt A) und Spalten (z.B. Personalwesen).
+
+| Vorteile | Nachteile |
+| -------- | --------- |
+| hohe Beteiligung der Mitarbeitenden | Konflikte | 
+| Spezialisierungen | unklare Verhältnisse |
+| Entlastung der Leitungsspitze | hoher Koordinationsaufwand |
+| flache Hierarchie |  |
+
