@@ -364,7 +364,117 @@ In de rRegel wird in der Hauptversammlung nach dem **Mehrhetsprinzip** abgestimm
 | Leitung | • Geschäftsführer **ohne** Zeitbeschränkung | • Vorstand **max.** 5 Jahre |  
 | Aufsichtsrat | • nach dem BetrVG nur, wen nmehr als `500` Arbeitnehmer <br> • nach dem MitbestG mehr als `2000` Arbeitnehmer <br> | • durch das AktG zwingend vorgeschrieben |
 | Gesamtheit der <br> Gesellschafter | • Gesellschafterversammlung <br> • Stimmrecht nach Geschäftsanteilen | • Hauptversammlung <br> • Stimmrecht nach Aktienbesitz |
+| Mindestkapital | • Stammkapital mind. `25.000€` | • Grundkapital mind. `50.000€` |
+| Anteil | • Stammeinlage (mind. `100€`) | • Aktie (mind. `1€`) |
+| Nachschlusspflicht | • kann im Gesellschaftsvertrag vorgesehen werden | • nicht möglich |
+
+<!-- bei Anteil fehlen paar Punkte -->
+
+Vergleich aller Formen im [Foliensatz](https://moodle.thi.de/pluginfile.php/700953/mod_resource/content/3/BWLG_Kapitel2_Konstitutive%20Entscheidungen.pdf) auf S. 65.
+
+#### Sonderformen
+Mit der `SE` - der Europäischen Gesellschaft - können Unternehmen mit Sitz in der EU gegründet werden.
+
+### Mischformen
+Verschiedene Rechtsformen können auch kombiniert werden, zum Beispiel die `GmbH & Co. KG`.
+
+**GmbH & Co. KG** <br>
+Die `GmbH & Co. KG` ist eine **Personengesellschaft**, bei der die **Komplementäre** eine `GmbH` ist. Die `GmbH` ist somit **persönlich haftender Gesellschafter** und die **Kommanditisten** sind **beschränkt haftende Gesellschafter**.
+
+## Zusammenarbeit
+Als letzen Punkt ist  noch die Zusammenarbeit - beispielsweise eine Genossenschaft - wichtig.
+
+### Kooperation
+Hierbei bleibt die Selbstständigkeit der Unternehmen **erhalten**, es wird nur eine **freiwillige Zusammenarbeit** vereinbart.
+
+- Die **wirtschaftliche** Entscheidungsfreiheit wird in den vertraglichen Beziehungen eingeschränkt.
+- Zusammenarbeit entsteht durch Abstimmung oder *Ausgliederung** von **Funktionen**.
+
+Eine Zusammenführung geschieht oft zur Steigerung der **Wettbewerbsfähigkeit**.
+
+### Konzentration
+Bei der Konzentration wird die Selbstständigkeit mindestens eines Teils der Unternehmen **aufgehoben**.
+
+- Die beteiligten Unternehmen **geben** dabei ihre **wirtschaftliche Selbstständigkeit** auf.
+- Geben die Unternehmen neben der wirtschaftlichen auch ihre **rechtliche** Selbstständigkeit auf, so spricht man von einer **Fusion**.
+
+Es gibt Fusionskontrolle oder das Gesetzt gegen Wettbewerbsbeschränkungen (GWB) - zur Verhinderung von **Monopolen**.
+
+> Bei einer Verschmelzung (`Fusioin`) durch Neubildung wird ein neues Unternehmen (AG) gegründet, auf welches das Vermögen der sich vereinigenden Gesellschaften als Ganzes übertragen wird. Die bisherigen Aktionäre tauschen ihre Aktien gegen Aktien der neuen Gesellschaft ein
+
+## Fragen
+Kontrollfragen zum zweiten Kapitel.
+
+**Frage 01** <br>
+Zu welcher Kategorie an Standortfaktoren zählt der Faktor „Arbeitskräfte“? Welche Kosten können für den Faktor Arbeitskräfte entstehen? Welchen Einfluss hat der Freizeitwert eines Standorts auf die Lohnkosten?
+
+<details><summary>Antwort</summary>
 ...
+</details> <br>
 
-<!-- S. 60 -->
+**Frage 02** <br>
+Sie wollen mit zwei weiteren Geschäftspartnern ein Unternehmen gründen, das sich mit der Herstellung und dem Vertrieb von Lebensmitteln beschäftigt. Sie alle sind insgesamt bereit, 10.000€ ins Unternehmen einzubringen. Nennen Sie drei Rechtsformen, die in dieser Konstellation nicht gewählt werden könnten.
 
+<details><summary>Antwort</summary>
+...
+</details> <br>
+
+**Frage 03** <br>
+Bei welchen der Rechtsformen sind alle Gesellschafter leitungsbefugt? <br>
+`KG`, `GmbH`, `OHG`, `GbR`, `AG`
+
+<details><summary>Antwort</summary>
+
+- [ ] KG
+- [ ] GmbH
+- [x] OHG
+- [x] GbR
+- [ ] AG
+
+> Antworten nicht geprüft.
+
+</details> <br>
+
+Bei welchen der Rechtsformen sind mindestens zwei Gründer vorgeschrben? <br>
+`GmbH`, `AG`, `OHG`, `KG`, `Einzelunternehmen`
+
+<details><summary>Antwort</summary>
+
+- [ ] GmbH
+- [ ] AG
+- [x] OHG
+- [x] KG
+- [ ] Einzelunternehmen
+
+> Antworten nicht geprüft.
+
+</details> <br>
+
+**weitere Fragen** <br>
+Einige weitere Fragen zum zweiten Thema. 
+
+<details><summary>ausklappen</summary>
+
+> Wie werden konstitutive Entscheidungen definiert, und wo stehen sie in der betrieblichen Entscheidungshierarchie?
+ 
+> Nach welchen Verfahren lässt sich eine betriebliche Standortwahl vornehmen? Nennen Sie jeweils zwei Beispiele!
+ 
+> Wie wird eine Nutzwertanalyse bei der Bestimmung der optimalen Standortwahl erstellt?
+ 
+> Was unterscheidet die Personengesellschaft von der Kapitalgesellschaft?
+ 
+> Welche Kaufmann-Formen gibt es?
+ 
+> Ihr Freund ist Arzt und möchte mit einem Kollegen eine Praxisgemeinschaft eröffnen. Zu welcher Rechtsform raten Sie ihm? Was ist bezüglich Haftung und Vertretung nach außen zu beachten?
+ 
+> Was sind die Organe einer Aktiengesellschaft? Nennen Sie jeweils zwei Aufgaben jedes Organs
+ 
+> Nennen und erläutern Sie drei Kriterien, wodurch sich Aktiengesellschaft und GmbH unterscheiden
+ 
+> Wodurch kann die Wahl der Rechtsform eingeschränkt werden? Nennen Sie Beispiele für die einzelnen Einschränkungen!
+ 
+> Welche Ziele werden mit Unternehmenszusammenschlüssen verfolgt?
+ 
+> In der Industrie erfolgen häufig diagonale Zusammenschlüsse. Welche Motive werden damit verfolgt?
+
+</details> <br>
