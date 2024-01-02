@@ -6,6 +6,15 @@ Prof. Dr. Ulrich Margull
   - [Contents](#contents)
 - [Classical Bits and Gates](#classical-bits-and-gates)
 - [Single Qubits](#single-qubits)
+  - [Single Qubit Gates](#single-qubit-gates)
+    - [Pauli Gates](#pauli-gates)
+    - [Hadamard Gate](#hadamard-gate)
+- [Quantum Registers (and Entanglement)](#quantum-registers-and-entanglement)
+  - [CNOT (controlled Pauli-X)](#cnot-controlled-pauli-x)
+  - [Entanglement](#entanglement)
+  - [SWAP-Gate](#swap-gate)
+  - [Toffoli-Gate](#toffoli-gate)
+  - [Multiple Hadamard Gates](#multiple-hadamard-gates)
 
 # Classical Bits and Gates
 One bit is represented by an vector $0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ or $1 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. The boolean `NOT` gate is represented by the matrix $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
