@@ -39,7 +39,7 @@ $AND = \begin{pmatrix} 1 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$
 **NAND-Gate** <br>
 The NAND-Gate is the negation of the AND-Gate. Therefore the matrix is the negation of the AND-Gate matrix.
 
-$NAND = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \cdot \begin{pmatrix} 1 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 & 1 \\ 1 & 1 & 1 & 0 \end{pmatrix}$
+$`NAND = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \cdot \begin{pmatrix} 1 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 & 1 \\ 1 & 1 & 1 & 0 \end{pmatrix}`$
 
 **Parralel Gates** <br>
 The most simple case are two `NOT` gates in parralel. 
@@ -48,35 +48,35 @@ The most simple case are two `NOT` gates in parralel.
 
 Now we have two inputs and two outputs, both are 4-dimensional vectors. 
 
-$a= \begin{pmatrix} a_0 \\ a_1 \end{pmatrix}$, $b= \begin{pmatrix} b_0 \\ b_1 \end{pmatrix}$ and the input then is $a \otimes b = \begin{pmatrix} a_0 b_0 \\ a_0 b_1 \\ a_1 b_0 \\ a_1 b_1 \end{pmatrix}$
+$`a= \begin{pmatrix} a_0 \\ a_1 \end{pmatrix}$, $b= \begin{pmatrix} b_0 \\ b_1 \end{pmatrix}$ and the input then is $a \otimes b = \begin{pmatrix} a_0 b_0 \\ a_0 b_1 \\ a_1 b_0 \\ a_1 b_1 \end{pmatrix}`$
 
 <details><summary>example</summary>
 
-$|01\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} \\ 0 \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}$.
+$`|01\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} \\ 0 \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}`$.
 
 </details> <br>
 
 The same applies to the gates - the combination of both parallel gates is the tensor product of the infdividual gates.
 
-$X = NOT \otimes NOT = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 0 \cdot \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} & 1 \cdot \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \\ 1 \cdot \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} & 0 \cdot \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{pmatrix}$
+$`X = NOT \otimes NOT = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \otimes \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} = \begin{pmatrix} 0 \cdot \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} & 1 \cdot \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \\ 1 \cdot \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} & 0 \cdot \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{pmatrix}`$
 
 <details><summary>example</summary>
 
 For example, the input $|01\rangle$ yields the output $|10\rangle$.
 
-$\begin{pmatrix} 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{pmatrix} |01\rangle = X \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix} = |10\rangle$
+$`\begin{pmatrix} 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{pmatrix} |01\rangle = X \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix} = |10\rangle`$
 
 </details> <br>
 
 The concatenation of the two steps $x$ and $AND$ is the normal product of the matrices (in reverse order).
 
-$|e\rangle = AND \cdot X = \begin{pmatrix} 1 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \cdot X = \begin{pmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{pmatrix}|ab\rangle$
+$`|e\rangle = AND \cdot X = \begin{pmatrix} 1 & 1 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} \cdot X = \begin{pmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{pmatrix}|ab\rangle`$
 
 <details><summary>example</summary>
 
 For example, the input $|01\rangle$ yields $|0\rangle$ as output.
 
-$\begin{pmatrix} 0 & 1 & 1 & 1 \\ 1 & 0 & 0 & 0 \end{pmatrix} |01\rangle = \begin{pmatrix} 0 & 1 & 1 & 1 \\ 1 & 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} = |0\rangle$
+$`\begin{pmatrix} 0 & 1 & 1 & 1 \\ 1 & 0 & 0 & 0 \end{pmatrix} |01\rangle = \begin{pmatrix} 0 & 1 & 1 & 1 \\ 1 & 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} = |0\rangle`$
 
 </details> <br>
 
@@ -89,7 +89,7 @@ The qubit is normalized, therefore $|\alpha|^2 + |\beta|^2 = 1$ and $\alpha, \be
 
 When we measure the qubit, the probability of the measured state is given by
 
-$P(|0\rangle) = |\alpha|^2$ and $P(|1\rangle) = |\beta|^2$
+$`P(|0\rangle) = |\alpha|^2$ and $P(|1\rangle) = |\beta|^2`$
 
 and the sum of both will be $1$.
 
@@ -102,8 +102,8 @@ S. 19
 **Special Qubits** <br>
 There are two common special qubits, the $|+\rangle$ and $|-\rangle$ qubit.
 
-$|+\rangle = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle)$ <br>
-$|-\rangle = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle)$ <br>
+$`|+\rangle = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle)`$ <br>
+$`|-\rangle = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle)`$ <br>
 
 In this case, the probability of measuring $|0\rangle$ or $|1\rangle$ is the same. 
 
@@ -128,35 +128,35 @@ The Pauli gates are the most common gates.
 **Pauli-X** <br>
 The Pauli-X gate exchanges the amplitudes of the qubit. 
 
-$X|\psi\rangle = X(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \begin{pmatrix} \beta \\ \alpha \end{pmatrix} = \beta|0\rangle + \alpha|1\rangle$
+$`X|\psi\rangle = X(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \begin{pmatrix} \beta \\ \alpha \end{pmatrix} = \beta|0\rangle + \alpha|1\rangle`$
 
 It is also caled a `bit-flip` gate - when applying to the base states $|0\rangle$ and $|1\rangle$, the result is the opposite state.
 
 **Pauli-Z** <br>
 The Pauli-Z gate changes the sign of the $\beta$ amplitude.
 
-$Z|\psi\rangle = Z(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \begin{pmatrix} \alpha \\ -\beta \end{pmatrix} = \alpha|0\rangle - \beta|1\rangle$
+$`Z|\psi\rangle = Z(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \begin{pmatrix} \alpha \\ -\beta \end{pmatrix} = \alpha|0\rangle - \beta|1\rangle`$
 
 It is also called a `phase-flip` gate - when applying to the base state $Z|1\rangle$, the result is $-|1\rangle$.
 
 **Pauli-Y** <br>
 The Pauli-Y gate is a bit more complicated gate, it has an imaginary factor. 
 
-$Y|\psi\rangle = Y(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = i \begin{pmatrix} -\beta \\ \alpha \end{pmatrix} = -i\beta|0\rangle + i\alpha|1\rangle$
+$`Y|\psi\rangle = Y(|\alpha|0\rangle + \beta|1\rangle) = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = i \begin{pmatrix} -\beta \\ \alpha \end{pmatrix} = -i\beta|0\rangle + i\alpha|1\rangle`$
 
 **Information** <br>
 When two of the same gates are applied, the result is the identity matrix.
 
-$X \cdot X = Y \cdot Y = Z \cdot Z = I_2 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$
+$`X \cdot X = Y \cdot Y = Z \cdot Z = I_2 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}`$
 
 ### Hadamard Gate
 The Hadamard gate is a very common gate, it is used to create superposition - it applies to the base states like this. 
 
-$H|0\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle) = |+\rangle$ <br>
+$`H|0\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} (|0\rangle + |1\rangle) = |+\rangle`$ <br>
 
-$H|1\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle) = |-\rangle$
+$`H|1\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \frac{1}{\sqrt{2}} (|0\rangle - |1\rangle) = |-\rangle`$
 
-These are superposition states, the probability of measuring both states is equal. Hadamard is also it's own inverse, so $H \cdot H = 1$.
+These are superposition states, the probability of measuring both states is equal. Hadamard is also it's own inverse, so $`H \cdot H = 1`$.
 
 # Quantum Registers (and Entanglement)
 <!-- 2 Qubit Register 5.1.1 -->
@@ -169,7 +169,7 @@ The CNOT, `CX`-gate or controlledd Pauli-X is a 2-qubit gate with a control qubi
 
 Let $q_1$ be the control-gate and $q_0$ the controlled gate, then CNOT has the following form. 
 
-$CNOT = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}$ 
+$`CNOT = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}`$ 
 
 In `Qiskit`, the CNOT gate is defined as 
 
@@ -205,7 +205,7 @@ The SWAP-Gate swaps the two qubits - as simple as that.
 
 The SWAP-Gate is defined as
 
-$SWAP = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}$
+$`SWAP = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix}`$
 
 and in `Qiskit` code it looks like this
 
@@ -233,7 +233,7 @@ The Toffoli-Gate is a 3-qubit gate, with two control qubits and one target qubit
 
 The Toffoli-Gate is defined as
 
-$CCNOT = \begin{pmatrix} 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \end{pmatrix}$
+$`CNOT = \begin{pmatrix} 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \end{pmatrix}`$
 
 and in `Qiskit` code it looks like this
 
