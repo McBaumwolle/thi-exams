@@ -478,3 +478,64 @@ Einige weitere Fragen zum zweiten Thema.
 > In der Industrie erfolgen häufig diagonale Zusammenschlüsse. Welche Motive werden damit verfolgt?
 
 </details> <br>
+
+
+# Unternehmensführung
+Unter der Unternehmensführung versteht man die zielgerichtete Gestaltung und Entwicklung von Unternehmen.
+
+## Führungsfunktionen
+
+<img src="resources/bwlg/01_unternehmensfuehrung.png" width="500"/>
+
+Der idealtypische Ablauf der Unternehmensführung sieht wiefolgt aus. 
+
+1. Analyse der Ausgangslage
+2. Leitbild
+3. Formulierung der Unternehmenspolitik
+4. Implementierung der Politik
+5. Evaluierung der Resultate
+
+### Zielsetzung - 1
+**Formalziele** <br>
+- Produktivität
+- Wirtschaftlichkeit
+- Rentabilität und Gewinn
+
+**Sachziele** <br>
+- Leistungsziele
+- Finanzziele
+- Führungs- und Organisationsziele
+- soziale und ökologische Ziele
+
+Zielsuche - Zielformulierung - Zielabstimmung - Zielverbindlichkeit <br>
+Formuliert nach `SMART`!
+
+### Planung - 2 
+
+| Planung | Eigenschaften |
+| ------- | ------------- |
+| strategisch | • langfristig (`5.10y`) <br> • Produktionsprogrammplanung <br> • oberste Führungsebene |
+| taktische | • mittelfristig (`1-4y`) <br> • unterteilt strategische Planung in **Teilbereiche** |
+| operativ | • kurzfristig (`<1y`) <br> • detaillierte Planung <br> • **mittlere** und **untere** Führungsebene |
+| rollierend | • ursprüngliche Planung wird **revidiert** und **ergänzt** |
+| Blockplanung | • Neuplanung am Ende der ursprünglichen Planung |
+| retrograde Planung | • **top-down** Planung <br> • von oben nach unten mit Teilplänen |
+| progressive Planung | • **bottom-up** Planung <br> • von unten nach oben mit Teilplänen |
+| Gegenstromverfahren | • Kombination aus retrograder und progressiver Planung <br> • **vorläufiger** Plan von oben nach unten |
+
+Kann auch gut in funktionale Gesichtspunkte unterteilt werden.
+
+```mermaid
+graph LR
+  A[Absatzpläne]
+  B[Beschaffungspläne]
+  C[Produktionspläne]
+  D[Personalpläne]
+  E[Finanzpläne]
+
+  A --> B
+  B --> C
+  C --> D
+  D --> E
+  E --> A
+```
