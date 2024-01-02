@@ -22,7 +22,7 @@ One bit is represented by an vector $0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ o
 **AND-Gate** <br>
 The AND-Gate has `2` input bits, therefore two bits are represented by a 4-dimensional vector. 
 
-$00 = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix}$, $01 = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}$, $10 = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix}$, $11 = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 1 \end{pmatrix}$
+$`00 = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix}`$, $01 = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}$, $10 = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix}$, $11 = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 1 \end{pmatrix}$
 
 <details><summary>math</summary>
 
