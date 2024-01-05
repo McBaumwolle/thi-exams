@@ -13,6 +13,12 @@
   - [Personalführung](#personalführung)
   - [Organisation](#organisation)
   - [Fragen](#fragen)
+- [Materialwirtschaft \& Produktion](#materialwirtschaft--produktion)
+  - [Einkauf und Materialanalyse](#einkauf-und-materialanalyse)
+  - [Materialrationalisierung](#materialrationalisierung)
+  - [Materialdisposition](#materialdisposition)
+    - [Bedarfsplanung](#bedarfsplanung)
+
 
 <!-- VSC weigert sich, das Inhaltsverzeichnis ganz zu erstellen -->
 
@@ -662,4 +668,72 @@ Kombination aus Ein- und Mehrliniensystem - unterteilt Aufgaben in Zeilen  (z.B.
 https://moodle.thi.de/pluginfile.php/706897/mod_resource/content/2/BWLG_Kapitel3-Aufgaben und Kontrollfragen.pdf
 
 Aufgabe 2!
+-->
+
+# Materialwirtschaft & Produktion
+Die Materialwirtschaft ist ein Teilbereich der Unternehmensführung und befasst sich mit der Beschaffung, Lagerung und Bereitstellung von Materialien.
+
+## Einkauf und Materialanalyse
+Unter einem strategischem Einkaufsportfolio versteht man die **Analyse** und **Bewertung** der Materialien.
+
+**ABC-Analyse** <br>
+Methode zur Klassifizierung von Materialien nach ihrer **Wichtigkeit** - es wird zwischen `A`, `B` und `C` Materialien unterschieden.
+
+| | |
+| --- | --- |
+| `A` | • eingehende Bestellvorbereitung <br> • aufwendige Disposition <br> • Kostenanalyse |
+| `B` | • zwischen `A` und `C` |
+| `C` | • Sammelbestellungen <br> • einfaches Bestellen <br> • einfache Lagerhaltung |
+
+<details><summary>Graph</summary>
+
+<img src="resources/bwlg/03_abc_analyse.png" width="400"/>
+
+</details> <br>
+
+**XYZ-Analyse** <br>
+Methode zur Klassifizierung von Materialien nach ihrer **Verfügbarkeit** - es wird zwischen `X`, `Y` und `Z` Materialien unterschieden.
+
+| | |
+| --- | --- |
+| `X` | • regelmäßiger, Bedarfsverlauf <br> gute Prognose möglich |
+| `Y` | • trendmäßig steigend oder fallender Bedarfsverlauf <br> • **saisonale** Schwankungen |
+| `Z` | • unregelmäßiger Bedarfsverlauf oder **zufällige** Bedarfsentwicklung <br> • schlechte Prognose |
+
+Die Darstellung erfolgt hier in einem Graph über die Zeit - zum Beispiel in Absatz in $St/m$. 
+
+## Materialrationalisierung
+Ist ein Instrument zur Kostensenkung beziehungsweise Leistungssteigerung. 
+
+**Standardisierung** <br>
+Vereinheitlichung von Materialien, Bauteilen, Verfahren, etc. - zum Beispiel durch Normen.
+
+| Normung | Typung | Mengenstandardisierung |
+| ------- | ------ | ---------------------- |
+| • **vereinheitlichung** von Einzelteilen <br> • Festlegen von Größen, Form, etc. | • **vereinheitlichung** von Baugruppen | • "Normung des Materialverbrauchs" <br> • soll-ist-Vergleich zwischen **prognostiziertem** und **tatsächlichem** Materialverbrauch |
+
+**Nummerung** <br>
+Bei der Materialnummerung werden NUmmern für diverse Objekte vergeben - zum Beispiel Rohstoffe oder Einzelteile.
+
+| Identifikation | Klassifikation | Prüfung |
+| -------------- | ------------- | -------- |
+| • **eindeutige** Identifizierung | • gruppierung von Objekten | • Prüf- oder **Kontrollnummer** |
+
+Ein Beispiel für Klassifikation und Prüfung ist die `ISBN` mit ihrer `Prüfziffer`.
+
+## Materialdisposition
+Materialdisposition umfasst alle Maßnahmen zur **zeitgerechten** Beschaffung von Rohstoffen, Hilfsstoffen oder Handelswaren unter Kostenaspekten für ein Unternehmen.
+
+### Bedarfsplanung
+Die **vorrausschauende** Ermittlung des benötigten Materialbedarfs - es wird zwischen drei Arten unterschieden.
+
+- `Primärbedarf` - Bedarf an Endprodukten
+- `Sekundärbedarf` - Bedarf an Rohstoffen, etc.
+- `Tertiärbedarf` - Bedarf an Hilfsstoffen, etc.
+
+Die Bedarfsermittlung kann **verbrauchsorientiert** oder **bedarfsorientiert** erfolgen - aber auch durch **Schätzungen**. 
+
+<!-- 
+https://moodle.thi.de/pluginfile.php/708194/mod_resource/content/4/BWLG_Kapitel4_Materialwirtschaft%20und%20Produtionswirtschaft.pdf
+S. 20
 -->
