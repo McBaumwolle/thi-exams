@@ -15,6 +15,8 @@
     - [hybride Verschlüsselung](#hybride-verschlüsselung)
   - [Integrität](#integrität)
   - [Authentiizität](#authentiizität)
+- [Netzwerksicherheit](#netzwerksicherheit)
+  - [Social Engineering](#social-engineering)
 
 
 # Einführung
@@ -337,9 +339,88 @@ Die Idee der Signatur ist es, eine Nachricht `N` mit einem Private-Key `K_priv` 
 Ziel ist das Nachweisen der Identität eines Kommunikationspartners - mit Zertifikaten vertrauenswürdiger Herausgeber (`Root-CA`) oder Signatur.
 
 **SSL/TLS** <br>
-Authentifiziert den Server und ggf auch die Clients, stellt Integrität der Datenübertragung und vertrauliche Kommunikation sicher. 
+Authentifiziert den Server und ggf auch die Clients, stellt Integrität der Datenübertragung und vertrauliche Kommunikation sicher - Grundidee ist
+
+- Generierung zufälliger **symmetrischer** Schlüssel
+- AUstausch mit **asymmetrischer** Verschlüsselung
+- Kommunikation mit **symmetrischer** Verschlüsselung
 
 <!--
-S. 243
-https://moodle.thi.de/course/view.php?id=8533
+SSL/TSL
+Ablauf
+
+nachholen
+S. 249
 -->
+
+# Netzwerksicherheit
+<!-- ## Angriff auf Netze -->
+Angegriffen werden kann unter anderem die Datenübertragung (belauschen, unterdrücken oder manipulieren) sowie die Verfügbarkeit eines Systems - auch Reconnaisanve (Datensammlung)  ist relevant. 
+
+## Social Engineering
+<!-- S 15 -->
+Ziel ist es Informationen zu sammeln, um an Daten zu kommen - einen Einstieg zu finden.
+
+**Erreichbarkeit** <br>
+Mit `ping` kann die Erreichbarkeit von Systemen getestet werden, oder `portscan` um offene Ports zu finden.
+
+**Netzinfrastruktur** <br>
+Mit `traceroute` kann die Netzinfrastruktur ermittelt werden, also über welche Server die Datenpakete laufen.
+
+**Dienste** <br>
+Die angebotenen Dienste können mit `portscan` analysiert werden, um Schwachstellen zu finden.
+
+**Versionen** <br>
+Verwendete Versionen können mittels `Connect Scan` oder `Version Scan` ermittelt werden.
+
+**Betriebssystem** <br>
+Durch `Fingerprints` kann das verwendete Betriebssystem ermittelt werden.
+
+### Hintergrundwissen
+**Handshake** <br>
+Ein Verfahren zum Aufbau verlustfreier Datenübertragung zwischen `2` Instanzen ist der `3-Way-Handshake`.
+
+```mermaid
+sequenceDiagram
+    participant HostA
+    participant HostB
+
+    Note over HostA, HostB: SYN (Synchronize)
+
+    HostA->>HostB: SYN
+    Note over HostB: SYN received
+
+    HostB->>HostA: SYN, ACK
+    Note over HostA: SYN-ACK received
+
+    HostA->>HostB: ACK
+    Note over HostB: Connection established
+```
+
+<details><summary>GIF von WIkipedia</summary>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Three-way-handshake-example.gif" width="500px">
+
+</details>
+
+Auch möglich ist ein `4-Way-Handshake` mit `FIN` (Finish).
+
+```mermaid
+sequenceDiagram
+    participant HostA
+    participant HostB
+
+    Note over HostA, HostB: FIN (Finish)
+
+    HostA->>HostB: FIN
+    Note over HostB: FIN received
+
+    HostB->>HostA: ACK
+    Note over HostA: ACK received
+
+    HostB->>HostA: FIN
+    Note over HostA: FIN received
+
+    HostA->>HostB: ACK
+    Note over HostB: ACK received
+```
