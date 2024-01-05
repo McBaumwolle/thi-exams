@@ -424,3 +424,81 @@ sequenceDiagram
     HostA->>HostB: ACK
     Note over HostB: ACK received
 ```
+
+**SYN-Scan** <br>
+Mit `nmap` kann ein `SYN-Scan` durchgeführt werden, um offene Ports zu finden. 
+
+<img src="resources/its/01_syn_scan.png" width="500px" alt="SYN-Scan">
+
+Nun weiß der Angreifer, dass der Port offen und erreichtbar ist.
+
+<details><summary>Diagramm</summary>
+
+```mermaid
+sequenceDiagram
+    participant Attacker
+    participant Host
+
+    Note over Attacker, Host: SYN-Scan
+
+    Attacker->>Host: SYN
+    Note over Host: SYN received
+
+    Host->>Attacker: SYN, ACK
+    Note over Attacker: SYN-ACK received
+
+    Attacker->>Host: RST
+    Note over Host: RST received
+```
+
+</details> <br>
+
+Der Host sendet ein `RST`, falls der Port geschlossen ist. Falls keine Antwort kommt, ist der Port **gefiltert**.
+
+<!--
+```mermaid	
+sequenceDiagram
+    participant Attacker
+    participant Host
+
+    Note over Attacker, Host: SYN-Scan
+
+    Attacker->>Host: SYN
+    Attacker->>Host: SYN
+
+    Note over Attacker, Host: gefiltert
+```
+-->
+
+```bash
+root@user:~# nmap ip.of.fb -sS
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-11 18:09 CEST
+Nmap scan report for 192.0.2.1
+Host is up (0.0045s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT     STATE SERVICE            VERSION
+53/tcp   open  domain             NLnet Labs NSD
+80/tcp   open  http               FRITZ!Box http config
+443/tcp  open  ssl/http           FRITZ!Box http config
+5060/tcp open  sip                AVM FRITZ!OS SIP
+8181/tcp open  intermapper?
+
+TRACEROUTE (using port 110/tcp)
+HOP RTT      ADDRESS
+1   1.07 ms  Surface-Pro-8 (172.24.144.1)
+2   22.39 ms 192.168.178.1
+
+AC Address: 1C:ED:6F:xx:xx:xx (AVM Audiovisuelles Marketing und Computersysteme GmbH)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3
+       cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.9
+Network Distance: 1 hop
+Service Info: Devices: broadband router, VoIP adapter
+```
+
+<!-- 
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/.
+Nmap done: 1 IP address (1 host up) scanned in 22.98 seconds
+-->
