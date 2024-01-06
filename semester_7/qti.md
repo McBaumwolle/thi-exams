@@ -246,4 +246,45 @@ and the visual representation is as follows.
 <img src="resources/qti/04_toffoli.png" width="100"/>
 
 ## Multiple Hadamard Gates
-<!-- S. 31 -->
+Note that hadamard operates on each qubit seperately, so we do not get entanglement from it.
+
+$H^{\otimes 2} =
+	{1\over\sqrt{2}}\begin{pmatrix}1&1\\1&-1\end{pmatrix} \otimes 
+	{1\over\sqrt{2}}\begin{pmatrix}1&1\\1&-1\end{pmatrix} =
+	{{1}\over{2}}\begin{pmatrix}
+		1&1&1&1\\1&-1&1&-1\\
+		1&1&-1&-1\\1&-1&-1&1
+	\end{pmatrix}$
+
+The visual representation is as follows.
+
+<img src="resources/qti/05_hadamard.png" width="100"/>
+
+When applying a Hadamard on a base vector $|u\rangle$, we get this
+
+$H\ket{u}={1\over\sqrt{2^1}}(\ket{0}+(-1)^u\ket{1})$
+
+where $u$ is in $\{0,1\}$ using summation, we can write this as
+
+$H\ket{u}={1\over\sqrt{2}}\sum_{\nu\in \{0,1\} }(-1)^{\nu\cdot u}\ket{\nu}$
+
+where $\nu\cdot u$ is the dot product of the two vectors.
+
+# Quantum Algorithms
+## Deutsch-Jozsa Algorithm
+Let's assume we have a binary function with one input and one output and let's ask the question if the function is **constant** or **balanced** - balanced means that teh function produces different values as the input changes. 
+
+- the output is always `0` (constant)
+- the output is always `1` (constant)
+- identity function `f(x) = x` (balanced)
+- negation function `f(x) = !x` (balanced)
+
+The classical approach would be to evaluate the function for all possible inputs and check if the output values. This is not possible with only **one function call** - two are needed. 
+
+But with quantum computing, we can do this with only **one function call**! The problem is that the constant functions are **not** reversible - the solution is quite simple, we add a qubit. 
+
+- one qubit is the input of the function and remains unchanged 
+- the second qubit (initial `0`) is the output of the function
+
+<img src="resources/qti/06_deutsch_jozsa.png" width="500" alt="Deutsch-Jozsa Algorithm - source unknown or possibly the lecturer"/>
+
