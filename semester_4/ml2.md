@@ -1,6 +1,5 @@
 # Maschinelles Lernen 2
-Prof. Dr. Sören Grottrup <br>
-Prof. Dr. Michael Botsch
+Mitschrift und Zusammenfassung des Vortrags von Prof. Dr. Sören Gröttrup (SL) und Prof. Dr. Michael Botsch (USL) an der Technischen Hochschule Ingolstadt. Alle Rechte liegen bei den Originalautoren. 
 
 ## Inhalt
 - [Maschinelles Lernen 2](#maschinelles-lernen-2)
@@ -1049,5 +1048,95 @@ Der `MINT`-Datensatz besteht aus 70.000 Bildern von handgeschriebenen Ziffern. J
 
 <img src="resources/ml/18_pca_example.png" width="400"> <br>
 
+<!--
 ## Lineare Diskriminanzanalyse
 ...
+-->
+
+# Clusteranalyse
+Die `Clusteranalyse` ist ein Verfahren zur Gruppierung von Datenpunkten in Cluster - also das automatische Labeln von Input-Daten. 
+
+- **hartes Clustering** - Unterteilung des Datensatzes in Cluster
+- **fuzzy Clustering** - Zugehörigkeitswahrscheinlichkeit zu den Elementen
+
+> Clustering ist ein subjektiver Prozess, da die Cluster nicht eindeutig sind.
+
+<!--
+**Rational Clustering** <br>
+Das `ähnlichkeitsbasierte´ Clustering ist ...
+
+**Feature-Based Clustering** <br>
+Das `merkmalsbasierte` Clustering ist ...
+-->
+
+## partitionierende Clusterverfahren
+Hierbei handelt es sich um `merkmalsbasierte` Clusterverfahren, bei denen die Daten in eine vorgegebene Anzahl $K$ von CLustern $C_1, ..., C_K$ gruppiert werden, sodass eine Kostenfunktion minimiert wird. <br>
+
+> Jeder Punkt $v_m$ aus $D$ kann eindeutig einem Cluster $C_k$ zugeordnet werden.
+
+Aufgabe ist es, Repräsentanten $c_k$ der einzelnen Cluster zu finden, die die Datenpunkte des Clusters möglichst gut abbilden. <br>
+
+Wenn also $d(v_m,c_k) die Distanz zwischen dem Datenpunkt $v_m$ und dem Repräsentanten $c_k$ ist, so ist die Optimierungsaufgabe wie folgt definiert.
+
+${\{c_1, ..., c_K\}} = argmin_{\{c_1', ..., c_K'\}} \sum_{m=1}^M min_{k=1, ..., K} d(v_m, c_k')$ <br>
+
+Führt man für jeden Datenpunkt die Variable $z_m \in \{1, ..., K\}$ ein, welche die Zugehörigkeit zu einem Cluster angibt, so lässt sich die Optimierungsaufgabe wie folgt schreiben.
+
+${\{c_1, ..., c_K ; z_1, ..., z_M\}} = argmin_{\{c_1', ..., c_K' ; z_1', ..., z_M'\}} \sum_{m=1}^M d(v_m, c_{z_m}')$ <br>
+
+Die Aufgabe ist nicht konvex, es werden iterativ nur `lokale` Minima gefunden. <br>
+
+### k-Means
+Das bekannteste partitionierende Clusterverfahren ist `k-Means` - hier wird das `Block Coordinate Descent`-Verfahren verwendet. <br>
+
+1. Es werden $K$ Cluster festgelegt. 
+2. CLusterzentren werden zufällig initialisiert.
+3. Jeder Datenpunkt $v_m$ aus $D$ wird dem nächsten Zentrum zugeordnet - die Zentren bleiben **konstant**. [`a1`]
+4. Neue Clusterzentren werden berechnet, wobei nun die Zugehörigkeit der Datenpunkte **konstant** bleibt. [`a2`]
+5. Schritt `3` und `4` werden wiederholt, bis sich die Clusterzentren nicht mehr signifikant ändern.
+
+<details><summary>Formeln</summary>
+
+[`a1`] $\{z_1, ..., z_M\} = argmin_{\{z_1', ..., z_M'\}} \sum_{m=1}^M d(v_m, c_{z_m'})$ <br>
+[`a2`] $\{c_1, ..., c_K\} = argmin_{\{c_1', ..., c_K'\}} \sum_{m=1}^M min_{k=1, ..., K} d(v_m, c_{z_m}')$ <br>
+
+</details> <br>
+
+Oft wird als Distanzmaß der quadrierte euklidische Abstand verwendet, dann ist die Optimierungsaufgabe einfacher. 
+
+$z_m = argmin_k = \{ ||v_m - c_k||_2^2 \}$ <br>
+
+Entsprechend der L2-Norm ist die Formel für die Clusterzentren nun auch simpler definiert.
+
+$c_k = \argmin_{c_k'} \sum_{m:z_m = k} ||v_m - c_k'||_2^2$ <br>
+
+Diese GLeichung von $c_k$ kann durch Nullsetzen der Ableitung nach $c_k'$ gelöst werden.
+
+**Vorteile** <br>
+- Algorithmus ist gut **universell** einsetzbar.
+- Komplexität ist **linear** in den relevanten Größen (K, M, N) und damit für **große** Datenmengen geeignet.
+
+**Nachteile** <br>
+- Die Anzahl der Cluster $K$ muss **vorher** festgelegt werden.
+- Die Ergebnisse hängen von der zufälligen Initialisierung ab.
+- **Ausreißer** beeinflussen wegen **L2**-Norm stark das Ergebnis.
+
+Nun muss zuerst die Anzahl $K$ der Cluster festgelegt werden, hierzu eignet sich ein `Silhouetten-Koeffizient`. <br>
+
+$s(v_m) = \frac{d(v_m, c_{q_m}) - d(v_m, c_{z_m})}{max\{d(v_m, c_{q_m}), d(v_m, c_{z_m})\}}$ <br>
+
+Die einzelnenSilhouetten-Wert liegt zwischen $-1$ und $1$, wobei $1$ für eine gute Zugehörigkeit zu einem Cluster steht. Der **Koeffizient** beschreibt den Mittelwert und je größer, desto höher ist die **Strukturierung** der Daten. <br>
+
+| Strukturierung | Werte | 
+| -------------- | ----- |
+| stark          | $0.75 \leq s(v) \leq 1$   |
+| mittel         | $0.5 \leq s(v) \leq 0.75$ |
+| schwach        | $0.25 \leq s(v) \leq 0.5$ |
+| keine Struktur | $0 \leq s(v) \leq 0.25$   |
+
+<!-- 
+https://moodle.thi.de/pluginfile.php/659214/mod_resource/content/1/Vorabversion_ML2_UnsupervisedLearning.pdf
+
+Initialisierungen
+S. 100
+-->

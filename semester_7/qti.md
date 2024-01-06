@@ -288,4 +288,6 @@ But with quantum computing, we can do this with only **one function call**! The 
 
 <img src="resources/qti/06_deutsch_jozsa.png" width="500" alt="Deutsch-Jozsa Algorithm - source unknown or possibly the lecturer"/>
 
-
+<!--
+https://youtu.be/pC2XRXInHnc?si=HdGE7kTbP0Uz9qgl
+-->

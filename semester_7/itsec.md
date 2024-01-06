@@ -485,7 +485,7 @@ PORT     STATE SERVICE            VERSION
 
 TRACEROUTE (using port 110/tcp)
 HOP RTT      ADDRESS
-1   1.07 ms  Surface-Pro-8 (172.24.144.1)
+1   1.07 ms  Surface-Pro-8 (172.23.124.2)
 2   22.39 ms 192.168.178.1
 
 AC Address: 1C:ED:6F:xx:xx:xx (AVM Audiovisuelles Marketing und Computersysteme GmbH)
@@ -502,3 +502,5 @@ Service Info: Devices: broadband router, VoIP adapter
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/.
 Nmap done: 1 IP address (1 host up) scanned in 22.98 seconds
 -->
+
+**Tarnen & Täuschen** <br>
