@@ -731,9 +731,71 @@ Die **vorrausschauende** Ermittlung des benötigten Materialbedarfs - es wird zw
 - `Sekundärbedarf` - Bedarf an Rohstoffen, etc.
 - `Tertiärbedarf` - Bedarf an Hilfsstoffen, etc.
 
-Die Bedarfsermittlung kann **verbrauchsorientiert** oder **bedarfsorientiert** erfolgen - aber auch durch **Schätzungen**. 
+Die Bedarfsermittlung kann **verbrauchsorientiert** (berechnet aus den Vergangenheitswerten) oder **programmgesteuert** (Prognose aus Plänen) erfolgen - oder auch per **Schätzung**.
 
 <!-- 
+Mengenstückliste
+Strukturstückliste
+Baukastenstückliste
+-->
+
+## Bestandsplanung
+Die Bestandsplanung ist das Bindeglied zwischen der Bedarfsplanung und der Beschaffungsplanung.
+
+<img src="resources/bwlg/04_bestell.png" width="500"/>
+
+Beispiele hierzu im [Foliensatz](https://moodle.thi.de/pluginfile.php/708194/mod_resource/content/4/BWLG_Kapitel4_Materialwirtschaft%20und%20Produtionswirtschaft.pdf) ab S. 25.
+
+## Beschaffungsplanung
+Letzte Stufe der Materialdisposition - es werden fünf ENtscheidungen getroffen - Prinzipien, Kosten, Menge, Termine und Wege. 
+
+**Beschaffungsprinzipien** <br>
+- `Just-in-time` - Material wird erst dann **beschafft**, wenn es **benötigt** wird.
+- `Fertigungsbeschaffung` - wird passend zur **Fertigung** beschafft.
+- `Vorratebeschaffung` - Material wird **auf Vorrat** beschafft.
+- `Einzelbeschaffung` - im Bedarfsfall wird **einzelne** Material beschafft.
+
+**Beschaffungskosten** <br>
+- `Anschaffungskosten` - $`Einzelpreis \times Menge`$
+- `Bestellabwicklungskosten` - z.B. Personalkosten
+- `Lagerhaltungskosten` - z.B. Lagermiete
+- `Fehlmengenkosten` - z.B. Preisdifferenzen
+
+<!--
+$`Angebotspreis + Anschaffungskosten + Zuschläge - Rabatte - Skonto + Lagerkosten = Einstandspreis`$
+-->
+
+**Beschaffungsmenge** <br>
+Zielsetzung bei der Optimierung der Bestellmenge ist es, das **Optimum** von Beschaffungsmenge, Einstandspreis, Lagerhaltungskosten und Bestellabwicklungskosten zu finden.
+
+$x_{opt} = \sqrt{\frac{200 \cdot m \cdot a}{p \cdot q}}$ <br>
+$x_{opt}$ - optimale Bestellmenge <br>
+$m$ - Gesamtjahresbedarf <br>
+$a$ - Bestellabwicklungskosten <br>
+$p$ - Einstandspreis (Summe der Kosten) <br>
+$q$ - Lagerhaltungskosten
+
+Mit der `Andler'schen` Formel kann die optimale Bestellmenge berechnet werden.
+
+<details><summary>Beispiel</summary>
+
+Ein Spielzeugproduzent fertigt in Serie Spielzeugautos. Die Autos sind mit einer Batterie ausgestattet, von denen im Gesamtjahr `10.000` Stück benötigt werden. Die Batterien werden fremdbezogen. Der Einstandspreis beläuft sich auf `0,30€` pro Stück. Die Bestellabwicklungskosten betragen `48€` und der Lagerhaltungssatz wird mit `20%` des durchschnittlichen Lagerwertes angenommen.
+
+$x_{opt} = \sqrt{\frac{200 \cdot 10.000 \cdot 48}{0,30 \cdot 0,20}} = 4.000$
+
+Diese Menge wird `10.000 : 4.000 = 2,5` mal pro Jahr (`5` mal in `2` Jahren) bestellt. Die jährlichen Bestellkosten betragen `2,5 x 48 = 120` Euro.
+
+</details> <br>
+
+**Beschaffungswege** <br>
+Es wird zwischen `direkten` und `indirekten` Beschaffungswegen unterschieden.
+
+**Beschaffungstermine** <br>
+Es wird zwischen `verbrauchs-` und `bedarfsgesteuerten` Beschaffungsterminen unterschieden.
+
+# Produktionswirtschaft
+
+<!--
 https://moodle.thi.de/pluginfile.php/708194/mod_resource/content/4/BWLG_Kapitel4_Materialwirtschaft%20und%20Produtionswirtschaft.pdf
-S. 20
+S. 32
 -->
