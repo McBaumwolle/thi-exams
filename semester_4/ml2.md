@@ -1134,9 +1134,55 @@ Die einzelnenSilhouetten-Wert liegt zwischen $-1$ und $1$, wobei $1$ für eine g
 | schwach        | $0.25 \leq s(v) \leq 0.5$ |
 | keine Struktur | $0 \leq s(v) \leq 0.25$   |
 
-<!-- 
-https://moodle.thi.de/pluginfile.php/659214/mod_resource/content/1/Vorabversion_ML2_UnsupervisedLearning.pdf
+**Initialisierungen** <br>
+Die Initialisierung der Clusterzentren ist wichtig, da die Ergebnisse stark davon abhängen. <br>
 
-Initialisierungen
-S. 100
+- `Forgy`-Initialisierung - zufällige Auswahl von $K$ Datenpunkten als Zentren.
+- `Random Partition`-Initialisierung - zufällige Zuweisung eines CLusters zu jedem Datenpunkt.
+- `Furthest First`-Initialisierung - erstes Zentrum zufällig, dann dasjenige, welches am weitesten vom bisherigen Zentrum entfernt ist, iterativ.
+- `Subset Furthest First`-Initialisierung - wie `Furthest First` - nur um Ausreißer nicht als Zentrum zu wählen - wähle die neuen Zentren nur aus einer Untermenge. 
+
+**Visualisierung** <br>
+Bei der graphischen Darstellung werden die CLuster gut sichtbar. <br>
+
+<img src="resources/ml/19_kmeans.png" width="400" alt="kmeans" source="https://bookdown.org/tpinto_home/Unsupervised-learning/k-means-clustering.html"> <br>
+
+<!-- 
+S. 102 genaueres Beispiel
+-->
+
+### k-Medoids
+Statt die Zentren der CLuster als Repräentanten der Datenpunkte zu wählen, sind auch `Medoids` möglich. Das sind Datenpunkte, deren mittlere Distanz zu den anderen Datenpunkten im selben Cluster minimal ist. <br>
+
+**Partitioning Around Medoids** <br>
+Der Algorithmus `PAM` ist der bekannteste Algorithmus für `k-Medoids`. <br>
+
+1. Es werden $K$ Medoids aus $D$ ausgewählt.
+2. Distanzmatrix $M \times M$ mit dem $(m,l)$-ten Eintrag $d(v_m, v_l)$ wird berechnet.
+3. Jeder Datenpunkt $D$ wird dem nächstgelegenen Medoid zugeordnet.
+4. Nun wird für jedes CLuster und deren Datenpunkte überprüft, ob ein Wechsel des Medoids zu einer Verbesserung (bessere mittlere Distanz) führt - falls ja, wird der Medoid gewechselt.
+5. Falls in `4` ein Medoid geändert wurde, wird Schritt `3` wiederholt, ansonsten ist der Algorithmus beendet.
+
+Eine weitere Variante ist `CLARA` - mehr dazu im [Foliensatz](https://moodle.thi.de/pluginfile.php/659214/mod_resource/content/1/Vorabversion_ML2_UnsupervisedLearning.pdf) ab S. 106. 
+
+**Fuzzy k-Means** <br>
+Bei k-Means hängt die Lösung stark von den Positionen der Clusterzentren ab - bei `Fuzzy k-Means` wird die Zugehörigkeit der Datenpunkte zu den Clustern als Wahrscheinlichkeit definiert. Die Zugehörigkeit von $v_m$ zu dem CLuster $k$ ist gegeben durch
+
+$u_{k,m} = \frac{1}{\sum_{j=1}^K (\frac{d(v_m, c_k)}{d(v_m, c_j)})^{\frac{2}{\alpha-1}}}$
+
+wobei $\alpha \in [1, \infty)$ ein Parameter ist, der die `Fuzzyness` des Clusters bestimmt (ist häufig $2$). $d(v_m, c_k)$ ist die euklidische Distanz zwischen dem Datenpunkt $v_m$ und dem Clusterzentrum $c_k$. Clusterzentren werden wiefolgt berechnet.
+
+$c_k = \frac{\sum_{m=1}^M u_{k,m}^{\alpha} v_m}{\sum_{m=1}^M u_{k,m}^{\alpha}}$ <br>
+
+Der Algorithmus ist wie folgt definiert.
+
+1. Zufällig werden Zugehörigkeiten $u_{k,m}$ für alle Datenpunkte $v_m$ zugewiesen.
+2. Jedes Clusterzentrum $c_k$ wird berechnet. 
+3. Jeder Zugehörigkeitsanteil der Datenpunkte wird berechnet, siehe oben.
+4. Schritt `2` und `3` werden wiederholt, bis sich die Zugehörigkeiten nicht mehr signifikant ändern.
+
+## modellebasierte Clusterverfahren
+<!--
+S. 115
+https://moodle.thi.de/pluginfile.php/659214/mod_resource/content/1/Vorabversion_ML2_UnsupervisedLearning.pdf
 -->
