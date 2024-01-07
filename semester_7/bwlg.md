@@ -794,8 +794,61 @@ Es wird zwischen `direkten` und `indirekten` Beschaffungswegen unterschieden.
 Es wird zwischen `verbrauchs-` und `bedarfsgesteuerten` Beschaffungsterminen unterschieden.
 
 # Produktionswirtschaft
+Die wirtschaftliche Gestaltung und Durchführung der **Produktion** von Gütern und Dienstleistungen aus vorhandenen Produktionsfaktoren. Zielfelder könenn unter anderem sein...
 
-<!--
-https://moodle.thi.de/pluginfile.php/708194/mod_resource/content/4/BWLG_Kapitel4_Materialwirtschaft%20und%20Produtionswirtschaft.pdf
-S. 32
+- ``wirtschaftliche`` Ziele (Produktivität, Rentabilität, etc.)
+- ``Umweltziele`` (Energieverbrauch, umweltfreundliche Produkte, etc.)
+- ``Flexibilitätsziele`` (qualifizierte Arbeitskräfte, Anpassungsfähigkeit, etc.)
+- ``Qualitätsziele`` (hoher Qualitätsstandard, wenig Reklamationen, etc.)
+- ``Zeitziele`` (kurze Durchlaufzeiten, pünktliche Lieferung, etc.)
+- ``personenbezogene`` Ziele (Arbeitssicherheit, Arbeitszufriedenheit, etc.)
+
+## strategische Entscheidungen
+Zum Beispiel die **Make-or-Buy** Entscheidung - es wird entschieden, ob ein Produkt selbst hergestellt oder von einem Lieferanten bezogen wird. Kriterien sind zum Beispiel...
+
+- Beschaffbarkeit
+- Risiko
+- Umwelt
+
+und sind sehr vielfältig. Oft ist es zum Beispiel günstiger, ein Produkt extern zu beziehen, als es selbst herzustellen.
+
+## strategische Aufgaben - Produktionsprozesse
+Wird von einem Produkt nur eine Einheit hergestellt, spricht man von **Einzelfertigung** - bei mehreren Einheiten von **Mehrfachfertigung**. Hier kann eine hohe Stückzahl eines Produkts hergestellt werden. 
+
+- Massenanfertigung - Herstellung über einen langen Zeitraum
+- Serienfertigung - Herstellung auf eine bestimmte Stückzahl
+
+Zu den Fertigungstypen mehr im [Foliensatz](https://moodle.thi.de/pluginfile.php/708194/mod_resource/content/4/BWLG_Kapitel4_Materialwirtschaft%20und%20Produtionswirtschaft.pdf) auf S. 43. 
+
+**Fertigungsverfahren** <br>
+- `Punktprinzip` - Baustellen-, EInzelplaztfertigung
+- `Werkstattprinzip` - in einer Werkstatt
+- `Gruppenfertigung` - Bearbeitungszentrum
+- `Fließfertigung` - FLießband- , Reihenfertigung
+
+## operative Aufgaben - Produktionsprogrammplannung
+Die Produktionsprogrammplannung ist die **langfristige** Planung der Produktionsmenge. 
+
+**Periodenmenge** <br>
+Die Periodenmenge ist die _Produktionsmenge_ in einem bestimmten _Zeitraum_ - zum Beispiel in einem Monat.
+
+**Losgrößen** <br>
+Die _optimale_ Losgröße muss der MEnge entsprechen, bei der sich ein _Minimum an Kosten pro Einheit_ der produzierten Menge ergibt.
+
+$X_{opt} = \sqrt{\frac{2 \cdot E \cdot m}{s \cdot p}}$ <br>
+$k$ - Kosten je Einheit <br>
+$m$ - Gesamtjahresbedarf <br>
+$x$ - Stückzahl je Auflage (Losgröße) <br>
+$s$ - Produktionskosten je Stück <br>
+$p$ - Zinssatz <br>
+$E$ - konstante Koste der Umrüstung je Los <br>
+
+Gesamtkosten für optimale Losgröße: 
+
+$K_{opt} = \sqrt{2 \cdot E \cdot m \cdot s \cdot p}$
+
+<!-- 
+Fragen 
+
+https://moodle.thi.de/mod/resource/view.php?id=383690
 -->
