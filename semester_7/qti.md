@@ -271,7 +271,7 @@ $H\ket{u}={1\over\sqrt{2}}\sum_{\nu\in \{0,1\} }(-1)^{\nu\cdot u}\ket{\nu}$
 where $\nu\cdot u$ is the dot product of the two vectors.
 
 # Quantum Algorithms
-## Deutsch-Jozsa Algorithm
+## Deutsch Algorithm
 Let's assume we have a binary function with one input and one output and let's ask the question if the function is **constant** or **balanced** - balanced means that teh function produces different values as the input changes. 
 
 - the output is always `0` (constant)
@@ -288,6 +288,38 @@ But with quantum computing, we can do this with only **one function call**! The 
 
 <img src="resources/qti/06_deutsch_jozsa.png" width="500" alt="Deutsch-Jozsa Algorithm - source unknown or possibly the lecturer"/>
 
-<!--
-https://youtu.be/pC2XRXInHnc?si=HdGE7kTbP0Uz9qgl
+> How is a balanced function detected with only one function call?
+
+1. Initialisation of both qubits with `1` (inverting the `0` states).
+2. Apply Hadamard to both qubits which puts them into superposition $\frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)$.
+3. Apply the function to both qubits like before.
+4. Measure both qubits (the upper one is enough).
+
+The result is either `01` or `11` - if the function is balanced, the result is `01`, if the function is constant, the result is `11`.
+
+<!-- 
+visualisation of the algorithm
 -->
+
+## Deutsch-Jozsa Algorithm
+The Deutsch-Jozsa algorithm is an extension of the Deutsch algorithm, now with $n$ input qubits where $f: x\mapsto y, x\in \{0,1\}^n, y\in \{0,1\}$ and the question once again is if the function is constant or balanced.
+
+### Oracle Function
+The quantum function in the algorithm is called the **Oracle Function** - the input is $n$ qubits and to make it reversible, another qubit to store the result - also called an _ancillary_ qubit.
+
+**Example** <br>
+With $n=2$, the oracle function takes two input qubits and the ancillary qubit (set to `0`). It has three output qubits, the first two are the input qubits and the third is $0\oplus f(b)$, where $\oplus$ is a XOR function.
+
+Now there are two constant functions, one producing always `0` (change nothing on the _a_-qubit) and one producing always `1` (flip the _a_-qubit). An example for a balanced function would be a `CNOT` on one _b_-qubit and the _a_-qubit.
+
+<!-- 
+example on page 45
+-->
+
+<!-- 
+exercise on page 46
+do it!
+-->
+
+**Algorithm** <br>
+...

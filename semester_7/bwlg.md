@@ -852,3 +852,8 @@ Fragen
 
 https://moodle.thi.de/mod/resource/view.php?id=383690
 -->
+
+# Marketing und Vertrieb
+<!--
+https://moodle.thi.de/mod/resource/view.php?id=383687
+-->
