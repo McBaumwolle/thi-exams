@@ -854,6 +854,64 @@ https://moodle.thi.de/mod/resource/view.php?id=383690
 -->
 
 # Marketing und Vertrieb
-<!--
-https://moodle.thi.de/mod/resource/view.php?id=383687
--->
+<!-- ... -->
+
+## Planungsprozess
+Der Marketingplanungsprozess ist ein **kontinuierlicher** Prozess, der sich aus den folgenden Schritten zusammensetzt.
+
+- **Situationsanalyse** - Marktdiagnose, Prognose und Analyse der eigenen Situation
+- **Ziel- & Strategieplanung** - Formulierung von Marketing-Zielen
+- **Maßnahmenplanung** - konkrete Aussagen über den Einsatz der absatzpolitischen Instrumente
+- **Umsetzung** - Durchführung der Maßnahmen
+- **Kontrolle** - Überprüfung der Zielerreichung
+
+## Marktforschung 
+Gewinnung und Auswertung von Informationen über die Marktentwicklung - zum Beispiel der Beliebtheit bei den Zielgruppen. 
+
+### Primärforschung
+Unter der Primärmarktforschung versteht man verschiedene Methoden zur Gewinnung von Informationen über den Markt.
+
+Vorteile sind die **Aktualität** und **Genauigkeit** der Daten, wobei Nachteile hoher **Zeit-** und **Kostenaufwand** sind.
+
+**Befragungen** <br>
+Wichtigeste Methode zur Informationserhebung - ist mündlich, schriftlich, telefonisch oder online dirchgeführt werden.
+
+> Umfrage zur Beliebtheit verschiedener Brotaufstriche. 
+
+**Beobachtung** <br>
+Befasst sich mit Gegebenheiten und **Verhaltensweisen** von Personen, Gruppen oder Organisationen. 
+
+**Tests** <br>
+Hierbei werden Veränderungen und Reaktionen dokumentiert, nachdem eine **Veränderung** eingetreten ist.
+
+> Rezeptänderung eines Brotaufstrichs.
+
+Im besten Fall mit einer Kontrollgruppe und ein oder mehreren Testgruppen. 
+
+### Sekundärforschung
+Unter der Sekundärmarktforschung versteht man zum Beispiel inner- oder außerbetriebliche Quellen. 
+
+## Marktsegmentierung
+Aufteilung des Gesamtmarktes in **homogene** Gruppen - zum Beispiel nach Alter oder Wohnort.
+
+- `geographische` Segmentierung - nach Land, Stadt, etc.
+- `demographische` Segmentierung - nach Alter, Beruf, Einkommen, etc.
+- `sozialpsychologische` Segmentierung - nach Lebensstil, etc.
+- `verhaltensbezogene` Segmentierung - nach Kaufverhalten, Markentreue, etc.
+
+Einheitliche Einteilung zum Beispiel mit den `SINUS`-Milieus - mehr dazu [hier](https://www.sinus-institut.de/en/sinus-milieus/sinus-milieus-germany).
+
+## Marketing-Mix
+Der Marketing-Mix umfasst alle Aktivitäten, die zur Erreichung der Marketingziele notwendig sind. 
+
+**Produktpolitik** <br>
+Kernbereich des Marketing-Mix - zum Beispiel die **Produktvariation** oder **-innovation**. Produkte folgen einem individuellen Lebenszyklus - Einführung, Wacstum, Reife, Sättigung und Rückgang. 
+
+**Preispolitik** <br>
+Setzt sich mit der Preisbildung auseinander - zum Beispiel mit der **Preisunter-** und **-obergrenze**.
+
+**Vertriebspolitik** <br>
+Das System der Absatzwege, wie das PRodukt die Kunden erreicht - zum Beispiel über den Einzelhandel.
+
+**Kommunikationspolitik** <br>
+Die Kommunikationspolitik befasst sich mit der **Kommunikation** zwischen Unternehmen und Kunden - zum Beispiel mit der **Werbung**.
