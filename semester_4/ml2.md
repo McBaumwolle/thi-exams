@@ -1182,7 +1182,52 @@ Der Algorithmus ist wie folgt definiert.
 4. Schritt `2` und `3` werden wiederholt, bis sich die Zugehörigkeiten nicht mehr signifikant ändern.
 
 ## modellebasierte Clusterverfahren
-<!--
+Merkmalsbasierte Verfahren, bei denen die Daten durch ein Modell beschrieben werden - Grundidee ist, dass die Datenpunkte aus einer **Mischverteilung** gezogen werden. <br>
+
+Jeder Datenpunkt hat eine WDF (Wahrscheinlichkeitsdichtefunktion) $p(v_m)$, welche die Wahrscheinlichkeit angibt, dass der Datenpunkt $v_m$ aus der Mischverteilung gezogen wurde. <br>
+
+<!-- 
+vervollständigen mit anderen Quellen um die Grundlagen zu verstehen
 S. 115
-https://moodle.thi.de/pluginfile.php/659214/mod_resource/content/1/Vorabversion_ML2_UnsupervisedLearning.pdf
 -->
+
+## hierarchische Clusterverfahren
+<!-- 
+vervollständigen mit anderen Quellen um die Grundlagen zu verstehen
+S. 148
+vermutlich nicht so relevant wie modell. Cl.
+-->
+
+## wahrscheinlichkeitsbasierte Clusterverfahren
+Grundidee ist, dass ein Cluster an dichten Punkten (hohe Dichte) ist und von anderen Clustern durch Bereiche mit geringer **Punktdichte** getrennt ist. <br>
+
+**Vorteile** <br>
+- Cluster von beliebiger **Form** können erkannt werden.
+- Ausreißer können gut erkannt werden.
+- Die Anzahl der Cluster muss **nicht** vorher festgelegt werden.
+
+### DBSCAN
+Der `Density-Based Spatial Clustering of Applications with Noise` (`DBSCAN`) ist ein weit verbreitetes Verfahren zur Clusteranalyse. Es gibt im Algorithmus zwei Parameter, $\epsilon$ und $minPts$. <br>
+
+<!-- Links
+- https://scribe.rip/mlearning-ai/dbscan-demystified-understanding-how-this-parameter-free-algorithm-works-89e03d7d7ab
+- https://www.analyticsvidhya.com/blog/2020/09/how-dbscan-clustering-works/
+-->
+
+ - $\epsilon$ definiert die **Nachbarschaftslänge** eines Punktes (falls der Abstand kleiner als $\epsilon$ ist, so kann Punkt A Punkt B erreichen).
+ - $minPts$ definiert die Mindestanzahl an Punkten, die in der Nachbarschaft eines Punktes liegen müssen, damit dieser als Kernpunkt definiert wird - also die **Dichte**.
+
+Es wird zusätzlich zwischen drei Arten von Punkten unterschieden.
+
+- **Kernpunkte** - Datenpunkte, die selbst _dicht_ sind.
+- **Randpunkte** - auch Dichte-erreichbare-Punkte genannt, sind von Kernpunkt erreichbar, aber selbst nicht _dicht_.
+- **Rauschpunkte** - Datenpunkte die weder _dicht_ sind, noch von einem Kernpunkt erreichbar sind.
+
+<img src="resources/ml/20_dbscan.png" width="600" alt="dbscan" source="https://www.researchgate.net/figure/An-Example-Illustrating-the-Density-Based-DBSCAN-Clustering-Method-Applied-to-SMLM-Data_fig4_342141592"> <br>
+
+Da Dichte-Erreichbarkiet nicht symmatrisch ist, wurde die **Dichte-Verbundenheit** eingeführt. Zwei Punkte sind dichte-verbunden, wenn es eine Kette von Kernpunkten gibt, von denen beide Punkte erreichbar sind - die durch dieselben Kernpunkte erreichbaren Punkte bilden das Cluster. <br>
+
+**Herausforderungen** <br>
+- Curse of Dimensionality - bei hochdimensionalen Daten kann die Dichte nicht mehr gut bestimmt werden, Lösung ist hier die [Dimensionsredutkion](#dimensionalitätsreduktion).
+- Parameterwahl - die Parameter $\epsilon$ und $minPts$ müssen geeignet gewählt werden. 
+
