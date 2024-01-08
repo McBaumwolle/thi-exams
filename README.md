@@ -6,7 +6,7 @@ Zusammenfassungen für die Prüfungen, in Markdown.
 ### Semester 7
 [Grundlagen der Betriebswirtschaft und des Gründertums](semester_7/bwlg.md)
 
-[IT-Security in der KI](semester_7/itsec.md)
+[IT-Security](semester_7/itsec.md) & [IT-Security in der KI](semester_7/ski.md)
 
 [Quantum Technologies and Information](semester_7/qti.md)
 
