@@ -61,3 +61,6 @@ Nach Yupeng Hu et al. (2021) kategorisieren sich die Angriffe wiefolgt.
 | Adversarial-Example Attacks |  |
 |  System-Integration Attacks | Model-Extraction Attack | 
 
+<!-- 
+richtig kürzen 
+-->

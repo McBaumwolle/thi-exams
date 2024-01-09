@@ -811,6 +811,8 @@ Rotation, Skalierung, Pixel versetzen, Spiegelung, Rauschen, Färbung, Schattier
 **Spracherkennung** <br>
 Geschwindigkeit, Rauschen, Tonlage, etc.
 
+<!--
+nicht klausurrelevant 
 
 # Optimierung von Hyperparametern
 Die Optimierung von Hyperparametern ist ein wichtiger Schritt beim Training von Neuronalen Netzen. <br>
@@ -902,6 +904,7 @@ Weitere Informationen und Varianten im [Foliensatz](https://moodle.thi.de/plugin
 ## Evaolutionäre Algorithmen
 ...
 
+-->
 
 <!--
 ab hier Teil von Hr. Botsch
@@ -939,7 +942,8 @@ $v_1 = \begin{pmatrix} 2 \\ -1 \end{pmatrix}$ und $v_2 = \begin{pmatrix} 0 \\ 3 
 
 </details> <br>
 
-<!-- L - + unendlich -->
+**L-Ähnlichkeiten** <br>
+Die $L_{\infty}$- und $L_{-\infty}$-Ähnlichkeit beschreiben jeweils den größten bzw. kleinsten Unterschied zweier Vektoren. <br>
 
 **Cosinus-Ähnlichkeit** <br>
 Die Cosinus-Ähnlichkeit ist ein Maß für die Ähnlichkeit zweier Vektoren - auch `Cosinus-Similarity` genannt. <br>

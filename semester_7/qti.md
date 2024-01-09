@@ -158,6 +158,14 @@ $`H|1\rangle = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} 
 
 These are superposition states, the probability of measuring both states is equal. Hadamard is also it's own inverse, so $`H \cdot H = 1`$.
 
+$$H\ket{u}={1\over\sqrt{2}}(\ket{0}+(-1)^u\ket{1})$$ 
+
+In more general words, the Hadamard gate on one qubit produces the result above.
+
+<!-- 
+more on 2 dimensional on p. 48
+-->
+
 # Quantum Registers (and Entanglement)
 <!-- 2 Qubit Register 5.1.1 -->
 
@@ -322,4 +330,54 @@ do it!
 -->
 
 **Algorithm** <br>
-...
+One system call is enough to find the answer with the Deutsch-Jozsa algorithm. 
+
+1. All $n$ inputs qubits are set to `0` and the ancillary qubit is set to `1`.
+2. Apply Hadamard to all qubits.
+3. magic Oracle Function
+4.  Apply Hadamard the first $n$ qubits - not the ancillary qubit.
+5.  Measure the first $n$ qubits.
+
+If the measurement is `000...0`, the function is constant, otherwise it is balanced.
+
+
+## Grover Algorithm
+Given unsorted data, how do we find a specific element? The classical approach is to iterate over - in the worst case - all elements.
+
+With a dataset of $N$ elements, the **Grover** algorithm can find the element in $\sqrt{N}$ steps.
+
+**Oracle Function** <br>
+Usually we would have a boolean function that yields the answer to the question if the element is the one we are looking for. 
+
+But with the Grover algorithm, we have a **binary** input and can represent $2^n$ numbers with $n$ qubits - in addition to a qubit for the output of the function.
+
+<img src="resources/qti/07_grover.png" width="500" alt="Grover Algorithm - source unknown or possibly the lecturer, adapted"/>
+
+For example (see above) the oracle to determine the wanted element `01` so that $f(01) = 1$ could be the [Toffoli gate](#toffoli-gate) with the first two qubits as control qubits. 
+
+> The Toffoli switches the lowest qubit if $q_0$ and $q_1$ are `1`.
+
+But as usual - to use the power of quantum computing - we start with Hadamard on some qubits to achieve **superposition**.
+
+> The auxiliary qubit is flipped when the correct target state is found.
+
+**Phase Flip** <br>
+The Grover algorithm works by using a `phase-flip` to mark the correct state. It encodes the result of the oracle function with Hadamard so the output to finding `01` would be as follows. 
+
+$\frac{1}{2}(|100\rangle - |101\rangle + |110\rangle + |111\rangle)$
+
+As we can se, the target state is flipped (to `-`) and all others are unchanged.
+
+<details><summary>Circuit</summary>
+
+<img src="resources/qti/08_grover_example.png" width="500" alt="Grover Algorithm - source unknown or possibly the lecturer"/>
+
+</details> <br>
+
+**Amplitude Amplification** <br>
+The flipped phase does not help us as we **cannot** measure it. 
+
+<!--
+p. 55
+ask someone 
+-->
