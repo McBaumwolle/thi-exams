@@ -64,3 +64,66 @@ Nach Yupeng Hu et al. (2021) kategorisieren sich die Angriffe wiefolgt.
 <!-- 
 richtig kürzen 
 -->
+
+# Risikomanagemenet
+Das Risiko ist ein Maß für Wagnis und Unsicherheit. Es ist die Wahrscheinlichkeit, dass ein Ereignis eintritt und die Auswirkung, die dieses Ereignis hat.
+
+**Cyberrisiko** <br>
+Wahrscheinlichkeit, dass ein Cybervorfall eintritt und dessen Auswirkungen. 
+
+**Infomrationsrisiko** <br>
+Beschreibt alle Risiken, die auf Informationen einwirken können. 
+
+**IT-Sicherheitsrisiko** <br>
+Schutz von elektronisch gespeicherten Informationen und deren Verarbeitung. 
+
+## Ursache und Wirkung
+
+> Kleinste Ursachen können große Wirkungen haben. 
+
+Es müssen also alle wesentlichen Ursachen analysiert werden. 
+
+> Personen, Daten, IT-Systeme, IT-Prozesse, organisations-Regelungen, IT-Umfeld
+
+Die durch das Risiko verbundenen Auswirkungen sind vielseitig. 
+
+> Compliance, Beeinträchtigung der Geschäftsprozesse, funanzielle Schäen, mittelbare finanzielle Schäden (Zeit- und Reputationsverlust)
+
+## Zeitfaktor
+In Notfallplänen sollte der Zeitfaktor berücksichtigt werden.
+
+- Beginn der Behebungsmaßnahmen
+- Dauer der Behebungsmaßnahmen
+
+Zudem hilft gute Dokumentation für die erneute Behebung.
+
+## Risiko-Heatmap
+Mit der Heatmap können verschiedene Risiken visualisiert werden.
+
+<img src="resources/ski/01_risiko_heatmap.png" width="500" alt="Risiko-Heatmap" source="https://www.techtarget.com/searchsecurity/definition/risk-map-risk-heat-map"/>
+
+Quer durch die Matrix kann eine **Risikoakzeptanzlinie** gezogen werden.
+
+<!-- 
+Übung mit Risiko-Heatmap
+S. 20
+-->
+
+## Risikostrategien
+Die Risikostrategien sind in vier Kategorien unterteilt.
+
+**Akzeptanz** <br>
+Bei `niedriger` Schadenshöhe und Eintrittswahrscheinlichkeit kann das Risiko akzeptiert werden.
+
+**Transfer** <br>
+`Abfederung` von finanziellen Risiken - es bleiben jedoch juristische und reputationelle Schäden. 
+
+**Vermeidung** <br>
+Durch geeignete Maßnahmen kann das Risiko vermieden werden.
+
+**Reduktion** <br>
+Durch geeignete `Maßnahmen` kann das Risiko reduziert werden.
+
+<!--
+Versicherung von KI-Risiken
+-->
