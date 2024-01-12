@@ -6,6 +6,12 @@ Mitschrift und Zusammenfassung des Vortrags von Patrizia Heinl an der Technische
 - [Inhalt](#inhalt)
 - [Einführung](#einführung)
   - [STRIDE](#stride)
+  - [Angriffstypen](#angriffstypen)
+- [Risikomanagemenet](#risikomanagemenet)
+  - [Ursache und Wirkung](#ursache-und-wirkung)
+  - [Zeitfaktor](#zeitfaktor)
+  - [Risiko-Heatmap](#risiko-heatmap)
+  - [Risikostrategien](#risikostrategien)
 
 # Einführung
 Bei dem Einsatz von KI-Systemen liegt ein wichtiger Schwerpunkt auf der Sicherheit.
