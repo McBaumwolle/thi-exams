@@ -15,6 +15,12 @@ Transcript and summary of the lecture given by Prof Dr. Ulrich Margull at the In
   - [SWAP-Gate](#swap-gate)
   - [Toffoli-Gate](#toffoli-gate)
   - [Multiple Hadamard Gates](#multiple-hadamard-gates)
+- [Quantum Algorithms](#quantum-algorithms)
+  - [Deutsch Algorithm](#deutsch-algorithm)
+  - [Deutsch-Jozsa Algorithm](#deutsch-jozsa-algorithm)
+    - [Oracle Function](#oracle-function)
+  - [Grover Algorithm](#grover-algorithm)
+- [Error Correction](#error-correction)
 
 # Classical Bits and Gates
 One bit is represented by an vector $0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ or $1 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. The boolean `NOT` gate is represented by the matrix $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
@@ -381,3 +387,6 @@ The flipped phase does not help us as we **cannot** measure it.
 p. 55
 ask someone 
 -->
+
+# Error Correction
+In classical information theory, using multiple transmissions can reduce the error rate arbitrarily. 
