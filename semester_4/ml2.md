@@ -1,5 +1,5 @@
 # Maschinelles Lernen 2
-Mitschrift und Zusammenfassung des Vortrags von Prof. Dr. Sören Gröttrup (SL) und Prof. Dr. Michael Botsch (USL) an der Technischen Hochschule Ingolstadt. Alle Rechte liegen bei den Originalautoren. 
+Mitschrift und Zusammenfassung des Vortrags von Prof. Dr. Sören Gröttrup (SL) und Prof. Dr. Michael Botsch (USL) an der Technischen Hochschule Ingolstadt. Alle Rechte liegen bei den Originalautoren, Inhalte ohne Gewähr. <br>
 
 ## Inhalt
 - [Maschinelles Lernen 2](#maschinelles-lernen-2)
@@ -33,18 +33,22 @@ Mitschrift und Zusammenfassung des Vortrags von Prof. Dr. Sören Gröttrup (SL) 
   - [Ensemble](#ensemble)
   - [Early Stopping](#early-stopping)
   - [Data Augmentation](#data-augmentation)
-- [Optimierung von Hyperparametern](#optimierung-von-hyperparametern)
-  - [Grid-Search](#grid-search)
-  - [Random-Search](#random-search)
-  - [Bayessche Optimierung](#bayessche-optimierung)
-  - [Evaolutionäre Algorithmen](#evaolutionäre-algorithmen)
+- [Unsuperivsed Learning](#unsuperivsed-learning)
 - [Ähnlichkeitsmaße](#ähnlichkeitsmaße)
   - [Sequenzen](#sequenzen)
 - [Lagrange-Multiplikatoren](#lagrange-multiplikatoren)
 - [Dimensionalitätsreduktion](#dimensionalitätsreduktion)
   - [Hauptkomponentenanalyse](#hauptkomponentenanalyse)
     - [Beispiel](#beispiel)
-  - [Lineare Diskriminanzanalyse](#lineare-diskriminanzanalyse)
+- [Clusteranalyse](#clusteranalyse)
+  - [partitionierende Clusterverfahren](#partitionierende-clusterverfahren)
+    - [k-Means](#k-means)
+    - [k-Medoids](#k-medoids)
+  - [modellebasierte Clusterverfahren](#modellebasierte-clusterverfahren)
+  - [hierarchische Clusterverfahren](#hierarchische-clusterverfahren)
+  - [wahrscheinlichkeitsbasierte Clusterverfahren](#wahrscheinlichkeitsbasierte-clusterverfahren)
+    - [DBSCAN](#dbscan)
+
 
 
 
@@ -371,7 +375,7 @@ Verringerung der Lernrate nach einer festgelegten Anzahl an Iterationen.
 ### Adagrad
 Mit `Ada`ptive `Grad`ienten wird die Lernrate für jeden Parameter individuell angepasst. <br>
 
-> AdaGrad skaliert $\alpha$ umgekehrt proportiinal zur Wurzel der Summe der quadrierten Gradienten der Vergangenheit. 
+> AdaGrad skaliert $\alpha$ umgekehrt proportional zur Wurzel der Summe der quadrierten Gradienten der Vergangenheit. 
 
 > Parameter mit größerer Ableitungen der Verlustfunktion erhalten eine schnelle Verringerung der Lernrate und umgekehrt.
 
@@ -665,8 +669,11 @@ Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/750384/mod_resource/cont
 
 </details> <br>
 
+<!--
 **Weight Decay** <br>
-Die `Weight Decay` ist eine Variante der L2-Regularisierung, bei der die Gewichte mit einem Faktor verringert werden, die Anpassung sieht wie folgt aus. 
+Die `Weight Decay` ist eine Variante der L2-Regularisierung, bei der die Gewichte mit einem Faktor verringert werden, die Anpassung sieht wie folgt aus.
+-->
+Wird auch `Weight Decay` genannt. Das Update der Gewichte sieht wie folgt aus. 
 
 $w_{i,j}^{(l)} = (1-\alpha \frac{\lambda}{n}) \cdot w_{i,j}^{(l)} - \alpha \cdot \triangledown_{w_{i,j}^{(l)}} C(\theta)$
 
@@ -692,7 +699,7 @@ Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/750384/mod_resource/cont
 
 **Update der Gewichte** <br>
 Falls $w_{i,j}^{(l)} >= 0$ ist, so wird $w_{i,j}^{(l)}$ um $\lambda - \alpha \cdot \triangledown_{w_{i,j}^{(l)}} C(\theta)$ verringert. <br>
-Falls $w_{i,j}^{(l)} < 0$ ist, so wird $w_{i,j}^{(l)}$ um $-\lambda - \alpha \cdot \triangledown_{w_{i,j}^{(l)}} C(\theta)$ erhöht.
+Falls $w_{i,j}^{(l)} < 0$ ist, so wird $w_{i,j}^{(l)}$ um $\lambda - \alpha \cdot \triangledown_{w_{i,j}^{(l)}} C(\theta)$ erhöht.
 
 > Die Gewichte werden also durch $\lambda$ in Richtung $0$ gedrückt.
 
@@ -707,7 +714,7 @@ Die Idee von `Dropout` ist es, das Netzwerk zu vereinfachen, indem `zufällig` N
 
 Bei linearer Regression werden ebenso Neuronen deaktiviert, also 
 
-$f_A(x) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n$ = \sum_{i=1}^n \beta_i x_i$
+$f_A(x) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n$ = $\sum_{i=1}^n \beta_i x_i$
 
 fallen einige $\beta_i$ weg - eine Vorhersage kann nicht auf wenigen Feature basieren. Die Features müssen so genereller gelernt werden und alle Features müssen einbezogen werden.
 
@@ -909,6 +916,8 @@ Weitere Informationen und Varianten im [Foliensatz](https://moodle.thi.de/plugin
 <!--
 ab hier Teil von Hr. Botsch
 -->
+
+# Unsuperivsed Learning
 
 # Ähnlichkeitsmaße
 Verschiedene Ähnlichkeitsmaße für die Bewertung von Clustern. <br>
