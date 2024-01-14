@@ -489,14 +489,13 @@ Siehe [Foliensatz](https://moodle.thi.de/pluginfile.php/747685/mod_resource/cont
 - Gewichte werden sehr schnell klein (nahe 0) oder ganz `0`.
 
 **Gradient Clipping** <br>
-Beim `Clipping` werden die Gradienten gestutzt, sobald sie einen minimalen oder maximalen Wert überschreiten.
+Beim `Clipping` werden die Gradienten gestutzt, sobald sie einen minimalen oder maximalen Wert überschreiten - mehr bei [Papers with Code](https://paperswithcode.com/method/gradient-clipping) mit Visualisierung. 
 
 $g = (g_1, ..., g_n) = (\triangledown_{\theta_1} C(\theta), ..., \triangledown_{\theta_n} C(\theta))$ <br>
 
 Hier kann nach Value $g_i := h | g_i := H$ oder nach Norm $g_i := H \cdot \frac{g}{||g||}$ gestutzt werden. <br>
 
 <img src="resources/ml/09_gradient_clipping.png" width="400"> <br>
-
 
 ## Initialisierung der Gewichte
 Die `Weight-Initalization` ist ein wichtiger Schritt beim Training von Neuronalen Netzen. Bei der Einführung des Gradientenabstiegs wurden die Gewichte $W^{(1)}, ..., W^{(L)}$ zufällig initialisiert. 
