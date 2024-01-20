@@ -169,3 +169,8 @@ wie viel relevant?
 | `Staging Attacks` <br> Unter ML Staging-Attacks werden Angriffe verstanden, die auf die ML-Systeme abzielen. | • Proxy-ML Modell <br> • Backdoors |
 | `Exfiltration` <br> Daten werden aus dem System entfernt oder abgeführt. | |
 | `Impact` <br> Resultierende Auswirkungen des Angriffs. | • Umgehung des Modells <br> • Denial of Service <br> • Spamming mit wertlosen Daten <br> • Kostenverursachung <br> • Diebstahl von Intellectual Property <br> • Missbrauch des Systems |
+
+
+<!--
+Data Collection Related Attacks
+-->
