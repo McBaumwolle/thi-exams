@@ -18,7 +18,19 @@
   - [Materialrationalisierung](#materialrationalisierung)
   - [Materialdisposition](#materialdisposition)
     - [Bedarfsplanung](#bedarfsplanung)
-
+  - [Bestandsplanung](#bestandsplanung)
+  - [Beschaffungsplanung](#beschaffungsplanung)
+- [Produktionswirtschaft](#produktionswirtschaft)
+  - [strategische Entscheidungen](#strategische-entscheidungen)
+  - [strategische Aufgaben - Produktionsprozesse](#strategische-aufgaben---produktionsprozesse)
+  - [operative Aufgaben - Produktionsprogrammplannung](#operative-aufgaben---produktionsprogrammplannung)
+- [Marketing und Vertrieb](#marketing-und-vertrieb)
+  - [Planungsprozess](#planungsprozess)
+  - [Marktforschung](#marktforschung)
+    - [Primärforschung](#primärforschung)
+    - [Sekundärforschung](#sekundärforschung)
+  - [Marktsegmentierung](#marktsegmentierung)
+  - [Marketing-Mix](#marketing-mix)
 
 <!-- VSC weigert sich, das Inhaltsverzeichnis ganz zu erstellen -->
 

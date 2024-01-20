@@ -21,6 +21,9 @@ Transcript and summary of the lecture given by Prof Dr. Ulrich Margull at the In
     - [Oracle Function](#oracle-function)
   - [Grover Algorithm](#grover-algorithm)
 - [Error Correction](#error-correction)
+- [Quantum Communication](#quantum-communication)
+  - [Bell States](#bell-states)
+  - [Teleportation](#teleportation)
 
 # Classical Bits and Gates
 One bit is represented by an vector $0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ or $1 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. The boolean `NOT` gate is represented by the matrix $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
@@ -390,3 +393,38 @@ ask someone
 
 # Error Correction
 In classical information theory, using multiple transmissions can reduce the error rate arbitrarily. 
+
+# Quantum Communication
+Quantum communication is the transmission of quantum information. 
+
+## Bell States
+The Bell states are a set of four quantum states that are maximally entangled.
+
+$|\Phi^+\rangle = \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle)$ <br>
+$|\Phi^-\rangle = \frac{1}{\sqrt{2}} (|00\rangle - |11\rangle)$ <br>
+$|\Psi^+\rangle = \frac{1}{\sqrt{2}} (|01\rangle + |10\rangle)$ <br>
+$|\Psi^-\rangle = \frac{1}{\sqrt{2}} (|01\rangle - |10\rangle)$ <br>
+
+**Entanglement** <br>
+How to test if two qubits are entangled?
+
+> If a state cannot be seperated, it is entangled.
+
+$a_0 a_3 - a_1 a_2 = 0$ 
+
+If the result is `0`, the qubits are entangled - only if no $a_i$ is `0`. In other words, if there is a dot product, the equation is `0`. 
+
+## Teleportation
+The goal of Quantum Teleportation is to transport a qubit $|\psi\rangle$ from Alice to Bob.
+
+<img src="resources/qti/09_teleportation.png" width="500" alt="Teleportation - source unknown or possibly the lecturer"/>
+
+1. First we create a Bell state $\Phi^+ = \frac{1}{\sqrt{2}} (|00\rangle + |11\rangle)$ between Alice and Bob (which means each one gets one qubit).
+2. Now Alice applies a `CNOT` on $|\psi\rangle$ and the first qubit of the Bell state (so $|\alpha\rangle$), then a `Hadamard` on $|\psi\rangle$. Now she measures both qubits and sends the result to Bob - which could be `00`, `01`, `10` or `11` and are all equally likely.
+3. The result can be transmitted classically to Bob. 
+4. Bob then - depending on the results - applies `Pauli-X` and/or `Pauli-Z` and gets the qubit $|\psi\rangle$.
+
+<!--
+this is not that much
+try to understand well
+-->
