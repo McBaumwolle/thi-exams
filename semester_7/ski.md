@@ -133,3 +133,122 @@ Durch geeignete `Maßnahmen` kann das Risiko reduziert werden.
 <!--
 Versicherung von KI-Risiken
 -->
+
+# Angriffe auf KI-Systeme
+Ein ANgriff wird nach **Sicherheitsverletzung** (Integrität, Verfügbarkeit oder Datenschutz), **Angriffseigenschaften** (gezielt oder willkürlich) und **Klassifikationsfehlereigenschaften** (spezifisch oder generisch) unterschieden.
+
+Die angreifende Person kann Wissen über 
+
+- Trainingsdaten
+- Feature-Set
+- Lernalgorithmus
+- Parameter der Zielfunktion
+
+besitzen und dementsprechend lassen sich Angriffszenarien ableiten. Hierbei wird auch noch über **limited** und **perfect** Knowledge-Attacks unterschieden. 
+
+- Causative Attack - Angreifer kennt Trainings- & Testdaten
+- Exploratory Attack - Angreifer kennt nur Trainingsdaten
+
+## Angriffstechniken
+Das Framework `MITRE ATT&CK` beschreibt Angriffstechniken auf KI-Systeme.
+
+<!--
+wie viel relevant?
+-->
+
+**Reconnaissance** <br>
+Techniken um Informationen über das Ziel zu sammeln, die für einen Angriff nützlich sein können.
+
+- aktives Scannen
+- öffentliche Forschungsinhalte
+- Websites des Ziels
+- öffentliche Schwachstellenanalysen
+- Anwendungsverzeichnisse
+
+**Resource Development** <br>
+Sammeln oder Erwerben von verschiedenen Tools, die für einen Angriff nützlich sein können.
+
+- öffentliche ML-Artefakte
+- technische Ressourcen
+- Adversarial-Attack Fähigkeiten
+- Infrastruktur
+- Veröffentlichung eines kompromittierten Datensatzes
+- Kompromittierung von Trainingsdaten
+- Nutzeraccounts erstellen
+
+**Initial Access** <br>
+Ausnutzen oder Kompromittieren von Schwachstellen. 
+
+- ML Supply-Chain
+- Accounts im System
+- Umgehung des Modells
+- öffentlich zugängliche Anwendungen
+
+**Model Access** <br>
+Zugriff auf das Modell.
+
+- Interface API
+- Dienste, die auf dem Modell basieren
+- physischer Zugriff 
+
+**Execution** <br>
+Ausführen von Angriffen auf das Modell.
+
+- Nutzeraktivität
+- Commands oder Skripte
+
+**Persistence** <br>
+Einbauen von versteckten Funktionen. 
+
+- Manipulation der Trainingsdaten
+- Backdoors
+
+**Defense Evasion** <br>
+Vermeiden von Erkennung durch Sicherheitsmechanismen.
+
+**Discovery** <br>
+Erkunden von Informationen über das Modell.
+
+- Modellarchitektur
+- Artefakten
+
+**Collection** <br>
+Es werden Daten gesammelt, die für den Angriff nützlich sind.
+
+- Artefakte
+- Daten von Ablageorten
+- Daten lokaler Systeme
+
+**Staging Attacks** <br>
+Unter ML Staging-Attacks werden Angriffe verstanden, die auf die ML-Systeme abzielen.
+
+- Proxy-ML Modell
+- Backdoors
+
+**Exfiltration** <br>
+Daten werden aus dem System entfernt oder abgeführt.
+
+**Impact** <br>
+Resultierende Auswirkungen des Angriffs.
+
+- Umgehung des Modells
+- Denial of Service
+- Spamming mit wertlosen Daten
+- Kostenverursachung
+- Diebstahl von Intellectual Property
+- Missbrauch des Systems
+
+
+| **Kategorie** | **Beschreibung** |
+| --- | --- |
+| `Reconnaissance` <br> Sammeln oder Erwerben von verschiedenen Tools, die für einen Angriff nützlich sein können. | • öffentliche ML-Artefakte <br> • technische Ressourcen <br> • Adversarial-Attack Fähigkeiten <br> • Infrastruktur <br> • Veröffentlichung eines kompromittierten Datensatzes <br> • Kompromittierung von Trainingsdaten <br> • Nutzeraccounts erstellen |
+| `Initial Access` <br> Ausnutzen oder Kompromittieren von Schwachstellen. | • ML Supply-Chain <br> • Accounts im System <br> • Umgehung des Modells <br> • öffentlich zugängliche Anwendungen |
+| `Model Access` <br> Zugriff auf das Modell. | • Interface API <br> • Dienste, die auf dem Modell basieren <br> • physischer Zugriff |
+| `Execution` <br> Ausführen von Angriffen auf das Modell. | • Nutzeraktivität <br> • Commands oder Skripte |
+| `Persistence` <br> Einbauen von versteckten Funktionen. | • Manipulation der Trainingsdaten <br> • Backdoors |
+| `Defense Evasion` <br> Vermeiden von Erkennung durch Sicherheitsmechanismen. | |
+| `Discovery` <br> Erkunden von Informationen über das Modell. | • Modellarchitektur <br> • Artefakten |
+| `Collection` <br> Es werden Daten gesammelt, die für den Angriff nützlich sind. | • Artefakte <br> • Daten von Ablageorten <br> • Daten lokaler Systeme |
+| `Staging Attacks` <br> Unter ML Staging-Attacks werden Angriffe verstanden, die auf die ML-Systeme abzielen. | • Proxy-ML Modell <br> • Backdoors |
+| `Exfiltration` <br> Daten werden aus dem System entfernt oder abgeführt. | |
+| `Impact` <br> Resultierende Auswirkungen des Angriffs. | • Umgehung des Modells <br> • Denial of Service <br> • Spamming mit wertlosen Daten <br> • Kostenverursachung <br> • Diebstahl von Intellectual Property <br> • Missbrauch des Systems |
