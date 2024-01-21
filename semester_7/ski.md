@@ -12,6 +12,13 @@ Mitschrift und Zusammenfassung des Vortrags von Patrizia Heinl an der Technische
   - [Zeitfaktor](#zeitfaktor)
   - [Risiko-Heatmap](#risiko-heatmap)
   - [Risikostrategien](#risikostrategien)
+- [Angriffe auf KI-Systeme](#angriffe-auf-ki-systeme)
+  - [Angriffstechniken](#angriffstechniken)
+  - [Angriffe](#angriffe)
+    - [Poisoning Attacks](#poisoning-attacks)
+    - [Evasion Attacks](#evasion-attacks)
+    - [System Integration Attacks](#system-integration-attacks)
+
 
 # Einführung
 Bei dem Einsatz von KI-Systemen liegt ein wichtiger Schwerpunkt auf der Sicherheit.
@@ -174,3 +181,42 @@ wie viel relevant?
 <!--
 Data Collection Related Attacks
 -->
+
+## Angriffe
+Verschiedene Angriffsarten werden hier vorgestellt.
+
+**Data Collection Attacks** <br>
+Es kann auch ohne Angriff ein Bias vorliegen. 
+
+- `Fake-Data` - falsche Daten werden eingespeist
+- `Data-Breach` - Daten werden gestohlen
+- `Sensor-Spoofing` - Injeltion manipulierter Signale
+
+<details><summary>Beispiele</summary>
+Sensor-Spoofing: manipulierte Messdaten an das ABS-System eines Autos, Lebensgefahr für die Insassen. Angriff über den Übertragungskanal: Microfon wird beeinflusste, es werden falsche Töne übertragen.
+
+<!--
+Seitenkanal Beispiel
+-->
+
+</details>
+
+**Scaling Attacks** <br>
+Bilder für das Training haben  normalerweise eine feste Größe, die durch Skalierung angepasst wurden. 
+
+- `Image Scaling Attack` - nach dem Skalieren ist ein anderes Bild zu sehen, davor jedoch das gewollte - damit werden falsche Daten gelernt, da die Labels nicht mehr passen!
+
+Hier unterscheidet man zwischen starken (Angreifer kennt das Inputbild und will ein bestimmtes Label erzeugen) und schwachen (Angreifer kennt nichts und eill nur stören) Scaling-Attacks.
+
+### Poisoning Attacks
+Bei Poisoning-Attacks werden die Trainingsdaten manipuliert.
+
+<!-- 
+weiter morgen ab Seite 27
+-->
+
+### Evasion Attacks
+...
+
+### System Integration Attacks
+...
