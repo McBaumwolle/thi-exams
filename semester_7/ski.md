@@ -211,12 +211,45 @@ Hier unterscheidet man zwischen starken (Angreifer kennt das Inputbild und will 
 ### Poisoning Attacks
 Bei Poisoning-Attacks werden die Trainingsdaten manipuliert.
 
-<!-- 
-weiter morgen ab Seite 27
+**Verfügbarketsangriffe** <br>
+- `Gradient-based` - Komplexität der Gradienten
+- `GAN-based` - poisoned Data für das GAN
+
+Ein aktuelles Beispiel zu Poisoning-Attacks ist `Nightshade`, damit können Biler verändert werden, die später im Training Probleme bereiten. Ist für Künstler interessant, da sie so ihre Bilder schützen können (vor unerlaubter Nutzung - zum Beispiel Midjourney). 
+
+**Integritätsangriffe** <br>
+- `Backdoor` - Hintertür im Modell für Zugriff, verseht dann Bilder mit einem Trigger - kann von Menschen erkannnt werden
+- `Clean Label Poisoning` - Ein Feature wird durch neue (falsche) Daten verändert (spam zu not-spam zum Beispiel)
+
+<!--
+Erst seit 2013 
 -->
 
+### Adversarial-Example Attacks
+Seit etwa 2013 ist die Performance von DNNs den der Menschen ähnlich. Ein `Adversarial-Example` ist ein Bild, das für den Menschen eindeutig zu erkennen ist, für das Modell jedoch eine falsche Klassifikation erzeugt.
+
+- Image Classification
+- Speech Recognition
+- Natural Language Processing
+- Malware Detection
+
+Den Daten wird Noise hinzugefügt - eine `Pertubation` - welche die Klassifikation verändert - visuelles Beispiel im [Web](https://kennysong.github.io/adversarial.js/).
+
+<!--
+weiter ausführen
+S. 23
+
 ### Evasion Attacks
-...
+-->
 
 ### System Integration Attacks
 ...
+
+**Bias** <br>
+...
+
+**Vertraulichkeit** <br>
+...
+
+**Code-Schwachstellen** <br>
+Ausnutzen von Schwachstellen in der Software oder Libraries Dritter - System selbst muss nicht das Problem sein. 
