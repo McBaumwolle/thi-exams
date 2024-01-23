@@ -391,6 +391,40 @@ p. 55
 ask someone 
 -->
 
+## Shor Algorithm
+Classic RSA encryption is based on the fact that it is hard to factorize a large number into two primes. The Shor algorithm can factorize a number in managable time. 
+
+<details><summary>RSA</summary>
+
+1. Find two prime numbers $p$ and $q$.
+2. Calculate $n = p \cdot q$ and $\phi(n) = (p-1) \cdot (q-1)$.
+3. Choose a small number $e$ that is coprime to $\phi(n)$.
+4. Now find a number $d$ so that $d \cdot e \equiv 1 \mod \phi(n)$.
+5. The public key is $e$ and the private key is $d$.
+6. Encrypt a message $m$ with $\widetilde{m} = m^e \mod n$.
+7. Decrypt the message with $m = \widetilde{m}^d \mod n$.
+
+Test with $p = 47$ and $q = 59$, now $n = 2773$ and $\phi(n) = 46 \cdot 58 = 2668$. Choose $e = 17$ and $d = 157$.
+
+| Text | HA | LL | OW | EL | T |
+| ---- | -- | -- | -- | -- | - |
+| $m$ | 0801 | 1212 | 1523 | 0512 | 2000 |
+| $\widetilde{m}$ | 2480 | 2345 | 1107 | 1278 | 317 |
+
+`801^17 mod 2773 = 2480`
+
+</details> <br> 
+
+The circuit will look like this and takes $n=log(N)$ and $m=log(N^2)=2 \cdot log(N) = 2n$ qubits.
+
+<img src="resources/qti/10_shor.png" width="500" alt="Shor Algorithm - source unknown or possibly the lecturer"/>
+
+
+
+
+
+
+
 # Error Correction
 In classical information theory, using multiple transmissions can reduce the error rate arbitrarily. 
 
