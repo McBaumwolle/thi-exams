@@ -253,3 +253,70 @@ S. 23
 
 **Code-Schwachstellen** <br>
 Ausnutzen von Schwachstellen in der Software oder Libraries Dritter - System selbst muss nicht das Problem sein. 
+
+# sichere Entwicklung
+Eines der Ziele ist es, das Durchsickern von Informationen zu minimieren. 
+
+**Probing** <br>
+Durch das Probing kann ein Angreifer Informationen über das Modell erhalten. Nicht mehr sehr effektiv sind Captchas oder die Beschränkung von IP-Adressen.
+
+Empfohlen ist das Preprocessing der Eingaben, um Angreifer zu erkennen oder die 2FA. 
+
+**Ensemble Learning** <br>
+Dabei wird eine Gruppe von Algorithmus verwendet, um bessere Vorhersagen zu treffen.
+
+## Gegenmaßnahmen
+Verschiedene Gegegnmaßnahmen zu den oben vorgestellten [Angriffen](#angriffe) werden hier vorgestellt.
+
+### Data Collection 
+Einige Forschende schlagen zum Beispiel folgende Maßnahmen vor. 
+
+- Daten filtern und analysieren
+- Datenherkunft und Authentizität beachten
+- Management standardisieren
+
+**Erkennen & Filtern** <br>
+Durch das Filtern von Daten können zum Beispiel `Outlier` erkannt werden, es muss aber auf algorithmische Biases geachtet werden (Data, Model und Evaluation Bias).
+
+> Ein Beispiel ist das föderale Lernen, bei dem die Daten auf den Geräten bleiben und nur die Parameter des Modells übertragen werden.
+
+> Oder spezielle Mikrofone, die nur bestimmte Frequenzen aufnehmen können - um Hardware Data Collection Attacks zu verhindern.
+
+> Bei der Erkennung von Fake-News zum Beispiel mittels den Merkmalen "natürlicher Sprache".
+
+**Datenherkunft & Authentizität** <br>
+Durch die Authentizität der Daten kann die Integrität gewährleistet werden. 
+
+> PyCRA untersucht zum Beispiel Sensordaten auf Manipulationen.
+
+**standardisiertes Management** <br>
+Durch das standardisierte Management kann die Sicherheit besser gewährleistet werden.
+
+- Schulung von Mitarbeitenden
+- Prozesse für sichere Datensammlung
+
+### Scaling Attacks
+Es gibt verschiedene Maßnahmen, um bei der Skalierung eventuelle Manipulationen zu erkennen oder zu entfernen.
+
+- `Robust Scaling`
+- `Image Reconstruction`
+
+### Poisoning Attacks
+Bei Poisoning-Attacks gibt es verschiedene Maßnahmen, um diese zu erkennen oder zu verhindern.
+
+> Poisoning-Attacks sind Angriffe auf die Trainingsdaten.
+
+- `Datenbereinigung` - bei signifikanten Änderungen auf den Klassifikator werden Daten aussortiert
+- `robustes Training` - bessere Erkennung von Outliern
+- `zertifizierte Verteidigung` - eliminieren von Outliern und empirische Risikominimierung
+
+### Adversarial-Example Attacks
+Die Gegenmaßnahmen sollten darauf achten, dass das Modell nicht zu stark verändert wird und die Performance nicht zu stark leidet.
+
+> Zur Wiederholung, ein `Adversarial-Example` ist ein Bild, das für den Menschen eindeutig zu erkennen ist, für das Modell jedoch eine falsche Klassifikation erzeugt.
+
+Eine Möglichkeit ist das `Adversarial Training`, bei dem das Modell mit den Adversarial-Examples trainiert wird. Es ist aber wichtig, eine gute Balance zwischen Originalen und Examples zu finden. (Zudem kann Over- und Overfitting reguliert werden.)
+
+<!-- 
+S. 42
+-->
