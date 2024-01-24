@@ -421,12 +421,57 @@ The circuit will look like this and takes $n=log(N)$ and $m=log(N^2)=2 \cdot log
 
 
 
-
-
-
-
 # Error Correction
 In classical information theory, using multiple transmissions can reduce the error rate arbitrarily. 
+
+In a quantum system, states of qubits can be changed by the environment - this is called **decoherence**.
+
+> A photon can be absorbed by the environment and the state is lost.
+
+> Or the photon collides with another particle and the state is flipped. 
+
+If the particle is in a superposition, the interaction then **entangles** the particle and photon. Any further changes to the photon will also affect the particle.
+
+> phase flip = Z
+> bit flip = X
+> no change = I
+
+## Error Detection
+The simplest way to detect an error is to apply some gates to the qubit and then measure them. 
+
+<img src="resources/qti/11_error_detection.png" width="300" alt="Error Detection - source unknown or possibly the lecturer"/>
+
+Here the state $\alpha|0\rangle + \beta|1\rangle$ will become $\alpha|000\rangle + \beta|111\rangle$ and if an error occurs within the two gates, an error is detected.
+
+<img src="resources/qti/12_error_detection.png" width="300" alt="Error Detection - source unknown or possibly the lecturer"/>
+
+The circuit above can detect a bitflip on $|\psi\rangle$ and returns the corrected state - the $E_bit$ function simulates the error and flips the qubit. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Quantum Communication
 Quantum communication is the transmission of quantum information. 
