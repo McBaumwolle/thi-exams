@@ -448,31 +448,6 @@ Here the state $\alpha|0\rangle + \beta|1\rangle$ will become $\alpha|000\rangle
 The circuit above can detect a bitflip on $|\psi\rangle$ and returns the corrected state - the $E_bit$ function simulates the error and flips the qubit. 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Quantum Communication
 Quantum communication is the transmission of quantum information. 
 
