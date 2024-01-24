@@ -320,3 +320,57 @@ Eine Möglichkeit ist das `Adversarial Training`, bei dem das Modell mit den Adv
 <!-- 
 S. 42
 -->
+
+# Sicherheit durch KI
+Angriffe auf kritische Infrastrukturen sind keine Seltenheit und können mit KI besser erkannt werden. 
+
+<!-- 
+2.
+-->
+
+## Phasen
+### KI für die Discovery-Phase
+Mit KI können wichtige Geräte, SOftware und Daten identifiziert werden. Bei Daten zum Beispiel die **Anomalieerkennung** und bei Geräten eine **predictive Maintenance**.
+
+> Welche Assets stellen eine Bedrohung dar? 
+> Welche Teile der Infrastruktur weisen Vulnerabilities auf?
+
+> Vorhersage oder Erkennung von Angriffen. 
+
+### KI für Threat-Scores
+Unter `Threat-Scores` versteht man die Bewertung von Bedrohungen nach ihrem Risiko (siehe z.B. [Risiko-Heatmap](#risiko-heatmap)).
+
+> Bedrohungen auf einer Skala [0-10] einordnen.
+
+### KI für Threat-Response
+Schnelle Reaktion auf Bedrohungen ist wichtig, kann mittels KI effizienter gestaltet werden. 
+
+> Vorhersage zu Gegenmaßnahmen, die am effektivsten sind.
+
+### KI für Protection
+In der Protection-Phase wird sich mit dem Schutz des Systems vor Angriffen beschäftigt, vor allem mit der Authotisierung sowie Authentifizierung.
+
+> Erkennen von  anomalen Verhalten.
+> Automatisches Einleiten von Gegenmaßnahmen.
+
+### KI für das Monitoring
+Beim Monitoring werden die Systeme überwacht und die Daten analysiert - also alle bisherigen Schritte zusammengefasst und überwacht.
+
+1. Monitoring - Überwachung der Assets
+2. Bedrohungsmonitoring - erkennt Muster im Netzwerk
+3. Recovery - lernen aus vergangenen Gegenmaßnahmen
+4. Detection - erkennen von anomalen Verhalten
+
+## Malware Detection
+Erkennung von Malware mittels KI. 
+
+- großes, repräsentatives Datenset
+- leichte Interpretation der Ergebnisse
+- False-Positives vermeiden
+- flexibles Anpassen der Architektur
+
+Häufig wird **random Forest** verwendet, da es sich gut für die Erkennung von Malware eignet.
+
+<!-- 
+S. 25f
+-->
