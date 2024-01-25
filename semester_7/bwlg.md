@@ -927,3 +927,81 @@ Das System der Absatzwege, wie das PRodukt die Kunden erreicht - zum Beispiel ü
 
 **Kommunikationspolitik** <br>
 Die Kommunikationspolitik befasst sich mit der **Kommunikation** zwischen Unternehmen und Kunden - zum Beispiel mit der **Werbung**.
+
+# Gründertum
+## Awareness
+Von der **Idee** zur **Invention** und weiter zur **Innovation**. Letzeres ist charakterisiert durch vier Merkmale. 
+
+- `Neuheit` - das Produkt ist neu
+- `Komplexität` - überschaubar oder komplex
+- `Unsicherheit` - keine Prognosen möglich
+- `Konfliktgehalt` - Widerstand gegen das Produkt
+
+Allgemein ist eine Innovation die erstmalige wirtschaftliche Umsetzung einer neuen Idee in Form eines neuen Produkts, etc. 
+
+- `Produktinnovation` - neue Produkte (5G), Marktsättigung beachten
+- `Prozessinnovation` - vorsprung durch Technik
+- `Marketinginnovation` - neue Vertriebswege
+- `Geschäftsmodellinnovation` - neue Geschäftsmodelle (Spotify)
+
+**Innovation** <br>
+Man unterscheidet zwischen **radikalen** (neue Mittel und Markt) und **inkrementellen** (Schritt-für-Schritt, alte Mittel und Markt, Zweck) Innovationen.
+
+**fachliche Grundkenntnisse** <br>
+Fachwissen, Branchenwissen udn kaufmännische Grundkenntnisse sind drei wichtige Grundkenntnisse für Gründende. 
+
+### Frameworks 
+Frameworks sind Modelle, die bei der Entwicklung einer Idee helfen sollen.
+
+**5-Forces-Framework** <br>
+Das 5-Forces-Framework ist ein Modell zur Analyse der `Wettbewerbsintensität` - es wird zwischen Suppliers, Buyers, Substitutes und potential Entrants unterschieden.
+
+> Hoher Grad an Rivalität entsteht durch viele Wettbewerber, hohe Fixkosten oder geringe Differenzierung.
+
+> Hohe Einsteigerhürden entstehen aus hohen Fixkosten oder zum Beispiel Patente sowie Lernkurven. 
+
+**strategische Gruppen** <br>
+Strategische Gruppen sind Organisationen einer Industrie oder eines Sektors mit ähnlichen `Charakteristiken`, indem sie ähnliche Strategien verfolgen.
+
+> Fokus auf direkte Wettbewerber. 
+
+> ANalyse der STrategien anderer Unternehmen.
+
+<details><summary>Beispiel</summary>
+Strategische Gruppen im Hotelmarkt - Luxus-, Business und Budgethotels. Kategorien können zum Beispiel Preisklasse, Zielgruppe und Service sein.
+</details> <br>
+
+**Marktsegmentierung** <br>
+Im Gegensatz zu strategischen Gruppen liegt der Fokus bei der Marktsegmentierung auf den `Kundenbedürfnissen`.
+
+> Marktsegemnt ist eine Gruppe von Kunden mit ähnlichen Bedürfnissen.
+
+Siehe auch [Marktsegmentierung](#Marktsegmentierung) weiter oben. 
+
+## Konzeption
+Elemente eines Geschäftsmodells werden strukturiert im `Business Canvas` nach Osterwalder dargestellt. Siehe FOliensatz S. 64.
+
+**Entwicklungsmethoden** <br>
+1. PoC - Proof of Concept
+2. Prototyp - erste Version des Produkts
+3. MVP - Minimum Viable Product
+4. Prodult - fertiges Produkt
+
+**Business-Plan** <br>
+Ein Business-Plan ist ein Dokument, das die **Geschäftsidee** und die **Umsetzung** beschreibt - sowie die **Zielgruppe** und den **Markt** analysiert.
+
+- Zusammenfassung
+- Idee und Zielgruppe
+- Markt und Wettbewerb
+- Marketing und Vertrieb
+- Business-System
+- Team und Gründer
+- Risiken und Chancen
+- Umsetzungsplan
+- Finanzplanung
+
+## Finanzierung
+Die Finanzierung ist die Beschaffung von Kapital für die Gründung und den Betrieb eines Unternehmens.
+
+- Fördermittel für Existenzgründer 
+- öffentliche Fördermittel 
