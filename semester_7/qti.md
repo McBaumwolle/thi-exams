@@ -482,3 +482,36 @@ The goal of Quantum Teleportation is to transport a qubit $|\psi\rangle$ from Al
 this is not that much
 try to understand well
 -->
+
+# Qunatum Hardware
+Usually a quantum computer needs qubits, which can be **initialised** (with ground states) and needs to **robustly** store this information. Operations such as **quantum gates** should also be possible as well as **measurements**.
+
+- superconducting circuits (e.g. transmons)
+- photons
+- atom- or ion-traps
+
+These are the most common approaches to quantum computing with many more in development.
+
+**Quantum Volume** <br>
+The quantum volume is a metric to measure the performance of a quantum computer. It relies on the number of **qubits**, number of possible steps before the qubits **decay** and the **error rate** of them. 
+
+## Superconducting Transmon Qubit
+Their coherency is approximately $30-100 \mu s$ and a common gate takes approximately $10-30 ns$ to execute.
+
+> State of the art are 72 qubits!
+
+They rely on superconducting circuits and can be used for universal quantum computing, IBM currently has `1121` qubits available (as of Dec. 23) - error rates are about $1%$ but very low temperatures are required (around $10mK$) to achieve this.
+
+## Photonic Qubits
+Based on photons, this technology has a longer decoherence time and operates at light speed, so very good for communication - storage of the photos is the problem here. 
+
+> Just a handful of qubits are possible. 
+
+Technically speaking, mirrors are used to reflect the photons. This also works at room temperature and the gate operations are very fast.
+
+## Atom Traps
+Atoms are trapped in e.g. a magnetic field at low temperatures. a qubit state corresponds to the energy level of the atom - light can change this state. 
+
+> Just a handful of atoms or ions.
+
+Best for universal computing, but once again low temperatures ($\approx 10mK$) are required - but a high coherence time is possible. 
