@@ -374,3 +374,38 @@ Häufig wird **random Forest** verwendet, da es sich gut für die Erkennung von 
 <!-- 
 S. 25f
 -->
+
+## Social Engineering
+Social Engineering ist eine Methode, um Menschen zu manipulieren und so an Informationen zu gelangen.
+
+`Deepfake` ist eine Technik, um Videos zu manipulieren. Meist werden Gesichter ausgetauscht, aber auch Stimmen können verändert werden.
+
+- Datenschutz
+- Rechte an den generierten Werken
+- biometrische Daten
+- Missbrauch von Deepfake
+
+**Photo-Deepfakes** <br>
+Mittels DNN werden Biler manipuliert, um zum Beispiel Gesichter auszutauschen - FaceApp ist ein Beispiel dafür.
+
+- Face-Swapping
+- Face-Morphing
+- Full Body-Puppetry
+
+**Video-Deepfakes** <br>
+Ähnlich wie bei den Bildern werden hier Videos manipuliert.
+
+> Social Engineering auf YouTube mit Tutorials. 
+
+**Audio-Deepfakes** <br>
+Hier unterscheidet man zwischen `Voice Swapping` und `Text to Speech`. Menschen können Audio-Deepfakes aber gut erkennen. 
+
+### Funktionsweise
+Normalerweise werden Deepfakes mit `Autoencodern` erstellt.
+
+1. Encoder erkennt die Merkmale des Inputs
+2. im Latent-Space wird das Gesicht gespeichert
+3. Decoder erstellt das neue Gesicht mit dem Input 
+
+### Sonstiges
+Auch ´Phishing` ist eine Form von Social Engineering, natürlicher denn je mit KI. So ist ein Phishing-Angriff besser skalierbar und personenbezogen oder in mehreren Sprachen möglich.
