@@ -515,3 +515,37 @@ Atoms are trapped in e.g. a magnetic field at low temperatures. a qubit state co
 > Just a handful of atoms or ions.
 
 Best for universal computing, but once again low temperatures ($\approx 10mK$) are required - but a high coherence time is possible. 
+
+
+# Quantum Key Distribution
+Symmetric encryption requires a shared key between the sender and receiver. The key is used to encrypt and decrypt the message.
+
+> This is a problem, as the key needs to be secret!
+
+SOlutions include the Diffie-Hellman key exchange or two separate keys for encryption and decryption. `Hash` functions are also used to verify the integrity of the message.
+
+## BB84 Protocol
+Quantum Key Distribution makes use of the `no-cloning` theorem - it is not possible to copy a qubit.
+
+1. Alice creates a random, classical bit `a` and a random qubit `|x⟩` which gets initialized with the value of `a` (usually for random `a` you can use a quantum bit `|0⟩` and a Hadamard).
+2. Alice creates anothe random bit `a'` and if this one is `1`, then she applies Hadamard to `|x⟩`.
+    - if `a' = 0`, then `|x'⟩ = |x⟩` 
+    - if `a' = 1`, then `|x'⟩ = H(|x⟩)`
+3. Alice sends `|x'⟩` to Bob. 
+4. Bob also generates a random bit `b'`
+    - if `b' = 0`, then Bob measures the regular base §e_N = {|0⟩, |1⟩}
+    - if `b' = 1`, then Bob measures on base §e_N = {|+⟩, |-⟩} (which is equal to a Hadamard)
+5. ALice and Bob exchange their random bits `a'` and `b'` - if both are equal, they use the transmitted bit - otherwiese the bit is discarded. 
+
+<img src="resources/qti/13_bb84.png" width="500" alt="BB84 Protocol - source unknown or possibly the lecturer"/>
+
+Possible combinations here are shown in the following table where `R` is a random bit.
+
+|  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `a` | `0` | `0` | `1` | `1` | `0` | `0` | `1` | `1` |
+| `a'` | `0` | `1` | `0` | `1` | `0` | `1` | `0` | `1` |
+| `x⟩` | `0⟩` | `+⟩` | `1⟩` | `-⟩` | `0⟩` | `+⟩` | `1⟩` | `-⟩` |
+| `b'` | `0` | `0` | `0` | `0` | `1` | `1` | `1` | `1` |
+| `b` | `0` | `R` | `1` | `R` | `R` | `0` | `R` | `1` |
+| Key | `0` |  | `1` |  |  | `0` |  | `1` | 
