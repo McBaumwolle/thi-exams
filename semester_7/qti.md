@@ -20,10 +20,19 @@ Transcript and summary of the lecture given by Prof Dr. Ulrich Margull at the In
   - [Deutsch-Jozsa Algorithm](#deutsch-jozsa-algorithm)
     - [Oracle Function](#oracle-function)
   - [Grover Algorithm](#grover-algorithm)
+  - [Shor Algorithm](#shor-algorithm)
 - [Error Correction](#error-correction)
+  - [Error Detection](#error-detection)
 - [Quantum Communication](#quantum-communication)
   - [Bell States](#bell-states)
   - [Teleportation](#teleportation)
+- [Qunatum Hardware](#qunatum-hardware)
+  - [Superconducting Transmon Qubit](#superconducting-transmon-qubit)
+  - [Photonic Qubits](#photonic-qubits)
+  - [Atom Traps](#atom-traps)
+- [Quantum Key Distribution](#quantum-key-distribution)
+  - [BB84 Protocol](#bb84-protocol)
+
 
 # Classical Bits and Gates
 One bit is represented by an vector $0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ or $1 = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$. The boolean `NOT` gate is represented by the matrix $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
