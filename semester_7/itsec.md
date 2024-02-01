@@ -17,6 +17,7 @@
   - [Authentiizität](#authentiizität)
 - [Netzwerksicherheit](#netzwerksicherheit)
   - [Social Engineering](#social-engineering)
+    - [Hintergrundwissen](#hintergrundwissen)
 
 
 # Einführung
@@ -397,7 +398,7 @@ sequenceDiagram
     Note over HostB: Connection established
 ```
 
-<details><summary>GIF von WIkipedia</summary>
+<details><summary>GIF von Wikipedia</summary>
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Three-way-handshake-example.gif" width="500px">
 
@@ -504,3 +505,4 @@ Nmap done: 1 IP address (1 host up) scanned in 22.98 seconds
 -->
 
 **Tarnen & Täuschen** <br>
+ne bye

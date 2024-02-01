@@ -199,7 +199,7 @@ Sensor-Spoofing: manipulierte Messdaten an das ABS-System eines Autos, Lebensgef
 Seitenkanal Beispiel
 -->
 
-</details>
+</details> <br>
 
 **Scaling Attacks** <br>
 Bilder für das Training haben  normalerweise eine feste Größe, die durch Skalierung angepasst wurden. 
