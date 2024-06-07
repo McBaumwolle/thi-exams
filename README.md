@@ -11,7 +11,7 @@ Zusammenfassungen für die Prüfungen, in Markdown.
 [Quantum Technologies and Information](semester_7/qti.md)
 
 ### Semester 6
-...
+siehe Obsidian
 
 ### Semester 5
 ...
